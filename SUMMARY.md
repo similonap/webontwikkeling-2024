@@ -9,9 +9,19 @@
 
 ## NodeJS + TypeScript
 
-* [Wat is nodeJS?](nodejs-+-typescript/wat-is-nodejs.md)
+* [Wat is NodeJS?](nodejs-+-typescript/wat-is-nodejs.md)
 * [Waarom TypeScript?](nodejs-+-typescript/waarom-typescript.md)
-* [Types](nodejs-+-typescript/types.md)
+* [Eerste NodeJS App](nodejs-+-typescript/eerste-nodejs-app.md)
+* [Type Systeem](nodejs-+-typescript/type-systeem/README.md)
+  * [Basic types](nodejs-+-typescript/type-systeem/basic-types.md)
+  * [Any](nodejs-+-typescript/type-systeem/any.md)
+  * [Combinatie types](nodejs-+-typescript/type-systeem/combinatie-types.md)
+  * [Arrays](nodejs-+-typescript/type-systeem/arrays.md)
+  * [Interfaces](nodejs-+-typescript/type-systeem/interfaces.md)
+  * [Optionals en null handling](nodejs-+-typescript/type-systeem/optionals-en-null-handling.md)
+  * [Functions](nodejs-+-typescript/type-systeem/functions.md)
+* [Exceptions](nodejs-+-typescript/exceptions.md)
+* [Modules](nodejs-+-typescript/modules.md)
 
 ## Express
 
