@@ -11,7 +11,7 @@
 
 * [Wat is nodeJS?](nodejs-+-typescript/wat-is-nodejs.md)
 * [Waarom TypeScript?](nodejs-+-typescript/waarom-typescript.md)
-* [Variable Types](nodejs-+-typescript/variable-types.md)
+* [Types](nodejs-+-typescript/types.md)
 
 ## Express
 
