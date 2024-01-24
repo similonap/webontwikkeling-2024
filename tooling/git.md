@@ -30,3 +30,5 @@ git config --global user.email "Jouw Email"
 Vervang `Jouw Naam` en `Jouw Email` door je eigen naam en email adres. Deze gegevens worden gebruikt om je commits te identificeren. Je kan ook nog andere instellingen aanpassen, maar dat is niet nodig voor deze cursus.
 
 ## Git gebruiken
+
+Git is een command line tool. Dat wil zeggen dat je het gebruikt door commando's in te typen in een command line interface. Het is op dit moment nog niet nodig om alle commando's te kennen. We zullen enkel de commando's gebruiken die nodig zijn om de oefeningen te maken. De belangrijkste commando's zijn:
