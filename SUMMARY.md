@@ -4,6 +4,7 @@
 
 ## Tooling
 
+* [Git](tooling/git.md)
 * [Devcontainers](tooling/devcontainers.md)
 * [Node JS](tooling/node-js.md)
 
