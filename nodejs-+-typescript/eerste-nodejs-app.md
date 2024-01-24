@@ -45,7 +45,7 @@ npm install -g typescript
 Deze bovenstaande commando's moet je maar 1 keer doen op jouw machine.
 
 {% hint style="info" %}
-Indien je gebruik maakt van devcontainers moet je typescript en ts-node niet meer globaal installeren. Normaal gezien zijn deze al voorgeinstalleerd in je container.
+Indien je gebruik maakt van devcontainers moet je **typescript** en **ts-node** niet meer globaal installeren. Normaal gezien zijn deze al voorgeinstalleerd in je container.
 {% endhint %}
 
 Bij elk nieuw project moet je wel &#x20;
@@ -86,8 +86,6 @@ ts-node helloTypeScript.ts
 ```
 
 in je terminal in te voeren.
-
-![](broken-reference)
 
 ### Samengevat
 
