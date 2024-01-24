@@ -87,8 +87,6 @@ ts-node helloTypeScript.ts
 
 in je terminal in te voeren.
 
-![](broken-reference)
-
 ### Samengevat
 
 **Commando's die je maar 1 keer moet uitvoeren op je computer:**
