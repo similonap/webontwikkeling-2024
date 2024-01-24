@@ -28,3 +28,5 @@ git config --global user.email "Jouw Email"
 ```
 
 Vervang `Jouw Naam` en `Jouw Email` door je eigen naam en email adres. Deze gegevens worden gebruikt om je commits te identificeren. Je kan ook nog andere instellingen aanpassen, maar dat is niet nodig voor deze cursus.
+
+## Git gebruiken
