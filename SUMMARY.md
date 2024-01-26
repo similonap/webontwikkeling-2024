@@ -19,6 +19,7 @@
   * [Interfaces](nodejs-+-typescript/type-systeem/interfaces.md)
   * [Optionals en null handling](nodejs-+-typescript/type-systeem/optionals-en-null-handling.md)
   * [Functions](nodejs-+-typescript/type-systeem/functions.md)
+* [Input lezen](nodejs-+-typescript/input-lezen.md)
 * [Exceptions](nodejs-+-typescript/exceptions.md)
 * [Modules](nodejs-+-typescript/modules.md)
 
