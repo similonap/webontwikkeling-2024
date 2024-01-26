@@ -1,2 +1,0 @@
-# Optionals en null handling
-
