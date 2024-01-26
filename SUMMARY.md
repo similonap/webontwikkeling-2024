@@ -15,8 +15,6 @@
 * [Eerste NodeJS App](nodejs-+-typescript/eerste-nodejs-app.md)
 * [Type Systeem](nodejs-+-typescript/type-systeem/README.md)
   * [Basic types](nodejs-+-typescript/type-systeem/basic-types.md)
-  * [Any](nodejs-+-typescript/type-systeem/any.md)
-  * [Combinatie types](nodejs-+-typescript/type-systeem/combinatie-types.md)
   * [Arrays](nodejs-+-typescript/type-systeem/arrays.md)
   * [Interfaces](nodejs-+-typescript/type-systeem/interfaces.md)
   * [Optionals en null handling](nodejs-+-typescript/type-systeem/optionals-en-null-handling.md)

@@ -137,6 +137,17 @@ console.log(isGroterDan) // true
 
 Vergelijkingen of comparisons zien we later in detail in een verder hoofdstuk.
 
+### Type inference
+
+TypeScript is een taal die gebruik maakt van type inference. Dit wil zeggen dat TypeScript zelf zal proberen te achterhalen welk type een variabele heeft. Dit is een van de grote voordelen van TypeScript. Je moet dus niet altijd expliciet het type van een variabele aangeven. Dit is een van de grote verschillen met andere talen zoals C# en Java.
+
+```typescript
+let a = 0; // a is van het type number
+let b = "Hello"; // b is van het type string\
+```
+
+Het is wel een goed idee om altijd het type van een variabele te declareren. Dit zorgt ervoor dat je code leesbaarder is en dat je minder fouten zal maken.
+
 ### null
 
 De speciale `null` waarde hoort niet thuis in een van de types die hierboven zijn beschreven.
@@ -147,11 +158,11 @@ Het vormt een apart type dat alleen de `null` value bevat.
 let collegeDegree = null;
 ```
 
-Het is een speciale waarde die "niets" of"leeg" voorstelt. De code hierboven zegt gewoon dat de gebruiker bijvoorbeeld geen `collegeDegree` heeft. Dus bijvoorbeeld zit deze gebruiker nog in het middelbaar en heeft dus geen diploma.
+Het is een speciale waarde die "niets" of "leeg" voorstelt. De code hierboven zegt gewoon dat de gebruiker bijvoorbeeld geen `collegeDegree` heeft. Dus bijvoorbeeld zit deze gebruiker nog in het middelbaar en heeft dus geen diploma.
 
 ### undefined
 
-Net zoals `null` is `undefined` een waarde die op zichzelf staat met zijn eigen type. De betekenis is zeer gelijkaardig maar toch iets anders. Het zegt dat de waarde nog niet is toegekend.&#x20;
+Net zoals `null` is `undefined` een waarde die op zichzelf staat met zijn eigen type. De betekenis is zeer gelijkaardig maar toch iets anders. Het zegt dat de waarde nog niet is toegekend.
 
 ```typescript
 let message;
@@ -161,10 +172,30 @@ console.log(message); // undefined
 
 We hebben hier boven dus nog geen waarde toegekend aan de variabele `message`
 
-### object en array
+### any 
 
-Er zijn ook nog types die wie complexe types noemen. Hier behoren de objecten en de arrays. We gaan hier op dit moment nog niet verder op in omdat dit een te complex gegeven is om nu al te behandelen. Deze types worden nog duidelijk in een verder hoofdstuk.
+Het `any` type is een speciaal type in TypeScript. Het is een type dat je kan gebruiken als je niet weet welk type een variabele zal hebben. Het is een type dat je best zo weinig mogelijk gebruikt. Het is een type dat je kan gebruiken als je nog niet weet welk type een variabele zal hebben. Het wordt vaak gebruikt als je een externe library gebruikt die je niet zelf hebt geschreven. Je weet dan niet welke types er allemaal gebruikt worden in die library. Je kan dan het `any` type gebruiken om aan te geven dat je niet weet welk type de variabele zal hebben.
 
-### eigen data types
+```typescript
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false;
+```
 
-In TypeScript is het mogelijk om je eigen complexe data types te gaan aanmaken. Dit is ook iets wat we in een later hoofdstuk gaan doen.&#x20;
+Je ziet dat we de variabele `notSure` eerst een getal geven, dan een string en dan een boolean. Dit is allemaal mogelijk omdat we het `any` type gebruiken. Je verliest hier wel de voordelen van TypeScript. Je kan dus best zo weinig mogelijk het `any` type gebruiken. 
+
+## Union types
+
+Een union type is een type dat bestaat uit meerdere types. Je kan een union type gebruiken als je een variabele wil declareren die meerdere types kan bevatten. Je kan een union type declareren door de types te scheiden met een `|` teken. Als je wil toelaten dat een variabele een string of een getal kan bevatten dan kan je dit doen door het volgende te schrijven:
+ 
+```typescript
+let id : number | string = 1;
+id = "123e4567-e89b-12d3-a456-426614174000";
+```
+
+Dit wordt vaak gebruikt in combinatie met het `undefined` type. Je kan dan een variabele declareren die een bepaald type of `undefined` kan bevatten. Dit kan handig zijn als je een variabele wil declareren en deze nog niet meteen een waarde wil geven. Je kan dan het `undefined` type gebruiken om aan te geven dat de variabele nog niet is toegewezen. 
+
+```typescript
+let id : number | undefined = undefined;
+```
+
