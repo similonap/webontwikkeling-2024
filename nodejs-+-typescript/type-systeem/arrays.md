@@ -72,54 +72,73 @@ let fruits : string[] = ["Banana","Apple","Orange"];
 console.log(fruits); // [ 'Banana', 'Apple', 'Orange' ]
 ```
 
-### Push/pop&#x20;
-
-We hebben hiervoor een element toegevoegd aan de hand van een nieuwe index.
-
-```typescript
-fruits[3] = "Kiwi";
-```
-
-Je kan dit ook doen aan de hand van de `push` methode op de array aan te roepen. Je hoeft hier geen index van de array mee te geven. Het element wordt achteraan de array toegevoegd:
-
-```typescript
-fruits.push("Kiwi");
-```
-
-Wil je het laatste element verwijderen van de array dan gebruik je de `pop` methode.
-
-```typescript
-fruits.pop();
-```
-
-Handig hierbij is dat de `pop()` methode het element zelf teruggeeft. Zo kan je dit toekennen aan een variabele en ermee werken
-
-```typescript
-let lastFruit : string = fruits.pop();
-console.log(lastFruit); // Kiwi
-```
-
-### Shift/unshift
-
-We hebben al elementen toegevoegd en verwijderd van de achterkant van een array. Maar je kan hetzelfde doen aan de voorzijde van de array.&#x20;
-
-We kunnen een element vooraan de array toevoegen met de `unshift` methode:
+Ook een loop over een array is zeer gelijkaardig aan JavaScript.
 
 ```typescript
 let fruits : string[] = ["Banana","Apple","Orange"];
 
-fruits.unshift("Pear");
-
-console.log(fruits[0]); // Pear
+for (let i : number = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
 ```
 
-Wil je het eerste element uit de array halen dan doe je dit met `shift` methode:
+Door type inference is het ook mogelijk het type van `i` weg te laten. TypeScript zal dit automatisch als een `number` type beschouwen.
 
 ```typescript
 let fruits : string[] = ["Banana","Apple","Orange"];
 
-console.log(fruits.shift()); // Banana
-console.log(fruits);
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+```
+
+In de `for...of` loop wordt in TypeScript de types van het element automatisch ingevuld. Je moet dus ook het type van `fruit` weglaten.
+
+```typescript
+let fruits : string[] = ["Banana","Apple","Orange"];
+
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+```
+
+### Multi-dimensionale arrays
+
+Een array kan ook een array bevatten. Dit noemen we een multi-dimensionale array. Je kan dit op de volgende manier doen:
+
+```typescript
+let matrix : number[][] = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+```
+
+Je kan deze array op dezelfde manier gebruiken als een gewone array. Je kan bijvoorbeeld het eerste element van de eerste array opvragen op de volgende manier:
+
+```typescript
+console.log(matrix[0][0]); // 1
+```
+
+Nog een voorbeeld:
+
+```typescript
+let starterPokemon : string[][] = [
+    ["Bulbasaur","Charmander","Squirtle"],
+    ["Chikorita","Cyndaquil","Totodile"],
+    ["Treecko","Torchic","Mudkip"]
+];
+```
+
+Als je hier over wil itereren met een for loop kan je dit op de volgende manier doen:
+
+```typescript
+for (let i=0;i<starterPokemon.length;i++) {
+    console.log(`Generation ${i+1}:`);
+    for (let j=0;j<starterPokemon[i].length;j++) {
+        console.log(starterPokemon[i][j])
+    }
+}
 ```
 
 ### Tuples
