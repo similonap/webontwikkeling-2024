@@ -77,7 +77,7 @@ multiply(2, 2).then((result) => {
 Als je zelf een promise maakt, dan kan je ook een reject functie aanroepen. Deze functie heeft als argument een error object. Dit object kan je zelf aanmaken. Het is een goed idee om een error object te maken dat een boodschap bevat die uitlegt wat er fout is gegaan. 
 
 ```typescript
-const multiply = (number1: number, number2: number): Promise<number> => {
+function multiply(number1: number, number2: number): Promise<number> {
     return new Promise<number>((resolve, reject) => {
         setTimeout(() => {
             if (number1 * number2 > 10) {
