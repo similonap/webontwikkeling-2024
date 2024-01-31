@@ -1,14 +1,16 @@
 # Devcontainers
 
+{% embed url="https://www.youtube.com/watch?v=Z7bCqFxC5cM" %}
+
 ## Dev Environment
 
 Een Dev Environment is simpelweg een systeem waar alle software, tools en hardware op geïnstalleerd zijn, zodat jij kunt programmeren aan een specifiek project. Met software en tools wordt echt alles bedoeld dat je gebruikt tijdens het programmeren:
 
-- Code Editors (bv. VS Code of Visual Studio)
-- Plugins (bv. een Markdown extension in VS Code)
-- Compilers (bv. de .NET compiler voor C#)
-- Sandbox omgevingen (bv. NodeJS)
-- ...
+* Code Editors (bv. VS Code of Visual Studio)
+* Plugins (bv. een Markdown extension in VS Code)
+* Compilers (bv. de .NET compiler voor C#)
+* Sandbox omgevingen (bv. NodeJS)
+* ...
 
 Meestal heb je op één toestel meerdere Dev Environments geïnstalleerd. Het is nu eenmaal niet praktisch om rond te lopen met 5 laptops...
 
@@ -40,30 +42,24 @@ We kunnen een Docker Container zo samenstellen dat alle tools en instellingen da
 
 Je hebt in feite slechts 3 programma's nodig op je computer:
 
-- Git
-- Docker Desktop*
-- Visual Studio Code
-*Om Docker te laten werken moet je WSL geïnstalleerd hebben op je Windows computer. Dus in principe moet je 3 dingen installeren.
+* Git
+* Docker Desktop\*
+* Visual Studio Code \*Om Docker te laten werken moet je WSL geïnstalleerd hebben op je Windows computer. Dus in principe moet je 3 dingen installeren.
 
 ### Hoe Maak je een DevContainer?
 
-- Ga naar github en maak een nieuwe repository (via classrooms invite).
-- Open VS Code, en installeer het Remote Development extension pack. Dit geeft je alle tools die je nodig hebt om een DevContainer te maken en gebruiken.
-- In VS Code, gebruik de toets-combinatie CTRL + SHIFT + P om het Command Palette venster te openen.
-- In het command palette window kies je voor de optie:
-"Dev Containers: Clone Repository in Container Volume..."
-- VS Code vraagt om de url naar een repository. Plak hier de HTTPS link die je in stap 1 kopieerde.
-(eventjes wachten...)
-- Kies hier voor de geschikte DevContainer configuratie. In het geval van React kiezen we voor Node.js & TypeScript.
-Kies ook voor de default versie van Node.
-- Je kan in de volgende stap extra features aanduiden. Voor React hebben we niks nodig, dus klik gewoon op 'ok'.
-(eventjes wachten... De containers worden nu gedownload en opgestart. Zeker de eerste keer kan dit een tijdje duren!)
-Proficiat, je hebt een volledig werkende DevContainer!
+* Ga naar github en maak een nieuwe repository (via classrooms invite).
+* Open VS Code, en installeer het Remote Development extension pack. Dit geeft je alle tools die je nodig hebt om een DevContainer te maken en gebruiken.
+* In VS Code, gebruik de toets-combinatie CTRL + SHIFT + P om het Command Palette venster te openen.
+* In het command palette window kies je voor de optie: "Dev Containers: Clone Repository in Container Volume..."
+* VS Code vraagt om de url naar een repository. Plak hier de HTTPS link die je in stap 1 kopieerde. (eventjes wachten...)
+* Kies hier voor de geschikte DevContainer configuratie. In het geval van React kiezen we voor Node.js & TypeScript. Kies ook voor de default versie van Node.
+* Je kan in de volgende stap extra features aanduiden. Voor React hebben we niks nodig, dus klik gewoon op 'ok'. (eventjes wachten... De containers worden nu gedownload en opgestart. Zeker de eerste keer kan dit een tijdje duren!) Proficiat, je hebt een volledig werkende DevContainer!
 
 Enkele vreemde zaken om op te merken:
 
-- Ga in VS Code naar Terminal > New Terminal en merk op dat het pad niet langer begint met C:. Dit komt omdat je niet langer in een Windows omgeving werkt, maar wel in een Linux omgeving!
-- Node werkt, zelfs als je Node nooit geinstalleerd hebt op je systeem.
+* Ga in VS Code naar Terminal > New Terminal en merk op dat het pad niet langer begint met C:. Dit komt omdat je niet langer in een Windows omgeving werkt, maar wel in een Linux omgeving!
+* Node werkt, zelfs als je Node nooit geinstalleerd hebt op je systeem.
 
 ### Trouble Shooting
 
@@ -71,8 +67,8 @@ Enkele vreemde zaken om op te merken:
 
 Als je de DevContainer probeert te openen, maar je krijgt een foutmelding dat je WSL versie niet up-to-date is, dan moet je WSL updaten. Dit kan je doen door het volgende stappenplan te volgen:
 
-- Open Powershell als administrator (rechtermuisknop op het Powershell icoontje, en kies voor Run as Administrator)
-- Voer de volgende commando's uit:
+* Open Powershell als administrator (rechtermuisknop op het Powershell icoontje, en kies voor Run as Administrator)
+* Voer de volgende commando's uit:
 
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -81,4 +77,4 @@ wsl --set-default-version 2
 wsl --update
 ```
 
-- Hierna kan je best je computer herstarten om zeker te zijn dat alles goed werkt.
+* Hierna kan je best je computer herstarten om zeker te zijn dat alles goed werkt.
