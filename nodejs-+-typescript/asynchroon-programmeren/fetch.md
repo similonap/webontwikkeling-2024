@@ -75,6 +75,8 @@ of met async en await:
 })();
 ```
 
+Let op dat een API niet altijd een array teruggeeft. Het kan ook een object zijn dat op zijn beurt weer een array bevat. Je moet dus altijd controleren wat de data is die je terugkrijgt. 
+
 ## Error afhandelen
 
 De catch functie is nodig om een error af te handelen. Onder een errors vallen alleen errors die veroorzaakt worden op netwerk niveau. Dus bijvoorbeeld als de server niet bereikbaar is of als de URL niet bestaat. 
@@ -84,7 +86,7 @@ Als je toch een error wil afhandelen die veroorzaakt wordt door een fout in de c
 ```typescript
 fetch('https://jsonplaceholder.typicode.com/posts/123')
     .then(r => {
-        if (!r.ok) throw new Error(r.statusText)
+        if (!r.ok) throw new Error(r.status)
         return r.json()
     })
     .then(r => console.log(r))
@@ -99,11 +101,11 @@ Deze code is ook weer sterk te vereenvoudigen met async en await:
 (async function () {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts/123');
-        if (!response.ok) throw new Error(response.statusText);
+        if (!response.ok) throw new Error(response.status);
         const posts : Post[] = await response.json();
         console.log(posts[0].title);
     } catch (error: any) {
-        console.log(error.message);
+        console.log(error);
     }
 })();
 ```
@@ -121,7 +123,77 @@ Je kan ook de `status` property gebruiken om de status code op te vragen. Deze p
         const posts : Post[] = await response.json();
         console.log(posts[0].title);
     } catch (error: any) {
-        console.log(error.message);
+        console.log(error);
     }
 })();
 ```
+
+## Een voorbeeld met paging
+
+We gaan nu een iets complexer voorbeeld bekijken. We gaan deze keer eens de `https://reqres.in/api/users` API gebruiken. Als je naar de response kijkt, dan zie je dat deze geen array teruggeeft, maar een object. Dit object bevat een array met de key `data` en ook een andere properties zoals `page`, `per_page`, `total` en `total_pages`. Het data object bevat een array van gebruikers. 
+
+Hier kan je de volgende interface voor gebruiken:
+
+```typescript
+interface User {
+    id: number;
+    email: string;
+    first_name: string;
+    last_name: string;
+    avatar: string;
+}
+
+interface RootObject {
+    page: number;
+    per_page: number;
+    total: number;
+    total_pages: number;
+    data: User[];
+}
+```
+
+We gaan nu de gebruikers ophalen en de gebruikers te loggen naar de console. 
+
+```typescript
+async function main() {
+    try {
+        const response = await fetch('https://reqres.in/api/users');
+        if (!response.ok) throw new Error(response.statusText);
+        const users : RootObject = await response.json();
+        for (const user of users.data) {
+            console.log(user.first_name);
+        }
+    } catch (error: any) {
+        console.log(error);
+    }
+};
+main();
+```
+
+Merk op dat we hier wel geen rekening hebben gehouden met de pagina's. Als je naar de response kijkt zie je dat hier een `page` property in zit. Deze property geeft aan op welke pagina je zit. Als je naar de URL kijkt, dan zie je dat er een `page` query parameter in zit. Deze parameter geeft aan op welke pagina je zit. Als je deze parameter aanpast, dan krijg je een andere pagina terug. Je zou hier dus een loop kunnen maken die alle pagina's afgaat. 
+
+```typescript
+async function main() {
+    try {
+        let page : number = 1;
+        let total_pages : number = 1;
+
+        while (page <= total_pages) {
+            const response = await fetch("https://reqres.in/api/users?page=" + page);
+            if (!response.ok) throw new Error(response.statusText);
+            const root : RootObject = await response.json();
+            total_pages = root.total_pages;
+            console.log("Page " + page);
+            for (const user of root.data) {
+                console.log(user.first_name);
+            }
+            page++;
+        }
+    } catch (error: any) {
+        console.log(error);
+    }
+};
+main();
+```
+
+Let wel op dat elk paging systeem anders is. Je moet dus altijd controleren hoe het paging systeem werkt.
