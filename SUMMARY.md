@@ -21,6 +21,10 @@
   * [Functions](nodejs-+-typescript/type-systeem/functions.md)
 * [Exceptions](nodejs-+-typescript/exceptions.md)
 * [Modules](nodejs-+-typescript/modules.md)
+* [Asynchroon Programmeren](nodejs-+-typescript/asynchroon-programmeren/README.md)
+  * [Promises](nodejs-+-typescript/asynchroon-programmeren/promises.md)
+  * [Async/Await](nodejs-+-typescript/asynchroon-programmeren/async-await.md)
+  * [Fetch](nodejs-+-typescript/asynchroon-programmeren/fetch.md)
 
 ## Express
 
