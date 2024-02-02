@@ -4,9 +4,10 @@
 
 ## Tooling
 
-* [Git](tooling/git.md)
 * [Devcontainers](tooling/devcontainers.md)
-* [Node JS](tooling/node-js.md)
+* [Git](tooling/git.md)
+* [Bash](tooling/bash.md)
+* [Oefeningen](tooling/oefeningen.md)
 
 ## NodeJS + TypeScript
 
