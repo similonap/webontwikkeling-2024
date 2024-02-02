@@ -1,6 +1,6 @@
 # Node Client
 
-## Data
+## JSON
 
 We gaan in dit vak later een json bestand nodig hebben dat we gaan gebruiken als basis van een API. Iedereen mag zelf beslissen welke soort data hij/zij in het bestand steekt. Het is wel belangrijk dat het bestand aan een aantal voorwaarden voldoet:
 
