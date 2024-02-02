@@ -75,9 +75,18 @@ workspaces
 
 By default zit je in de map `Deel1-Node-en-Typescript`. Als je naar de map `src` wil gaan, dan typ je `cd src`.
 
-Wil je terug naar de map `Deel1-Node-en-Typescript`, dan typ je `cd ..`. Dit commando staat voor `ga naar de bovenliggende map`. Je kan ook twee mappen omhoog gaan met `cd ../..` of drie mappen met `cd ../../..` enzovoort.
+Wil je terug naar de map `Deel1-Node-en-Typescript`, dan typ je `cd ..`. Dit commando staat voor `ga naar de bovenliggende map`. Je kan ook twee
 
 Je kan ook rechstreeks van de ene map naar de andere gaan. Als je in de map `Deel1-Node-en-Typescript` zit en je wil naar de map `dir1`, dan typ je `cd src/dir1`.
 
 Tab completion werkt ook in de terminal. Als je begint te typen en dan op tab drukt, dan zal de terminal proberen aan te vullen wat je aan het typen bent. Als er meerdere mogelijkheden zijn, dan zal de terminal een lijst tonen van mogelijke aanvullingen.
 
+## mkdir
+
+`mkdir` staat voor `make directory`. Dit commando laat je toe om een nieuwe map aan te maken.
+
+Stel dat je in de map `Deel1-Node-en-Typescript` zit en je wil een nieuwe map `labos` aanmaken, dan typ je `mkdir labos`.
+
+## touch
+
+`touch` is een commando dat je toelaat om een nieuw bestand aan te maken. Als je in de map `Deel1-Node-en-Typescript` zit en je wil een nieuw bestand `index.html` aanmaken, dan typ je `touch index.html`.
