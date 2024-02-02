@@ -6,7 +6,7 @@
 
 * [Devcontainers](tooling/devcontainers.md)
 * [Git](tooling/git.md)
-* [Bash](tooling/bash.md)
+* [Terminal en bash](tooling/bash.md)
 * [Oefeningen](tooling/oefeningen.md)
 
 ## NodeJS + TypeScript
