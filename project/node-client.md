@@ -15,6 +15,6 @@ We gaan in dit vak later een json bestand nodig hebben dat we gaan gebruiken als
 * Property met een image URL als waarde: Dit kan de URL van een profielfoto zijn.
 * Property waarvan de waarde een string is met een beperkt aantal mogelijke waarden.
 * Property met een array van strings als waarde: Dit kunnen bijvoorbeeld hobby's zijn.
-* Property met een ander object als waarde. Dit object moet op zijn beurt ook een aantal properties bevatten, vooral een id property. Die id verwijst naar een ander object in een andere array die we later gaan maken.
+* Property met een ander object als waarde. Dit object moet op zijn beurt ook een aantal properties bevatten, vooral een id property. Die id verwijst naar een ander object in een andere array die we later gaan maken. Het moet wel verwijzen naar een nieuw type object.
 
 Let op dat dit een minimale vereiste is. Je mag gerust meer properties toevoegen als dat nodig is voor je idee.
