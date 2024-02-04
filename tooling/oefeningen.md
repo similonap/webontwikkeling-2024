@@ -18,3 +18,9 @@
 * Maak een nieuwe map `tooling` in de map `labos` en ga naar de map `tooling` in de terminal.
 * Maak een nieuw bestand `oefeningen.md` aan in de map `tooling` en open het bestand in visual studio code.
 * Maak een wijziging in het bestand en voeg vervolgens alle wijzigingen toe aan de staging area, commit en push ze naar de remote repository.
+* Maak een nieuwe map `backup` en kopiëer het bestand `oefeningen.md` naar de map `backup`.
+* Maak een kopie van het bestand `oefeningen.md` in de `backup` directory en noem het `oefeningen2.md`. 
+* Maak een kopie van de directory `backup` en noem het `backup2`.
+* Zorg dat alle wijzigingen in de terminal zichtbaar zijn in de remote repository (git add, commit, push)
+* Verwijder de map `backup2` volledig.
+* Zorg dat deze wijziging ook zichtbaar is in de remote repository (git add, commit, push)

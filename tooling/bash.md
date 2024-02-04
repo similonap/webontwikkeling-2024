@@ -104,3 +104,9 @@ Je kan ook een map kopiëren. Als je een map `src` wil kopiëren naar `src2`, da
 `mv` staat voor `move`. Dit commando laat je toe om een bestand of map te verplaatsen. Als je een bestand `index.html` wil verplaatsen naar de map `src`, dan typ je `mv index.html src`.
 
 Je kan ook een bestand hernoemen. Als je een bestand `index.html` wil hernoemen naar `index2.html`, dan typ je `mv index.html index2.html`.
+
+## rm 
+
+`rm` staat voor `remove`. Dit commando laat je toe om een bestand of map te verwijderen. Als je een bestand `index.html` wil verwijderen, dan typ je `rm index.html`.
+
+Je kan ook een map verwijderen. Als je een map `src` wil verwijderen, dan typ je `rm -r src`. De `-r` staat voor `recursive` en zorgt ervoor dat de map en alle bestanden en mappen in de map verwijderd worden.
