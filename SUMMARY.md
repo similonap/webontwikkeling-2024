@@ -36,5 +36,4 @@
 
 ## Labos 2023-2024
 
-* [Labo 1](labos-2023-2024/labo-1/README.md)
-  * [Devcontainers ](labos-2023-2024/labo-1/oefeningen.md)
+* [Labo 1](labos-2023-2024/labo-1.md)
