@@ -79,6 +79,8 @@ Wil je terug naar de map `Deel1-Node-en-Typescript`, dan typ je `cd ..`. Dit com
 
 Je kan ook rechstreeks van de ene map naar de andere gaan. Als je in de map `Deel1-Node-en-Typescript` zit en je wil naar de map `dir1`, dan typ je `cd src/dir1`.
 
+## Tab completion
+
 Tab completion werkt ook in de terminal. Als je begint te typen en dan op tab drukt, dan zal de terminal proberen aan te vullen wat je aan het typen bent. Als er meerdere mogelijkheden zijn, dan zal de terminal een lijst tonen van mogelijke aanvullingen.
 
 ## mkdir
@@ -90,3 +92,15 @@ Stel dat je in de map `Deel1-Node-en-Typescript` zit en je wil een nieuwe map `l
 ## touch
 
 `touch` is een commando dat je toelaat om een nieuw bestand aan te maken. Als je in de map `Deel1-Node-en-Typescript` zit en je wil een nieuw bestand `index.html` aanmaken, dan typ je `touch index.html`.
+
+## cp
+
+`cp` staat voor `copy`. Dit commando laat je toe om een bestand of map te kopiëren. Als je een bestand `index.html` wil kopiëren naar `index2.html`, dan typ je `cp index.html index2.html`.
+
+Je kan ook een map kopiëren. Als je een map `src` wil kopiëren naar `src2`, dan typ je `cp -r src src2`. De `-r` staat voor `recursive` en zorgt ervoor dat de map en alle bestanden en mappen in de map gekopieerd worden.
+
+## mv
+
+`mv` staat voor `move`. Dit commando laat je toe om een bestand of map te verplaatsen. Als je een bestand `index.html` wil verplaatsen naar de map `src`, dan typ je `mv index.html src`.
+
+Je kan ook een bestand hernoemen. Als je een bestand `index.html` wil hernoemen naar `index2.html`, dan typ je `mv index.html index2.html`.

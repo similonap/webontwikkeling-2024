@@ -25,14 +25,14 @@ We gaan in dit vak later een json bestand nodig hebben dat we gaan gebruiken als
 - Het bestand moet een array van objecten bevatten (minimum 10).
 - Elk object moet minstens de volgende soort properties bevatten :
 - Een id property met een unieke waarde.
-- Property met een korte string als waarde: Dit kan bijvoorbeeld een naam zijn.
-- Property met een lange string als waarde: Dit kan bijvoorbeeld een beschrijving zijn.
-- Property met een number als waarde: Dit kan bijvoorbeeld de leeftijd zijn.
-- Property met een boolean als waarde: Dit kan aangeven of iemand bijvoorbeeld een actieve status heeft.
-- Property met een datum als waarde: Dit kan de geboortedatum zijn.
-- Property met een image URL als waarde: Dit kan de URL van een profielfoto zijn.
+- Property met een korte string als waarde
+- Property met een lange string als waarde
+- Property met een number als waarde
+- Property met een boolean als waarde
+- Property met een datum als waarde
+- Property met een image URL als waarde
 - Property waarvan de waarde een string is met een beperkt aantal mogelijke waarden.
-- Property met een array van strings als waarde: Dit kunnen bijvoorbeeld hobby's zijn.
+- Property met een array van strings als waarde
 - Property met een ander object als waarde. Dit object moet op zijn beurt ook een aantal properties bevatten, vooral een id property. Die id verwijst naar een ander object in een andere array die we later gaan maken.
 - Property met een array van objecten als waarde. Dit object moet ook een aantal properties bevatten, vooral een id property. Die id verwijst naar een ander object in een andere array die we later gaan maken.
 
@@ -113,4 +113,4 @@ of
 }
 ```
 
-Je kan hiervoor chatgpt gebruiken om een voorbeeld dataset te genereren. 
+Je kan hiervoor chatgpt gebruiken om een voorbeeld dataset te genereren.
