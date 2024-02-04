@@ -7,7 +7,6 @@
 * [Devcontainers](tooling/devcontainers.md)
 * [Git](tooling/git.md)
 * [Terminal en bash](tooling/bash.md)
-* [Oefeningen](tooling/oefeningen.md)
 
 ## NodeJS + TypeScript
 
@@ -34,3 +33,8 @@
 ## Project
 
 * [Node Client](project/node-client.md)
+
+## Labos 2023-2024
+
+* [Labo 1](labos-2023-2024/labo-1/README.md)
+  * [Devcontainers ](labos-2023-2024/labo-1/oefeningen.md)
