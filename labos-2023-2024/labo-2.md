@@ -18,11 +18,11 @@ De meeste oefeningen hieronder zijn sterk gebaseerd op de oefeningen die je hebt
 
 Maak een nieuwe directory `labo2` aan in de root van je project.
 
-### Hello
+### Hello, Name!
 
-Maak een nieuw project aan in de `labo2` directory met de naam `hello` en installeer de readline-sync module.
+Maak een nieuw project aan in de `labo2` directory met de naam `hello-name` en installeer de readline-sync module.
 
-We willen een programma maken dat de naam van de gebruiker vraagt en vervolgens "Hello, <naam>!" toont. 
+We willen een programma maken dat de naam van de gebruiker vraagt en vervolgens "Hello, <name>!" toont. 
 
 ```
 What's your name? Andie
