@@ -9,3 +9,5 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 * [Eerste NodeJS App](../nodejs-+-typescript/eerste-nodejs-app.md)
 * [Input Lezen](../nodejs-+-typescript/input-lezen.md)
 * [Basis types](../nodejs-+-typescript/type-systeem/basic-types.md) (enkel string, number en boolean)
+
+## BMI Calculator
