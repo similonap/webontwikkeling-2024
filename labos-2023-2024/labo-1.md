@@ -12,7 +12,6 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 * Github account aanmaken indien je er nog geen hebt.
 * Je kan de volgende invite link gebruiken om de repository te clonen: [Github Classroom](https://classroom.github.com/a/ml4mFUyT)
-* Open visual studio code
 * Volg de instructies in de [Devcontainers](../tooling/devcontainers.md) sectie om een devcontainer op te zetten.
 
 ## Git en Terminal
