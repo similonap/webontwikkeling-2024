@@ -12,7 +12,7 @@
 
 * [Wat is NodeJS?](nodejs-+-typescript/wat-is-nodejs.md)
 * [Waarom TypeScript?](nodejs-+-typescript/waarom-typescript.md)
-* [Eerste NodeJS App](nodejs-+-typescript/eerste-nodejs-app.md)
+* [Nieuw project](nodejs-+-typescript/projectmaken.md)
 * [Input lezen](nodejs-+-typescript/input-lezen.md)
 * [Type Systeem](nodejs-+-typescript/type-systeem/README.md)
   * [Basic types](nodejs-+-typescript/type-systeem/basic-types.md)

@@ -6,7 +6,7 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 * [Wat is NodeJS](../nodejs-+-typescript/wat-is-nodejs.md)
 * [Waarom TypeScript?](../nodejs-+-typescript/waarom-typescript.md)
-* [Eerste NodeJS App](../nodejs-+-typescript/eerste-nodejs-app.md)
+* [Eerste NodeJS App](../nodejs-+-typescript/projectmaken.md)
 * [Input Lezen](../nodejs-+-typescript/input-lezen.md) (nog geen menu)
 * [Basis types](../nodejs-+-typescript/type-systeem/basic-types.md) (enkel string, number en boolean)
 
@@ -16,18 +16,18 @@ De meeste oefeningen hieronder zijn sterk gebaseerd op de oefeningen die je hebt
 
 ### Voorbereiding
 
-Maak een nieuwe directory `labo2` aan in de root van je project. 
+Maak een nieuwe directory `labo2` aan in de root van je project.
 
 ### Hello
 
 Volg de volgende stappen om een nieuw project aan te maken:
 
-- Maak een nieuwe directory `hello` aan in de `labo2` directory. 
-- Gebruik het `npm init` commando om een nieuw project aan te maken. Zorg dat je in de `hello` directory zit wanneer je dit commando uitvoert.
-- Initialiseer een nieuwe TypeScript configuratie in de `hello` directory met het `tsc --init` commando.
-- Installeer de node types met het `npm install --save-dev @types/node` commando.
-- Installeer de `readline-sync` module met het `npm install readline-sync` commando.
-- Maak een bestand `hello.ts` aan in de `hello` directory.
+* Maak een nieuwe directory `hello` aan in de `labo2` directory.
+* Gebruik het `npm init` commando om een nieuw project aan te maken. Zorg dat je in de `hello` directory zit wanneer je dit commando uitvoert.
+* Initialiseer een nieuwe TypeScript configuratie in de `hello` directory met het `tsc --init` commando.
+* Installeer de node types met het `npm install --save-dev @types/node` commando.
+* Installeer de `readline-sync` module met het `npm install readline-sync` commando.
+* Maak een bestand `hello.ts` aan in de `hello` directory.
 
 Het bestand `hello.ts` moet het volgende bevatten:
 
@@ -54,7 +54,7 @@ Het gewicht wordt ingegeven in kilogram en de lengte in meter.
 
 #### Voorbeeld interactie
 
-De gebruiker zal zijn gewicht en lengte moeten ingeven. Dit kan je doen door gebruik te maken van de `readline` module. Deze module laat toe om input te lezen van de gebruiker. 
+De gebruiker zal zijn gewicht en lengte moeten ingeven. Dit kan je doen door gebruik te maken van de `readline` module. Deze module laat toe om input te lezen van de gebruiker.
 
 ```bash
 Geef je gewicht in (in kg): 80
@@ -142,7 +142,7 @@ Maak een nieuw project aan in de `labo2` directory met de naam `name-from-email`
 
 We gaan in deze oefening een programma maken dat de naam van een email adres moet tonen. De gebruiker zal een email adres moeten ingeven en de applicatie zal vervolgens de naam tonen. De naam wordt hierbij als volgt geformatteerd: `<eerste (hoofd)letter van voornaam>. <achternaam>`.
 
-Je mag er van uitgaan dat het email adres altijd correct ingegeven wordt. Vervolgens zal de applicatie vragen of de gebruiker nog een email adres wil ingeven (adhv `keyInYNStrict`). 
+Je mag er van uitgaan dat het email adres altijd correct ingegeven wordt. Vervolgens zal de applicatie vragen of de gebruiker nog een email adres wil ingeven (adhv `keyInYNStrict`).
 
 #### Voorbeeld interactie
 
@@ -178,6 +178,3 @@ Geef de tekst in: Hey broer
 Geef de tekst in: 
 Tot ziens!
 ```
- 
-
-
