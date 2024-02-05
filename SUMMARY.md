@@ -37,3 +37,4 @@
 ## Labos 2023-2024
 
 * [Labo 1](labos-2023-2024/labo-1.md)
+* [Labo 2](labos-2023-2024/labo-2.md)
