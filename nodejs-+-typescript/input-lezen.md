@@ -8,6 +8,12 @@ Soms is het handig om input te kunnen lezen van de gebruiker om interactie te he
 npm install readline-sync
 ```
 
+We moeten ook nog de types installeren van deze module. Deze zijn niet standaard meegeleverd met de module. Je kan deze installeren aan de hand van het volgende commando:
+
+```typescript
+npm install --save-dev @types/readline-sync
+```
+
 Je moet deze module elke keer dat je deze nodig hebt importeren in je code:
 
 ```typescript
