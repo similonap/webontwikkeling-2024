@@ -1,112 +1,72 @@
-# Eerste NodeJS App
+# Project aanmaken
 
-Nu we onze basis ontwikkelomgeving hebben omgezet gaan we nu eens onze eerste JavaScript programma bouwen. Je leest het goed, we bouwen eerst een JavaScript programma en niet een TypeScript programma.&#x20;
+Vooraleer we kunnen starten met het schrijven van een node applicatie moeten we eerst een nieuwe directory aanmaken waar we onze code in kunnen plaatsen. 
 
-### Hello JavaScript
+We zullen in dit geval een nieuwe directory aanmaken met de naam `hello`. Je kan deze in een directory `theorie` plaatsen.
 
-Maak eerst een nieuwe directory `HelloWorld` en open Visual Studio Code in deze directrory. Maak vervolgens een bestand `helloWorld.js` aan met de volgende inhoud:
+Vervolgens zorg je ervoor dat je in de `hello` directory zit aan de hand van het `cd` commando.
 
-```javascript
-console.log("Hello World");
+```bash
+cd theorie/hello
 ```
 
-Dit programma bestaat uit één JavaScript-statement. Statements kunt u beschouwen als de opdrachten aan de JavaScript-runtime (in dit geval node.js). Het `console.log` statement zorgt ervoor dat er tekst op het scherm wordt getoond. Statements worden net zoals in C# afgesloten met een `;`&#x20;
+## npm init
 
-{% hint style="info" %}
-JavaScript is minder kieskeurig dan C#, de puntkomma mag u weg laten zonder dat JavaScript daar een probleem van maakt. Voor de duidelijkheid is het echter wel aan te bevelen de puntkomma toch te gebruiken, al was het alleen maar om slechte gewoonten te voorkomen als u ook regelmatig in een andere taal programmeert.
-{% endhint %}
+Nu we een nieuwe directory hebben aangemaakt kunnen we een nieuw project aanmaken. Dit doen we aan de hand van het `npm init` commando. 
 
-Het uitvoeren van dit programma gaan we aan de hand van het `node` commando doen in onze terminal. Open eerst je terminal in de directory waar je `helloWorld.js` bestand zich bevind. Je kan een terminal venster openen op de locatie waar je bestand zich bevind door rechtermuisknop te klikken op het bestand en dan `open in integrated terminal` te klikken.&#x20;
-
-Vervolgens voer je het `helloWorld` programma uit door
-
-```
-node helloWorld.js
+```bash
+npm init
 ```
 
-uit te voeren.
+Dit commando zal een aantal vragen stellen over jouw project. Je kan deze gewoon beantwoorden door op enter te drukken. Als je dit commando hebt uitgevoerd zal je een nieuw bestand `package.json` zien in je directory. Dit bestand bevat alle informatie over jouw project. We zullen hier later nog op terugkomen.
 
-### Hello TypeScript
+## TypeScript configuratie
 
-TypeScript kan niet zoals JavaScript rechtstreeks uitgevoerd worden door node.js. De code moet altijd eerst nog omgevormd worden naar JavaScript voordat de node runtime deze kan begrijpen en uitvoeren. Eerst maken we de TypeScript versie van ons programma hierboven. Maak een bestand aan genaamd `helloTypeScript.ts` en plaats daar de volgende inhoud in:
+Nu we een nieuw project hebben aangemaakt moeten we een nieuwe TypeScript configuratie aanmaken. Dit doen we aan de hand van het `tsc --init` commando.
+
+```bash
+tsc --init
+```
+
+Dit commando zal een nieuw bestand `tsconfig.json` aanmaken in je directory. Dit bestand bevat alle configuratie opties voor de TypeScript compiler. 
+
+## Node types installeren
+
+Nu we een TypeScript configuratie hebben aangemaakt moeten we de node types installeren. Dit zijn de types die nodig zijn om met TypeScript en Node.js te werken. 
+
+```bash
+npm install --save-dev @types/node
+```
+
+Je zal zien dat er een nieuwe directory `node_modules` is aangemaakt in je project. Hierin zitten alle modules die je nodig hebt om je project te laten werken.
+
+## Bestand aanmaken
+
+Nu we alle configuratie hebben aangemaakt kunnen we beginnen met het schrijven van onze code. Maak een nieuw bestand `hello.ts` aan in de `hello` directory. De bestandsnaam mag je zelf kiezen.
+
+Het bestand `hello.ts` moet het volgende bevatten:
 
 ```typescript
-console.log("Hello TypeScript");
+console.log('Hello, world!');
 ```
 
-Je merkt waarschijnlijk direct op: "Deze code is identiek hetzelfde als de vorige". Dat klopt. Op dit moment is er nog geen verschil tussen JavaScript en TypeScript. Ze hebben dezelfde statements, de syntax is hetzelfde en elke statement moet gevolgd worden door een `;` Het verschil zal pas duidelijk worden als we variabelen en types gaan introduceren. Op het moment is dus de TypeScript code identiek aan de JavaScript code, maar toch kan onze JavaScript runtime deze niet uitvoeren:
+## Uitvoeren
 
-Hiervoor moeten we de `TypeScript Compiler` gebruiken om dit bestand om te zetten. Vooraleer we Typescript kunnen gebruiken in ons project moeten we via onze terminal de volgende commando's uitvoeren
+Nu we ons programma hebben geschreven kunnen we dit uitvoeren. Dit kan je doen aan de hand van het `ts-node` commando.
 
-```
-npm install -g typescript
-```
-
-Deze bovenstaande commando's moet je maar 1 keer doen op jouw machine.
-
-{% hint style="info" %}
-Indien je gebruik maakt van devcontainers moet je **typescript** en **ts-node** niet meer globaal installeren. Normaal gezien zijn deze al voorgeinstalleerd in je container.
-{% endhint %}
-
-Bij elk nieuw project moet je wel &#x20;
-
-```
-tsc --init
-npm install @types/node
+```bash
+ts-node hello.ts
 ```
 
-uitvoeren
+Dit commando zal je programma uitvoeren en je zal `Hello, world!` zien verschijnen in je terminal.
 
-We zien later nog wat deze commando's in detail doen.&#x20;
+## Samengevat
 
-Nu kan je via het `tsc` (TypeScript compiler) je TypeScript programma omzetten naar JavaScript.
+| Commando | Beschrijving |
+| --- | --- |
+| `npm init` | Maakt een nieuw project aan. |
+| `tsc --init` | Maakt een nieuw tsconfig bestand aan. Het initialiseert een nieuw TypeScript project. |
+| `npm install --save-dev @types/node` | Installeert alle types die nodig zijn om met TypeScript en Node.js te werken. |
+| `ts-node <naam file>.ts` | Voert het programma uit dat je geschreven hebt in `<naam file>.ts`. |
 
-```
-tsc helloTypeScript.ts
-```
-
-Dit zal een nieuw bestand `helloTypeScript.js` aanmaken dat je wel via node kan uitvoeren. Merk weeral op dat momenteel de code die hier wordt aangemaakt nog altijd identiek hetzelfde is bij JavaScript en TypeScript.
-
-### ts-node
-
-Je merkt waarschijnlijk op dat deze manier van werken soms wat omslachtig is. Als je elke keer de code moet compileren naar JavaScript zal je veel tijd verliezen. Daarom is er een aparte versie van `node` gemaakt die automatisch het compileren op zich zal nemen.&#x20;
-
-Je moet deze installeren door een keer&#x20;
-
-```
-npm install -g ts-node
-```
-
-uit te voeren. Daarna moet je deze stap op jouw machine niet meer uitvoeren.&#x20;
-
-Nu kan je simpelweg je programma uitvoeren door
-
-```
-ts-node helloTypeScript.ts
-```
-
-in je terminal in te voeren.
-
-### Samengevat
-
-**Commando's die je maar 1 keer moet uitvoeren op je computer:**
-
-|                                                    |                                                                                            |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| <pre><code>npm install -g typescript
-</code></pre> | Installeert de typescript compiler op jouw computer.                                       |
-| <pre><code>npm install -g ts-node
-</code></pre>    | Installeert een tool die het mogelijk maakt om rechtstreeks typescript code uit te voeren. |
-|                                                    |                                                                                            |
-
-**Commando's die je voor elk nieuwe project (of labo) moet uitvoeren:**
-
-|                                                      |                                                                                       |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| <pre><code>tsc --init
-</code></pre>                  | Maakt een nieuw tsconfig bestand aan. Het initialiseert een nieuw typescript project. |
-| <pre><code>npm install @types/node
-</code></pre>     | Installeert alle types die nodig zijn om met typescript en node js te werken.         |
-| <pre><code>ts-node &#x3C;naam file>.ts
-</code></pre> | Voert het programma uit dat je geschreven hebt in \<naam file>.ts                     |
-
+Deze commando's zal je voor elk nieuw project moeten uitvoeren. Het is dus handig om deze te onthouden. 
