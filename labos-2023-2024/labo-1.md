@@ -1,5 +1,13 @@
 # Labo 1
 
+## Theorie
+
+Bekijk voor het labo aan te vangen eerst de volgende topics:
+
+* [Devcontainers](../tooling/devcontainers.md)
+* [Git](../tooling/git.md)
+* [Terminal en bash](../tooling/bash.md)
+
 ## Devcontainer opzetten
 
 * Github account aanmaken
