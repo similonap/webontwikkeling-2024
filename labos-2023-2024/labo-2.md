@@ -11,3 +11,7 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 * [Basis types](../nodejs-+-typescript/type-systeem/basic-types.md) (enkel string, number en boolean)
 
 ## BMI Calculator
+
+
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
