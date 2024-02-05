@@ -14,7 +14,35 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 De meeste oefeningen hieronder zijn sterk gebaseerd op de oefeningen die je hebt gemaakt in de cursus webtechnologie. Je kan deze oefeningen gebruiken als basis voor de oefeningen hieronder. Het belangrijkste verschil hier is dat je nu gebruik zal maken van NodeJS en TypeScript. Let er dus op dat alle variabelen types hebben en dat je de juiste types gebruikt.
 
+### Voorbereiding
+
+Maak een nieuwe directory `labo2` aan in de root van je project. 
+
+### Hello
+
+Volg de volgende stappen om een nieuw project aan te maken:
+
+- Maak een nieuwe directory `hello` aan in de `labo2` directory. 
+- Gebruik het `npm init` commando om een nieuw project aan te maken. Zorg dat je in de `hello` directory zit wanneer je dit commando uitvoert.
+- Initialiseer een nieuwe TypeScript configuratie in de `hello` directory met het `tsc --init` commando.
+- Installeer de node types met het `npm install --save-dev @types/node` commando.
+- Installeer de `readline-sync` module met het `npm install readline-sync` commando.
+- Maak een bestand `hello.ts` aan in de `hello` directory.
+
+Het bestand `hello.ts` moet het volgende bevatten:
+
+```typescript
+import * as readline from 'readline-sync';
+
+let name = readlineSync.question('What is your name? ');
+console.log(`Hello, ${name}!`);
+```
+
+voer het `ts-node hello.ts` commando uit in de terminal om het programma uit te voeren.
+
 ### BMI Calculator
+
+Maak een nieuwe directory `bmi-calculator` aan in de `labo2` directory en initialiseer een nieuw project (zoals in de vorige oefening). Maak een bestand voor je programma. De naam van het bestand mag je zelf kiezen.
 
 We gaan in deze oefening een BMI calculator maken. De gebruiker zal zijn gewicht en lengte moeten ingeven en de applicatie zal de BMI berekenen en tonen.
 
@@ -38,6 +66,8 @@ Zorg ervoor dat je de BMI afrondt op 2 cijfers na de komma.
 
 ### BMI Calculator voor meerdere personen
 
+Maak een nieuw project aan in de `labo2` directory met de naam `bmi-calculator-multi`. Zoals je dat in de vorige oefening hebt gedaan.
+
 We gaan de applicatie uitbreiden zodat we de BMI van meerdere personen kunnen berekenen. De gebruiker zal een lijst van personen moeten ingeven. Voor elke persoon zal hij zijn gewicht en lengte moeten ingeven. De applicatie zal vervolgens de BMI van elke persoon berekenen en tonen.
 
 #### Voorbeeld interactie
@@ -55,6 +85,8 @@ Piet heeft een BMI van 29.39
 ```
 
 ### Interest Calculator
+
+Maak een nieuw project aan in de `labo2` directory met de naam `interest-calculator`.
 
 We gaan in deze oefening een interest calculator maken. De gebruiker zal een bedrag en een interest percentage moeten ingeven. De applicatie zal vervolgens het bedrag na 1 jaar, 2 jaar en 5 jaar tonen.
 
@@ -76,6 +108,8 @@ Na 5 jaar heb je 1276.28
 
 ### Uren en minuten
 
+Maak een nieuw project aan in de `labo2` directory met de naam `uren-minuten`.
+
 We gaan in deze oefening een programma maken dat een aantal minuten moet omzetten naar uren en minuten. De gebruiker zal een aantal minuten moeten ingeven en de applicatie zal vervolgens het aantal uren en minuten tonen.
 
 Je kan dit doen door gebruik te maken van de modulo operator. Deze operator geeft de rest van een deling terug.
@@ -89,6 +123,8 @@ Dit is 2 uur en 30 minuten
 
 ### Wisselgeld
 
+Maak een nieuw project aan in de `labo2` directory met de naam `wisselgeld`.
+
 We gaan in deze oefening een programma maken dat een bedrag moet omzetten naar het kleinste aantal briefjes en munten. De gebruiker zal een bedrag moeten ingeven en de applicatie zal vervolgens het aantal briefjes en munten tonen.
 
 Je kan dit doen door gebruik te maken van de modulo operator. Deze operator geeft de rest van een deling terug.
@@ -101,6 +137,8 @@ Dit is 1 briefje van 100, 1 briefje van 20, 1 munt van 2 en 1 munt van 1
 ```
 
 ### Name from email
+
+Maak een nieuw project aan in de `labo2` directory met de naam `name-from-email`.
 
 We gaan in deze oefening een programma maken dat de naam van een email adres moet tonen. De gebruiker zal een email adres moeten ingeven en de applicatie zal vervolgens de naam tonen. De naam wordt hierbij als volgt geformatteerd: `<eerste (hoofd)letter van voornaam>. <achternaam>`.
 
@@ -119,6 +157,8 @@ Nog een goede dag!
 ```
 
 ### Text-box
+
+Maak een nieuw project aan in de `labo2` directory met de naam `text-box`.
 
 We gaan in deze oefening een programma maken dat een tekst moet tonen in een text-box. De gebruiker zal een tekst moeten ingeven en de applicatie zal vervolgens de tekst tonen in een text-box. Hij zal de gebruiker blijven vragen om een tekst in te geven tot de gebruiker een lege tekst ingeeft.
 
