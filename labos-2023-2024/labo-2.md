@@ -14,4 +14,9 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+$$
+BMI = gewicht / (lentgte)^2
+$$
+
+
+
