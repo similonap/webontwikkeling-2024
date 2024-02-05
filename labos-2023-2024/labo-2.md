@@ -20,29 +20,18 @@ Maak een nieuwe directory `labo2` aan in de root van je project.
 
 ### Hello
 
-Volg de volgende stappen om een nieuw project aan te maken:
+Maak een nieuw project aan in de `labo2` directory met de naam `hello` en installeer de readline-sync module.
 
-* Maak een nieuwe directory `hello` aan in de `labo2` directory.
-* Gebruik het `npm init` commando om een nieuw project aan te maken. Zorg dat je in de `hello` directory zit wanneer je dit commando uitvoert.
-* Initialiseer een nieuwe TypeScript configuratie in de `hello` directory met het `tsc --init` commando.
-* Installeer de node types met het `npm install --save-dev @types/node` commando.
-* Installeer de `readline-sync` module met het `npm install readline-sync` commando.
-* Maak een bestand `hello.ts` aan in de `hello` directory.
+We willen een programma maken dat de naam van de gebruiker vraagt en vervolgens "Hello, <naam>!" toont. 
 
-Het bestand `hello.ts` moet het volgende bevatten:
-
-```typescript
-import * as readline from 'readline-sync';
-
-let name = readlineSync.question('What is your name? ');
-console.log(`Hello, ${name}!`);
 ```
-
-voer het `ts-node hello.ts` commando uit in de terminal om het programma uit te voeren.
+What's your name? Andie
+Hello, Andie!
+```
 
 ### BMI Calculator
 
-Maak een nieuwe directory `bmi-calculator` aan in de `labo2` directory en initialiseer een nieuw project (zoals in de vorige oefening). Maak een bestand voor je programma. De naam van het bestand mag je zelf kiezen.
+Maak een nieuw project aan in de `labo2` directory met de naam `bmi-calculator`.
 
 We gaan in deze oefening een BMI calculator maken. De gebruiker zal zijn gewicht en lengte moeten ingeven en de applicatie zal de BMI berekenen en tonen.
 
@@ -66,7 +55,7 @@ Zorg ervoor dat je de BMI afrondt op 2 cijfers na de komma.
 
 ### BMI Calculator voor meerdere personen
 
-Maak een nieuw project aan in de `labo2` directory met de naam `bmi-calculator-multi`. Zoals je dat in de vorige oefening hebt gedaan.
+Maak een nieuw project aan in de `labo2` directory met de naam `bmi-calculator-multi`.
 
 We gaan de applicatie uitbreiden zodat we de BMI van meerdere personen kunnen berekenen. De gebruiker zal een lijst van personen moeten ingeven. Voor elke persoon zal hij zijn gewicht en lengte moeten ingeven. De applicatie zal vervolgens de BMI van elke persoon berekenen en tonen.
 
@@ -108,7 +97,7 @@ Na 5 jaar heb je 1276.28
 
 ### Uren en minuten
 
-Maak een nieuw project aan in de `labo2` directory met de naam `uren-minuten`.
+Maak een nieuw project aan in de `labo2` directory met de naam `uren-en-minuten`.
 
 We gaan in deze oefening een programma maken dat een aantal minuten moet omzetten naar uren en minuten. De gebruiker zal een aantal minuten moeten ingeven en de applicatie zal vervolgens het aantal uren en minuten tonen.
 
