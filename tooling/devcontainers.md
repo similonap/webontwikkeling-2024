@@ -2,6 +2,10 @@
 
 {% embed url="https://www.youtube.com/watch?v=Z7bCqFxC5cM" %}
 
+{% hint style="danger" %}
+In het filmpje wordt er gebruik gemaakt van `wsl --install` om wsl te installeren. Gebruik in de plaats `wsl --install --no-distribution` want anders zal deze ook Ubuntu installeren.
+{% endhint %}
+
 ## Dev Environment
 
 Een Dev Environment is simpelweg een systeem waar alle software, tools en hardware op geïnstalleerd zijn, zodat jij kunt programmeren aan een specifiek project. Met software en tools wordt echt alles bedoeld dat je gebruikt tijdens het programmeren:
