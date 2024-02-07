@@ -28,34 +28,6 @@ Meest gebruikte programmeertalen, Aug 2021 vergeleken met vorig jaar:
 | 9               | **TypeScript** | 2.11 %  | +0.2 % |
 | 10              | Swift          | 1.96 %  | -0.3 % |
 
-**Groei van JavaScript**
 
-Sinds de creatie van Node.js in 2009, heeft JavaScript een exponentiële groei doorgemaakt en heeft het zich ver ontwikkeld buiten het bereik van alleen webbrowsers. Hier zijn enkele van de nieuwste manieren waarop JavaScript wordt gebruikt:
-
-* **Internet of Things (IoT):**
-  * Door gebruik te maken van libraries zoals Johnny-Five, kan JavaScript communiceren met verschillende apparaten en sensoren in de IoT-sfeer.
-* **Server-side applications:**
-  * Met frameworks zoals Express.js, kan JavaScript krachtige backend-functionaliteiten bieden.
-*   **Machine Learning:**
-
-    * Frameworks zoals TensorFlow.js stellen ontwikkelaars in staat om machine learning-modellen te ontwikkelen en te trainen rechtstreeks in JavaScript.
-
-    **Toekomst van JavaScript**
-
-    Met de constante evolutie van technologie, blijft JavaScript zich aanpassen en uitbreiden. Zo maakt de opkomst van WebAssembly het mogelijk voor developers om code geschreven in andere talen om te zetten naar een formaat dat door webbrowsers kan worden uitgevoerd, waardoor de performance van JavaScript-applicaties aanzienlijk verbetert.
-
-    **Leren JavaScript**
-
-    Voor diegenen die geïnteresseerd zijn in het leren van JavaScript en zijn vele toepassingen, zijn hier enkele resources:
-
-    * **Online tutorials en cursussen:**
-      * Sites zoals [freeCodeCamp](https://www.freecodecamp.org/) en [Codecademy](https://www.codecademy.com/) bieden uitstekende gratis cursussen aan voor beginners.
-    * **Boeken:**
-      * 'Eloquent JavaScript' van Marijn Haverbeke blijft een populaire keuze om de taal grondig te leren.
-    *   **Community en ondersteuning:**
-
-        * Platformen zoals [Stack Overflow](https://stackoverflow.com/) en GitHub bieden een gemeenschap waar beginners kunnen leren van meer ervaren ontwikkelaars.
-
-        Deze evolutie laat zien dat JavaScript meer is dan alleen een taal voor het ontwikkelen van websites; het is een essentieel onderdeel van het moderne software-ontwikkelingslandschap. Met zijn ongekende flexibiliteit en brede aanvaarding blijft JavaScript een kerncompetentie voor ontwikkelaars over de hele wereld.
 
 JavaScript is een van de meest veelzijdige talen in de programmeerwereld waar bijna alles mee kan gedaan worden. Dit is allemaal mogelijk geworden dankzij het ontstaan van Node.js in 2009, zonder Node.js zouden we voor eeuwig vast hebben gezeten in de limieten van de browser en was JavaScript nooit uitgegroeid tot de taal die het nu is.
