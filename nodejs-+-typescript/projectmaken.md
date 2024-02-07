@@ -60,44 +60,6 @@ ts-node hello.ts
 
 Dit commando zal je programma uitvoeren en je zal `Hello, world!` zien verschijnen in je terminal.
 
-## Templates
-
-Er bestaan tal van scripts die de creatie van projecten vereenvoudigen. We hebben voor deze cursus ook een script ontwikkeld dat het aanmaken van een node.js project in combinatie met TypeScript sterk vereenvoudigd.&#x20;
-
-Je kan het volgende commando gebruiken om al het bovenstaande te automatiseren:
-
-```
-npx create-clean-node
-```
-
-Er zullen een aantal vragen worden gesteld die het mogelijk maken het project te customizen
-
-```
-? What is the name of your project? helloworld
-? Do you want to install the readline-sync library? Yes
-
-added 2 packages, and audited 3 packages in 677ms
-
-found 0 vulnerabilities
-Installing readline-sync...
-Debugger attached.
-
-added 1 package, and audited 4 packages in 2s
-
-found 0 vulnerabilities
-Debugger attached.
-
-added 1 package, and audited 5 packages in 2s
-
-found 0 vulnerabilities
-Success! Your new project is ready.
-Created helloworld at /workspaces/Deel1-project/helloworld
-```
-
-{% hint style="info" %}
-Je dient een project ook zelfstandig te kunnen opzetten dus zorg dat je dit ook nog altijd onder de knie hebt. De starter template zal mogelijks niet altijd de beste optie zijn en kan enkel zeer eenvoudige projecten genereren.
-{% endhint %}
-
 ## Samengevat
 
 | Commando                             | Beschrijving                                                                          |
