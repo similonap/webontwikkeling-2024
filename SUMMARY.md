@@ -38,3 +38,4 @@
 
 * [Labo 1](labos-2023-2024/labo-1.md)
 * [Labo 2](labos-2023-2024/labo-2.md)
+* [Labo 3](labos-2023-2024/labo-3.md)
