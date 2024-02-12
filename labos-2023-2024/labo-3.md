@@ -124,7 +124,7 @@ Jouw team van pokemon is:
 
 Maak een nieuw project aan in de `labo3` directory met de naam `tic-tac-toe`.
 
-We willen een programma maken dat het spelletje Tic Tac Toe kan spelen. We gaan dit doen met een 2D array. We gaan het spel spelen met 2 spelers. De eerste speler zal altijd "X" zijn en de tweede speler "O". 
+We willen een programma maken dat het spelletje Tic Tac Toe kan spelen. We gaan dit doen met een 2D array. We gaan het spel spelen met 2 spelers. De eerste speler zal altijd "X" zijn en de tweede speler "O".
 
 We werken met een 2D array van 3x3. We gaan het spel spelen met de coordinaten van de array. De bovenste rij is 0, de middelste rij 1 en de onderste rij 2. De meest linkse kolom is 0, de middelste kolom 1 en de meest rechtse kolom 2.
 
@@ -138,3 +138,6 @@ Als de gebruiker een zet doet die geldig is dan wordt het bord getoond. Als er e
 
 ### Voorbeeld interactie (heel het programma):
 
+
+
+<figure><img src="../.gitbook/assets/tictactoe.gif" alt=""><figcaption></figcaption></figure>
