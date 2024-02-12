@@ -55,13 +55,16 @@ We willen een programma maken dat een string encodeert met de rot13 methode. De 
 
 De gebruiker geeft een string in en het programma toont de gecodeerde string.
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 De werkwijze is als volgt:
-- Je begint met een array van het alfabet in kleine letters.
-- Je vraagt de gebruiker om een string in te geven.
-- Je gaat door elke letter van de string en je zoekt de index van de letter in de array van het alfabet.
-- Je telt 13 op bij de index en je neemt de modulo van 26. Dit is de nieuwe index van de letter.
-- Je neemt de letter op de nieuwe index en je voegt deze toe aan een nieuwe string.
-- Als de letter een spatie is of een ander teken dan een letter dan voeg je deze ook toe aan de nieuwe string. Je moet dus controleren of de letter in de array van het alfabet staat.
+
+* Je begint met een array van het alfabet in kleine letters.
+* Je vraagt de gebruiker om een string in te geven.
+* Je gaat door elke letter van de string en je zoekt de index van de letter in de array van het alfabet.
+* Je telt 13 op bij de index en je neemt de modulo van 26. Dit is de nieuwe index van de letter.
+* Je neemt de letter op de nieuwe index en je voegt deze toe aan een nieuwe string.
+* Als de letter een spatie is of een ander teken dan een letter dan voeg je deze ook toe aan de nieuwe string. Je moet dus controleren of de letter in de array van het alfabet staat.
 
 #### Voorbeeld interactie
 
@@ -179,7 +182,5 @@ Als de gebruiker een zet doet op een plaats die niet bestaat dan krijgt hij een 
 Als de gebruiker een zet doet die geldig is dan wordt het bord getoond. Als er een winnaar is dan wordt dit getoond en het programma stopt. Als het bord vol is en er is geen winnaar dan wordt dit getoond en het programma stopt.
 
 ### Voorbeeld interactie (heel het programma):
-
-
 
 <figure><img src="../.gitbook/assets/tictactoe.gif" alt=""><figcaption></figcaption></figure>
