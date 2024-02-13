@@ -121,7 +121,7 @@ npm install --save-dev @types/ejs
 Je kan op de npmjs website heel eenvoudig zien of een bepaalde package TypeScript support heeft:
 
 * Bevat deze een <img src="../.gitbook/assets/dt.png" alt="" data-size="line"> tag? Dan kan je deze installeren aan de hand van de bovenstaande commando's
-* Bevat deze een <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> tag, dan zitten de types al in de npm package en dan hoef je niets te doen.
+* Bevat deze een <img src="../.gitbook/assets/image.png" alt="" data-size="line"> tag, dan zitten de types al in de npm package en dan hoef je niets te doen.
 
 Bevat deze geen van beide? Dan heb je helemaal geen types en heb je geen voordelen van TypeScript. Je moet dan ook nog een extra aanpassing doen aan je project om deze library toch nog te gebruiken.
 
