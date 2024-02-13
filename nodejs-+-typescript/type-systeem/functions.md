@@ -330,7 +330,9 @@ Het type dat de callback functie teruggeeft is hetzelfde als het type van de acc
 let sum : number = numbers.reduce((accumulator: number, element: number) => accumulator + element);
 ```
 
-Soms is het zelfs nodig om het type van de accumulator expliciet aan te geven omdat het type niet kan worden afgeleid. Bijvoorbeeld in het voorbeeld hieronder:
+Het type van de accumulator is hetzelfde als het type van de initiele waarde die je meegeeft aan de `reduce` methode. Als je geen initiele waarde meegeeft, dan zal de accumulator hetzelfde type hebben als het eerste element van de array. 
+
+Soms is het zelfs nodig om het type van de accumulator expliciet aan te geven omdat het type niet kan worden afgeleid. 
 
 ```typescript
 let numbers : number[] = [1,2,3,4,5];
