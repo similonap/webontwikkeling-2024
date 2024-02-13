@@ -148,6 +148,28 @@ anders krijg je deze error:
 console.log(user.address.street); // Error: Object is possibly 'undefined'
 ```
 
+## Record type
+
+Een record type is een object waarvan we de properties niet kennen. We weten niet welke properties het object zal hebben. We kunnen dit aangeven aan de hand van de `Record` type. Dit type heeft twee type parameters: het eerste type parameter is het type van de keys en het tweede type parameter is het type van de values.
+
+Stel dat we een object willen gebruiken om bij te houden hoeveel keer een bepaalde waarde voorkomt in een array. We kunnen onmogelijk op voorhand weten welke waarden er in de array zullen zitten dus we kunnen niet op voorhand zeggen welke properties het object zal hebben. We kunnen dit oplossen aan de hand van de `Record` type:
+
+```typescript
+let count: Record<string, number> = {};
+
+let values = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+for (let value of values) {
+  if (count[value]) {
+    count[value]++;
+  } else {
+    count[value] = 1;
+  }
+}
+
+console.log(count); // { '1': 3, '2': 3, '3': 3, '4': 3, '5': 3 }
+```
+
 ## JSON bestand inlezen
 
 ### import statement
