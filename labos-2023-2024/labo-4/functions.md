@@ -1,6 +1,6 @@
 # Functions
 
-## Wiskundige functies
+### Wiskundige functies
 
 Maak een nieuw project aan met de naam `math`.
 
@@ -21,7 +21,7 @@ Gebruik deze functies om de volgende berekening uit te voeren:
 
 Print het resultaat van de berekening af.
 
-## Array sum
+### Array sum
 
 Maak een nieuw project aan met de naam `array-sum`.
 
@@ -35,7 +35,7 @@ als je de volgende array meegeeft aan de functie:
 
 dan moet de functie 15 teruggeven want 1 + 2 + 3 + 4 + 5 = 15.
 
-## Movies 2
+### Movies (vervolg)
 
 Deze oefening gaat verder op de Movies oefening.
 
@@ -55,7 +55,7 @@ Maak 3 functies aan en probeer deze uit:
     * newscore die een nieuwe score bevat
   * met return waarde een nieuw Movie object met de nieuwe score
 
-## Eigen array functies
+### Eigen array functies
 
 Maak een nieuw project aan met de naam `array-functions`.
 
@@ -73,7 +73,7 @@ console.log(myNumbersFilter(numbers, (number) => number % 2 === 0)); // [2, 4]
 console.log(myNumbersFind(numbers, (number) => number === 3)); // 3
 ```
 
-## atLeastTwo
+### atLeastTwo
 
 Maak een nieuw project aan met een bestand `atLeastTwo.ts` met de volgende inhoud:
 
