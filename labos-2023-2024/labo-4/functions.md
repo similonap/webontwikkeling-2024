@@ -51,3 +51,21 @@ Maak 3 functies aan en probeer deze uit:
     - movie van het type Movie 
     - newscore die een nieuwe score bevat
   - met return waarde een nieuw Movie object met de nieuwe score
+
+## Eigen array functies
+
+Maak een nieuw project aan met de naam `array-functions`.
+
+- Maak een nieuwe functie `myNumbersMap` die de functionaliteit van de `map` functie van een array nabootst. De `myNumbersMap` functie heeft een array en een callback functie als parameters. 
+- Maak een nieuwe functie `myNumbersFilter` die de functionaliteit van de `filter` functie van een array nabootst. De `myNumbersFilter` functie heeft een array en een callback functie als parameters. 
+- Maak een nieuwe functie `myNumbersFind` die de functionaliteit van de `find` functie van een array nabootst. De `myNumbersFind` functie heeft een array en een callback functie als parameters. 
+
+Let op dat je de bestaande `map`, `filter` en `find` functies niet gebruikt in je eigen functies.
+
+```
+const numbers : number[] = [1, 2, 3, 4, 5];
+
+console.log(myNumbersMap(numbers, (number) => number * 2)); // [2, 4, 6, 8, 10]
+console.log(myNumbersFilter(numbers, (number) => number % 2 === 0)); // [2, 4]
+console.log(myNumbersFind(numbers, (number) => number === 3)); // 3
+```
