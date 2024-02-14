@@ -1,8 +1,8 @@
-# Node Client
+# Opdracht - JSON
 
-## JSON
+## JSON Aanmaken
 
-We gaan in dit vak later een json bestand nodig hebben dat we gaan gebruiken als basis van een API. Iedereen mag zelf beslissen welke soort data hij/zij in het bestand steekt. Het is wel belangrijk dat het bestand aan een aantal voorwaarden voldoet:
+We gaan een json bestand nodig hebben dat we gaan gebruiken als basis van een API. Iedereen mag zelf beslissen welke soort data hij/zij in het bestand steekt. Het is wel belangrijk dat het bestand aan een aantal voorwaarden voldoet:
 
 * Het bestand moet een array van objecten bevatten (minimum 10).
 * Elk object moet minstens de volgende soort properties bevatten :
@@ -21,6 +21,10 @@ We gaan in dit vak later een json bestand nodig hebben dat we gaan gebruiken als
   * Dit object is afkomstig van een 2de json bestand.&#x20;
 
 Let op dat dit een minimale vereiste is. Je mag gerust meer properties toevoegen als dat nodig is voor je idee.
+
+{% hint style="info" %}
+Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd aan de hand van AI generation tools zoals DALL-E (via bing of chatgpt)
+{% endhint %}
 
 **Voorbeelden:**
 
@@ -74,12 +78,12 @@ Let op dat dit een minimale vereiste is. Je mag gerust meer properties toevoegen
 ```json
 [
   {
-        "id": "GUILD-009",
-        "name": "Order of the Cosmic Veil",
-        "guildMaster": "Celestial Mage",
-        "guildEmblemUrl": "https://example.com/images/guilds/cosmic-veil-emblem.jpg",
-        "foundedYear": 1423,
-        "motto": "Balance in All, All in Balance"
+    "id": "GUILD-009",
+    "name": "Order of the Cosmic Veil",
+    "guildMaster": "Celestial Mage",
+    "guildEmblemUrl": "https://example.com/images/guilds/cosmic-veil-emblem.jpg",
+    "foundedYear": 1423,
+    "motto": "Balance in All, All in Balance"
   },
   {
     "id": "GUILD-015",
@@ -162,3 +166,15 @@ Let op dat dit een minimale vereiste is. Je mag gerust meer properties toevoegen
 ]
 ```
 {% endcode %}
+
+## JSON Hosten
+
+We gaan github gebruiken voor ons JSON bestand te hosten. Hoewel github gebruikt wordt kunnen we dit ook gebruiken om bestanden in op te slaan en publiekelijk te hosten (in beperkte mate)
+
+* Maak een nieuwe github repository aan en zet deze publiek.
+* Je kan deze clonen of gewoon via de web interface de bestanden toevoegen.
+* Upload je image bestanden naar github (of push deze naar je repository)
+* Update de image urls in je json file zodat deze naar github urls wijzen. Zorg zeker dat je de raw url gebruikt als image url. Bv: [https://raw.githubusercontent.com/similonap/fake-gpt/main/images/chatbot.png](https://raw.githubusercontent.com/similonap/fake-gpt/main/images/chatbot.png)
+* Upload je json naar github (of push deze naar je repository)
+
+Je mag uiteraard zelf ook hosting voorzien voor je json bestand en images. Zorg er gewoon voor dat je json publiekelijk beschikbaar is en je images.
