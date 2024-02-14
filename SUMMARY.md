@@ -38,7 +38,9 @@
 
 * [Labo 1 - Tooling](labos-2023-2024/labo-1.md)
 * [Labo 2 - Basis](labos-2023-2024/labo-2.md)
-* [Labo 3 - Arrays ](labos-2023-2024/labo-3.md)
+* [Labo 3 - Arrays](labos-2023-2024/labo-3.md)
 * [Labo 4 - Interfaces en functies](labos-2023-2024/labo-4.md)
   * [Interfaces](labos-2023-2024/labo-4/interfaces.md)
   * [Functies](labos-2023-2024/labo-4/functions.md)
+* [Labo 5 - Exceptions en modules](labos-2023-2024/labo-5-exceptions-en-modules.md)
+* [Labo 6 - Async en fetch](labos-2023-2024/labo-6-async-en-fetch.md)
