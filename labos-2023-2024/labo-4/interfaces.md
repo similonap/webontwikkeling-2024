@@ -1,8 +1,8 @@
 # Interfaces
 
-### Recept
+### Recepten
 
-Maak een nieuw project aan in de `labo4` directory met de naam `recepten`.
+Maak een nieuw project aan met de naam `recepten`.
 
 Je maakt eerst een interface voor het \`Recept\`\` object. Dit bevat een
 
@@ -33,9 +33,42 @@ Ingredienten:
 Totale kostprijs: 10 euro
 ```
 
+### Persoon
+
+Maak een nieuw project aan met de naam `persoon`.
+
+Maak een **persoon.json** bestand aan met volgende data:
+
+```
+{
+  "voornaam": "Jurgen",
+  "achternaam": "Vervoort",
+  "leeftijd": 27,
+  "gemeente": "Heist-op-den-Berg",
+  "straat": "Bergstraat",
+  "huisnummer": "17c",
+  "postcode": 2220,
+  "hobbies": ["voetbal", "tafeltennis", "vissen"]
+}
+```
+
+1. Maak een interface aan voor het object persoon.&#x20;
+2. Lees het _persoon.json_ bestand in
+3. Maak een eerste functie _printFullName()_ dat het ingelezen object als parameter ontvangt en de volledige naam van de persoon uitprint.&#x20;
+4. Maak een tweede functie _printHobbies()_ dat het ingelezen object als parameter ontvangt en de hobby's van de persoon oplijst.
+
+**Voorbeeldinteractie**
+
+```
+Jurgen Vervoort
+- voetbal
+- tafeltennis
+- vissen
+```
+
 ### Todo list
 
-Maak een nieuw project aan in de `labo4` directory met de naam `todo-list`. Gebruik de vorige todo list als basis.
+Maak een nieuw project met de naam `todo-list`. Gebruik de vorige todo list als basis.
 
 Je maakt eerst een interface voor het `Todo` object. Dit bevat een&#x20;
 
