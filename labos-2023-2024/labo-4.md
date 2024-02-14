@@ -28,7 +28,7 @@ voor de ingredienten maak je een interface `Ingredient`. Dit bevat een
 
 Maak nu een object aan voor een lasagne recept. Je kan de ingredienten zelf kiezen. Print het recept af en bereken de totale kostprijs van het recept.
 
-### Voorbeeld interactie
+#### Voorbeeld interactie
 
 ```bash
 Recept: Lasagne
