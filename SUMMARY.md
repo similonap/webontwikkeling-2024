@@ -43,4 +43,4 @@
 
 ## Project
 
-* [Opdracht 1](project/node-client.md)
+* [Opdracht - JSON](project/node-client.md)
