@@ -1,6 +1,6 @@
 # Interfaces
 
-### Recepten
+### Oefening: Recepten
 
 Maak een nieuw project aan met de naam `recepten`.
 
@@ -33,7 +33,7 @@ Ingredienten:
 Totale kostprijs: 10 euro
 ```
 
-### Movies
+### Oefening: Movies
 
 Maak een nieuw project aan met de naam `movies`.
 
@@ -77,14 +77,14 @@ Metascore: 9
 Seen: YES
 ```
 
-### Todo list
+### Oefening: Todo list
 
 Maak een nieuw project met de naam `todo-list`. Gebruik de vorige todo list als basis.
 
-Je maakt eerst een interface voor het `Todo` object. Dit bevat een&#x20;
+Je maakt eerst een interface voor het `Todo` object. Dit bevat een
 
-* id (number)&#x20;
-* title (string)&#x20;
+* id (number)
+* title (string)
 * completed (boolean)
 
 Bij het opstarten van het programma laad je de todos in vanuit een bestand `todos.json`.

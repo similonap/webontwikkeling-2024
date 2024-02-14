@@ -1,6 +1,6 @@
 # Functions
 
-### Short Notation
+### Oefening: Short Notation
 
 Maak een nieuw project aan met de naam `short-notation`
 
@@ -19,7 +19,7 @@ const numberToString = (number: number): string => {
 }
 ```
 
-### Wiskundige functies
+### Oefening: Wiskundige functies
 
 Maak een nieuw project aan met de naam `math`.
 
@@ -40,7 +40,7 @@ Gebruik deze functies om de volgende berekening uit te voeren:
 
 Print het resultaat van de berekening af.
 
-### Array sum
+### Oefening: Array sum
 
 Maak een nieuw project aan met de naam `array-sum`.
 
@@ -54,7 +54,7 @@ als je de volgende array meegeeft aan de functie:
 
 dan moet de functie 15 teruggeven want 1 + 2 + 3 + 4 + 5 = 15.
 
-### Movies (vervolg)
+### Oefening: Movies (vervolg)
 
 Deze oefening gaat verder op de Movies oefening.
 
@@ -74,7 +74,7 @@ Maak 3 functies aan en probeer deze uit:
     * newscore die een nieuwe score bevat
   * met return waarde een nieuw Movie object met de nieuwe score
 
-### Filter
+### Oefening: Filter
 
 Maak een nieuw project aan met de naam `filter`
 
@@ -125,7 +125,7 @@ const isPositive = (number: number) => number >= 0;
 console.log(filter(numbers, isPositive)); // 1,2,3,4,5
 ```
 
-### atLeastTwo
+### Oefening: atLeastTwo
 
 Maak een nieuw project aan met een bestand `atLeastTwo` met de volgende inhoud:
 
