@@ -12,7 +12,7 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 ### Som van getallen
 
-Maak een nieuw project aan in de `labo3` directory met de naam `som-van-getallen`.
+Maak een nieuw project aan met de naam `som-van-getallen`.
 
 We willen een programma maken dat de som van een aantal getallen berekent. De gebruiker zal eerst moeten ingeven hoeveel getallen hij wil optellen. Vervolgens zal hij de getallen moeten ingeven. Het programma zal dan de som van de getallen tonen.
 
@@ -30,7 +30,7 @@ De som van de getallen is 15
 
 ### Puntenboek
 
-Maak een nieuw project aan in de `labo3` directory met de naam `puntenboek`.
+Maak een nieuw project aan met de naam `puntenboek`.
 
 We willen een programma maken dat de punten van een aantal studenten bijhoudt. De gebruiker geeft de punten van de studenten op 20 in. Als de gebruiker geen punten meer wil ingeven dan geeft hij een lege string in.
 
@@ -49,7 +49,7 @@ Het aantal studenten met een onvoldoende is 2
 
 ### Rot13
 
-Maak een nieuw project aan in de `labo3` directory met de naam `rot13`.
+Maak een nieuw project aan met de naam `rot13`.
 
 We willen een programma maken dat een string encodeert met de rot13 methode. De rot13 methode is een simpele methode om een string te coderen. Elke letter wordt vervangen door de letter die 13 plaatsen verder in het alfabet staat. Als je aan het einde van het alfabet komt dan ga je terug naar het begin.
 
@@ -74,6 +74,8 @@ uryyb
 ```
 
 ### Pokemon team
+
+Maak een nieuw project aan met de naam `pokemon`&#x20;
 
 Gegeven is de volgende array van 20 pokemon:
 
@@ -167,7 +169,7 @@ Jouw team van pokemon is:
 
 ### Todo list
 
-Maak een nieuw project aan in de `labo3` directory met de naam `todo-list`.
+Maak een nieuw project aan met de naam `todo-list`.
 
 We willen een programma maken dat een todo lijst bijhoudt. De gebruiker kan taken toevoegen aan de lijst. De gebruiker kan ook taken op de lijst afvinken. Voorzie bij het opstarten van het programa twee arrays. Eén voor de taken en één voor de taken die afgevinkt zijn. Een taak is gewoon een string.
 
@@ -214,7 +216,7 @@ Als de gebruiker kiest voor "Exit" dan stopt het programma.
 
 ### Tic Tac Toe
 
-Maak een nieuw project aan in de `labo3` directory met de naam `tic-tac-toe`.
+Maak een nieuw project aan met de naam `tic-tac-toe`.
 
 We willen een programma maken dat het spelletje Tic Tac Toe kan spelen. We gaan dit doen met een 2D array. We gaan het spel spelen met 2 spelers. De eerste speler zal altijd "X" zijn en de tweede speler "O".
 
