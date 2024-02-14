@@ -30,10 +30,6 @@
 
 * [Page 2](express/page-2.md)
 
-## Project
-
-* [Node Client](project/node-client.md)
-
 ## Labos 2023-2024
 
 * [1 - Tooling](labos-2023-2024/labo-1.md)
@@ -44,3 +40,7 @@
   * [Functies](labos-2023-2024/labo-4/functions.md)
 * [5 - Exceptions en modules](labos-2023-2024/5-exceptions-en-modules.md)
 * [6 - Async en fetch](labos-2023-2024/6-async-en-fetch.md)
+
+## Project
+
+* [Node Client](project/node-client.md)
