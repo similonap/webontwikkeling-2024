@@ -54,8 +54,7 @@ Maak een **persoon.json** bestand aan met volgende data:
 
 1. Maak een interface aan voor het object persoon.&#x20;
 2. Lees het _persoon.json_ bestand in
-3. Maak een eerste functie _printFullName()_ dat het ingelezen object als parameter ontvangt en de volledige naam van de persoon uitprint.&#x20;
-4. Maak een tweede functie _printHobbies()_ dat het ingelezen object als parameter ontvangt en de hobby's van de persoon oplijst.
+3. Toon de naam en de hobbies op de console
 
 **Voorbeeldinteractie**
 
