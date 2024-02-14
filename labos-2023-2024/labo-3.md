@@ -10,7 +10,7 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 ## Oefeningen
 
-### Som van getallen
+### Oefening: Som van getallen
 
 Maak een nieuw project aan met de naam `som-van-getallen`.
 
@@ -28,7 +28,7 @@ Geef getal 3 in: 7
 De som van de getallen is 15
 ```
 
-### Puntenboek
+### Oefening: Puntenboek
 
 Maak een nieuw project aan met de naam `puntenboek`.
 
@@ -47,7 +47,7 @@ Het gemiddelde van de punten is 6
 Het aantal studenten met een onvoldoende is 2
 ```
 
-### Rot13
+### Oefening: Rot13
 
 Maak een nieuw project aan met de naam `rot13`.
 
@@ -73,7 +73,7 @@ Enter a string: hello
 uryyb
 ```
 
-### Pokemon team
+### Oefening: Pokemon team
 
 Maak een nieuw project aan met de naam `pokemon`&#x20;
 
@@ -167,7 +167,7 @@ Jouw team van pokemon is:
 
 ![](../.gitbook/assets/pokemon.gif)
 
-### Todo list
+### Oefening: Todo list
 
 Maak een nieuw project aan met de naam `todo-list`.
 
@@ -214,7 +214,7 @@ Als de gebruiker kiest voor "Exit" dan stopt het programma.
 
 <figure><img src="../.gitbook/assets/todos.gif" alt=""><figcaption></figcaption></figure>
 
-### Tic Tac Toe
+### Oefening: Tic Tac Toe
 
 Maak een nieuw project aan met de naam `tic-tac-toe`.
 
