@@ -1,12 +1,17 @@
-# Dev container
+# Voorbereiding
+
+{% embed url="https://www.youtube.com/watch?v=-xPt-sTAkQY" %}
 
 ## Github opzetten
 
-1. Maak een nieuwe repository aan op Github aan de hand van de [Github Classroom](https://classroom.github.com/a/z_CYhW1S) link.
-2. Clone de repository in een container volume. (ctrl-shift-p -> `Remote-Containers: Clone Repository in Container Volume...`)
-![Alt text](devcontainer_clone.png)
+{% hint style="info" %}
+Je kan deze workflow ook gebruiken voor andere projecten die node.js. Uiteraard moet je dan wel zelf je eigen repository aanmaken op github.
+{% endhint %}
+
+1. Maak een nieuwe repository aan op Github aan de hand van de [Github Classroom](https://classroom.github.com/a/z\_CYhW1S) link.&#x20;
+2. Clone de repository in een container volume. (ctrl-shift-p -> `Remote-Containers: Clone Repository in Container Volume...`)&#x20;
 3. Kies `main` als branch
-4. Als er gevraagd wordt achter de container template: Kies `Node JS & Typescript` 
+4. Als er gevraagd wordt achter de container template: Kies `Node JS & Typescript`
 5. Als er gevraagd wordt welke versie van Node JS je wil gebruiken: Kies `20-bullseye`
 6. Als er gevraagd wordt welke extra features je wil installeren: Kies dan `ts-node`
 7. Vervolgens zal de devcontainer worden opgestart en kan je beginnen met het project. Kijk zeker na dat je een bestand kan pushen naar de repository.
@@ -40,3 +45,4 @@ Je kan nakijken of alles correct is ingesteld door het bestand `.devcontainer/de
 	// "remoteUser": "root"
 }
 ```
+
