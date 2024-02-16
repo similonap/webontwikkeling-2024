@@ -229,3 +229,7 @@ Please enter the ID you want to filter by: FTC-001
     - Founded: 1423
     - Motto: Balance in All, All in Balance
 ```
+
+### Inzenden
+
+Zorg ervoor dat je alles pushed naar je repository en de link naar je repository inzendt via digitap.
