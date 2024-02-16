@@ -1,5 +1,7 @@
 # Voorbereiding
 
+{% embed url="https://www.youtube.com/watch?v=-xPt-sTAkQY" %}
+
 ## Github opzetten
 
 {% hint style="info" %}
