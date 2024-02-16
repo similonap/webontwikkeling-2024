@@ -232,4 +232,4 @@ Please enter the ID you want to filter by: FTC-001
 
 ### Inzenden
 
-Zorg ervoor dat je alles pushed naar je repository en de link naar je repository inzendt via digitap.
+Zorg ervoor dat je alles pushed naar je repository en de link naar je repository inzendt via digitap. De deadline vind je op digitap.
