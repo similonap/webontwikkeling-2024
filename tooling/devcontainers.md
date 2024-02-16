@@ -98,9 +98,15 @@ Ga naar [https://www.docker.com/products/docker-desktop/](https://www.docker.com
 
 Download het installie-programma en voer het programma uit.
 
+#### Install Git
+
+Ga naar [https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+Download het installie-programma en voer het programma uit.
+
 #### Install Visual Studio Code
 
-Go to [https://code.visualstudio.com/](https://code.visualstudio.com/)
+Ga naar [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 Download het installie-programma en voer het programma uit.
 
