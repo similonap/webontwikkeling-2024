@@ -44,4 +44,4 @@
 ## Project
 
 * [Voorbereiding](project/dev-container.md)
-* [Deadline 1 - Terminal](project/node-client.md)
+* [Milestone 1 - Terminal App](project/node-client.md)
