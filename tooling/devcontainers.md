@@ -48,22 +48,97 @@ Je hebt in feite slechts 3 programma's nodig op je computer:
 
 * Git
 * Docker Desktop\*
-* Visual Studio Code \*Om Docker te laten werken moet je WSL geïnstalleerd hebben op je Windows computer. Dus in principe moet je 3 dingen installeren.
+* Visual Studio Code&#x20;
 
-### Hoe Maak je een DevContainer?
+_\*Om Docker te laten werken moet je WSL geïnstalleerd hebben op je Windows computer. Dus in principe moet je 3 dingen installeren._
 
-* Ga naar github en maak een nieuwe repository (via classrooms invite).
-* Open VS Code, en installeer het Remote Development extension pack. Dit geeft je alle tools die je nodig hebt om een DevContainer te maken en gebruiken.
-* In VS Code, gebruik de toets-combinatie CTRL + SHIFT + P om het Command Palette venster te openen.
-* In het command palette window kies je voor de optie: "Dev Containers: Clone Repository in Container Volume..."
-* VS Code vraagt om de url naar een repository. Plak hier de HTTPS link die je in stap 1 kopieerde. (eventjes wachten...)
-* Kies hier voor de geschikte DevContainer configuratie. In het geval van React kiezen we voor Node.js & TypeScript. Kies ook voor de default versie van Node.
-* Je kan in de volgende stap extra features aanduiden. Voor React hebben we niks nodig, dus klik gewoon op 'ok'. (eventjes wachten... De containers worden nu gedownload en opgestart. Zeker de eerste keer kan dit een tijdje duren!) Proficiat, je hebt een volledig werkende DevContainer!
+## Devcontainers (1st time setup)
 
-Enkele vreemde zaken om op te merken:
+### Installation
 
-* Ga in VS Code naar Terminal > New Terminal en merk op dat het pad niet langer begint met C:. Dit komt omdat je niet langer in een Windows omgeving werkt, maar wel in een Linux omgeving!
-* Node werkt, zelfs als je Node nooit geinstalleerd hebt op je systeem.
+#### install WSL
+
+Open Powershell **als administrator**.
+
+Gebruik het volgende commando om na te kijken of je WSL hebt geinstalleerd, en zo ja, welke versie.
+
+```
+wsl --version
+```
+
+Als WSL geinstalleerd is, zou je output moeten krijgen zoals deze (versie nummers kunnen verschillen).
+
+```
+WSL version: 2.0.14.0
+Kernel version: 5.15.133.1-1
+WSLg version: 1.0.59
+MSRDC version: 1.2.4677
+Direct3D version: 1.611.1-81528511
+DXCore version: 10.0.25131.1002-220531-1700.rs-onecore-base2-hyp
+Windows version: 10.0.22621.3007
+```
+
+Indien WSL dus geinstalleerd is, kan je WSL updaten met het volgende command:
+
+```
+wsl --update
+```
+
+**Als je WSL **_**NIET**_** geinstalleerd hebt, dan installeer je WSL met het volgende commando:**
+
+```
+wsl --install
+```
+
+Meer informatie vind je op:[ https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+#### Install Docker Desktop
+
+Ga naar [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+
+Download het installie-programma en voer het programma uit.
+
+#### Install Visual Studio Code
+
+Go to [https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+Download het installie-programma en voer het programma uit.
+
+#### Install the VS Code Extensions
+
+Open Visual Studio Code.
+
+Open de Extensions tab vanuit de Sidebar.
+
+Zoek naar het "Remote Development" extension pack van Microsoft. [https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+
+Dit installeert 4 extensies in VS Code die je helpen met ontwikkeling in DevContainers.
+
+### Starting a DevContainer from a Github Repo
+
+Maak een nieuwe Github Repo (tijdens onze lessen gebruik je de Github url op Digitap) of gebruik een bestaande Github Repo.
+
+* [ ] Kopieer de HTTPS Git URL (vanuit de groene "Code" knop op de repo pagina).
+* [ ] Open VS Code.
+* [ ] Open het Command Pallette (CTRL + SHIFT + P)
+* [ ] Zoek naar het command "Dev Containers: Clone Repository in Container Volume..."
+* [ ] Druk Enter
+* [ ] Plak de HTTPS Git URL die je kopieerde vanuit je Github Repo
+* [ ] Druk Enter
+
+Als je Github Repo reeds een Devcontainer gebruikte (meestal een `devcontainer.json` bestand in een mapje genaamd `.devcontainer`), zal de devcontainer nu gestart worden. **De eerste keer zal een tijdje duren**, want Docker moet alle nodige bestanden downloaden.
+
+Als je Github Repo nog geen Devcontainer gebruikte, zal VS Code je een aantal vragen stellen:
+
+* [ ] Wat voor omgeving je wilt opzetten:
+  * e.g. typescript & Node, Python, C#, ...
+* [ ] Welke versie van die omgeving je wilt gebruiken:
+  * e.g. The version of Node
+* [ ] Welke extra tools je wilt gebruiken in je omgeving:
+  * e.g. Angular CLI, database tools, ...
+* [ ] Welke versie van die tools je wilt gebruiken.
+
+Wanneer je alle vragen hebt beantwoord, wordt het `devcontainer.json` bestand aangemaakt en wordt de devcontainer opgestart.
 
 ### Trouble Shooting
 
