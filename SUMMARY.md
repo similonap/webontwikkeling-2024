@@ -43,4 +43,5 @@
 
 ## Project
 
-* [Opdracht - JSON](project/node-client.md)
+* [Dev container](project/dev-container.md)
+* [Deadline 1 - Terminal](project/node-client.md)
