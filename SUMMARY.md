@@ -57,6 +57,7 @@
   * [Functies](labos-2023-2024/labo-4/functions.md)
 * [5 - Exceptions en modules](labos-2023-2024/5-exceptions-en-modules.md)
 * [6 - Async en fetch](labos-2023-2024/6-async-en-fetch.md)
+* [Oefeningen](exercises/README.md)
 
 ## Project
 
