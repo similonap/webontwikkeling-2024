@@ -66,7 +66,7 @@
   * [Pokemon Team](labos-2023-2024/labo-3/pokemon-team.md)
   * [Todo List String](labos-2023-2024/labo-3/todo-list-string.md)
   * [Tick Tac Toe](labos-2023-2024/labo-3/tic-tac-toe.md)
-* [4 - Interfaces en functies](labos-2023-2024/labo-4.md)
+* [4 - Interfaces & functies](labos-2023-2024/labo-4.md)
   * [Interfaces](labos-2023-2024/labo-4/interfaces/README.md)
     * [Recepten](labos-2023-2024/labo-4/interfaces/recepten.md)
     * [Movies Objects](labos-2023-2024/labo-4/interfaces/movies-objects.md)
@@ -78,7 +78,7 @@
     * [Movies Functions](labos-2023-2024/labo-4/functions/movies-functions.md)
     * [Filter Numbers](labos-2023-2024/labo-4/functions/filter-numbers.md)
     * [At Least Two](labos-2023-2024/labo-4/functions/at-least-two.md)
-* [5 - Async en fetch](labos-2023-2024/5-async-en-fetch/README.md)
+* [5 - Async & fetch](labos-2023-2024/5-async-en-fetch/README.md)
   * [Fake Fetch](labos-2023-2024/5-async-en-fetch/fake-fetch.md)
   * [Promise All](labos-2023-2024/5-async-en-fetch/promise-all.md)
   * [Slow Sum](labos-2023-2024/5-async-en-fetch/slow-sum.md)
@@ -88,6 +88,7 @@
   * [School API](labos-2023-2024/5-async-en-fetch/school-api.md)
   * [Cocktails API](labos-2023-2024/5-async-en-fetch/cocktails-api.md)
   * [Unix Timestamp API](labos-2023-2024/5-async-en-fetch/unix-timestamp-api.md)
+* [6 - Modules & Exceptions](labos-2023-2024/6-modules-and-exceptions.md)
 
 ## Project
 
