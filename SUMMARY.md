@@ -1,13 +1,3 @@
-
-<!-- bitcoin-api            movies-objects   som-van-getallen
-bmi-calculator         name-from-email  text-box
-bmi-calculator-multi   pokemon-team     tic-tac-toe
-cocktails-api          promise-all      todo-list-objects
-cocktails-promise-all  puntenboek       todo-list-string
-fake-fetch             recepten         unix-timestamp-api
-hello-name             rot13            uren-en-minuten
-interest-calculator    school-api       wisselgeld
-joke-api               slow-sum -->
 # Table of contents
 
 * [Introductie](README.md)
@@ -60,46 +50,45 @@ joke-api               slow-sum -->
 ## Labos 2023-2024
 
 * [1 - Tooling](labos-2023-2024/labo-1.md)
-* [2 - Basis](labos-2023-2024/labo-2.md)
-* [3 - Arrays](labos-2023-2024/labo-3.md)
+* [2 - Basis](labos-2023-2024/labo-2/README.md)
+  * [Hello Name](labos-2023-2024/labo-2/hello-name.md)
+  * [BMI Calculator](labos-2023-2024/labo-2/bmi-calculator.md)
+  * [BMI Calculator Multi](labos-2023-2024/labo-2/bmi-calculator-multi.md)
+  * [Interest Calculator](labos-2023-2024/labo-2/interest-calculator.md)
+  * [Uren en Minuten](labos-2023-2024/labo-2/uren-en-minuten.md)
+  * [Wisselgeld](labos-2023-2024/labo-2/wisselgeld.md)
+  * [Name from Email](labos-2023-2024/labo-2/name-from-email.md)
+  * [Text Box](labos-2023-2024/labo-2/text-box.md)
+* [3 - Arrays](labos-2023-2024/labo-3/README.md)
+  * [Som van getallen](labos-2023-2024/labo-3/som-van-getallen.md)
+  * [Puntenboek](labos-2023-2024/labo-3/puntenboek.md)
+  * [Rot13](labos-2023-2024/labo-3/rot13.md)
+  * [Pokemon Team](labos-2023-2024/labo-3/pokemon-team.md)
+  * [Todo List String](labos-2023-2024/labo-3/todo-list-string.md)
+  * [Tick Tac Toe](labos-2023-2024/labo-3/tic-tac-toe.md)
 * [4 - Interfaces en functies](labos-2023-2024/labo-4.md)
-  * [Interfaces](labos-2023-2024/labo-4/interfaces.md)
-  * [Functies](labos-2023-2024/labo-4/functions.md)
-* [5 - Async en fetch](labos-2023-2024/5-async-en-fetch.md)
-* [Oefeningen](exercises/README.md)
-  * [Hello Name](exercises/node-typescript/hello-name/README.md)
-  * [BMI Calculator](exercises/node-typescript/bmi-calculator/README.md)
-  * [BMI Calculator Multi](exercises/node-typescript/bmi-calculator-multi/README.md)
-  * [Interest Calculator](exercises/node-typescript/interest-calculator/README.md)
-  * [Uren en Minuten](exercises/node-typescript/uren-en-minuten/README.md)
-  * [Wisselgeld](exercises/node-typescript/wisselgeld/README.md)
-  * [Name from Email](exercises/node-typescript/name-from-email/README.md)
-  * [Text Box](exercises/node-typescript/text-box/README.md)
-  * [Som van getallen](exercises/node-typescript/som-van-getallen/README.md)
-  * [Puntenboek](exercises/node-typescript/puntenboek/README.md)
-  * [Rot13](exercises/node-typescript/rot13/README.md)
-  * [Pokemon Team](exercises/node-typescript/pokemon-team/README.md)
-  * [Todo List String](exercises/node-typescript/todo-list-string/README.md)
-  * [Tick Tac Toe](exercises/node-typescript/tic-tac-toe/README.md)
-  * [Recepten](exercises/node-typescript/recepten/README.md)
-  * [Movies Objects](exercises/node-typescript/movies-objects/README.md)
-  * [Todo List Objects](exercises/node-typescript/todo-list-objects/README.md)
-  * [Math Fun](exercises/node-typescript/math-fun/README.md)
-  * [Short Notation](exercises/node-typescript/short-notation/README.md)
-  * [Array Sum](exercises/node-typescript/array-sum/README.md)
-  * [Movies Functions](exercises/node-typescript/movies-functions/README.md)
-  * [Filter Numbers](exercises/node-typescript/filter-numbers/README.md)
-  * [At Least Two](exercises/node-typescript/at-least-two/README.md)
-  * [Fake Fetch](exercises/node-typescript/fake-fetch/README.md)
-  * [Promise All](exercises/node-typescript/promise-all/README.md)
-  * [Slow Sum](exercises/node-typescript/slow-sum/README.md)
-  * [Cocktails Promise All](exercises/node-typescript/cocktails-promise-all/README.md)
-  * [Cocktails API](exercises/node-typescript/cocktails-api/README.md)
-  * [Bitcoin API](exercises/node-typescript/bitcoin-api/README.md)
-  * [Joke API](exercises/node-typescript/joke-api/README.md)
-  * [School API](exercises/node-typescript/school-api/README.md)
-  * [Unix Timestamp API](exercises/node-typescript/unix-timestamp-api/README.md)
-  
+  * [Interfaces](labos-2023-2024/labo-4/interfaces/README.md)
+    * [Recepten](labos-2023-2024/labo-4/interfaces/recepten.md)
+    * [Movies Objects](labos-2023-2024/labo-4/interfaces/movies-objects.md)
+    * [Todo List Objects](labos-2023-2024/labo-4/interfaces/todo-list-objects.md)
+  * [Functies](labos-2023-2024/labo-4/functions/README.md)
+    * [Math Fun](labos-2023-2024/labo-4/functions/math-fun.md)
+    * [Short Notation](labos-2023-2024/labo-4/functions/short-notation.md)
+    * [Array Sum](labos-2023-2024/labo-4/functions/array-sum.md)
+    * [Movies Functions](labos-2023-2024/labo-4/functions/movies-functions.md)
+    * [Filter Numbers](labos-2023-2024/labo-4/functions/filter-numbers.md)
+    * [At Least Two](labos-2023-2024/labo-4/functions/at-least-two.md)
+* [5 - Async en fetch](labos-2023-2024/5-async-en-fetch/README.md)
+  * [Fake Fetch](labos-2023-2024/5-async-en-fetch/fake-fetch.md)
+  * [Promise All](labos-2023-2024/5-async-en-fetch/promise-all.md)
+  * [Slow Sum](labos-2023-2024/5-async-en-fetch/slow-sum.md)
+  * [Cocktails Promise All](labos-2023-2024/5-async-en-fetch/cocktails-promise-all.md)
+  * [Bitcoin API](labos-2023-2024/5-async-en-fetch/bitcoin-api.md)
+  * [Joke API](labos-2023-2024/5-async-en-fetch/joke-api.md)
+  * [School API](labos-2023-2024/5-async-en-fetch/school-api.md)
+  * [Cocktails API](labos-2023-2024/5-async-en-fetch/cocktails-api.md)
+  * [Unix Timestamp API](labos-2023-2024/5-async-en-fetch/unix-timestamp-api.md)
+
 ## Project
 
 * [Voorbereiding](project/dev-container.md)

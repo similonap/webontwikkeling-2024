@@ -1,6 +1,6 @@
-### Oefening: Pokemon team
+# Pokemon Team
 
-Maak een nieuw project aan met de naam `pokemon`&#x20;
+Maak een nieuw project aan met de naam `pokemon`
 
 Gegeven is de volgende array van 20 pokemon:
 
@@ -90,4 +90,4 @@ Jouw team van pokemon is:
 
 **Voorbeeld interactie:**
 
-![](pokemon.gif)
+![](../../exercises/node-typescript/pokemon-team/pokemon.gif)

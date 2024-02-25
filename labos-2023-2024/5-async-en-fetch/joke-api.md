@@ -1,8 +1,8 @@
-### Joke API
+# Joke API
 
 Maak een nieuw project aan met de naam `joke-api`.
 
-Bij het opstarten van de applicatie worden eerst alle categorieën van grappen opgehaald. Die kan je op de volgende URL met fetch ophalen: 
+Bij het opstarten van de applicatie worden eerst alle categorieën van grappen opgehaald. Die kan je op de volgende URL met fetch ophalen:
 
 https://v2.jokeapi.dev/categories
 
@@ -16,6 +16,6 @@ Let op dat de `single` grappen een `joke` veld hebben en de `twopart` grappen ee
 
 Na het vertonen van de grap wordt de gebruiker gevraagd of hij nog een grap wil zien. Als de gebruiker `ja` antwoordt, wordt de gebruiker opnieuw gevraagd om een categorie en type te kiezen. Als de gebruiker `nee` antwoordt, wordt de applicatie afgesloten.
 
-#### Voorbeeldinteractie:
+## Voorbeeldinteractie:
 
-![Jokes Interactie](jokes.gif)
+![Jokes Interactie](../../exercises/node-typescript/joke-api/jokes.gif)
