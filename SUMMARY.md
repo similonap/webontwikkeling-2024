@@ -1,3 +1,13 @@
+
+<!-- bitcoin-api            movies-objects   som-van-getallen
+bmi-calculator         name-from-email  text-box
+bmi-calculator-multi   pokemon-team     tic-tac-toe
+cocktails-api          promise-all      todo-list-objects
+cocktails-promise-all  puntenboek       todo-list-string
+fake-fetch             recepten         unix-timestamp-api
+hello-name             rot13            uren-en-minuten
+interest-calculator    school-api       wisselgeld
+joke-api               slow-sum -->
 # Table of contents
 
 * [Introductie](README.md)
@@ -77,9 +87,13 @@
   * [Fake Fetch](exercises/node-typescript/fake-fetch/README.md)
   * [Promise All](exercises/node-typescript/promise-all/README.md)
   * [Slow Sum](exercises/node-typescript/slow-sum/README.md)
+  * [Cocktails Promise All](exercises/node-typescript/cocktails-promise-all/README.md)
   * [Cocktails API](exercises/node-typescript/cocktails-api/README.md)
   * [Bitcoin API](exercises/node-typescript/bitcoin-api/README.md)
-
+  * [Joke API](exercises/node-typescript/joke-api/README.md)
+  * [School API](exercises/node-typescript/school-api/README.md)
+  * [Unix Timestamp API](exercises/node-typescript/unix-timestamp-api/README.md)
+  
 ## Project
 
 * [Voorbereiding](project/dev-container.md)
