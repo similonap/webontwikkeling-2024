@@ -199,3 +199,17 @@ Dit wordt vaak gebruikt in combinatie met het `undefined` type. Je kan dan een v
 let id : number | undefined = undefined;
 ```
 
+### String union
+
+Een string union is een speciaal type in TypeScript. Het is een type dat een aantal vaste waarden kan bevatten. Je kan een string union gebruiken als je een variabele wil declareren die een van een aantal vaste waarden kan bevatten. Je kan een string union declareren door de waarden te scheiden met een `|` teken. 
+
+Als je wil toelaten dat een variabele enkel de waarden "ON", "DIMMED" en "OFF" kan bevatten dan kan je dit doen door het volgende te schrijven:
+
+```typescript
+let lightStatus : "ON" | "DIMMED" | "OFF" = "ON";
+
+lightStatus = "DIMMED"; // OK
+lightStatus = "OFF"; // OK
+lightStatus = "ON"; // OK
+lightStatus = "BROKEN"; // FOUT
+```
