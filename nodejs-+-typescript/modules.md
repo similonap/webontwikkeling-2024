@@ -1,12 +1,13 @@
 # Modules
 
-## Wat zijn modules?
+## Eigen Modules Maken
+### Wat zijn modules?
 
 Modules zijn een manier om je code te organiseren in verschillende bestanden. Vaak wil je bepaalde functies beschikbaar maken voor andere bestanden. Dit kan je doen door deze functies in een module te zetten. Je kan dan in andere bestanden deze module importeren en de functies gebruiken.
 
 Eigenlijk heb je al modules gebruikt in vorige delen in de vorm van npm packages. Deze bevatten ook modules die je kan importeren in je eigen code.
 
-## Hoe maak je een module?
+### Hoe maak je een module?
 
 Stel dat je een functie hebt om de oppervlakte te berekenen van een cirkel, vierkant en rechthoek.
 
@@ -41,7 +42,7 @@ export function areaRectangle(l: number, w: number): number {
 
 Zorg er wel voor dat je deze functies in een apart bestand zet met de extensie `.ts`. In dit geval bijvoorbeeld `area.ts`.
 
-## Hoe importeer je functies uit een module?
+### Hoe importeer je functies uit een module?
 
 Wil je deze functies gebruiken in een ander bestand? Dan moet je deze eerst importeren aan de hand van het volgende commando.
 
@@ -62,7 +63,7 @@ console.log(areaCircle(2));
 console.log(areaSquare(2));
 ```
 
-## Default exports
+### Default exports
 
 Heel vaak wordt er door een module maar één functie geëxporteerd. In dat geval kan je gebruik maken van een default export. Dit is een export zonder naam.
 
@@ -84,6 +85,37 @@ In principe maakt het niet uit welke naam je achter de import zet want er is maa
 import area from './area';
 ```
 
+### Interfaces exporteren
+
+Tot nu toe hebben we altijd interfaces in hetzelfde bestand gezet als de code die deze interface gebruikt. Maar je kan ook interfaces exporteren uit een module.
+
+```typescript
+export interface Person {
+    name: string;
+    age: number;
+}
+```
+
+We plaatsen deze interfaces vaak in een apart bestand met de naam `types.ts`. We kunnen deze dan importeren in een ander bestand.
+
+```typescript
+import { Person } from './types';
+```
+
+## Npm Packages
+
+## npm.js
+
+npm.js is de package manager voor JavaScript. Het is de grootste software registry ter wereld. Hier vind je heel veel packages die je kan gebruiken in je projecten. Je kan deze packages installeren aan de hand van het volgende commando.
+
+```bash
+npm install <package-name>
+```
+
+Wil je een bepaalde package zoeken dan kan je dat doen op de [npmjs website](https://www.npmjs.com/). Je vind er ook uitgebreide documentatie over de packages en hoe je deze kan gebruiken. 
+
+![alt text](../.gitbook/assets/npmjs.png)
+
 ## Importeren van npm packages
 
 Dit is ook de manier hoe je meestal npm packages importeert. Daar maakte het ook nooit uit welke naam je achter de import zette.
@@ -97,6 +129,28 @@ Deze functies kon je dan gebruiken door middel van de naam die je achter de impo
 ```typescript
 const name = readline.question('Wat is je naam? ');
 ```
+
+## Voorbeeld: Chalk
+
+We gaan in dit voorbeeld de `chalk` package gebruiken. Deze package zorgt ervoor dat je tekst in de terminal kan kleuren. We gaan een programma maken dat de naam van de gebruiker in het rood toont.
+
+Het eerste wat we moeten doen is de package installeren.
+
+```bash
+npm install chalk
+```
+
+Vervolgens bekijken we de documentatie van de package op de [npmjs website](https://www.npmjs.com/package/chalk). Hier vinden we hoe we de package kunnen gebruiken.
+
+```typescript
+import chalk from 'chalk';
+
+const name = 'Jelle';
+
+console.log(chalk.red(name));
+```
+
+Dit zal de naam `Jelle` in het rood tonen in de terminal.
 
 ## Importeren van types
 
@@ -134,3 +188,55 @@ declare module 'rainbow-colors-array';
 Dit is ook wat je vscode je aanraad als je over de error hovered als hij de types niet vindt:
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-17 at 16.16.10.png" alt=""><figcaption></figcaption></figure>
+
+## Voorbeeld: Lodash
+
+We gaan in dit voorbeeld de `lodash` package gebruiken. Deze package bevat heel veel handige functies die je kan gebruiken in je projecten. Het is een soort zwitsers zakmes voor JavaScript. 
+
+We installeren deze library aan de hand van het volgende commando.
+
+```bash
+npm install lodash
+```
+
+Deze library heeft geen ingebouwde types. We moeten deze dus apart installeren.
+
+```bash
+npm install --save-dev @types/lodash
+```
+
+Vaak is de documentatie bedoeld voor een ouder module systeem. We moeten dan de documentatie aanpassen naar het nieuwe module systeem.
+
+```typescript
+var _ = require('lodash');
+```
+
+Dit moeten we aanpassen naar het nieuwe module systeem.
+
+```typescript
+import _ from 'lodash';
+```
+
+Vervolgens kunnen we de functies gebruiken zoals beschreven in de documentatie. 
+
+Bv de `reverse` functie.
+
+```typescript
+const array = [1, 2, 3];
+
+console.log(_.reverse(array));
+```
+
+of de `round` functie.
+
+```typescript
+console.log(_.round(4.006, 2));
+```
+
+In die oefeningen zullen we nog een aantal handige functies van `lodash` bekijken.
+
+
+
+
+
+
