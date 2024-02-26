@@ -2,18 +2,18 @@
 
 ### Oefening: Recepten
 
-{% content-ref url="recepten.md" %}
-[recepten.md](recepten.md)
+{% content-ref url="../../../exercises/node-typescript/recepten/" %}
+[recepten](../../../exercises/node-typescript/recepten/)
 {% endcontent-ref %}
 
 ### Oefening: Movies
 
-{% content-ref url="movies-objects.md" %}
-[movies-objects.md](movies-objects.md)
+{% content-ref url="../../../exercises/node-typescript/movies-objects/" %}
+[movies-objects](../../../exercises/node-typescript/movies-objects/)
 {% endcontent-ref %}
 
 ### Oefening: Todo list
 
-{% content-ref url="todo-list-objects.md" %}
-[todo-list-objects.md](todo-list-objects.md)
+{% content-ref url="../../../exercises/node-typescript/todo-list-objects/" %}
+[todo-list-objects](../../../exercises/node-typescript/todo-list-objects/)
 {% endcontent-ref %}
