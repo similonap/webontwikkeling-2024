@@ -213,3 +213,14 @@ lightStatus = "OFF"; // OK
 lightStatus = "ON"; // OK
 lightStatus = "BROKEN"; // FOUT
 ```
+
+Je kan ook dit soort types apart declareren als een `type`. Dit is handig als je deze types op meerdere plaatsen in je code wil gebruiken. 
+
+```typescript
+type LightStatus = "ON" | "DIMMED" | "OFF";
+
+let lightStatus : LightStatus = "ON";
+
+lightStatus = "DIMMED"; // OK
+...
+```
