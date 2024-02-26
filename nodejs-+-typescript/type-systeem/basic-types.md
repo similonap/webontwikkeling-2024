@@ -224,3 +224,28 @@ let lightStatus : LightStatus = "ON";
 lightStatus = "DIMMED"; // OK
 ...
 ```
+
+Je moet er wel rekening mee houden als je user input gaat gebruiken dat je deze waarden eerst controleert. Je kan dit doen door een `if` statement te gebruiken. 
+
+Als je bijvoorbeeld
+
+```typescript
+let lightStatusStr : LightStatus = readline.question("status");
+```
+
+doet zal je een error krijgen:
+
+```plaintext
+Type 'string' is not assignable to type 'LightStatus'.
+```
+
+Je moet dus eerst controleren of de waarde die je hebt ingelezen wel een van de waarden is die je hebt gedefinieerd.
+
+```typescript
+let lightStatusStr : string = readline.question("status");
+if (lightStatusStr === "ON" || lightStatusStr === "DIMMED" || lightStatusStr === "OFF") {
+    let lightStatus : LightStatus = lightStatusStr;
+} else {
+    console.log("Invalid status");
+}
+```
