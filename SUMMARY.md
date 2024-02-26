@@ -47,10 +47,10 @@
   * [Mocken van dependencies](express.js/testen-in-express/mocken-van-dependencies.md)
   * [Selenium](https://www.npmjs.com/package/selenium-webdriver)
 
-## Labos 2023-2024
+## Labos
 
-* [1. Tooling](labos-2023-2024/labo-1.md)
-* [2. Basis](labos-2023-2024/labo-2/README.md)
+* [1. Tooling](labos/labo1/README.md)
+* [2. Basis](labos/labo2/README.md)
   * [Hello Name](exercises/node-typescript/hello-name/README.md)
   * [BMI Calculator](exercises/node-typescript/bmi-calculator/README.md)
   * [BMI Calculator Multi](exercises/node-typescript/bmi-calculator-multi/README.md)
@@ -59,26 +59,26 @@
   * [Wisselgeld](exercises/node-typescript/wisselgeld/README.md)
   * [Name from Email](exercises/node-typescript/name-from-email/README.md)
   * [Text Box](exercises/node-typescript/text-box/README.md)
-* [3. Arrays](labos-2023-2024/labo-3/README.md)
+* [3. Arrays](labos/labo3/README.md)
   * [Som van getallen](exercises/node-typescript/som-van-getallen/README.md)
   * [Puntenboek](exercises/node-typescript/puntenboek/README.md)
   * [Rot13](exercises/node-typescript/rot13/README.md)
   * [Pokemon Team](exercises/node-typescript/pokemon-team/README.md)
   * [Todo List String](exercises/node-typescript/todo-list-string/README.md)
   * [Tick Tac Toe](exercises/node-typescript/tic-tac-toe/README.md)
-* [4. Interfaces & functies](labos-2023-2024/labo-4/README.md)
-  * [Interfaces](labos-2023-2024/labo-4/interfaces/README.md)
+* [4. Interfaces & functies](labos/labo4/README.md)
+  * [Interfaces](labos/labo4/interfaces/README.md)
     * [Recepten](exercises/node-typescript/recepten/README.md)
     * [Movies Objects](exercises/node-typescript/movies-objects/README.md)
     * [Todo List Objects](exercises/node-typescript/todo-list-objects/README.md)
-  * [Functies](labos-2023-2024/labo-4/functions/README.md)
+  * [Functies](labos/labo4/functions/README.md)
     * [Math Fun](exercises/node-typescript/math-fun/README.md)
     * [Short Notation](exercises/node-typescript/short-notation/README.md)
     * [Array Sum](exercises/node-typescript/array-sum/README.md)
     * [Movies Functions](exercises/node-typescript/movies-functions/README.md)
     * [Filter Numbers](exercises/node-typescript/filter-numbers/README.md)
     * [At Least Two](exercises/node-typescript/at-least-two/README.md)
-* [5. Async & fetch](labos-2023-2024/5-async-en-fetch/README.md)
+* [5. Async & fetch](labos/labo5/README.md)
   * [Fake Fetch](exercises/node-typescript/fake-fetch/README.md)
   * [Promise All](exercises/node-typescript/promise-all/README.md)
   * [Slow Sum](exercises/node-typescript/slow-sum/README.md)
@@ -88,7 +88,6 @@
   * [School API](exercises/node-typescript/school-api/README.md)
   * [Cocktails API](exercises/node-typescript/cocktails-api/README.md)
   * [Unix Timestamp API](exercises/node-typescript/unix-timestamp-api/README.md)
-* [6. Modules & Exceptions](labos-2023-2024/6-modules-and-exceptions/README.md)
 
 ## Project
 
