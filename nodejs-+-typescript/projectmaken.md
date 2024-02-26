@@ -71,7 +71,7 @@ Dit commando zal je programma uitvoeren en je zal `Hello, world!` zien verschijn
 
 Deze commando's zal je voor elk nieuw project moeten uitvoeren. Het is dus handig om deze te onthouden.
 
-### create-clean-node
+## create-clean-node
 
 Er zijn talrijke scripts beschikbaar die het opzetten van een TypeScript of JavaScript project aanzienlijk vereenvoudigen. Een voorbeeld hiervan is `create-clean-node`, een tool waarmee je met slechts één commando een nieuw project kunt starten. Door het volgende in je terminal te typen:
 
