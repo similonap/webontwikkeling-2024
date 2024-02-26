@@ -10,7 +10,7 @@ Bij het opstarten van de applicatie wordt er gevraagd welke valuta je wilt zien.
 
 ```
 Welke valuta wil je zien? (EUR, USD, GBP): USD
-De huidige prijs van bitcoin is 51547.106 USD
+De huidige prijs van bitcoin is 51547.13 USD
 ```
 
 ```
