@@ -137,8 +137,10 @@ We gaan in dit voorbeeld de `chalk` package gebruiken. Deze package zorgt ervoor
 Het eerste wat we moeten doen is de package installeren.
 
 ```bash
-npm install chalk
+npm install chalk@4
 ```
+
+Opgelet we moeten hier de versie 4 installeren omdat de nieuwste versie niet werkt met `ts-node` (en oudere versies van node)
 
 Vervolgens bekijken we de documentatie van de package op de [npmjs website](https://www.npmjs.com/package/chalk). Hier vinden we hoe we de package kunnen gebruiken.
 
