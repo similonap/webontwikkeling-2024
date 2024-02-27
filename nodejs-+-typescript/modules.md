@@ -116,6 +116,40 @@ Wil je een bepaalde package zoeken dan kan je dat doen op de [npmjs website](htt
 
 ![alt text](../.gitbook/assets/npmjs.png)
 
+## package.json
+
+Elk project heeft een `package.json` bestand. Dit bestand bevat alle informatie over je project. Het bevat ook een lijst van alle packages die je nodig hebt voor je project. Wanneer je een package installeert met npm dan wordt deze package toegevoegd aan dit bestand in de `dependencies` sectie.
+
+```json
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "Project description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andie Similon",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
+```
+
+Je kan alle dependencies installeren aan de hand van het volgende commando. Dus je moet niet elke package apart installeren.
+
+```bash
+npm install
+```
+
+## node_modules
+
+Wanneer je een package installeert met npm dan wordt deze package geïnstalleerd in een map genaamd `node_modules`. Deze map bevat alle packages die je nodig hebt voor je project. Je moet deze map niet zelf aanmaken. npm doet dit automatisch voor je.
+
+Omdat alle dependencies opgegeven staan in het `package.json` bestand en je deze ten allen tijde kan installeren aan de hand van het `npm install` commando, moet je deze map ook niet toevoegen aan je git repository. Het is een goed idee om deze map toe te voegen aan je `.gitignore` bestand. Voeg deze map ook nooit toe aan een zip bestand dat je doorstuurt naar iemand anders. Deze persoon kan dan zelf de dependencies installeren aan de hand van het `npm install` commando.
+
 ## Importeren van npm packages
 
 Dit is ook de manier hoe je meestal npm packages importeert. Daar maakte het ook nooit uit welke naam je achter de import zette.
