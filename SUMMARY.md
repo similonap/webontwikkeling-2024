@@ -1,3 +1,13 @@
+<!-- array-sum              export-interfaces    movies-objects   slow-sum
+at-least-two           fake-fetch           name-from-email  som-van-getallen
+bitcoin-api            filter-numbers       pokemon-team     text-box
+bmi-calculator         hello-name           promise-all      tic-tac-toe
+bmi-calculator-multi   interest-calculator  puntenboek       todo-list-objects
+cat-gpt                joke-api             recepten         todo-list-string
+cocktails-api          math-fun             rot13            unix-timestamp-api
+cocktails-promise-all  math-module          school-api       uren-en-minuten
+cowsay-module          movies-functions     short-notation   wisselgeld -->
+
 # Table of contents
 
 * [Introductie](README.md)
@@ -88,6 +98,11 @@
   * [School API](exercises/node-typescript/school-api/README.md)
   * [Cocktails API](exercises/node-typescript/cocktails-api/README.md)
   * [Unix Timestamp API](exercises/node-typescript/unix-timestamp-api/README.md)
+* [6. Modules en NPM Packages](labos/labo6/README.md)
+  * [Math Module](exercises/node-typescript/math-module/README.md)
+  * [Export Interfaces](exercises/node-typescript/export-interfaces/README.md)
+  * [Cowsay Module](exercises/node-typescript/cowsay-module/README.md)
+  * [Cat GPT](exercises/node-typescript/cat-gpt/README.md)
 
 ## Project
 
