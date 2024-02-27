@@ -103,6 +103,7 @@ cowsay-module          movies-functions     short-notation   wisselgeld -->
   * [Export Interfaces](exercises/node-typescript/export-interfaces/README.md)
   * [Cowsay Module](exercises/node-typescript/cowsay-module/README.md)
   * [Cat GPT](exercises/node-typescript/cat-gpt/README.md)
+  * [Rainbow Chalk](exercises/node-typescript/rainbow-chalk/README.md)
 
 ## Project
 
