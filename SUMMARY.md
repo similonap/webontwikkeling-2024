@@ -104,6 +104,8 @@ cowsay-module          movies-functions     short-notation   wisselgeld -->
   * [Cowsay Module](exercises/node-typescript/cowsay-module/README.md)
   * [Cat GPT](exercises/node-typescript/cat-gpt/README.md)
   * [Rainbow Chalk](exercises/node-typescript/rainbow-chalk/README.md)
+* [Extra oefeningen](labos/extra/README.md)
+  * [DNA Match](exercises/node-typescript/dna-match/README.md)
 
 ## Project
 
