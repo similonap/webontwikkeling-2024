@@ -18,7 +18,8 @@ In deze oefening is het nog niet de bedoeling om EJS te gebruiken. We gaan enkel
     * `age`
     * `profilePic`
 
-    De `profilepic` property bevat een url van een online foto (kies zelf iets)
+    De `profilepic` property bevat een url van een foto van jezelf. De foto moet je in de public folder zetten.
+
 * Zorg dat `localhost:3000/whoami` een HTML pagina toont met:
   * de zin "My name is _XXX_ and I am _YYY_ years old" met XXX en YYY de waarden van de properties van de `thisisme` variabel en
   * de foto uit profilePic
