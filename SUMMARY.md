@@ -1,13 +1,3 @@
-<!-- array-sum              export-interfaces    movies-objects   slow-sum
-at-least-two           fake-fetch           name-from-email  som-van-getallen
-bitcoin-api            filter-numbers       pokemon-team     text-box
-bmi-calculator         hello-name           promise-all      tic-tac-toe
-bmi-calculator-multi   interest-calculator  puntenboek       todo-list-objects
-cat-gpt                joke-api             recepten         todo-list-string
-cocktails-api          math-fun             rot13            unix-timestamp-api
-cocktails-promise-all  math-module          school-api       uren-en-minuten
-cowsay-module          movies-functions     short-notation   wisselgeld -->
-
 # Table of contents
 
 * [Introductie](README.md)
@@ -40,6 +30,7 @@ cowsay-module          movies-functions     short-notation   wisselgeld -->
 
 * [Wat is een backend framework?](express.js/wat-is-een-backend-framework.md)
 * [Basis](express.js/basis.md)
+* [Statische Bestanden](express.js/statische-bestanden.md)
 * [EJS](express.js/ejs.md)
 * [Requests](express.js/requests/README.md)
 * [MongoDB](express.js/mongodb/README.md)
