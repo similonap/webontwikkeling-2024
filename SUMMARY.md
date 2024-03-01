@@ -42,7 +42,6 @@ cowsay-module          movies-functions     short-notation   wisselgeld -->
 * [Basis](express.js/basis.md)
 * [EJS](express.js/ejs.md)
 * [Requests](express.js/requests/README.md)
-* [Static files](express.js/static-files.md)
 * [MongoDB](express.js/mongodb/README.md)
   * [Express](express.js/mongodb/express.md)
 * [Cookies en sessions](express.js/cookies-en-sessions/README.md)
