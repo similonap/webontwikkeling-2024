@@ -183,9 +183,7 @@ Laten we de index.ejs file aanpassen:
 
 Wanneer je nu naar localhost:3000 gaat, zal je het random getal in de tekst zien staan.
 
-## EJS syntax
-
-### Variabelen tonen
+## Variabelen tonen
 
 Om een variabele te tonen die werd meegegeven in de render functie, gebruiken we volgende notatie:
 
@@ -346,3 +344,81 @@ Het is ook mogelijk om een if statement toe te voegen. Stel dat we enkel persone
     <% } %>
 </table>
 ```
+
+## Include files
+
+Je kan ook andere EJS files includen in een EJS file. Dit is handig wanneer je bv een header en footer hebt die je in elke pagina wil tonen. Stel je voor dat we de volgende pagina hebben:
+
+```markup
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My website</title>
+</head>
+<body>
+    <header>
+        <h1>My website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Home</h1>
+        <p>Welcome to my website</p>
+    </main>
+    <footer>
+        <p>&copy; 2021</p>
+    </footer>
+</body>
+</html>
+```
+
+In principe wil je op elke pagina dezelfde header en footer tonen. We kunnen de header en footer in aparte EJS files steken en deze includen in de index.ejs file. Deze EJS files bewaren we meestal in een directory genaamd partials in de view directory.
+
+We maken dus een header.ejs file:
+
+```markup
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My website</title>
+</head>
+<body>
+    <header>
+        <h1>My website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+```
+
+En een footer.ejs file:
+
+```markup
+    </main>
+    <footer>
+        <p>&copy; 2021</p>
+    </footer>
+</body>
+</html>
+```
+
+nu kunnen we in elke EJS file de header en footer includen:
+
+```markup
+<%- include('partials/header') %>
+    <h1>Home</h1>
+    <p>Welcome to my website</p>
+<%- include('partials/footer') %>
+```
+
+Alle variabelen die doorgegeven worden met de render functie zijn ook beschikbaar in de included files.
