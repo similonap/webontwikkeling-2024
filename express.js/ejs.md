@@ -36,7 +36,7 @@ res.send(`Het random getal is ${randomGetal}`);
 
 In plaats van een vaste string, geven we nu het randomgetal mee. Elke refresh voert de callback in app.get uit, dus elke refresh zorgt voor een ander getal.
 
-**Templates**
+## Templates
 
 Volledige web paginas in variabelen steken is niet ideaal. Wanneer je weet dat ook nog CSS en scripts erbij moeten, dan is het duidelijk dat we een andere oplossing nodig hebben. Express laat toe templates te gebruiken.
 
@@ -62,7 +62,7 @@ Maar wat als we nu een willekeurige boodschap willen tonen? &#x20;
 
 Templates laten ons toe HTML paginas te schrijven zoals we dat gewoon zijn maar met variabele inhoud. Express ondersteunt verschillende template "engines". Hier gaan we gebruik maken van EJS.
 
-**EJS**
+## Ejs installeren
 
 Om EJS (Embedded JavaScript templating) te gebruiken installeren we de ejs module:
 
@@ -90,7 +90,7 @@ app.set("port", 3000);
 
 Net zoals we 'port' de waarde 3000 geven, zetten we de property 'view engine' op ejs.
 
-**EJS renderen**
+## Ejs render
 
 EJS bestanden lijken op HTML files maar bevatten wat extras. Laten we starten met een simpel EJS bestand.
 
@@ -111,7 +111,7 @@ Nu passen we onze applicatie aan om de index.ejs te tonen (renderen: omzetten va
 
 ```typescript
 import express from "express";
-const app : Express = express();
+const app = express();
 
 app.set('view engine', 'ejs'); // EJS als view engine
 app.set('port', 3000);
@@ -135,13 +135,13 @@ Ipv `res.send` gebruiken we `res.render`. Render verwacht als parameter de naam 
 
 Je kan nu verschillende EJS files toevoegen. Render ze via verschillende routes en kijk hoe je nu volledige control hebt over routes en de html die getoond wordt.
 
-**Dynamische content**
+## Dynamische Content
 
 Templates helpen ons de HTML dynamisch te maken. Laten we ons voorbeeld aanpassen zodat we het willekeurig getal weer zien verschijnen. Eerst passen we onze TypeScript aan.
 
 ```typescript
 app.get('/',(req,res)=>{
-    let randomGetal = Math.random()*100;
+    let randomGetal : number = Math.random()*100;
     res.render('index', {aRandomNumber: randomGetal});
 })
 ```
@@ -154,8 +154,8 @@ We kunnen ook meerdere properties meegeven:
 
 ```typescript
 app.get('/',(req,res)=>{
-    let randomGetal = Math.random()*100;
-    let randomGetal2 = randomGetal * 2;
+    let randomGetal : number = Math.random()*100;
+    let randomGetal2 : number = randomGetal * 2;
     res.render('index', 
         {    
             aRandomNumber: randomGetal,
@@ -183,12 +183,166 @@ Laten we de index.ejs file aanpassen:
 
 Wanneer je nu naar localhost:3000 gaat, zal je het random getal in de tekst zien staan.
 
-**EJS variabelen**
+## EJS syntax
 
-Om de variabelen te gebruiken moet je de volgende exacte notatie gebruiken:
+### Variabelen tonen
+
+Om een variabele te tonen die werd meegegeven in de render functie, gebruiken we volgende notatie:
 
 ```markup
 <%= variable_name %>
 ```
 
-De naam moet volledig overeenkomen met de naam van de property die je in render() meegeeft.&#x20;
+Het is perfect mogelijk om ook properties van een object te tonen:
+
+```markup
+<%= person.name %>
+```
+
+Als je een array hebt, kan je ook een element tonen:
+
+```markup
+<%= people[0] %>
+```
+
+### JavaScript in EJS
+
+EJS laat ons toe JavaScript te gebruiken om meer controle te hebben over de dynamische inhoud van het template. Tussen <% %> kunnen we JavaScript plaatsen:
+
+```markup
+<% 
+    let firstName = "John";
+    let lastName = "Smith";
+    let age = Math.random() * 100;
+%>
+
+<h1>Hi</h1>
+<p>
+    My name is <%= firstName %> <%= lastName %> 
+    and I'm <%= age %> years old.
+</p>
+```
+
+{% hint style="danger" %}
+In EJS bestanden kan je geen TypeScript types gebruiken. Let hier zeker op dat je enkel aan de controller kant TypeScript kan gebruiken.
+{% endhint %}
+
+### If statements
+
+Een if statement kan ook toegevoegd worden:
+
+```markup
+<% if (age > 50) { %>
+    <p>Je bent oud</p>
+<% } else { %>
+    <p>Je bent jong</p>
+<% } %>
+```
+
+Let hier op dat de if statement en het afsluiten van het `}` teken tussen `<% %>` moet staan.
+
+### Loops
+
+Er bestaat ook een mogelijkheid om een loop toe te voegen. We hebben al gezien dat we <% %> gebruiken om JavaScript uit te voeren. Stel je voor dat 10 keer "Hallo" getoond moet worden. We kunnen dit doen met een for loop:
+
+```markup
+<% for(let i=1; i<10;i++) { %>
+    <p>Hallo</p>
+<% } %>
+```
+
+Het is belangrijk om te weten dat alle javascript code tussen `<% %>` moet staan en dus ook de for statement en het afsluiten van het `}` teken. 
+
+Wil je de waarde van `i` tonen, dan moet je `<%= i %>` gebruiken. 
+
+```markup
+<% for(let i=1; i<10;i++) { %>
+    <p><%= i %></p>
+<% } %>
+```
+
+### Voorbeeld lijst
+
+Laten we een voorbeeld bekijken waar we een lijst van mensen tonen. We hebben een array van mensen en we willen de naam van elke persoon tonen.
+
+```typescript
+app.get('/',(req,res)=>{
+    let people : string[] = ["Sven", "Andie", "Sam", "Barbara"];
+    res.render('index', { people: people });
+});
+```
+
+In de index.ejs file tonen we nu de lijst van mensen:
+
+```markup
+<h1>People</h1>
+<ul>
+    <% for(let person of people) { %>
+        <li><%= people[i] %></li>
+    <% } %>
+</ul>
+```
+
+### Voorbeeld tabel
+
+Laten we een voorbeeld bekijken waar we een tabel tonen. We hebben een array van mensen. Deze keer worden deze mensen voorgesteld als objecten. We willen de naam, stad en leeftijd van elke persoon tonen.
+
+```typescript
+interface Person {
+    name: string;
+    city: string;
+    age: number;
+}
+
+app.get('/',(req,res)=>{
+    let persons : Person[] = [
+        {name: "Sven", city: "Antwerpen", age: 40},
+        {name: "Andie", city: "Gent", age: 30},
+        {name: "Sam", city: "Brussel", age: 25},
+        {name: "Barbara", city: "Leuven", age: 35}
+    ];
+    res.render('index', { persons: persons });
+});
+```
+
+In de index.ejs file tonen we nu de tabel van mensen:
+
+```markup
+<h1>People</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Age</th>
+    </tr>
+    <% for(let person of persons) { %>
+        <tr>
+            <td><%= person.name %></td>
+            <td><%= person.city %></td>
+            <td><%= person.age %></td>
+        </tr>
+    <% } %>
+</table>
+```
+
+Het is ook mogelijk om een if statement toe te voegen. Stel dat we enkel personen willen tonen die ouder zijn dan 30:
+
+```markup
+<h1>People</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Age</th>
+    </tr>
+    <% for(let person of persons) { %>
+        <% if (person.age > 30) { %>
+            <tr>
+                <td><%= person.name %></td>
+                <td><%= person.city %></td>
+                <td><%= person.age %></td>
+            </tr>
+        <% } %>
+    <% } %>
+</table>
+```
