@@ -1,7 +1,5 @@
 # Statische Bestanden
 
-
-
 Express laat ons toe statische bestanden te serveren. Dit zijn bestanden die niet veranderen. Denk aan CSS, JavaScript, afbeeldingen, etc.
 
 Wil je dit doen, dan moet je een folder aanmaken waarin je deze bestanden plaatst. Deze folder noemen we meestal `public`. In deze folder plaatsen we dan onze statische bestanden.

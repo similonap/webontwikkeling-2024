@@ -96,6 +96,8 @@
 * [7. Express](labos/labo7/README.md)
   * [Hello Express](exercises/express/hello-express/README.md)
   * [DadJoke Express](exercises/express/dadjoke-express/README.md)
+* [8. EJS + Static](labos/labo8/README.md)
+  * [Hello Express EJS](exercises/express/hello-express-ejs/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
