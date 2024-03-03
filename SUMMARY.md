@@ -30,6 +30,7 @@
 
 * [Wat is een backend framework?](express.js/wat-is-een-backend-framework.md)
 * [Basis](express.js/basis.md)
+* [Nodemon](express.js/nodemon.md)
 * [Statische Bestanden](express.js/statische-bestanden.md)
 * [EJS](express.js/ejs.md)
 * [Requests](express.js/requests/README.md)
