@@ -2,36 +2,36 @@
 
 ### Short Notation
 
-{% content-ref url="short-notation.md" %}
-[short-notation.md](short-notation.md)
+{% content-ref url="../../../exercises/node-typescript/short-notation/" %}
+[short-notation](../../../exercises/node-typescript/short-notation/)
 {% endcontent-ref %}
 
 ### Wiskundige functies
 
-{% content-ref url="math-fun.md" %}
-[math-fun.md](math-fun.md)
+{% content-ref url="../../../exercises/node-typescript/math-fun/" %}
+[math-fun](../../../exercises/node-typescript/math-fun/)
 {% endcontent-ref %}
 
 ### Array sum
 
-{% content-ref url="array-sum.md" %}
-[array-sum.md](array-sum.md)
+{% content-ref url="../../../exercises/node-typescript/array-sum/" %}
+[array-sum](../../../exercises/node-typescript/array-sum/)
 {% endcontent-ref %}
 
 ### Movies (vervolg)
 
-{% content-ref url="movies-functions.md" %}
-[movies-functions.md](movies-functions.md)
+{% content-ref url="../../../exercises/node-typescript/movies-functions/" %}
+[movies-functions](../../../exercises/node-typescript/movies-functions/)
 {% endcontent-ref %}
 
 ### Filter
 
-{% content-ref url="filter-numbers.md" %}
-[filter-numbers.md](filter-numbers.md)
+{% content-ref url="../../../exercises/node-typescript/filter-numbers/" %}
+[filter-numbers](../../../exercises/node-typescript/filter-numbers/)
 {% endcontent-ref %}
 
 ### atLeastTwo
 
-{% content-ref url="at-least-two.md" %}
-[at-least-two.md](at-least-two.md)
+{% content-ref url="../../../exercises/node-typescript/at-least-two/" %}
+[at-least-two](../../../exercises/node-typescript/at-least-two/)
 {% endcontent-ref %}
