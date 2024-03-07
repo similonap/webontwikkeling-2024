@@ -53,3 +53,5 @@ Deze screenshots dienen als voorbeeld en zijn niet bedoeld om exact gekopieerd t
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>Detail pagina van de gerelateerde guilds (geralateerde objecten)</p></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/milestone2.gif" alt=""><figcaption></figcaption></figure>
+
