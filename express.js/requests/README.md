@@ -42,11 +42,10 @@ let people = ["Sven","Andie","George","Geoff"];
 
 app.get("/person",(req,res)=>{
     res.type('text/html')
-    let index_ = req.query.index;
     // TypeScript kan niet garanderen dat deze parameter een geldige waarde heeft gekregen
     // de if staat ons toe binnen dat block te veronderstellen dat string het type is
-    if (typeof index_ === "string") {
-      let index = parseInt(index_);
+    if (typeof req.query.index === "string") {
+      let index = parseInt(req.query.index);
       res.send(people[index]);
     }
     else {
@@ -64,6 +63,149 @@ Probeer zelf eens een lijst van query velden toe te voegen aan de URL en print d
 {% hint style="danger" %}
 Let op welke characters je gebruikt in een query string. Je kan bv. geen spaties gebruiken. Wil je in jouw client applicatie een random string meegeven als waarde, gebruik dan [URI Encode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/encodeURI) om deze om te zetten in een geldige string!
 {% endhint %}
+
+#### Use case - Zoeken
+
+Zoals al vermeld hebben gebruikt Google de query string om zoektermen mee te geven. We kunnen dit ook doen in onze eigen applicatie. Stel dat we een zoekfunctie willen maken die de gebruiker toelaat om een naam op te zoeken in een array van namen. We kunnen dit doen met een formulier in ons ejs bestand:
+
+```html
+<form action="/" method="get">
+    <label for="search">Search for a name:</label>
+    <input type="text" id="search" name="q" value="<%= q %>">
+    <button type="submit">Search</button>
+</form>
+<% for (let person of persons) { %>
+    <p><%= person.name %> (<%= person.age %>)</p>
+<% } %> 
+```
+
+We gebruiken hier de query string `q` om de zoekterm mee te geven. De gebruiker kan een zoekterm invullen in het input veld en op de knop drukken. De browser zal een `GET` request sturen naar `/search?q=zoekterm`. We kunnen dit request afhandelen in onze Express applicatie:
+
+```typescript
+interface Person {
+    name: string;
+    age: number;
+}
+
+const persons: Person[] = [
+    { name: "Sven", age: 25 },
+    { name: "Andie", age: 24 },
+    { name: "George", age: 30 },
+    { name: "Zeoff", age: 28 },
+    ...
+]
+
+app.get("/", (req, res) => {
+    let q : string = typeof req.query.q === "string" ? req.query.q : "";
+    let filteredPersons: Person[] = persons.filter((person) => {
+        return person.name.toLowerCase().startsWith(q.toLowerCase());
+    });
+    res.render("index", {
+        persons: filteredPersons,
+        q: q
+    });
+});
+```
+
+We gebruiken hier de `filter` methode van een array om enkel de namen te tonen die beginnen met de zoekterm. We zetten de zoekterm en de gefilterde namen in een object en sturen dit naar de view. De `??` operator laat ons toe om een default waarde te geven aan een variabele. Als `req.query.q` `undefined` is, zal de zoekterm een lege string zijn.
+
+Het is belangrijk om de zoekterm te normaliseren. We willen niet dat de zoekterm "Sven" niet gevonden wordt omdat de gebruiker "sven" heeft ingegeven. Daarom zetten we de zoekterm en de namen om naar kleine letters met de `toLowerCase` methode. Let hier op dat we zoeken op de beginletters van de namen. Als je wil zoeken op een deel van de naam, kan je de `includes` methode gebruiken.
+
+Merk op dat we de `q` variabele ook meegeven aan de view. Zo kunnen we de zoekterm tonen in het input veld en blijft deze behouden wanneer de pagina herladen wordt.
+
+#### Use case - Sorteren
+
+Sorteren is een andere use case waarbij we de query string kunnen gebruiken. De opzet is iets complexer dan de zoekfunctie, maar het principe blijft hetzelfde. We willen de gebruiker toelaten om de namen te sorteren op basis van een bepaald veld. 
+
+Het eerste wat we gaan doen is twee query parameters kiezen voor de sorteerfunctie: `sortField` en `sortDirection`. De gebruiker kan een veld kiezen om op te sorteren en een richting. We halen deze als volgt op:
+
+```typescript
+const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
+const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
+```
+
+We kijken hier of de query parameters bestaan. Als ze bestaan, gebruiken we de waarde. Als ze niet bestaan, gebruiken we een default waarde. We gebruiken de `sort` methode van een array om de namen te sorteren. De richting van de sortering bepalen we door de return waarde van de sorteerfunctie om te keren. Als de richting "asc" is, sorteren we de namen in oplopende volgorde. Als de richting "desc" is, sorteren we de namen in aflopende volgorde.
+
+```typescript
+let sortedPersons = [...persons].sort((a, b) => {
+    if (sortField === "name") {
+        return sortDirection === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+    } else if (sortField === "age") {
+        return sortDirection === "asc" ? a.age - b.age : b.age - a.age;
+    } else {
+        return 0;
+    }
+});
+```
+
+Omdat we het huidige sorteer veld en de richting willen bijhouden in de view (zodat we de gebruiker kunnen tonen op welk veld en in welke richting de namen gesorteerd zijn), maken we een array van objecten aan om de opties voor de select elementen te genereren. Elk object bevat een `value` en een `text` property. De `selected` property bepaalt of de optie geselecteerd is of niet.
+
+```typescript
+const sortFields = [
+    { value: 'name', text: 'Name', selected: sortField === 'name' ? 'selected' : '' },
+    { value: 'age', text: 'Age', selected: sortField === 'age' ? 'selected' : ''}
+];
+
+const sortDirections = [
+    { value: 'asc', text: 'Asc', selected: sortDirection === 'asc' ? 'selected' : ''},
+    { value: 'desc', text: 'Desc', selected: sortDirection === 'desc' ? 'selected' : ''}
+];
+```
+
+Dit wordt samen:
+
+```typescript
+app.get("/", (req, res) => {
+    const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
+    const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
+    let sortedPersons = [...persons].sort((a, b) => {
+        if (sortField === "name") {
+            return sortDirection === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+        } else if (sortField === "age") {
+            return sortDirection === "asc" ? a.age - b.age : b.age - a.age;
+        } else {
+            return 0;
+        }
+    });
+
+    const sortFields = [
+        { value: 'name', text: 'Name', selected: sortField === 'name' ? 'selected' : '' },
+        { value: 'age', text: 'Age', selected: sortField === 'age' ? 'selected' : ''}
+    ];
+
+    const sortDirections = [
+        { value: 'asc', text: 'Ascending', selected: sortDirection === 'asc' ? 'selected' : ''},
+        { value: 'desc', text: 'Descending', selected: sortDirection === 'desc' ? 'selected' : ''}
+    ];
+
+    res.render("index", {
+        persons: sortedPersons,
+        sortFields: sortFields,
+        sortDirections: sortDirections
+    });
+});
+```
+
+In onze ejs kunnen we dan de select elementen genereren:
+
+```html
+<form action="/" method="get">
+    <select name="sortField">
+        <% for (let field of sortFields) { %>
+            <option value="<%= field.value %>" <%= field.selected %>><%= field.text %></option> 
+        <% } %>
+    </select>
+    <select name="sortDirection">
+        <% for (let direction of sortDirections) { %>
+            <option value="<%= direction.value %>" <%= direction.selected %>><%= direction.text %></option> 
+        <% } %>
+    </select>
+    <button type="submit">Sort</button>
+</form>
+<% for (let person of persons) { %>
+    <p><%= person.name %> (<%= person.age %>)</p>
+<% } %>
+```
 
 ### **Route Parameters**
 
