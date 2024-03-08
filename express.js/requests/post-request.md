@@ -168,3 +168,116 @@ app.post("/register", (req, res) => {
   }
 });
 ```
+
+## Andere form elementen
+
+Hier onder een formulier met een groot aantal mogelijke form elementen.
+
+```html
+<form action="/submit_form" method="post">
+    <!-- Text Input -->
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <!-- Email Input -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <!-- Password Input -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+
+    <!-- Number Input -->
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" min="0"><br>
+
+    <!-- Date Input -->
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob"><br>
+
+    <!-- Radio Buttons -->
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="other" value="other">
+    <label for="other">Other</label><br>
+
+    <!-- Checkbox -->
+    <p>Hobbies:</p>
+    <input type="checkbox" id="hobby1" name="hobby1" value="Sports">
+    <label for="hobby1"> Sports</label><br>
+    <input type="checkbox" id="hobby2" name="hobby2" value="Reading">
+    <label for="hobby2"> Reading</label><br>
+
+    <!-- Dropdown List -->
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+        <option value="usa">United States</option>
+        <option value="canada">Canada</option>
+        <option value="uk">United Kingdom</option>
+    </select><br>
+
+    <!-- Dropdown Mutliple -->
+    <label for="languages">Languages</label><br>
+    <select id="languages" name="languages" multiple>
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+    </select><br>
+
+    <!-- Textarea -->
+    <label for="bio">Bio:</label><br>
+    <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br>
+
+    <!-- Hidden Input -->
+    <input type="hidden" id="hiddenElement" name="hiddenElement" value="hiddenValue">
+
+    <!-- Color Input -->
+    <label for="color">Favorite Color:</label><br>
+    <input type="color" id="color" name="color"><br>
+
+    <!-- Range Input -->
+    <label for="range">Range:</label><br>
+    <input type="range" id="range" name="range" min="0" max="100"><br>
+
+    <!-- Year Input -->
+    <label for="year">Year:</label><br>
+    <input type="number" id="year" name="year" min="1900" max="2099" step="1" value="2021"><br>
+
+    <!-- Week Input -->
+    <label for="week">Week:</label><br>
+    <input type="week" id="week" name="week"><br>
+    
+
+    <input type="submit" value="Submit">
+</form>
+```
+
+Deze kan je op de volgende manier uitlezen:
+
+```typescript
+app.post("/submit_form", (req, res) => {
+    let name : string = req.body.name;   
+    let email : string = req.body.email;
+    let password : string = req.body.password;
+    let age : number = parseInt(req.body.age);
+    let dob : Date = new Date(req.body.dob);
+    let gender : Gender = req.body;
+    let country : Country = req.body.country;
+    let languages: Language[] = req.body.languages;
+    let bio: string = req.body.bio;
+    let hiddenElement: string = req.body.hiddenElement;
+    let color: string = req.body.color;
+    let range: number = parseInt(req.body.range);
+    let year: number = parseInt(req.body.year);
+    let week: string = req.body.week;
+
+
+    res.send(req.body);
+});
+```
+
+Twijfel je? Dan kan je altijd gewoon het `req.body` object afprinten via `console.log` en kijken wat erin zit.
