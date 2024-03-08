@@ -33,7 +33,7 @@
 * [Nodemon](express.js/nodemon.md)
 * [Statische Bestanden](express.js/statische-bestanden.md)
 * [EJS](express.js/ejs.md)
-* [Requests](express.js/requests/README.md)
+* [Request / Response](express.js/requests/README.md)
 * [MongoDB](express.js/mongodb/README.md)
   * [Express](express.js/mongodb/express.md)
 * [Cookies en sessions](express.js/cookies-en-sessions/README.md)
