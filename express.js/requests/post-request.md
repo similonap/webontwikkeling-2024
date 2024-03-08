@@ -4,7 +4,7 @@
 
 Hoewel het perfect mogelijk is om data te versturen via een `GET` request, is het niet altijd de beste keuze. De data die je verstuurd via een `GET` request is zichtbaar in de URL. Bovendien is de hoeveelheid data die je kan versturen beperkt. De meeste browsers hebben een limiet van 2048 karakters. Dit is niet altijd voldoende. Daarom gebruiken we `POST` requests.
 
-Bij een `POST` request wordt de data niet zichtbaar in de URL. De data wordt verstuurd in de body van het request. De body is een onderdeel van het request dat gebruikt wordt om data te versturen. Je zou de body kunnen zien als een brief die je in een enveloppe steekt. Bij de `GET` request zou je het bericht op de enveloppe schrijven, bij de `POST` request steek je het bericht in de enveloppe. Beide zullen de bestemming bereiken, maar de inhoud van de enveloppe is niet direct zichtbaar voor iedereen. 
+Bij een `POST` request wordt de data niet zichtbaar in de URL. De data wordt verstuurd in de body van het request. De body is een onderdeel van het request dat gebruikt wordt om data te versturen. Je zou de body kunnen zien als een brief die je in een enveloppe steekt. Bij de `GET` request zou je het bericht op de enveloppe schrijven, bij de `POST` request steek je het bericht in de enveloppe. Beide zullen de bestemming bereiken, maar de inhoud van de enveloppe is niet direct zichtbaar voor iedereen.
 
 Opgelet: Het is niet zo dat `POST` requests veilig zijn. De inhoud van een `POST` request is ook leesbaar. Als we teruggrijpen naar de analogie van de enveloppe, dan kan iedereen de enveloppe openen en de inhoud lezen. Als je echt zeker wil zijn dat de data veilig verstuurd wordt, moet je de data versleutelen. Dit is een proces dat we later in de cursus zullen behandelen.
 
@@ -41,32 +41,33 @@ Zo'n formulier kan er als volgt uit zien:
 ```
 
 Er zijn hier twee belangrijke dingen op te merken in dit voorbeeld:
-- Het attribuut `action` bevat de URL waar de data naartoe gestuurd wordt. Dit is de route die we zullen gebruiken om de data te behandelen.
-- Het attribuut `method` bevat de HTTP method die gebruikt wordt. In dit geval is dat `post`.
+
+* Het attribuut `action` bevat de URL waar de data naartoe gestuurd wordt. Dit is de route die we zullen gebruiken om de data te behandelen.
+* Het attribuut `method` bevat de HTTP method die gebruikt wordt. In dit geval is dat `post`.
 
 ## Form Handling
 
 Het proces om de data van een formulier te behandelen noemen we form handling. Dit is het proces waarbij de data van het formulier wordt opgevraagd en verwerkt. Hieronder een flowchart van het proces:
 
-![alt text](../../.gitbook/formhandling.png)
+![Form Handling (https://developer.mozilla.org/)](../../.gitbook/formhandling.png)
 
 De meeste formulieren werken op deze manier.
 
-1) De gebruiker krijgt een leeg formulier te zien bij de eerste keer dat de pagina wordt opgevraagd. 
-    - Het formulier kan lege velden bevatten (bv. als je een nieuw record aanmaakt) of het kan al ingevuld zijn met initiele waarden (bv. als je een record aanpast of nuttige standaardwaarden hebt).
-2) De gebruiker vult dit formulier in en de data wordt verstuurd via een `POST` request naar de url die in het `action` attribuut van het `form` element staat.
-3) De server ontvangt de data en valideert en sanitizeert deze. 
-    - Validatie is het proces waarbij de data wordt gecontroleerd op correctheid. 
-    - Sanitization is het proces waarbij de data wordt schoongemaakt. Dit is belangrijk om bv. SQL injecties te voorkomen (zie later)
-4) Als er data ongeldig is, wordt het formulier opnieuw getoond, maar nu met de ingevulde waarden en foutmeldingen voor de velden die niet correct zijn.
-5) Als alle data geldig is, worden de nodige acties uitgevoerd (bv. de data wordt opgeslagen in de database, een notificatie email wordt verstuurd, het resultaat van een zoekopdracht wordt teruggegeven, een bestand wordt geupload, etc.)
-6) Als alle acties zijn uitgevoerd, wordt de gebruiker doorgestuurd naar een andere pagina.
+1. De gebruiker krijgt een leeg formulier te zien bij de eerste keer dat de pagina wordt opgevraagd.
+   * Het formulier kan lege velden bevatten (bv. als je een nieuw record aanmaakt) of het kan al ingevuld zijn met initiele waarden (bv. als je een record aanpast of nuttige standaardwaarden hebt).
+2. De gebruiker vult dit formulier in en de data wordt verstuurd via een `POST` request naar de url die in het `action` attribuut van het `form` element staat.
+3. De server ontvangt de data en valideert en sanitizeert deze.
+   * Validatie is het proces waarbij de data wordt gecontroleerd op correctheid.
+   * Sanitization is het proces waarbij de data wordt schoongemaakt. Dit is belangrijk om bv. SQL injecties te voorkomen (zie later)
+4. Als er data ongeldig is, wordt het formulier opnieuw getoond, maar nu met de ingevulde waarden en foutmeldingen voor de velden die niet correct zijn.
+5. Als alle data geldig is, worden de nodige acties uitgevoerd (bv. de data wordt opgeslagen in de database, een notificatie email wordt verstuurd, het resultaat van een zoekopdracht wordt teruggegeven, een bestand wordt geupload, etc.)
+6. Als alle acties zijn uitgevoerd, wordt de gebruiker doorgestuurd naar een andere pagina.
 
-Vaak wordt form handling code geïmplementeerd met een GET route voor de initiële weergave van het formulier en een POST route naar dezelfde route voor de validatie en verwerking van de formuliergegevens. 
+Vaak wordt form handling code geïmplementeerd met een GET route voor de initiële weergave van het formulier en een POST route naar dezelfde route voor de validatie en verwerking van de formuliergegevens.
 
 ### Het lege formulier
 
-Het eerste wat je moet doen is een route maken die het lege formulier toont. Dit is een `GET` route die de HTML van het formulier teruggeeft. 
+Het eerste wat je moet doen is een route maken die het lege formulier toont. Dit is een `GET` route die de HTML van het formulier teruggeeft.
 
 ```typescript
 app.get("/register", (req, res) => {
@@ -93,7 +94,7 @@ app.use(express.urlencoded({ extended:true}))
 
 De waarde voor `limit` kies je zelf. Dit is de maximale grootte van het request. De tweede lijn zorgt ervoor dat de inhoud van de `POST` omgezet wordt in een handig JSON object.
 
-We kunnen nu de velden van het formulier uitlezen met `req.body`. 
+We kunnen nu de velden van het formulier uitlezen met `req.body`.
 
 ```typescript
 app.post("/register", (req, res) => {
@@ -107,9 +108,9 @@ app.post("/register", (req, res) => {
 
 ### Validatie en error handling
 
-Omdat je nooit kan vertrouwen op de data die je ontvangt, zelfs als er al in de browser zelf validatie is gebeurd, is het belangrijk om de data te valideren. Misschien hebben we een veld verplicht gemaakt, of willen we zeker zijn dat een emailadres een `@` bevat. 
+Omdat je nooit kan vertrouwen op de data die je ontvangt, zelfs als er al in de browser zelf validatie is gebeurd, is het belangrijk om de data te valideren. Misschien hebben we een veld verplicht gemaakt, of willen we zeker zijn dat een emailadres een `@` bevat.
 
-En als er iets misloopt willen we ook een foutmelding tonen. Deze moeten we dan meegeven aan de hand van het object in de `res.render` methode. 
+En als er iets misloopt willen we ook een foutmelding tonen. Deze moeten we dan meegeven aan de hand van het object in de `res.render` methode.
 
 ```typescript
 app.post("/register", (req, res) => {
@@ -128,7 +129,7 @@ app.post("/register", (req, res) => {
 });
 ```
 
-We moeten dan ook de error tonen in de view. 
+We moeten dan ook de error tonen in de view.
 
 ```html
 <% if (error) { %>
@@ -136,7 +137,7 @@ We moeten dan ook de error tonen in de view.
 <% } %>
 ```
 
-Vergeet ook geen lege error message mee te geven in de `GET` route of we krijgen een error. 
+Vergeet ook geen lege error message mee te geven in de `GET` route of we krijgen een error.
 
 ```typescript
 app.get("/register", (req, res) => {
