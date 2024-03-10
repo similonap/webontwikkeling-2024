@@ -109,6 +109,7 @@
   * [Math Service](exercises/express/math-service-express/README.md)
   * [Newspaper Route](exercises/express/newspaper-route/README.md)
   * [Newspaper Search](exercises/express/newspaper-search/README.md)
+  * [Steam](exercises/express/steam/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
