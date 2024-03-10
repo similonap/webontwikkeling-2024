@@ -106,6 +106,7 @@
   * [Maaltafels](exercises/express/maaltafels-ejs/README.md)
   * [Newspaper](exercises/express/newspaper/README.md)
 * [9. Get Request](labos/labo9/README.md)
+  * [Hello Query](exercises/express/hello-query/README.md)
   * [Math Service](exercises/express/math-service-express/README.md)
   * [Newspaper Route](exercises/express/newspaper-route/README.md)
   * [Newspaper Search](exercises/express/newspaper-search/README.md)
