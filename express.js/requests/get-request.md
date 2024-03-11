@@ -96,7 +96,7 @@ const persons: Person[] = [
 ]
 
 app.get("/", (req, res) => {
-    let q : string = typeof req.query.q === "string" ? req.query.q : "";
+    let q : string = req.query.q ?? req.query.q : "";
     let filteredPersons: Person[] = persons.filter((person) => {
         return person.name.toLowerCase().startsWith(q.toLowerCase());
     });
@@ -107,7 +107,7 @@ app.get("/", (req, res) => {
 });
 ```
 
-We gebruiken hier de `filter` methode van een array om enkel de namen te tonen die beginnen met de zoekterm. We zetten de zoekterm en de gefilterde namen in een object en sturen dit naar de view. De `??` operator laat ons toe om een default waarde te geven aan een variabele. Als `req.query.q` `undefined` is, zal de zoekterm een lege string zijn.
+We gebruiken hier de `filter` methode van een array om enkel de namen te tonen die beginnen met de zoekterm. We zetten de zoekterm en de gefilterde namen in een object en sturen dit naar de view. 
 
 Het is belangrijk om de zoekterm te normaliseren. We willen niet dat de zoekterm "Sven" niet gevonden wordt omdat de gebruiker "sven" heeft ingegeven. Daarom zetten we de zoekterm en de namen om naar kleine letters met de `toLowerCase` methode. Let hier op dat we zoeken op de beginletters van de namen. Als je wil zoeken op een deel van de naam, kan je de `includes` methode gebruiken.
 
