@@ -124,7 +124,7 @@ const sortField = typeof req.query.sortField === "string" ? req.query.sortField 
 const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
 ```
 
-We kijken hier of de query parameters bestaan. Als ze bestaan, gebruiken we de waarde. Als ze niet bestaan, gebruiken we een default waarde. We gebruiken de `sort` methode van een array om de namen te sorteren. De richting van de sortering bepalen we door de return waarde van de sorteerfunctie om te keren. Als de richting "asc" is, sorteren we de namen in oplopende volgorde. Als de richting "desc" is, sorteren we de namen in aflopende volgorde.
+We kijken hier of de query parameters bestaan. Als ze bestaan, gebruiken we de waarde. Als ze niet bestaan, gebruiken we een default waarde. We gebruiken de `sort` methode van een array om de namen te sorteren. De richting van de sortering bepalen we door de return waarde van de sorteerfunctie om te keren. Als de richting "asc" is, sorteren we de namen in oplopende volgorde. Als de richting "desc" is, sorteren we de namen in aflopende volgorde. 
 
 ```typescript
 let sortedPersons = [...persons].sort((a, b) => {
@@ -138,7 +138,60 @@ let sortedPersons = [...persons].sort((a, b) => {
 });
 ```
 
-Omdat we het huidige sorteer veld en de richting willen bijhouden in de view (zodat we de gebruiker kunnen tonen op welk veld en in welke richting de namen gesorteerd zijn), maken we een array van objecten aan om de opties voor de select elementen te genereren. Elk object bevat een `value` en een `text` property. De `selected` property bepaalt of de optie geselecteerd is of niet.
+We geven nu deze gesorteerde namen mee aan de view:
+
+```typescript
+res.render("index", {
+    persons: sortedPersons
+});
+```
+
+Dan kunnen we nu de gesorteerde namen tonen in de view. We voorzien ook al een formulier om de gebruiker toe te laten om de namen te sorteren:
+
+```html
+<form action="/" method="get">
+    <select name="sortField">
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+    </select>
+    <select name="sortDirection">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+    </select>
+    <button type="submit">Sort</button>
+</form>
+<% for (let person of persons) { %>
+    <p><%= person.name %> (<%= person.age %>)</p>
+<% } %>
+```
+
+Als we de sorteerrichting willen bijhouden in de view, kunnen we dit doen door de `selected` property van de optie te gebruiken.
+
+```html
+<form action="/" method="get">
+    <select name="sortField">
+        <option value="name" <%= sortField === 'name' ? 'selected' : '' %>>Name</option>
+        <option value="age" <%= sortField === 'age' ? 'selected' : '' %>>Age</option>
+    </select>
+    <select name="sortDirection">
+        <option value="asc" <%= sortDirection === 'asc' ? 'selected' : '' %>>Ascending</option>
+        <option value="desc" <%= sortDirection === 'desc' ? 'selected' : '' %>>Descending</option>
+    </select>
+    <button type="submit">Sort</button>
+</form>
+```
+
+We moeten dan wel de `sortField` en `sortDirection` variabelen meegeven aan de view:
+
+```typescript
+res.render("index", {
+    persons: sortedPersons,
+    sortField: sortField,
+    sortDirection: sortDirection
+});
+```
+
+Bij veel velden kan het handig zijn om de opties voor de select elementen te genereren in de route. Dit kan je doen door een array van objecten te maken en deze door te geven aan de view:
 
 ```typescript
 const sortFields = [
@@ -152,37 +205,13 @@ const sortDirections = [
 ];
 ```
 
-Dit wordt samen:
+en kan je deze doorgeven aan de view:
 
 ```typescript
-app.get("/", (req, res) => {
-    const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
-    const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
-    let sortedPersons = [...persons].sort((a, b) => {
-        if (sortField === "name") {
-            return sortDirection === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
-        } else if (sortField === "age") {
-            return sortDirection === "asc" ? a.age - b.age : b.age - a.age;
-        } else {
-            return 0;
-        }
-    });
-
-    const sortFields = [
-        { value: 'name', text: 'Name', selected: sortField === 'name' ? 'selected' : '' },
-        { value: 'age', text: 'Age', selected: sortField === 'age' ? 'selected' : ''}
-    ];
-
-    const sortDirections = [
-        { value: 'asc', text: 'Ascending', selected: sortDirection === 'asc' ? 'selected' : ''},
-        { value: 'desc', text: 'Descending', selected: sortDirection === 'desc' ? 'selected' : ''}
-    ];
-
-    res.render("index", {
-        persons: sortedPersons,
-        sortFields: sortFields,
-        sortDirections: sortDirections
-    });
+res.render("index", {
+    persons: sortedPersons,
+    sortFields: sortFields,
+    sortDirections: sortDirections
 });
 ```
 
