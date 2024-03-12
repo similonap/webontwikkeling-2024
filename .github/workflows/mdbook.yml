@@ -31,10 +31,10 @@ jobs:
     env:
       MDBOOK_VERSION: 0.4.36
     steps:
+      - uses: actions/checkout@v4
       - name: Fix SUMMARY.md for mdbook
         run: |
           sed -i 's/^## /# /' SUMMARY.md
-      - uses: actions/checkout@v4
       - name: Install mdBook
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
