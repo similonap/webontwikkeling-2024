@@ -31,6 +31,9 @@ jobs:
     env:
       MDBOOK_VERSION: 0.4.36
     steps:
+      - name: Fix SUMMARY.md for mdbook
+        run: |
+          sed -i 's/^## /# /' SUMMARY.md
       - uses: actions/checkout@v4
       - name: Install mdBook
         run: |
