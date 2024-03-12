@@ -1,0 +1,11 @@
+[book]
+authors = ["Andie Similon"]
+language = "en"
+multilingual = false
+src = "."
+title = "Webontwikkeling"
+[output.html.fold]
+enable = true
+
+[output.html]
+no-section-label = true

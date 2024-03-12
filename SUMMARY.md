@@ -2,13 +2,13 @@
 
 * [Introductie](README.md)
 
-## Tooling
+# Tooling
 
 * [Devcontainers](tooling/devcontainers.md)
 * [Git](tooling/git.md)
 * [Terminal en bash](tooling/bash.md)
 
-## NodeJS + TypeScript
+# NodeJS + TypeScript
 
 * [Wat is NodeJS?](nodejs-+-typescript/wat-is-nodejs.md)
 * [Waarom TypeScript?](nodejs-+-typescript/waarom-typescript.md)
@@ -26,7 +26,7 @@
   * [Async/Await](nodejs-+-typescript/asynchroon-programmeren/async-await.md)
   * [Fetch](nodejs-+-typescript/asynchroon-programmeren/fetch.md)
 
-## Express.js
+# Express.js
 
 * [Wat is een backend framework?](express.js/wat-is-een-backend-framework.md)
 * [Basis](express.js/basis.md)
@@ -39,18 +39,8 @@
 * [Response](express.js/response.md)
 * [MongoDB](express.js/mongodb/README.md)
   * [Express](express.js/mongodb/express.md)
-* [Cookies en sessions](express.js/cookies-en-sessions/README.md)
-  * [Sessions](express.js/cookies-en-sessions/sessions.md)
-  * [(JWT) tokens](express.js/cookies-en-sessions/jwt-tokens/README.md)
-    * [JWT NPM package](express.js/cookies-en-sessions/jwt-tokens/jwt-npm-package.md)
-    * [Tokens veilig opslaan](express.js/cookies-en-sessions/jwt-tokens/tokens-veilig-opslaan.md)
-  * [Session-based authentication versus JWT](https://stytch.com/blog/jwts-vs-sessions-which-is-right-for-you/)
-* [Testen in Express](express.js/testen-in-express/README.md)
-  * [Unit testen met Jest](express.js/testen-in-express/unit-testen-met-jest.md)
-  * [Mocken van dependencies](express.js/testen-in-express/mocken-van-dependencies.md)
-  * [Selenium](https://www.npmjs.com/package/selenium-webdriver)
 
-## Labos
+# Labos
 
 * [1. Tooling](labos/labo1/README.md)
 * [2. Basis](labos/labo2/README.md)
@@ -115,7 +105,7 @@
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
 
-## Project
+# Project
 
 * [Voorbereiding](project/dev-container.md)
 * [Milestone 1 - Terminal App](project/node-client.md)
