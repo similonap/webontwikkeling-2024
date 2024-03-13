@@ -21,3 +21,4 @@ Als het formulier correct werd ingevuld, wordt een bedanktbericht gerenderd. Het
 ![Contact form](contact.png)
 ![Terms and conditions](tos.png)
 ![Message Empty](message_empty.png)
+![Ok](ok.png)
