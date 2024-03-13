@@ -206,11 +206,9 @@ Hier onder een formulier met een groot aantal mogelijke form elementen.
     <label for="other">Other</label><br>
 
     <!-- Checkbox -->
-    <p>Hobbies:</p>
-    <input type="checkbox" id="hobby1" name="hobby1" value="Sports">
-    <label for="hobby1"> Sports</label><br>
-    <input type="checkbox" id="hobby2" name="hobby2" value="Reading">
-    <label for="hobby2"> Reading</label><br>
+    <p>Terms and conditions:</p>
+    <input type="checkbox" id="terms" name="terms" value="agree">
+    <label for="terms"> Accept terms and conditions</label><br>
 
     <!-- Dropdown List -->
     <label for="country">Country:</label><br>
@@ -262,6 +260,7 @@ Deze kan je op de volgende manier uitlezen:
 ```typescript
 app.post("/submit_form", (req, res) => {
     let name : string = req.body.name;   
+    let terms : boolean = req.body.terms === "agree";
     let email : string = req.body.email;
     let password : string = req.body.password;
     let age : number = parseInt(req.body.age);
