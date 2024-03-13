@@ -251,7 +251,7 @@ Hier onder een formulier met een groot aantal mogelijke form elementen.
     <input type="week" id="week" name="week"><br>
     
 
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
 </form>
 ```
 
