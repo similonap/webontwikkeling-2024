@@ -101,6 +101,8 @@
   * [Newspaper Route](exercises/express/newspaper-route/README.md)
   * [Newspaper Search](exercises/express/newspaper-search/README.md)
   * [Steam](exercises/express/steam/README.md)
+* [10. Post Request](labos/labo10/README.md)
+  * [Contact Form](exercises/express/contact-form/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
