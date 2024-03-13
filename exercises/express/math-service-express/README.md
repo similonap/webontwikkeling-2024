@@ -8,10 +8,12 @@ Maak een nieuwe express applicatie in een index.ts bestand. We gaan een web appl
 
 Zorg voor 1 GET-route die urls in de volgende vorm kan afhandelen:
 
+```
 http://localhost:3000/add?a=3&b=5
 http://localhost:3000/min?a=3&b=5
 http://localhost:3000/mult?a=3&b=5
 http://localhost:3000/div?a=3&b=5
+```
 
 Je moet dus query parameters (voor a en b) EN route parameters (voor de operatoren) gebruiken.
 
