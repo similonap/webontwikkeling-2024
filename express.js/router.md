@@ -37,7 +37,7 @@ We maken een bestand `posts.ts` aan in de `routers` map en definiëren daar de r
 export default function postRouter(posts: Post[]) {
     const router = express.Router();
 
-r   outer.get("/", (req, res) => {
+    router.get("/", (req, res) => {
         res.json(posts);
     });
 
