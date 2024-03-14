@@ -71,4 +71,10 @@ import postRouter from "./routers/posts";
 app.use("/posts", postRouter());
 ```
 
-Alle routes die je definieert in de `posts` router, zullen dan beginnen met `/posts`. 
+Alle routes die je definieert in de `posts` router, zullen dan beginnen met `/posts`. Dus in het geval van het voorbeeld hierboven:
+
+```
+GET /posts
+GET /posts/:id
+POST /posts
+```
