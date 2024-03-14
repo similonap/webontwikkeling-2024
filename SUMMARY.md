@@ -37,6 +37,7 @@
   * [GET Request](express.js/requests/get-request.md)
   * [POST Request](express.js/requests/post-request.md)
 * [Response](express.js/response.md)
+* [Router](express.js/router.md)
 * [MongoDB](express.js/mongodb/README.md)
   * [Express](express.js/mongodb/express.md)
 
