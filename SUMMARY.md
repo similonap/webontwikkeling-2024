@@ -36,8 +36,10 @@
 * [Request](express.js/requests/README.md)
   * [GET Request](express.js/requests/get-request.md)
   * [POST Request](express.js/requests/post-request.md)
+  * [Multi-part form data](express.js/requests/multi-part-form-data.md)
 * [Response](express.js/response.md)
 * [Router](express.js/router.md)
+* [Middleware](express.js/middleware.md)
 * [MongoDB](express.js/mongodb/README.md)
   * [Express](express.js/mongodb/express.md)
 
