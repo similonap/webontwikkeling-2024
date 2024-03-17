@@ -125,6 +125,22 @@ export function ejsUtility(req: Request, res: Response, next: NextFunction) {
 }
 ```
 
+en dan kan je deze middleware functie toevoegen aan de stack:
+
+```typescript
+import { ejsUtility } from "./middleware/ejsUtility";
+
+app.use(ejsUtility);
+```
+
+In dit voorbeeld voegen we een aantal utility functies toe aan de `res.locals` object. Deze functies zijn dan beschikbaar in alle views. Je kan dan bijvoorbeeld de `formatDate` functie gebruiken om een datum te formatteren. Je kan de `formatCurrency` functie gebruiken om een bedrag te formatteren als een valuta. Je kan de `random` functie gebruiken om een willekeurig getal te genereren tussen twee getallen.
+
+```
+<%= formatDate(new Date()) %>
+<%= formatCurrency(100) %>
+<%= random(100,500) %>
+```
+
 ### Error handling
 
 We hadden al gezien dat we 404 pagina's kunnen maken aan de hand van de volgende code:
@@ -266,3 +282,9 @@ import { maxRequest } from "./middleware/requestLimiter";
 
 app.use(maxRequest({ maxRequests: 10 }));
 ```
+
+### Middleware volgorde
+
+De volgorde van de middleware functies is belangrijk. De eerste middleware functie die wordt toegevoegd aan de stack zal als eerste worden uitgevoerd. De laatste middleware functie die wordt toegevoegd aan de stack zal als laatste worden uitgevoerd. 
+
+Als je bijvoorbeeld eerst de `loggingMiddleware` functie toevoegt aan de stack en dan de `verifyAuthToken` functie, dan zal de `loggingMiddleware` functie eerst worden uitgevoerd en dan de `verifyAuthToken` functie. Als je de volgorde omdraait, dan zal de `verifyAuthToken` functie eerst worden uitgevoerd en dan de `loggingMiddleware` functie. Dit wil zeggen dat als de `verifyAuthToken` functie een `Unauthorized` terugstuurt, dan zal de `loggingMiddleware` functie niet worden uitgevoerd.
