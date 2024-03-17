@@ -287,4 +287,13 @@ app.use(maxRequest({ maxRequests: 10 }));
 
 De volgorde van de middleware functies is belangrijk. De eerste middleware functie die wordt toegevoegd aan de stack zal als eerste worden uitgevoerd. De laatste middleware functie die wordt toegevoegd aan de stack zal als laatste worden uitgevoerd. 
 
-Als je bijvoorbeeld eerst de `loggingMiddleware` functie toevoegt aan de stack en dan de `verifyAuthToken` functie, dan zal de `loggingMiddleware` functie eerst worden uitgevoerd en dan de `verifyAuthToken` functie. Als je de volgorde omdraait, dan zal de `verifyAuthToken` functie eerst worden uitgevoerd en dan de `loggingMiddleware` functie. Dit wil zeggen dat als de `verifyAuthToken` functie een `Unauthorized` terugstuurt, dan zal de `loggingMiddleware` functie niet worden uitgevoerd.
+Doe je bv het volgende:
+
+```typescript
+app.use(requestLimiter({ maxRequests: 10 }));
+app.use(loggingMiddleware);
+```
+
+Dan zal er niet meer gelogd worden als er te veel requests zijn. De requestLimiter zal de request al afhandelen en de loggingMiddleware zal niet meer worden uitgevoerd.
+
+Als je het andersom doet dan zal de loggingMiddleware eerst worden uitgevoerd en dan pas de requestLimiter en zal er dus nog gelogd worden als er te veel requests zijn.
