@@ -29,7 +29,7 @@ De basisconfiguratie van `multer` ziet er als volgt uit:
 import multer from "multer";
 
 const upload = multer({
-    dest: "uploads/",
+    dest: "public/uploads",
 });
 ```
 
@@ -52,14 +52,15 @@ Om een bestand te kunnen uploaden, moeten we de `upload.single()` functie gebrui
 import express from "express";
 import ejs from "ejs";
 import multer from "multer";
+import path from "path";
 
 const app = express();
 
 app.set('view engine', 'ejs');
-app.use(express.static("uploads"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const upload = multer({
-    dest: "uploads",
+    dest: "public/uploads",
 });
 
 app.get("/", (req, res) => {
