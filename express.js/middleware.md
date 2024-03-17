@@ -75,3 +75,24 @@ app.get("/", (req, res) => {
 ```
 
 Hij zal hier dus eerst de security token controleren. Als de security token niet klopt, dan zal hij een 401 status code terugsturen met de tekst "Unauthorized". Als de security token wel klopt, dan zal hij de request doorsturen naar de volgende middleware functie in de stack. In dit geval is dat de route. Hij zal dus "Hello world" terugsturen. Alle andere routes zullen ook de security token controleren.
+
+### Middleware functies per route
+
+Je kan ook middleware functies toevoegen aan een specifieke route. Je kan dan ook een extra middleware functie toevoegen aan de route. Deze middleware functie zal dan eerst worden uitgevoerd voordat de route wordt uitgevoerd.
+
+```typescript
+const loggingMiddleware = (req: Request, res: Response, next: NextFunction) => {
+    console.log(`${req.method} ${req.path}`);
+    next();
+}
+
+app.get("/", loggingMiddleware, (req, res) => {
+    res.render("index");
+});
+
+app.get("/admin", (req, res) => {
+    res.render("admin");
+});
+```
+
+In het bovenstaande voorbeeld zal de `loggingMiddleware` functie alleen worden uitgevoerd voor de "/" route. De "/admin" route zal de `loggingMiddleware` functie niet uitvoeren.
