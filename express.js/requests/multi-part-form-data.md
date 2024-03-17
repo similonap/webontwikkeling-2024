@@ -148,4 +148,4 @@ De types van de `req.files` variabele zijn niet zo duidelijk. We kunnen de types
 
 ## Meer informatie
 
-Voor meer informatie over `multer`, kan je terecht op de volgende pagina: [http://expressjs.com/en/resources/middleware/multer.html](http://expressjs.com/en/resources/middleware/multer.html)
+- Voor meer informatie over `multer`, kan je terecht op de volgende pagina: [http://expressjs.com/en/resources/middleware/multer.html](http://expressjs.com/en/resources/middleware/multer.html)
