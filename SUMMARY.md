@@ -110,6 +110,7 @@
   * [Contact Form](exercises/express/contact-form/README.md)
 * [11. Router en Middleware](labos/labo11/README.md)
   * [Router Combi](exercises/express/router-combi/README.md)
+  * [Rate Limiter](exercises/express/rate-limiter-middleware/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
