@@ -109,7 +109,7 @@ app.use(verifyAuthToken);
 Een voorbeeld van een middleware functie die utility functies toevoegd aan de `res` object is de volgende:
 
 ```typescript
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from "express";
 
 export function ejsUtility(req: Request, res: Response, next: NextFunction) {
     res.locals.formatDate = (date: Date) => {
@@ -143,7 +143,7 @@ In dit voorbeeld voegen we een aantal utility functies toe aan de `res.locals` o
 
 ### Error handling
 
-We hadden al gezien dat we 404 pagina's kunnen maken aan de hand van de volgende code:
+We hadden al gezien dat we 404 pagina"s kunnen maken aan de hand van de volgende code:
 
 ```typescript
 app.use((req, res, next) => {
@@ -227,7 +227,7 @@ export const errorHandler = (options: ErrorHandlerOptions) => {
         res.status(options.statusCode).render("error",
             {
                 message: err.message,
-                message: err.stack
+                stack: err.stack
             }
     });
 }
@@ -250,7 +250,7 @@ Een voorbeeld van een configureerbare middleware functie is een request limiter.
 We zullen een nieuwe middleware functie maken die een parameter heeft. Deze parameter zal het aantal requests zijn dat een gebruiker mag doen. We zullen een bestand maken met de naam `requestLimiter.ts` in de `middleware` directory. Dit bestand zal er als volgt uitzien:
 
 ```typescript
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from "express";
 
 let requestLog : Record<string, number> = {};
 
