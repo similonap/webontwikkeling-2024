@@ -9,7 +9,7 @@ const app = express();
 
 app.set("port", 3000);
 
-app.get('/',(req,res)=>{
+app.get("/",(req,res)=>{
     let randomGetal = Math.random()*100;
     res.type("text/html");
     res.send(`Het random getal is ${randomGetal}`);
@@ -88,7 +88,7 @@ app.set("view engine", "ejs"); // EJS als view engine
 app.set("port", 3000);
 ```
 
-Net zoals we 'port' de waarde 3000 geven, zetten we de property 'view engine' op ejs.
+Net zoals we "port" de waarde 3000 geven, zetten we de property "view engine" op ejs.
 
 ## Ejs render
 
@@ -113,21 +113,21 @@ Nu passen we onze applicatie aan om de index.ejs te tonen (renderen: omzetten va
 import express from "express";
 const app = express();
 
-app.set('view engine', 'ejs'); // EJS als view engine
-app.set('port', 3000);
+app.set("view engine", "ejs"); // EJS als view engine
+app.set("port", 3000);
 
-app.get('/',(req,res)=>{
-  res.render('index');
+app.get("/",(req,res)=>{
+  res.render("index");
 })
 
-app.listen(app.get('port'), ()=>console.log( '[server] http://localhost:' + app.get('port')));
+app.listen(app.get("port"), ()=>console.log( "[server] http://localhost:" + app.get("port")));
 ```
 
 Merk op hoe eenvoudig onze route naar / is geworden:
 
 ```typescript
-app.get('/',(req,res)=>{
-    res.render('index');
+app.get("/",(req,res)=>{
+    res.render("index");
 })
 ```
 
@@ -140,9 +140,9 @@ Je kan nu verschillende EJS files toevoegen. Render ze via verschillende routes 
 Templates helpen ons de HTML dynamisch te maken. Laten we ons voorbeeld aanpassen zodat we het willekeurig getal weer zien verschijnen. Eerst passen we onze TypeScript aan.
 
 ```typescript
-app.get('/',(req,res)=>{
+app.get("/",(req,res)=>{
     let randomGetal : number = Math.random()*100;
-    res.render('index', {aRandomNumber: randomGetal});
+    res.render("index", {aRandomNumber: randomGetal});
 })
 ```
 
@@ -153,10 +153,10 @@ In dit voorbeeld heeft de tweede parameter maar 1 property: `aRandomNumber`. We 
 We kunnen ook meerdere properties meegeven:
 
 ```typescript
-app.get('/',(req,res)=>{
+app.get("/",(req,res)=>{
     let randomGetal : number = Math.random()*100;
     let randomGetal2 : number = randomGetal * 2;
-    res.render('index', 
+    res.render("index", 
         {    
             aRandomNumber: randomGetal,
             name: "Sven",
@@ -217,7 +217,7 @@ EJS laat ons toe JavaScript te gebruiken om meer controle te hebben over de dyna
 <h1>Hi</h1>
 <p>
     My name is <%= firstName %> <%= lastName %> 
-    and I'm <%= age %> years old.
+    and I"m <%= age %> years old.
 </p>
 ```
 
@@ -264,9 +264,9 @@ Wil je de waarde van `i` tonen, dan moet je `<%= i %>` gebruiken.
 Laten we een voorbeeld bekijken waar we een lijst van mensen tonen. We hebben een array van mensen en we willen de naam van elke persoon tonen.
 
 ```typescript
-app.get('/',(req,res)=>{
+app.get("/",(req,res)=>{
     let people : string[] = ["Sven", "Andie", "Sam", "Barbara"];
-    res.render('index', { people: people });
+    res.render("index", { people: people });
 });
 ```
 
@@ -292,14 +292,14 @@ interface Person {
     age: number;
 }
 
-app.get('/',(req,res)=>{
+app.get("/",(req,res)=>{
     let persons : Person[] = [
         {name: "Sven", city: "Antwerpen", age: 40},
         {name: "Andie", city: "Gent", age: 30},
         {name: "Sam", city: "Brussel", age: 25},
         {name: "Barbara", city: "Leuven", age: 35}
     ];
-    res.render('index', { persons: persons });
+    res.render("index", { persons: persons });
 });
 ```
 
@@ -415,10 +415,10 @@ En een footer.ejs file:
 nu kunnen we in elke EJS file de header en footer includen:
 
 ```markup
-<%- include('partials/header') %>
+<%- include("partials/header") %>
     <h1>Home</h1>
     <p>Welcome to my website</p>
-<%- include('partials/footer') %>
+<%- include("partials/footer") %>
 ```
 
 Alle variabelen die doorgegeven worden met de render functie zijn ook beschikbaar in de included files.

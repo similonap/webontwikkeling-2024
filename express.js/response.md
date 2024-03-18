@@ -11,8 +11,8 @@ Een redirect is een HTTP response die instructies bevat voor de client om een ni
 Om een redirect te sturen, gebruik je de method `res.redirect`:
 
 ```typescript
-app.get('/redirect',(req,res)=>{
-    res.redirect('https://google.com');
+app.get("/redirect",(req,res)=>{
+    res.redirect("https://google.com");
 })
 ```
 
@@ -21,16 +21,16 @@ app.get('/redirect',(req,res)=>{
 De status code van een HTTP response geeft aan of de request geslaagd is of niet. De status code wordt automatisch ingesteld op 200 (OK) wanneer je een response verstuurd. Je kan de status code wijzigen met de method `res.status`:
 
 ```typescript
-app.get('/status',(req,res)=>{
+app.get("/status",(req,res)=>{
     res.status(404);
-    res.send('Not found');
+    res.send("Not found");
 })
 ```
 
 Wil je direct een response sturen met een bepaalde status code, gebruik dan de method `res.sendStatus`:
 
 ```typescript
-app.get('/status',(req,res)=>{
+app.get("/status",(req,res)=>{
     res.sendStatus(404);
 })
 ```
@@ -55,32 +55,32 @@ Het is belangrijk om de juiste status code te gebruiken zodat de client weet of 
 Net zoals bij een request, kan je ook bij een response headers instellen. Dit kan je doen met de method `res.set`:
 
 ```typescript
-app.get('/headers',(req,res) => { 
-    res.set('Content-Type','text/html');
-    res.send('<h1>Hello World</h1>');
+app.get("/headers",(req,res) => { 
+    res.set("Content-Type","text/html");
+    res.send("<h1>Hello World</h1>");
 })
 ```
 
 Als je een response verstuurd, kan je geen headers meer wijzigen. Als je dit toch probeert, krijg je de volgende foutmelding:
 
-`Error: Can't set headers after they are sent.`
+`Error: Can"t set headers after they are sent.`
 
 Bijvoorbeeld:
 
 ```typescript
-app.get('/headers', (req, res) => {
-    res.send('<h1>Hello World</h1>');
-    res.set('Content-Type', 'text/html');
-    // Error: Can't set headers after they are sent.
+app.get("/headers", (req, res) => {
+    res.send("<h1>Hello World</h1>");
+    res.set("Content-Type", "text/html");
+    // Error: Can"t set headers after they are sent.
 });
 ```
 
 Dit komt omdat de headers al verstuurd worden door de send functie. Je kan dit oplossen door de headers te configureren voor je de response verstuurd:
 
 ```typescript
-app.get('/headers',(req,res)=>{
-    res.set('Content-Type','text/html');
-    res.send('<h1>Hello World</h1>');
+app.get("/headers",(req,res)=>{
+    res.set("Content-Type","text/html");
+    res.send("<h1>Hello World</h1>");
 })
 ```
 
@@ -89,9 +89,9 @@ app.get('/headers',(req,res)=>{
 De response type wordt automatisch ingesteld op `text/html` wanneer je een response verstuurd. Je kan de response type wijzigen met de method `res.type`:
 
 ```typescript
-app.get('/type',(req,res)=>{
-    res.type('text/plain');
-    res.send('Hello World');
+app.get("/type",(req,res)=>{
+    res.type("text/plain");
+    res.send("Hello World");
 })
 ```
 

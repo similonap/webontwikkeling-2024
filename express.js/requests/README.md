@@ -21,7 +21,7 @@ Zo kan je bijvoorbeeld aan de hand van de header `User-Agent` de browser van de 
 Headers worden meegestuurd in de request. Je kan ze lezen via het Request object:
 
 ```typescript
-app.get('/headers',(req,res)=>{
+app.get("/headers",(req,res)=>{
     let headers = req.headers;
     res.json(headers);
 })
@@ -30,9 +30,9 @@ app.get('/headers',(req,res)=>{
 Wil je een specifieke header lezen, gebruik dan de property `req.headers`:
 
 ```typescript
-app.get('/headers',(req,res)=>{
-    let userAgent = req.headers['user-agent'];
-    res.type('text/html')
+app.get("/headers",(req,res)=>{
+    let userAgent = req.headers["user-agent"];
+    res.type("text/html")
     res.send(`Your browser is ${userAgent}`);
 })
 ```

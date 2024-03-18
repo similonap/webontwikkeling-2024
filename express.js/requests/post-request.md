@@ -14,7 +14,7 @@ Opgelet: Het is niet zo dat `POST` requests veilig zijn. De inhoud van een `POST
 
 Over het algemeen worden `POST` requests gebruikt om formulieren te versturen. Een formulier is een manier om data te versturen naar een server. Een formulier bestaat uit een aantal velden die ingevuld kunnen worden. Deze velden worden verstuurd naar de server wanneer de gebruiker op de knop "Verzenden" klikt. De data wordt verstuurd als een `POST` request.
 
-Zo'n formulier kan er als volgt uit zien:
+Zo"n formulier kan er als volgt uit zien:
 
 ```html
 <form action="/register" method="post">
@@ -88,7 +88,7 @@ app.post("/register", (req, res) => {
 Willen we de inhoud van de body van het `POST` request lezen dan moeten we nog een kleine aanpassing maken aan onze applicatie. Bovenaan onze applicatie (bij de andere `app.use` statements) voegen we de volgende regels toe:
 
 ```typescript
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended:true}))
 ```
 

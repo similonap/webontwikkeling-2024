@@ -6,7 +6,7 @@ Express is een populair Web Application Framework gebaseerd op Node.js waarmee w
 
 Aan de hand van Express kunnen we onze applicaties als een full TypeScript (of JavaScript) stack schrijven, m.a.w. onze code op de backend en de code in de client is allemaal TypeScript.
 
-Dit type frameworks laat ons ook toe de client pagina's dynamisch te genereren. Dit wil zeggen dat de finale HTML/CSS/TS pagina niet bestaat tot een gebruiker de server raadpleegt. Express zal deze pagina aanmaken met alle nodige data (bv. data uit de database).
+Dit type frameworks laat ons ook toe de client pagina"s dynamisch te genereren. Dit wil zeggen dat de finale HTML/CSS/TS pagina niet bestaat tot een gebruiker de server raadpleegt. Express zal deze pagina aanmaken met alle nodige data (bv. data uit de database).
 
 Fictief voorbeeld: De gebruiker gaat naar http://webontwikkeling.ap/. Express herkent dat de gebruiker de homepagina wil (omdat er na de laatste slash niets volgt). De ontwikkelaar heeft gezorgd dat Express hier een mooie hoofdpagina toont met de laatste 3 nieuwtjes (die uit een database komen) over Webontwikkeling. Onderdelen van deze pagina bestonden (bv. de CSS, wat HTML en een stukje client script) maar Express vult de ontbrekende data in en stuurt mooie volledige HTML/CSS/TS naar de client.
 
@@ -66,8 +66,8 @@ app.set("port", 3000);
 Laten we nu eerst de laatste lijnen bekijken:
 
 ```typescript
-app.listen(app.get('port'), 
-    ()=>console.log( '[server] http://localhost:' + app.get('port')));
+app.listen(app.get("port"), 
+    ()=>console.log( "[server] http://localhost:" + app.get("port")));
 ```
 
 `app.listen` zorgt dat onze web applicatie start met luisteren op de meegegeven poort. Let op, we gebruiken in de eerste parameter app.get om de property die we daarnet een waarde hadden gegeven op te roepen. De tweede parameter is een callback die wordt uitgevoerd wanneer het luisteren succesvol is opgestart. Hier printen we gewoon de url en port uit op de console ter info.
@@ -79,9 +79,9 @@ Web applicaties en websites bevatten meestal meer dan 1 pagina. Tot nu toe zie j
 Express laat ons toe zelf te bepalen welke data wordt teruggestuurd aan de hand van de URL. In ons voorbeeld zal `localhost:3000/` de tekst "Hello World" tonen:
 
 ```typescript
-app.get('/',(req,res)=>{
-    res.type('text/html');
-    res.send('Hello <strong>World</strong>')
+app.get("/",(req,res)=>{
+    res.type("text/html");
+    res.send("Hello <strong>World</strong>")
 })
 ```
 
@@ -90,7 +90,7 @@ Express werkt met routes. Een route bepaalt welk path welke data terugstuurt. Je
 * het pad
 * een functie die de data terugstuurt naar de client
 
-Het pad hier is '/'. Dit komt overeen met `localhost:3000/`, omdat het relatief is ten opzichte van het adres van de server. Vervang je dit door bv '/helloworld', dan zal je naar `localhost:3000/helloworld` moeten gaan. localhost:3000 zal niet meer werken.
+Het pad hier is "/". Dit komt overeen met `localhost:3000/`, omdat het relatief is ten opzichte van het adres van de server. Vervang je dit door bv "/helloworld", dan zal je naar `localhost:3000/helloworld` moeten gaan. localhost:3000 zal niet meer werken.
 
 De functie als tweede parameter heeft zelf 2 parameters:
 
@@ -170,34 +170,34 @@ interface Person {
 
 const data : Person[] = [
     {   
-        name: 'george',
+        name: "george",
         age: 50
     },
     {   
-        name: 'jane',
+        name: "jane",
         age: 32
     },
     {   
-        name: 'john',
+        name: "john",
         age: 42
     },
 ];
 
-app.get('/getData',(req,res)=>{
-    res.type('application/json');
+app.get("/getData",(req,res)=>{
+    res.type("application/json");
     res.json(data);
 })
 
-app.listen(app.get('port'), ()=>console.log( '[server] http://localhost:' + app.get('port')));
+app.listen(app.get("port"), ()=>console.log( "[server] http://localhost:" + app.get("port")));
 </code></pre>
 
 We hebben een variabele data aangemaakt die een array van objecten bevat. Om deze data te sturen gebruiken we een ander type: application/json.
 
 ```typescript
-res.type('application/json');
+res.type("application/json");
 ```
 
-Dit zorgt ervoor dat de client weet dat het om json gaat. De Content-type in de header zal dan ook 'application/json' zijn.
+Dit zorgt ervoor dat de client weet dat het om json gaat. De Content-type in de header zal dan ook "application/json" zijn.
 
 ```typescript
 res.json(data);
@@ -206,7 +206,7 @@ res.json(data);
 Om de JSON data terug te sturen, gebruiken we res.json.
 
 {% hint style="danger" %}
-Eigenlijk moeten we het type hier niet definieren. res.json zal zelf de content-type van de header aanpassen naar 'application/json'.
+Eigenlijk moeten we het type hier niet definieren. res.json zal zelf de content-type van de header aanpassen naar "application/json".
 {% endhint %}
 
 #### Async routes
@@ -214,10 +214,10 @@ Eigenlijk moeten we het type hier niet definieren. res.json zal zelf de content-
 We kunnen ook async routes maken. Dit is handig als we bv. data moeten ophalen uit een API.
 
 ```typescript
-app.get('/users',async (req,res) =>{
-    let response = await fetch('https://jsonplaceholder.typicode.com/users');
+app.get("/users",async (req,res) =>{
+    let response = await fetch("https://jsonplaceholder.typicode.com/users");
     let data = await response.json();
-    res.type('application/json');
+    res.type("application/json");
     res.json(data);
 });
 ```
@@ -229,14 +229,14 @@ Wil je niet afhankelijk zijn van de snelheid van een externe API, dan kan je ook
 ```typescript
 let data : Person[] = [];
 
-app.get('/getData',(req,res)=>{
-    res.type('application/json');
+app.get("/getData",(req,res)=>{
+    res.type("application/json");
     res.json(data);
 });
 
-app.listen(app.get('port'), async ()=>{
-    let response = await fetch('https://jsonplaceholder.typicode.com/users');
+app.listen(app.get("port"), async ()=>{
+    let response = await fetch("https://jsonplaceholder.typicode.com/users");
     data = await response.json();
-    console.log( '[server] http://localhost:' + app.get('port'));
+    console.log( "[server] http://localhost:" + app.get("port"));
 });
 ```

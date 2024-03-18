@@ -5,7 +5,7 @@ Wanneer een gebruiker naar het domein van onze website surft, stuurt zijn browse
 Die kunnen we bijvoorbeeld zo afhandelen:
 
 ```typescript
-app.get('/',(req,res)=>{
+app.get("/",(req,res)=>{
     res.type("text/html")
     res.send("hello");
 });
@@ -41,7 +41,7 @@ Veronderstel dat we een array met namen hebben. We willen een naam opzoeken door
 let people = ["Sven","Andie","George","Geoff"];
 
 app.get("/person",(req,res)=>{
-    res.type('text/html')
+    res.type("text/html")
     // TypeScript kan niet garanderen dat deze parameter een geldige waarde heeft gekregen
     // de if staat ons toe binnen dat block te veronderstellen dat string het type is
     if (typeof req.query.index === "string") {
@@ -170,12 +170,12 @@ Als we de sorteerrichting willen bijhouden in de view, kunnen we dit doen door d
 ```html
 <form action="/" method="get">
     <select name="sortField">
-        <option value="name" <%= sortField === 'name' ? 'selected' : '' %>>Name</option>
-        <option value="age" <%= sortField === 'age' ? 'selected' : '' %>>Age</option>
+        <option value="name" <%= sortField === "name" ? "selected" : "" %>>Name</option>
+        <option value="age" <%= sortField === "age" ? "selected" : "" %>>Age</option>
     </select>
     <select name="sortDirection">
-        <option value="asc" <%= sortDirection === 'asc' ? 'selected' : '' %>>Ascending</option>
-        <option value="desc" <%= sortDirection === 'desc' ? 'selected' : '' %>>Descending</option>
+        <option value="asc" <%= sortDirection === "asc" ? "selected" : "" %>>Ascending</option>
+        <option value="desc" <%= sortDirection === "desc" ? "selected" : "" %>>Descending</option>
     </select>
     <button type="submit">Sort</button>
 </form>
@@ -195,13 +195,13 @@ Bij veel velden kan het handig zijn om de opties voor de select elementen te gen
 
 ```typescript
 const sortFields = [
-    { value: 'name', text: 'Name', selected: sortField === 'name' ? 'selected' : '' },
-    { value: 'age', text: 'Age', selected: sortField === 'age' ? 'selected' : ''}
+    { value: "name", text: "Name", selected: sortField === "name" ? "selected" : "" },
+    { value: "age", text: "Age", selected: sortField === "age" ? "selected" : ""}
 ];
 
 const sortDirections = [
-    { value: 'asc', text: 'Asc', selected: sortDirection === 'asc' ? 'selected' : ''},
-    { value: 'desc', text: 'Desc', selected: sortDirection === 'desc' ? 'selected' : ''}
+    { value: "asc", text: "Asc", selected: sortDirection === "asc" ? "selected" : ""},
+    { value: "desc", text: "Desc", selected: sortDirection === "desc" ? "selected" : ""}
 ];
 ```
 
@@ -242,9 +242,9 @@ In plaats van query strings te gebruiken, kunnen we ook gestructureerde routes m
 
 ```typescript
 let people = ["Sven","Andie","George","Geoff"];
-app.get('/person/:index',(req,res)=>{
+app.get("/person/:index",(req,res)=>{
     let index = parseInt(req.params.index);
-    res.type('text/html')
+    res.type("text/html")
     res.send(people[index]);
 })
 ```
@@ -257,7 +257,7 @@ Je kan ook meerdere parameters meegeven:
 
 ```typescript
 let people = ["Sven","Andie","George","Geoff"];
-app.get('/person/:index/replace/:newname',(req,res)=>{
+app.get("/person/:index/replace/:newname",(req,res)=>{
     let index = parseInt(req.params.index);
     let oldName = people[index];
     people[index] = req.params.newname;

@@ -7,7 +7,7 @@ Wil je dit doen, dan moet je een folder aanmaken waarin je deze bestanden plaats
 Het enige wat we dan nog moeten doen is Express vertellen dat deze folder statische bestanden bevat. Dit doen we met de `use` methode.
 
 ```typescript
-app.use(express.static('public'));
+app.use(express.static("public"));
 ```
 
 Alle bestanden in de public folder kunnen nu worden opgevraagd. Als je een bestand `style.css` in de public folder plaatst, kan je dit bestand opvragen via `http://localhost:3000/style.css`.
