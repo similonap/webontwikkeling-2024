@@ -112,6 +112,8 @@
   * [Router Combi](exercises/express/router-combi/README.md)
   * [Utility Middleware](exercises/express/utility-middleware/README.md)
   * [Rate Limiter](exercises/express/rate-limiter-middleware/README.md)
+* [12. Herhaling](labos/labo12/README.md)
+  * [Twitter](exercises/express/twitter/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
