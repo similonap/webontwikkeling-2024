@@ -114,6 +114,7 @@
   * [Rate Limiter](exercises/express/rate-limiter-middleware/README.md)
 * [12. Herhaling](labos/labo12/README.md)
   * [Twitter](exercises/express/twitter/README.md)
+  * [Word Guess](exercises/express/word-guess/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
