@@ -9,3 +9,4 @@ enable = true
 
 [output.html]
 no-section-label = true
+additional-css = ["custom.css"]
