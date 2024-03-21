@@ -28,11 +28,13 @@
 
 /* Adjusting the before content for info and success */
 .info:before {
-    content: "ℹ️"; /* Info icon */
+    content: "ⓘ"; /* Info icon */
+    color: var(--info-border);
 }
 
 .success:before {
     content: "✔️"; /* Check mark for success */
+    color: var(--success-border);
 }
 
 /* Setting background colors for blockquote */
