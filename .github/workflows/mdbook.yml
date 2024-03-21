@@ -43,9 +43,9 @@ jobs:
       - name: Find and Replace hint blurbs with regex while maintaining types
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "\\{\\% hint style=['\"](?<type>info|success|warning|danger)['\"] \\%\\}"
+          find: "\\{\\% hint style=['\"](\\binfo\\b|\\bsuccess\\b|\\bwarning\\b|\\bdanger\\b)['\"] \\%\\}"
           replace: |
-            <div class="\\k<type>">
+            <div class="$1">
           regex: true
       - name: Find and Replace all blurb endings with regex
         uses: jacobtomlinson/gha-find-replace@v3
