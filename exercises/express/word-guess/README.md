@@ -54,3 +54,18 @@ getRandomWord(['hello', 'world', 'test', 'word']) // 'world'
 - [ ] Stuur de gebruiker terug naar de `/guess` pagina. (redirect)
 - [ ] Voeg een link toe aan de `guess.ejs` pagina die de gebruiker naar de `/restart` route stuurt. Toon deze enkel als het spel is afgelopen (bij success message).
 
+#### Possible Words API
+
+- [ ] Bij het opstarten van de web server moet de `WORDS` array gevuld worden met de woorden uit de API. Deze bevat een lijst van woorden die mogelijk geraden kunnen worden. Gebruik hiervoor een fetch op https://raw.githubusercontent.com/similonap/word-guess-api/main/words.json
+- [ ] Pas de code aan van de `guess` POST route zodat deze de `WORDS` array gebruikt om te controleren of het woord in deze lijst staat. Geef een foutmelding als het woord niet in de lijst staat. WIOHR is een voorbeeld van een woord dat niet in de lijst staat. KRUID is een voorbeeld van een woord dat wel in de lijst staat.
+
+![alt text](wordguess-2.gif)
+
+#### Possible Words Search
+
+- [ ] Pas de `/words` route aan zodat hij alleen de eerste 40 woorden van de WORDS array toont.
+- [ ] Voeg een query parameter `q` toe aan de `/words` route. Als deze aanwezig is toon je enkel de woorden die deze query parameter bevatten. (bv. /words?q=hello)
+- [ ] Sorteer de woorden alfabetisch. Als je de query parameter `direction` meegeeft kan je de sorteer richting bepalen (asc of desc). Het random sorteren mag je uiteraard weglaten.
+- [ ] Voorzie een form op de `words.ejs` pagina die de gebruiker toelaat om te zoeken naar woorden. (GET request)
+
+![alt text](words-2.gif)

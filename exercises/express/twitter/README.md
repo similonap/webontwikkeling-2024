@@ -38,15 +38,15 @@ Om de feed te laten werken, moet je de volgende stappen uitvoeren:
 Om een tweet te kunnen posten, moet je de volgende stappen uitvoeren:
 
 - [ ] Maak een post route aan waarmee je een tweet kan posten. Kijk naar het formulier in de template om te zien welke data je moet ontvangen.
-- [ ] Gebruik de `createTweet` functie om een tweet aan de feed toe te voegen. Deze functie is beschikbaar in de `db.ts` file.
+- [ ] Gebruik de `createTweet` functie om een tweet aan de feed toe te voegen. Deze functie is beschikbaar in de `data.ts` file.
 
 ### Deel 4: De gebruikersprofielen
 
 Om de gebruikersprofielen te laten werken, moet je de volgende stappen uitvoeren:
 
 - [ ] Pas de `app.get("/TheLichKing")` route aan dat je eender welke gebruikersnaam kan meegeven. Je kan dit doen aan de hand van een route parameter.
-- [ ] Gebruik de `getProfileByHandle` functie om de juiste gebruiker op te halen. Deze functie is beschikbaar in de `db.ts` file.
-- [ ] Haal de tweets van deze gebruiker op aan de hand van de `getTweetsByHandle` functie. Deze functie is beschikbaar in de `db.ts` file.
+- [ ] Gebruik de `getProfileByHandle` functie om de juiste gebruiker op te halen. Deze functie is beschikbaar in de `data.ts` file.
+- [ ] Haal de tweets van deze gebruiker op aan de hand van de `getTweetsByHandle` functie. Deze functie is beschikbaar in de `data.ts` file.
 - [ ] Geef de tweets en de gebruiker door aan de `profile.ejs` template zodat deze beschikbaar is in de template.
 - [ ] Zorg dat de tweets en de gebruikersprofiel informatie in de template worden weergegeven.
 
