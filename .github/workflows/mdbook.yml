@@ -40,34 +40,20 @@ jobs:
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
           cargo install --version ${MDBOOK_VERSION} mdbook
-      - name: Find and Replace tip blurb header
+      - name: Find and Replace hint blurbs with regex while maintaining types
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "{% hint style='tip' %}"
+          find: "\\{\\% hint style=['\"](?<type>info|success|warning|danger)['\"] \\%\\}"
           replace: |
-            <div class="warning">
-          regex: false
-      - name: Find and Replace danger blurb header
+            <div class="\\k<type>">
+          regex: true
+      - name: Find and Replace all blurb endings with regex
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "{% hint style='danger' %}"
-          replace: |
-            <div class="warning">
-          regex: false
-      - name: Find and Replace warning blurb header
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "{% hint style='warning' %}"
-          replace: |
-            <div class="warning">
-          regex: false
-      - name: Find and Replace all blurb endings
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "{% endhint %}"
+          find: "\\{\\% endhint \\%\\}"
           replace: |
             </div>
-          regex: false          
+          regex: true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
