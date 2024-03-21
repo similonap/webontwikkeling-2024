@@ -1,26 +1,53 @@
 :root {
-    --danger-border: #ff0000;
+    --danger-border: #ff0000; /* Red for danger */
+    --info-border: #17a2b8;   /* Blue for info */
+    --success-border: #28a745; /* Green for success */
+}
+
+/* Base styles for danger, info, and success */
+.danger, .info, .success {
+    margin: 20px;
+    padding: 0 20px;
 }
 
 .danger {
-    margin: 20px;
-    padding: 0 20px;
-    border-inline-start: 2px solid var(--warning-border);
+    border-inline-start: 2px solid var(--danger-border);
 }
 
-.danger:before {
+.danger:before, .info:before, .success:before {
     position: absolute;
     width: 3rem;
     height: 3rem;
     margin-inline-start: calc(-1.5rem - 21px);
-    content: "⚠";
+    content: "⚠"; /* Default content, can be changed per class */
     text-align: center;
     background-color: var(--bg);
-    color: var(--danger-border);
     font-weight: bold;
     font-size: 2rem;
 }
 
-blockquote .danger:before {
+/* Adjusting the before content for info and success */
+.info:before {
+    content: "ℹ️"; /* Info icon */
+}
+
+.success:before {
+    content: "✔️"; /* Check mark for success */
+}
+
+/* Setting background colors for blockquote */
+blockquote .danger:before, blockquote .info:before, blockquote .success:before {
     background-color: var(--quote-bg);
+}
+
+/* Info specific styles */
+.info {
+    border-inline-start: 2px solid var(--info-border);
+    color: var(--info-border);
+}
+
+/* Success specific styles */
+.success {
+    border-inline-start: 2px solid var(--success-border);
+    color: var(--success-border);
 }
