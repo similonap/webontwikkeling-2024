@@ -67,6 +67,12 @@ Om MongoDB te gebruiken in Visual Studio Code, kan je de MongoDB for VS Code ext
 
 Om deze extension te installeren, ga je naar de extensions tab in VS Code en zoek je naar "MongoDB for VS Code". Klik op install om de extension te installeren.
 
+![alt text](<../../.gitbook/assets/mongovscode.png>)
+
+{% hint style="info" %}
+Als je gebruik maakt van MongoDB Atlas, kan je de connectie string die je daar hebt aangemaakt, gebruiken in de MongoDB for VS Code extension. Dit laat je toe om de database te beheren vanuit VS Code. 
+{% endhint %}
+
 ## MongoDB driver installeren
 
 Om MongoDB te gebruiken in TypeScript, moeten we de MongoDB driver installeren. Dit is een package die ons toelaat te connecteren op een MongoDB server en database calls uit te voeren.
