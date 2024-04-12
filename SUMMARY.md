@@ -44,11 +44,14 @@
 ## MongoDB
 
 * [Wat is MongoDB?](mongodb/wat-is-mongodb.md)
-* [Basis Queries](mongodb/basis-queries.md)
+* [MongoDB driver](mongodb/mongodb-driver.md)
+* [Insert](mongodb/insert.md)
+* [Find](mongodb/find.md)
 * [Limit & Sort](mongodb/limit-and-sort.md)
 * [Query Operators](mongodb/query-operators.md)
 * [Update](mongodb/update.md)
 * [Delete](mongodb/delete.md)
+* [Gebruik in Express.js](mongodb/gebruik-in-express.js.md)
 
 ## Labos
 
