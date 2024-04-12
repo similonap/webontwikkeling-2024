@@ -43,6 +43,11 @@
 * [MongoDB](express.js/mongodb/README.md)
   * [Express](express.js/mongodb/express.md)
 
+## MongoDB
+
+* [Wat is MongoDB?](mongodb/wat-is-mongodb.md)
+* [Basis Queries](mongodb/basis-queries.md)
+
 ## Labos
 
 * [1. Tooling](labos/labo1/README.md)
@@ -112,7 +117,7 @@
   * [Router Combi](exercises/express/router-combi/README.md)
   * [Utility Middleware](exercises/express/utility-middleware/README.md)
   * [Rate Limiter](exercises/express/rate-limiter-middleware/README.md)
-* [12. Herhaling](labos/labo12/README.md)
+* [12. Herhaling](labos/12.-herhaling/README.md)
   * [Twitter](exercises/express/twitter/README.md)
   * [Word Guess](exercises/express/word-guess/README.md)
 * [Extra oefeningen](labos/extra/README.md)
