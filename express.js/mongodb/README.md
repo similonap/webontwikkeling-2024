@@ -61,6 +61,14 @@ Om MongoDB Atlas te gebruiken, kan je een account aanmaken op [https://www.mongo
 
 Let zeker op dat je voor deze cursus een gratis cluster aanmaakt. Dit is voldoende voor onze doeleinden.
 
+## Devcontainer
+
+Als je applicatie in productie draait moet je uiteraard gebruik maken van een mongodb server die online staat (zoaals MongoDB Atlas). Maar tijdens het ontwikkelen kan je gebruik maken van een mongodb server die lokaal draait. Dit kan je doen door een mongodb server te installeren op je eigen machine of door gebruik te maken van een devcontainer die een mongodb server bevat.
+
+Er is jammer genoeg geen standaard devcontainer die typescript en mongodb bevat. Maar dankzij de flexibiliteit van devcontainers kunnen we zelf een devcontainer maken die typescript en mongodb bevat. Dit is buiten de scope van deze cursus, dus we gaan gebruik maken van een voorgemaakte template.
+
+Als je wil connecteren met een lokale mongodb server in een devcontainer, kan je gebruik maken van volgende connectie string: `mongodb://localhost:27017`.
+
 ## MongoDB for VS Code
 
 Om MongoDB te gebruiken in Visual Studio Code, kan je de MongoDB for VS Code extension installeren. Deze extension laat je toe om MongoDB databases te beheren vanuit VS Code.
@@ -70,7 +78,7 @@ Om deze extension te installeren, ga je naar de extensions tab in VS Code en zoe
 ![alt text](<../../.gitbook/assets/mongovscode.png>)
 
 {% hint style="info" %}
-Als je gebruik maakt van MongoDB Atlas, kan je de connectie string die je daar hebt aangemaakt, gebruiken in de MongoDB for VS Code extension. Dit laat je toe om de database te beheren vanuit VS Code. 
+Als je gebruik maakt van MongoDB Atlas, kan je de connectie string die je daar hebt aangemaakt, gebruiken in de MongoDB for VS Code extension. Dit laat je toe om de database te beheren vanuit VS Code. Bij een lokale MongoDB server kan je de connectie string `mongodb://localhost:27017` gebruiken.
 {% endhint %}
 
 ## MongoDB driver installeren
@@ -91,7 +99,7 @@ import { MongoClient } from "mongodb";
 const uri = "mongodb+srv://<username>:<password>@<your-cluster-url>/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
-async function doSomeDBCalls() {
+async function main() {
     try {
         // Connect to the MongoDB cluster
         await client.connect();
@@ -114,21 +122,6 @@ Vervolgens maken we een async functie aan die de connectie maakt met de MongoDB 
 
 In de try block maken we de connectie met de MongoDB server. In de catch block vangen we eventuele errors op. In de finally block sluiten we de connectie met de MongoDB server. Dit is belangrijk om te doen, anders blijft de connectie openstaan en kan dit problemen veroorzaken
 
-## Admin functies
-
-### Oplijsten van databases
-
-Het is mogelijk aan de hand van de `admin()` functie op de client een lijst van databases op te vragen:
-
-```typescript
-const databasesList = await client.db().admin().listDatabases();
-
-console.log("Databases:");
-for (let database of databasesList.databases) {
-  console.log(` - ${database.name}`);
-}
-```
-
 ## CRUD
 
 CRUD staat voor create, read, update, delete. Met deze operaties kunnen we objecten toevoegen, aanpassen, ophalen en verwijderen.
@@ -137,61 +130,80 @@ Om een bepaalde collectie in een bepaalde database op te roepen, gebruiken we vo
 
 `client.db(<naam van database>).collection(<naam van collectie>).<functie>`
 
-**Create**
+### Insert document (Create)
 
-Voor het toevoegen van 1 element gebruiken we de functie insertOne. Door een object mee te geven als parameter wordt dit object toegevoegd aan de database:
+Voor het toevoegen van 1 element gebruiken we de functie `insertOne`. Door een object mee te geven als parameter wordt dit object toegevoegd aan de database:
 
 ```typescript
 import { MongoClient, ObjectId } from "mongodb";
+
+const uri = "mongodb+srv://<username>:<password>@<your-cluster-url>/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri);
 
 interface Pokemon {
     _id?: ObjectId,
     name: string,
     age: number
 }
-let pikachu: Pokemon = {name:"pikachu", age:12};
-const result = await client.db("Les").collection("pokemon").insertOne(pikachu);
-console.log(`New listing created with the following id: ${result.insertedId}`);
+
+async function main() {
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+ 
+        let pikachu: Pokemon = { name:"pikachu", age:12 };
+        const result = await client.db("Les").collection("pokemon").insertOne(pikachu);
+        console.log(`New document created with the following id: ${result.insertedId}`);
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+main();
 ```
 
 {% hint style="info" %}
 Let op: elk object krijgt automatisch een \_id wanneer die wordt toegevoegd aan de database. MongoDB kiest hier zelf een uniek id. Om later deze property te kunnen aanspreken, hebben we dit veld voorzien in de interface van Pokemon. We maken die echter optioneel zodat we die zelf geen waarde geven.
 {% endhint %}
 
-Wanneer we verschillende elementen willen toevoegen, gebruiken we insertMany. Deze functie verwacht een array van objecten:
+Wanneer we verschillende elementen willen toevoegen, gebruiken we `insertMany`. Stel dat we een array van Pokemon objecten hebben:
 
 ```typescript
- import { MongoClient, ObjectId } from "mongodb";
+const pokemon: Pokemon[] = [
+  {name: "pichu", age:7},
+  {name: "flareon",age:3}
+];
+```
 
- interface Pokemon {
-    _id?: ObjectId,
-    name: string,
-    age: number
-}
- const pokemon: Pokemon[] = [
-            {name: "pichu", age:7},
-            {name: "flareon",age:3}
-        ];
-let result = await client.db("Les").collection("pokemon").insertMany(pokemon);
-console.log(`${result.insertedCount} new listing(s) created with the following id(s):`);
+dan kunnen we deze allemaal tegelijk toevoegen:
+
+```typescript
+const result = await client.db("Les").collection("pokemon").insertMany(pokemon);
+console.log(`${result.insertedCount} new documents(s) created with the following id(s):`);
 console.log(result.insertedIds);
 ```
 
-MongoDB laat toe verschillende types in 1 collectie toe te voegen:
+MongoDB laat toe verschillende types in 1 collectie toe te voegen. Stel dat we een array van objecten hebben met verschillende properties:
 
 ```typescript
 const pokemon: any[] = [
-            {name: "pichu", age:7},
-            {trainer: "ash"}
-        ];
+    {name: "pichu", age:7},
+    {trainer: "ash"}
+];
+```
+
+dan kunnen we deze toevoegen in 1 collectie:
+
+```typescript
 let result = await client.db("Les").collection("pokemon").insertMany(pokemon);
-console.log(`${result.insertedCount} new listing(s) created with the following id(s):`);
+console.log(`${result.insertedCount} new documents(s) created with the following id(s):`);
 console.log(result.insertedIds);
 ```
 
-Alhoewel dit mogelijk is, is dit niet altijd een goed idee.
+Alhoewel dit mogelijk is, is dit niet altijd een goed idee. Het is beter om een duidelijke structuur te hebben in je collecties. Dit maakt het makkelijker om queries uit te voeren. Maar het is wel een van de voordelen van NoSQL databases.
 
-**Read**
+### Find document (Read)
 
 Net zoals we een select kunnen doen op een relationele database, gebruiken we find and findOne om onze objecten terug op te roepen.
 
@@ -211,10 +223,6 @@ console.log(result);
 
 Pokemon objecten hebben de property name. Hierboven zoeken we dus alle Pokemon met "name" gelijk aan "eevee".
 
-{% hint style="info" %}
-Je kan ook reguliere expressies gebruiken indien je de relationele query `WHERE ... LIKE %...%` wil nabootsen.
-{% endhint %}
-
 Wanneer we meerdere objecten willen ophalen, gebruiken we find:
 
 ```typescript
@@ -227,89 +235,67 @@ console.log(result);
 Let op: find geeft niet direct een resultaat terug, maar een cursor. Je kan dit cursor object gebruiken om de resultaten op te halen, door bv. toArray() te gebruiken (deze geeft een promise terug!).
 {% endhint %}
 
-**Limit/Sort**
-
-Net zoals in relationele databases kunnen we ook gebruik maken van de sort en limit functies:
+Als we dit allemaal bij elkaar zetten, krijgen we volgende code:
 
 ```typescript
-let cursor =  client.db("Les").collection("pokemon").find<Pokemon>({}).sort({age:-1}).limit(3);
+import { MongoClient, ObjectId } from "mongodb";
+
+const uri = "mongodb+srv://<username>:<password>@<your-cluster-url>/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri);
+
+interface Pokemon {
+    _id?: ObjectId,
+    name: string,
+    age: number
+}
+
+async function main() {
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+ 
+        let pikachu: Pokemon = { name:"pikachu", age:12 };
+        const result = await client.db("Les").collection("pokemon").insertOne(pikachu);
+        console.log(`New document created with the following id: ${result.insertedId}`);
+
+        let cursor =  client.db("Les").collection("pokemon").find<Pokemon>({});
+        let pokemons = await cursor.toArray();
+        console.log(pokemons);
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
 ```
 
-In dit voorbeeld sorteren we op age (een negatief of positief getal bepaalt de richting van de sort op dit veld) en tonen we enkel de eerste 3 resultaten adhv limit(3).
-
-**Operators**
-
-We kunnen properties vergelijken aan de hand van exacte waarden, reguliere expressies, maar ook operators. Stel we willen alle pokemon met een leeftijd groter dan 3:
-
-```typescript
-cursor =  client.db("Les").collection("pokemon").find<Pokemon>({age:{$gt:3}});
-```
-
-Het object dat find meekrijgt bevat de property waarop we willen testen: age. Ipv een exact getal geven we dit nu de waarde van een object: {$gt:3}.
-
-Dit object bepaalt dat age groter ($gt) moet zijn dan 3.
-
-```typescript
-cursor =  client.db("Les").collection("pokemon").find<Pokemon>({age:{$gt:3,$lt:7}});
-```
-
-Hierboven zeggen we dat age nu ook nog kleiner moet zijn dan 7:
-
-$gt:3 komt overeen met groter dan 3\
-$lt:7 komt overeen met kleiner dan 7
-
-Door deze 2 properties in 1 object te plaatsen en mee te geven aan age, moeten de 2 waarden voldaan zijn.
-
-Voor meer operators kan je kijken op [https://docs.mongodb.com/manual/reference/operator/query/](https://docs.mongodb.com/manual/reference/operator/query/)
-
-Wat als je wilt dat maar 1 van de 2 waarden moeten voldoen? Dan gebruik je logische operators:
-
-```typescript
-cursor =  client.db("Les").collection("pokemon").find<Pokemon>({$or:[{age:{$gt:3}},{age:{$lt:7}}]});
-```
-
-De $or operator verwacht een array als waarde. Je schrijft dus {$or:\[ ... ]} als find parameter. De $or operator zegt dat 1 van de condities in deze array moeten voldoen. In het voorbeeld hierboven hebben we 2 condities geplaatst. age > 3 OF age < 7.
-
-Voor meer operators, kijk op [https://docs.mongodb.com/manual/reference/operator/query-logical/](https://docs.mongodb.com/manual/reference/operator/query-logical/)
-
-**Update**
+### Update document (Update)
 
 Het aanpassen van objecten doen we met updateOne en updateMany. Deze functies verwachten 2 parameters. De eerste parameter is identiek aan find: de query waar de objecten moeten aan voldoen. Geef je niets mee, dan wordt de update uitgevoerd op alle objecten in de collectie.
 
 De tweede parameter bepaalt wat moet aangepast worden in de objecten die matchen met de query. Dit doen we via de $set operator.
 
 ```typescript
-client.db("Les").collection("pokemon").updateOne({}, {$set:{age:2}}
-```
-
-In het voorbeeld hierboven worden alle leeftijden van alle objecten op 2 gezet.
-
-```typescript
 client.db("Les").collection("pokemon").updateOne({name:"eevee"}, {$set:{age:2}}
 ```
 
-Door een waarde aan de eerste parameter mee te geven, kunnen we bepalen welke objecten aangepast moeten worden. Hier passen we enkel "eevee" aan.
-
-Update kan ook gebruikt worden om duplicaten te vermijden wanneer we inserts doen. Stel we willen charmander updaten met een leeftijd van 2. Maar we weten niet of charmander al bestaat! We kunnen een find doen, indien die bestaat een update, indien die niet bestaat een insert doen. Dat is heel wat werk en kan makkelijker:
+De bovenstaande code past de leeftijd van eevee aan naar 2. 
 
 ```typescript
-client.db("Les").collection("pokemon").updateOne(
-    {name:"charmander"}, 
-    {$set:{name:"charmander",age:2}}, 
-    {upsert:true})
+client.db("Les").collection("pokemon").updateOne({}, {$set:{age:2}}
 ```
 
-Door gebruik te maken van upsert vragen we MongoDB om een update te doen indien het object bestaat, maar een insert te doen indien die niet bestaat.
+Geef je niets mee als eerste parameter, dan wordt de update uitgevoerd op alle objecten in de collectie. Maar omdat we gebruik maken van `updateOne`, wordt enkel het eerste object aangepast.
 
-UpdateMany laat ons dan toe de aanpassingen op verschillende objecten te doen. Let op, geef je als eerste parameter {} mee, dan verander je alle objecten!
+Willen we meer dan 1 object aanpassen, dan gebruiken we `updateMany`:
 
 ```typescript
-client.db("Les").collection("pokemon").updateMany({age:2}, {$set:{age:1}})
+client.db("Les").collection("pokemon").updateMany({}, {$set:{age:2}}
 ```
 
-De code hierboven verandert alle pokemon met leeftijd 2 naar leeftijd 1.
+De bovenstaande code past de leeftijd van alle objecten in de collectie aan naar 2.
 
-**Delete**
+### Delete document (Delete)
 
 Om objecten te verwijderen, gebruiken we deleteOne en deleteMany. Dit werkt zoals find maar verwijdert de matches die overeenkomen met de eerste parameter:
 
@@ -317,16 +303,11 @@ Om objecten te verwijderen, gebruiken we deleteOne en deleteMany. Dit werkt zoal
 client.db("Les").collection("pokemon").deleteOne({name:"pikachu"})
 ```
 
-De code hierboven verwijdert 1 pikachu.
-
-```typescript
-client.db("Les").collection("pokemon").deleteMany({age:{$gt:3}})
-```
-
-De code hierboven verwijdert alle pokemon met leeftijd groter dan 3.
+Als we alle objecten willen verwijderen die matchen met een bepaalde query, gebruiken we deleteMany:
 
 ```typescript
 await client.db("Les").collection("pokemon").deleteMany({});
 ```
 
 Let op: De code hierboven verwijdert de volledige inhoud van de collectie omdat je {} meegeeft!
+
