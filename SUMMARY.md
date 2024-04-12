@@ -125,6 +125,7 @@
 * [12. Herhaling](labos/12.-herhaling/README.md)
   * [Twitter](exercises/express/twitter/README.md)
   * [Word Guess](exercises/express/word-guess/README.md)
+* [13. Mongo Basics](labos/13.-mongo-basics.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
