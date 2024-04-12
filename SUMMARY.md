@@ -40,13 +40,15 @@
 * [Response](express.js/response.md)
 * [Router](express.js/router.md)
 * [Middleware](express.js/middleware.md)
-* [MongoDB](express.js/mongodb/README.md)
-  * [Express](express.js/mongodb/express.md)
 
 ## MongoDB
 
 * [Wat is MongoDB?](mongodb/wat-is-mongodb.md)
 * [Basis Queries](mongodb/basis-queries.md)
+* [Limit & Sort](mongodb/limit-and-sort.md)
+* [Query Operators](mongodb/query-operators.md)
+* [Update](mongodb/update.md)
+* [Delete](mongodb/delete.md)
 
 ## Labos
 
