@@ -122,15 +122,7 @@ Vervolgens maken we een async functie aan die de connectie maakt met de MongoDB 
 
 In de try block maken we de connectie met de MongoDB server. In de catch block vangen we eventuele errors op. In de finally block sluiten we de connectie met de MongoDB server. Dit is belangrijk om te doen, anders blijft de connectie openstaan en kan dit problemen veroorzaken
 
-## CRUD
-
-CRUD staat voor create, read, update, delete. Met deze operaties kunnen we objecten toevoegen, aanpassen, ophalen en verwijderen.
-
-Om een bepaalde collectie in een bepaalde database op te roepen, gebruiken we volgende syntax:
-
-`client.db(<naam van database>).collection(<naam van collectie>).<functie>`
-
-### Insert document (Create)
+## insertOne en insertMany
 
 Voor het toevoegen van 1 element gebruiken we de functie `insertOne`. Door een object mee te geven als parameter wordt dit object toegevoegd aan de database:
 
@@ -162,6 +154,8 @@ async function main() {
 }
 main();
 ```
+
+Aan de hand van de `db` en `collection` functies kunnen we de database en collectie selecteren waar we willen toevoegen. In dit geval voegen we een Pokemon object toe aan de collectie "pokemon".
 
 {% hint style="info" %}
 Let op: elk object krijgt automatisch een \_id wanneer die wordt toegevoegd aan de database. MongoDB kiest hier zelf een uniek id. Om later deze property te kunnen aanspreken, hebben we dit veld voorzien in de interface van Pokemon. We maken die echter optioneel zodat we die zelf geen waarde geven.
@@ -203,7 +197,7 @@ console.log(result.insertedIds);
 
 Alhoewel dit mogelijk is, is dit niet altijd een goed idee. Het is beter om een duidelijke structuur te hebben in je collecties. Dit maakt het makkelijker om queries uit te voeren. Maar het is wel een van de voordelen van NoSQL databases.
 
-### Find document (Read)
+## findOne en find
 
 Net zoals we een select kunnen doen op een relationele database, gebruiken we find and findOne om onze objecten terug op te roepen.
 
@@ -268,46 +262,3 @@ async function main() {
     }
 }
 ```
-
-### Update document (Update)
-
-Het aanpassen van objecten doen we met updateOne en updateMany. Deze functies verwachten 2 parameters. De eerste parameter is identiek aan find: de query waar de objecten moeten aan voldoen. Geef je niets mee, dan wordt de update uitgevoerd op alle objecten in de collectie.
-
-De tweede parameter bepaalt wat moet aangepast worden in de objecten die matchen met de query. Dit doen we via de $set operator.
-
-```typescript
-client.db("Les").collection("pokemon").updateOne({name:"eevee"}, {$set:{age:2}}
-```
-
-De bovenstaande code past de leeftijd van eevee aan naar 2. 
-
-```typescript
-client.db("Les").collection("pokemon").updateOne({}, {$set:{age:2}}
-```
-
-Geef je niets mee als eerste parameter, dan wordt de update uitgevoerd op alle objecten in de collectie. Maar omdat we gebruik maken van `updateOne`, wordt enkel het eerste object aangepast.
-
-Willen we meer dan 1 object aanpassen, dan gebruiken we `updateMany`:
-
-```typescript
-client.db("Les").collection("pokemon").updateMany({}, {$set:{age:2}}
-```
-
-De bovenstaande code past de leeftijd van alle objecten in de collectie aan naar 2.
-
-### Delete document (Delete)
-
-Om objecten te verwijderen, gebruiken we deleteOne en deleteMany. Dit werkt zoals find maar verwijdert de matches die overeenkomen met de eerste parameter:
-
-```typescript
-client.db("Les").collection("pokemon").deleteOne({name:"pikachu"})
-```
-
-Als we alle objecten willen verwijderen die matchen met een bepaalde query, gebruiken we deleteMany:
-
-```typescript
-await client.db("Les").collection("pokemon").deleteMany({});
-```
-
-Let op: De code hierboven verwijdert de volledige inhoud van de collectie omdat je {} meegeeft!
-
