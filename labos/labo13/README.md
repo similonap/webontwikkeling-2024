@@ -56,4 +56,4 @@ Deze zijn iets verschillend van elkaar. Let op dat je hier uiteraard je eigen us
 
 #### 5. Verbinding uitproberen
 
-Gebruik de connection string om via de mongodb extensie van vscode te verbinden met de mongodb database in cloud atlas.
+Gebruik de connection string om via de extensie in vscode te verbinden met deze mongodb database.
