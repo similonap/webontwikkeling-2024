@@ -126,6 +126,7 @@
   * [Twitter](exercises/express/twitter/README.md)
   * [Word Guess](exercises/express/word-guess/README.md)
 * [13. Mongo Basics](labos/labo13/README.md)
+  * [Guestbook](exercises/mongodb/guestbook/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
