@@ -127,6 +127,8 @@
   * [Word Guess](exercises/express/word-guess/README.md)
 * [13. Mongo Basics](labos/labo13/README.md)
   * [Guestbook](exercises/mongodb/guestbook/README.md)
+  * [MoviesDB](exercises/mongodb/movies-db/README.md)
+  * [Pokemon Team](exercises/mongodb/pokemon-team/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
