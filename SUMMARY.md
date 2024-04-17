@@ -139,3 +139,4 @@
 * [Voorbereiding](project/dev-container.md)
 * [Milestone 1 - Terminal App](project/node-client.md)
 * [Milestone 2 - Express](project/milestone-2-express.md)
+* [Milestone 3 - MongoDB](project/milestone-3-mongodb.md)
