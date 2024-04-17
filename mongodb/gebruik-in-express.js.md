@@ -208,7 +208,7 @@ Je Express.js applicatie (`index.ts`):
 ```typescript
 import express, { Express } from "express";
 import path from "path";
-import { connect, studentsCollection } from "./database";
+import { connect, getStudents } from "./database";
 
 const app : Express = express();
 
@@ -218,7 +218,7 @@ app.set('views', path.join(__dirname, "views"));
 app.set("port", process.env.PORT || 3000);
 
 app.get("/students", async (req, res) => {
-    let books = await studentsCollection.find().toArray();
+    let books = await getStudents();
     res.json(books);
 });
 
