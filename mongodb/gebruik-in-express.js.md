@@ -206,3 +206,24 @@ export async function connect() {
 Je Express.js applicatie (`index.ts`):
 
 ```typescript
+import express, { Express } from "express";
+import path from "path";
+import { connect, studentsCollection } from "./database";
+
+const app : Express = express();
+
+app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, "views"));
+
+app.set("port", process.env.PORT || 3000);
+
+app.get("/students", async (req, res) => {
+    let books = await studentsCollection.find().toArray();
+    res.json(books);
+});
+
+app.listen(app.get("port"), async() => {
+    await connect();
+    console.log("Server started on http://localhost:" + app.get('port'));
+});
+```
