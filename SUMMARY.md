@@ -131,7 +131,7 @@
   * [MoviesDB](exercises/mongodb/movies-db/README.md)
   * [Pokemon Team](exercises/mongodb/pokemon-team/README.md)
 * [14. Mongo Queries](labos/labo14/README.md)
-  * [Pet Shelter](exercises/mongodb/petshelter/README.md)
+  * [Pet Shelter](exercises/mongodb/pet-shelter/README.md)
   * [Games DB](exercises/mongodb/games-db/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
