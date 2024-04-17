@@ -51,6 +51,7 @@
 * [Query Operators](mongodb/query-operators.md)
 * [Update](mongodb/update.md)
 * [Delete](mongodb/delete.md)
+* [Text Search](mongodb/text-search.md)
 * [Gebruik in Express.js](mongodb/gebruik-in-express.js.md)
 
 ## Labos
