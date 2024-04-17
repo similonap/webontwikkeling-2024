@@ -227,3 +227,5 @@ app.listen(app.get("port"), async() => {
     console.log("Server started on http://localhost:" + app.get('port'));
 });
 ```
+
+Dit is een voorbeeld van hoe je de code kan structureren in je Express.js applicatie. Je kan deze structuur aanpassen naar eigen inzicht. Het belangrijkste is dat je de code goed organiseert en dat je de code herbruikbaar maakt. Zo kan je makkelijk nieuwe functionaliteit toevoegen en blijft je code overzichtelijk en leesbaar. 
