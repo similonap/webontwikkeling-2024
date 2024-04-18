@@ -53,7 +53,11 @@
 * [Delete](mongodb/delete.md)
 * [Text Search](mongodb/text-search.md)
 * [Gebruik in Express.js](mongodb/gebruik-in-express.js.md)
-* [Environment Variables](mongodb/environment-variables.md)
+
+## Security & Testing
+
+* [Environment Variables](security-and-testing/environment-variables.md)
+* [Page 1](security-and-testing/page-1.md)
 
 ## Labos
 
