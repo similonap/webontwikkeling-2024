@@ -215,7 +215,7 @@ const app : Express = express();
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, "views"));
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", 3000);
 
 app.get("/students", async (req, res) => {
     let books = await getStudents();
@@ -229,3 +229,21 @@ app.listen(app.get("port"), async() => {
 ```
 
 Dit is een voorbeeld van hoe je de code kan structureren in je Express.js applicatie. Je kan deze structuur aanpassen naar eigen inzicht. Het belangrijkste is dat je de code goed organiseert en dat je de code herbruikbaar maakt. Zo kan je makkelijk nieuwe functionaliteit toevoegen en blijft je code overzichtelijk en leesbaar. 
+
+## Environment variabelen
+
+Tot nu toe hebben we de connectie string voor de MongoDB database hard gecodeerd in onze applicatie. Dit is echter geen goede manier van werken. Het is beter om de connectie string op te slaan in een environment variabele. Zo kan je de connectie string makkelijk aanpassen zonder dat je de code moet aanpassen.
+
+Je kan meer over environment variabelen lezen in [dit hoofdstuk](../security-and-testing/environment-variables.md).
+
+Je maakt dan een `.env` bestand aan in de root van je project en plaatst daar de connectie string in.
+
+```
+MONGO_URI=mongodb://localhost:27017
+```
+
+Vervolgens kan je de connectie string ophalen in je code met `process.env.MONGO_URI`.
+
+```typescript
+export const client = new MongoClient(process.env.MONGO_URI);
+```
