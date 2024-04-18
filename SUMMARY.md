@@ -53,6 +53,7 @@
 * [Delete](mongodb/delete.md)
 * [Text Search](mongodb/text-search.md)
 * [Gebruik in Express.js](mongodb/gebruik-in-express.js.md)
+* [Environment Variables](mongodb/environment-variables.md)
 
 ## Labos
 
@@ -130,7 +131,7 @@
   * [Guestbook](exercises/mongodb/guestbook/README.md)
   * [MoviesDB](exercises/mongodb/movies-db/README.md)
   * [Pokemon Team](exercises/mongodb/pokemon-team/README.md)
-* [14. Mongo Queries](labos/labo14/README.md)
+* [14. Mongo Queries](labos/14.-mongo-queries/README.md)
   * [Pet Shelter](exercises/mongodb/pet-shelter/README.md)
   * [Games DB](exercises/mongodb/games-db/README.md)
 * [Extra oefeningen](labos/extra/README.md)
