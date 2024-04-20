@@ -2,6 +2,34 @@
 
 Tot nu toe hebben we enkel de MongoDB driver gebruikt in een Node.js applicatie. In dit hoofdstuk gaan we de MongoDB driver gebruiken in een Express.js applicatie. Over het algemeen is het gebruik van de MongoDB driver in een Express.js applicatie niet veel anders dan in een Node.js applicatie. We gaan echter wel enkele best practices bespreken.
 
+## Connect per request
+
+Een aanpak die je kan gebruiken is om een connectie met de database te maken bij elke request die binnenkomt. Dit zorgt ervoor dat je altijd een verse connectie hebt met de database. Dit is echter niet de meest efficiënte manier van werken. Het is beter om een connectie te maken bij het opstarten van de applicatie en deze connectie open te houden zolang de applicatie draait. Die manier zullen we verder in dit hoofdstuk bespreken.
+
+```typescript
+import { MongoClient } from "mongodb";
+
+const client = new MongoClient("mongodb://localhost:27017");
+
+const app = express();
+
+app.get("/students", async (req, res) => {
+    try {
+        await client.connect();
+        const db = client.db("example");
+        const students = await db.collection("student").find().toArray();
+        res.json(students);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal server error");
+    } finally {
+        await client.close();
+    }
+});
+```
+
+We gebruiken een `try catch finally` blok om ervoor te zorgen dat de connectie met de database altijd wordt afgesloten. Dit is belangrijk omdat je anders een connectie lek kan krijgen. Dit kan ervoor zorgen dat je applicatie vastloopt of dat je database overbelast raakt.
+
 ## Database module
 
 Het is een goed idee om een aparte module (in een apart bestand) aan te maken waarin je al je database gerelateerde code plaatst. Dit zorgt ervoor dat je code beter georganiseerd is en dat je je database code makkelijker kan hergebruiken. 
