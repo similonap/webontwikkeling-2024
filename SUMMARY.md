@@ -138,6 +138,8 @@
 * [14. Mongo Queries](labos/14.-mongo-queries/README.md)
   * [Pet Shelter](exercises/mongodb/pet-shelter/README.md)
   * [Games DB](exercises/mongodb/games-db/README.md)
+* [15. Mongo + Express](labos/15.-mongo-+-express/README.md)
+  * [Pet Shelter Express](exercises/mongodb/pet-shelter-express/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
