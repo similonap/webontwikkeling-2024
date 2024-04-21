@@ -141,6 +141,7 @@
 * [15. Mongo + Express](labos/15.-mongo-+-express/README.md)
   * [Pet Shelter Express](exercises/mongodb/pet-shelter-express/README.md)
   * [Guestbook Express](exercises/mongodb/guestbook-express/README.md)
+  * [Pokemon Team Express](exercises/mongodb/pokemon-team-express/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
