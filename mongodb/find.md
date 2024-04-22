@@ -20,6 +20,20 @@ console.log(result);
 
 Pokemon objecten hebben de property name. Hierboven zoeken we dus alle Pokemon met "name" gelijk aan "eevee".
 
+Je kan ook een ObjectId gebruiken om te zoeken naar een specifiek object:
+
+```typescript
+let result: Pokemon = await client.db("Les").collection("pokemon").findOne<Pokemon>({_id: new ObjectId("5f3b3b3b3b3b3b3b3b3b3b3b")});
+console.log(result);
+```
+Je moet hier uiteraard ook de ObjectId importeren:
+
+```typescript
+import { MongoClient, ObjectId } from "mongodb";
+```
+
+{% hint style="info" %}
+
 ## find
 
 Wanneer we meerdere objecten willen ophalen, gebruiken we find:

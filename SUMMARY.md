@@ -145,6 +145,7 @@
   * [Pokemon Team Express](exercises/mongodb/pokemon-team-express/README.md)
 * [16. CRUD](labos/16.-crud/README.md)
   * [Users CRUD](exercises/mongodb/users-crud-express/README.md)
+  * [Pokedex](exercises/mongodb/pokedex-mongo-express/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
