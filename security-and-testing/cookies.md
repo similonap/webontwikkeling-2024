@@ -1,6 +1,6 @@
 # Cookies
 
-## Stateless
+## Stateless HTTP
 
 HTTP is een stateless protocol. Dit betekent dat de server geen informatie bijhoudt over de client. Elke request is onafhankelijk van de vorige. Doe je een request naar de server, dan weet de server niet wie je bent of wat je vorige requests waren.
 
@@ -95,51 +95,127 @@ en kunnen we een link toevoegen in de `profile.ejs` file:
 <a href="/removeName">Remove name</a>
 ```
 
-### Onveilig login systeem
+### Beveiliging
 
-Cookies zijn niet veilig. De data die in cookies zit, is leesbaar voor iedereen. Als je bijvoorbeeld een login systeem maakt waarbij je de gebruikersnaam en het paswoord in een cookie opslaat, kan iedereen die cookie lezen en zo inloggen als iemand anders.
+Cookies zijn een krachtig instrument om informatie bij te houden over een gebruiker. Maar dit betekent ook dat je voorzichtig moet zijn met cookies. 
 
-We gaan als voorbeeld dit wel eens een keer doen. We kijken hier met een if statement of de gebruikersnaam admin overeenkomt met de string "admin" en of het paswoord "hunter2" is. Als dit het geval is, dan zetten we de gebruikersnaam in een cookie en sturen we de gebruiker door naar de profielpagina. Anders sturen we de gebruiker terug naar de "/" route.
+#### Cookies aanpassen in de browser
 
-```typescript
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.post("/", (req, res) => {
-    if (req.body.username === "admin" && req.body.password === "hunter2") {
-        res.cookie("username", req.body.username);
-        res.redirect("/profile");
-    } else {
-        res.redirect("/");
-    }
-});
-```
-
-de `index.ejs` file:
-
-```html
-<form action="/" method="post">
-  <input type="text" name="username" />
-  <input type="password" name="password" />
-  <button type="submit">Submit</button>
-</form>
-```
-
-In de profile route gaan we ook een if statement toevoegen. Als de gebruiker ingelogd is, dan tonen we de profielpagina. Anders sturen we de gebruiker terug naar de "/" route.
-
-```typescript
-app.get("/profile", (req, res) => {
-    if (req.cookies.username === "admin") {
-        res.render("profile", { username: req.cookies.username });
-    } else {
-        res.redirect("/");
-    }
-});
-```
-
-Dit lijkt op het eerste zicht een goede oplossing, maar dit is ver van waar. Als we nu even naar de cookies kijken in de development tools van de browser, zien we dat de gebruikersnaam gewoon uit te lezen valt en aan te passen is.
+Je kan cookies aanpassen in de browser. Dit kan handig zijn om te testen wat er gebeurt als een cookie niet meer bestaat of als een cookie een andere waarde heeft. Dit betekent ook dat je niet zomaar gevoelige informatie in een cookie mag opslaan of dat je niet zomaar mag vertrouwen op de data die in een cookie staat.
 
 ![Cookies in browser](../.gitbook/assets/cookie-browser.png)
 
-Dus doe dit niet! We zien later hoe we dit wel moeten aanpakken.
+
+#### Cookies instellen met een vervaldatum
+
+Je kan ook een cookie instellen met een vervaldatum. Dit doe je door een extra argument mee te geven aan de `cookie` methode:
+
+```typescript
+res.cookie("username", req.body.username, { expires: new Date(Date.now() + 900000) });
+```
+
+De vervaldatum is een `Date` object. In dit geval zal de cookie 15 minuten geldig zijn (900000 milliseconden) en daarna automatisch verwijderd worden.
+
+Je kan ook de `maxAge` property gebruiken om de vervaldatum in milliseconden mee te geven:
+
+```typescript
+res.cookie("username", req.body.username, { maxAge: 900000 });
+```
+
+#### HttpOnly
+
+Een heel belangrijke eigenschap van cookies is `HttpOnly`. Als je een cookie instelt met de `HttpOnly` eigenschap, dan kan de cookie niet aangepast worden door client-side JavaScript. Dit is belangrijk om te voorkomen dat een aan stuk kwaadaardige JavaScript code de cookie aanpast en zo bijvoorbeeld de sessie van een gebruiker overneemt.
+
+```typescript
+res.cookie("username", req.body.username, { httpOnly: true });
+```
+Als je een cookie instelt zonder httpOnly kan je met JavaScript de cookie aanpassen in de browser console:
+
+```
+document.cookie = "username=John Doe";
+```
+
+of hem ophalen:
+
+```
+console.log(document.cookie)
+```
+
+Je zal opmerken dat de cookie niet kan uitgelezen worden of aangepast worden als je de `httpOnly` property instelt.
+
+![httponly](../.gitbook/assets/httponly.gif)
+
+#### Secure
+
+Een andere belangrijke eigenschap van cookies is `Secure`. Als je een cookie instelt met de `Secure` eigenschap, dan kan de cookie enkel verstuurd worden over een beveiligde verbinding (HTTPS). 
+
+```typescript
+res.cookie("username", req.body.username, { secure: true });
+```
+
+#### SameSite
+
+De `SameSite` eigenschap van een cookie bepaalt of een cookie meegestuurd mag worden bij een cross-site request. Dit is een belangrijke eigenschap om CSRF-aanvallen te voorkomen. 
+
+```typescript
+res.cookie("username", req.body.username, { sameSite: "strict" });
+```
+
+De `SameSite` eigenschap kan drie waarden hebben: `strict`, `lax` of `none`.
+
+- `strict`: de cookie wordt enkel meegestuurd bij een same-site request. Dit betekent dat de cookie alleen wordt meegestuurd als de request naar dezelfde site is als waar de cookie is ingesteld.
+- `lax`: de cookie wordt meegestuurd bij een same-site request en bij een cross-site request als het via een normale link is. Dit betekent bijvoorbeeld dat de cookie niet wordt meegestuurd als het via een POST request is.
+- `none`: de cookie wordt altijd meegestuurd, ook bij cross-site requests. Dit kan enkel als de cookie ook de `Secure` eigenschap heeft.
+
+### Voorbeelden
+
+#### Winkel karretje
+
+Een veelgebruikte toepassing van cookies is het bijhouden van een winkelkarretje. Als een gebruiker producten toevoegt aan zijn winkelkarretje, dan kan je deze producten bijhouden in een cookie. Zo weet je welke producten de gebruiker wil kopen.
+
+```typescript
+let items: string[] = [
+    "Apple",
+    "Banana",
+    "Cherry",
+    "Orange",
+    "Raspberry",
+    "Strawberry",
+    "Watermelon",
+];
+
+app.get("/cart", (req, res) => {
+    let add : string = typeof req.query.add === "string" ? req.query.add : "";
+    let cart: string[] = req.cookies.cart ? JSON.parse(req.cookies.cart) : [];
+
+    if (add) {
+        cart.push(add);
+        res.cookie("cart", JSON.stringify(cart));
+    }
+
+    res.render("cart", {
+        items: items,
+        cart: cart
+    })
+});
+```
+
+de `cart.ejs` file:
+
+```html
+<h1>Shop</h1>
+<ul>
+<% for (let item of items) { %>
+    <li><a href="/cart?add=<%= item %>">Add <%= item %></a></li>
+<% } %>
+</ul>
+
+<h1>Cart</h1>
+<ul>
+<% for (let item of cart) { %>
+    <li><%= item %></li>
+<% } %>
+</ul>
+```
+
+Merk op dat we `JSON.stringify` en `JSON.parse` om een array van strings op te slaan in een cookie. Cookies kunnen enkel strings opslaan, dus we moeten de array omzetten naar een string.
