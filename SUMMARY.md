@@ -58,7 +58,7 @@
 ## Security & Testing
 
 * [Environment Variables](security-and-testing/environment-variables.md)
-* [Page 1](security-and-testing/page-1.md)
+* [Cookies](security-and-testing/cookies.md)
 
 ## Labos
 
