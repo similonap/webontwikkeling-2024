@@ -49,6 +49,15 @@ Als je een case-insensitive zoekopdracht wil uitvoeren, dan kan je de `i` vlag t
 const result = await collection.find({ title: /mongodb/i }).toArray();
 ```
 
+Dit geeft alle documenten terug waarvan het veld `title` het woord "MongoDB" bevat, ongeacht de case. 
+
+Wil je nu zoeken op een bepaalde variabelen, dan kan je de reguliere expressie dynamisch maken.
+
+```typescript
+const search : string = "MongoDB";
+const result : Book[] = await collection.find<Book>({ title: new RegExp(search, "i") }).toArray();
+```
+
 ## Text search
 
 ### Index aanmaken
