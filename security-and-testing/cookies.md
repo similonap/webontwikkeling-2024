@@ -218,4 +218,85 @@ de `cart.ejs` file:
 </ul>
 ```
 
-Merk op dat we `JSON.stringify` en `JSON.parse` om een array van strings op te slaan in een cookie. Cookies kunnen enkel strings opslaan, dus we moeten de array omzetten naar een string.
+Merk op dat we `JSON.stringify` en `JSON.parse` om een array van strings op te slaan in een cookie. Cookies kunnen enkel strings opslaan, dus we moeten de array omzetten naar een string. Je kan uiteraard ook andere objecten opslaan in een cookie aan de hand van `JSON.stringify` en `JSON.parse`. 
+
+#### User settings
+
+Een andere toepassing van cookies is het onthouden van gebruikersinstellingen. Als een gebruiker bijvoorbeeld de taal van de website wil veranderen, of het thema van de website wil aanpassen, dan kan je deze instellingen bijhouden in een cookie.
+
+We maken eerst een interface aan voor de gebruikersinstellingen:
+
+```typescript
+interface UserSettings {
+    theme: "dark" | "light";
+    language: "NL" | "EN" | "FR";
+}
+```
+
+Vervolgens maken we een GET route aan om het formulier tonen waar de gebruiker zijn instellingen kan aanpassen en een POST route om de instellingen op te slaan in een cookie:
+
+```typescript
+app.get("/settings", (req, res) => {
+    const settings : UserSettings = req.cookies.settings ? JSON.parse(req.cookies.settings) : { darkMode: false, language: "EN" };
+    res.render("settings", {
+        settings
+    });
+});
+
+app.post("/settings", (req, res) => {
+    const settings : UserSettings = {
+        theme: req.body.theme,
+        language: req.body.language
+    };
+    res.cookie("settings", JSON.stringify(settings));
+    res.redirect("/settings");
+});
+```
+
+We kunnen nu de instellingen uitlezen in de `settings.ejs` file:
+
+```html
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+
+        <% if (settings.theme === "dark") { %>
+            <style>
+                body {
+                    background-color: black;
+                    color: white;
+                }
+            </style>
+        <% } else if (settings.theme === "light") { %>
+            <style>
+                body {
+                    background-color: white;
+                    color: black;
+                }
+            </style>
+        <% } %>
+    </head>
+    <body>
+        <% if (settings.language === "NL") { %>
+            <h1>Instellingen</h1>
+        <% } else if (settings.language === "EN") { %>
+            <h1>Settings</h1>
+        <% } else if (settings.language === "FR") { %>
+            <h1>Paramètres</h1>
+        <% } %>
+        <form action="/settings" method="POST">
+            <select name="language">
+                <option <%= settings.language === 'NL' ? "selected" : ""%>>NL</option>
+                <option <%= settings.language === 'EN' ? "selected" : ""%>>EN</option>
+                <option <%= settings.language === 'FR' ? "selected" : ""%>>FR</option>
+            </select>
+            <select name="theme">
+                <option value="dark" <%= settings.theme === "dark" ? "selected" : "" %>>Dark</option>
+                <option value="light" <%= settings.theme === "light" ? "selected" : "" %>>Light</option>
+            </select>
+            <button type="submit">Save</button>
+        </form>
+</html>
+```
