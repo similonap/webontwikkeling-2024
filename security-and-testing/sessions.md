@@ -163,7 +163,7 @@ declare module 'express-session' {
 }
 ```
 
-De rest van de code in `session.ts` blijft hetzelfde.
+De rest van de code in `session.ts` blijft hetzelfde. Vergeet deze niet te importeren en toe te voegen aan de Express applicatie in `index.ts`.
 
 In het `index.ts` bestand definieren we nu een array van producten die we later kunnen toevoegen aan ons winkelkarretje:
 
@@ -199,5 +199,3 @@ app.get("/cart", (req, res) => {
     })
 });
 ```
-
-Vergeet uiteraard niet om de sessie middleware toe te voegen aan de Express applicatie.
