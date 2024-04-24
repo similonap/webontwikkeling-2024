@@ -66,6 +66,8 @@ declare module 'express-session' {
 }
 ```
 
+Het voordeel van een sessie t.o.v. een cookie is hier dat je ook complexe objecten kan opslaan in de sessie, zoals arrays of objecten. Dus je hoeft deze niet te serialiseren naar een string.
+
 Vervolgens kunnen we data opslaan in de sessie door de `req.session` object te gebruiken:
 
 ```typescript
@@ -138,36 +140,64 @@ export default session({
 
 ### Voorbeelden
 
-#### Login systeem
+#### Winkel karretje
 
-We hernemen ons voorbeeld van een login systeem, maar deze keer gebruiken we sessies om de gebruiker ingelogd te houden. We maken een login route die de gebruiker inlogt en een middleware die controleert of de gebruiker is ingelogd:
+Willen we nu het winkelkarretje van een gebruiker bijhouden op de server in plaats van in de browser, dan kunnen we dit doen met sessies. We kunnen in een sessie een array bijhouden van producten die de gebruiker heeft toegevoegd aan zijn winkelkarretje. Deze keer zullen we geen array van strings bijhouden, maar een array van objecten. Elk object zal een product voorstellen, met een naam en een prijs.
+
+Het eerste wat we moeten doen is het product definiëren in een interface (bv in `types.ts`):
 
 ```typescript
-app.post("/", (req, res) => {
-    if (req.body.username === "admin" && req.body.password === "hunter2") {
-        req.session.username = req.body.username;
-        res.redirect("/profile");
-    } else {
-        res.redirect("index");
-    }
-});
+interface Product {
+    name: string;
+    price: number;
+}
+```
 
-app.get("/profile", (req, res) => {
-    if (req.session.username === "admin") {
-        res.render("profile", { username: req.session.username  });
-    } else {
-        res.redirect("/");
+In het `session.ts` bestand moeten we deze interface importeren en toevoegen aan de `SessionData` interface:
+
+```typescript
+declare module 'express-session' {
+    export interface SessionData {
+        cart?: Product[];
     }
+}
+```
+
+De rest van de code in `session.ts` blijft hetzelfde.
+
+In het `index.ts` bestand definieren we nu een array van producten die we later kunnen toevoegen aan ons winkelkarretje:
+
+```typescript
+let items: Product[] = [
+    {name: "Apple", price: 1},
+    {name: "Banana", price: 2},
+    {name: "Cherry", price: 3},
+    {name: "Orange", price: 2},
+    {name: "Raspberry", price: 4},
+    {name: "Strawberry", price: 1},
+    {name: "Watermelon", price: 5},
+];
+```
+
+De code om dan een product toe te voegen aan het winkelkarretje ziet er als volgt uit:
+
+```typescript
+app.get("/cart", (req, res) => {
+    let add : string = typeof req.query.add === "string" ? req.query.add : "";
+    let cart: Product[] = req.session.cart ? req.session.cart : [];
+    let addProduct : Product | undefined = items.find(product => product.name === add);
+    if (addProduct) {
+        if (add) {
+            cart.push(addProduct);
+            req.session.cart = cart;
+        }
+    }
+
+    res.render("cart", {
+        items: items,
+        cart: cart
+    })
 });
 ```
 
-Het grote verschil met het vorige voorbeeld is dat we nu de gebruikersnaam opslaan in de sessie in plaats van in een cookie. Hierdoor kan de gebruiker de data niet aanpassen en is het veiliger. Als de gebruiker uitlogt, kunnen we de sessie verwijderen door de data te verwijderen:
-
-```typescript
-app.get("/logout", (req, res) => {
-    req.session.destroy(() => {
-        res.redirect("/");
-    });
-});
-```
-
+Vergeet uiteraard niet om de sessie middleware toe te voegen aan de Express applicatie.
