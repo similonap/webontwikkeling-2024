@@ -30,6 +30,7 @@ export default session({
     store: new MemoryStore(),
     resave: true,
     saveUninitialized: true,
+    maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
 });
 ```
 
@@ -37,6 +38,7 @@ export default session({
 - De `store` optie is een object dat de sessie data opslaat. In dit geval gebruiken we een `MemoryStore`, wat betekent dat de data in het geheugen van de server wordt opgeslagen. Dit is handig voor ontwikkeling en debugging, maar niet geschikt voor productie. In productie gebruik je best een externe database, zoals MongoDB of Redis.
 - De `resave` optie bepaalt of de sessie opnieuw moet worden opgeslagen als er geen veranderingen zijn. De standaardwaarde is `true`.
 - De `saveUninitialized` optie bepaalt of de sessie moet worden opgeslagen als er geen data in zit. De standaardwaarde is `true`.
+- De `maxAge` optie bepaalt hoelang de sessie geldig is. In dit geval is de sessie 1 week geldig. Als je deze optie niet instelt, is de sessie geldig tot de browser wordt gesloten.
 
 Vervolgens moeten we deze sessie middleware toevoegen aan onze Express applicatie. Eerst importeren we de sessie middleware in ons `app.ts` bestand:
 
