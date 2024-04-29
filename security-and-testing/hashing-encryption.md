@@ -103,7 +103,7 @@ Bij asymmetrische encryptie worden twee sleutels gebruikt: een publieke en een p
 
 Pas op dat je nooit een private sleutel deelt met anderen, want dan kan iedereen je data ontsleutelen.
 
-Je kan via `https://pgptool.org/` zelf een public en private sleutel genereren aan de hand van een online tool en hier eens mee experimenteren.
+Je kan via https://pgptool.org/ zelf een public en private sleutel genereren aan de hand van een online tool en hier eens mee experimenteren.
 
 ### HTTPS
 
