@@ -60,6 +60,7 @@
 * [Environment Variables](security-and-testing/environment-variables.md)
 * [Cookies](security-and-testing/cookies.md)
 * [Sessions](security-and-testing/sessions.md)
+* [Hashing & Encryptie](security-and-testing/hashing-encryption.md)
 
 ## Labos
 

@@ -134,3 +134,4 @@ Normaal gezien moet je betalen voor een SSL certificaat, maar er zijn ook gratis
 Let's Encrypt is een non-profit certificeringsinstantie (CA's) die gratis SSL certificaten uitgeeft. Het doel van Let's Encrypt is om het internet veiliger te maken door het gebruik van HTTPS te stimuleren. Je kan een SSL certificaat aanvragen via de website van Let's Encrypt of via een hosting provider die Let's Encrypt ondersteunt.
 
 Je kan meer informatie vinden op de website van Let's Encrypt: [https://letsencrypt.org/](https://letsencrypt.org/)
+
