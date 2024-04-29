@@ -148,11 +148,10 @@
 * [16. CRUD](labos/16.-crud/README.md)
   * [Users CRUD](exercises/mongodb/users-crud-express/README.md)
   * [Pokedex](exercises/mongodb/pokedex-mongo-express/README.md)
-* [17. Session & Cookies](labos/17.-session-+-cookies/README.md)
+* [17. Session & Cookies](labos/17.-session-and-cookies/README.md)
   * [Shopping Cookie](exercises/security/shopping-cookie/README.md)
   * [View Counter Cookies](exercises/security/view-counter-cookies/README.md)
   * [View Counter Sessions](exercises/security/view-counter-sessions/README.md)
-  
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
@@ -163,3 +162,4 @@
 * [Milestone 1 - Terminal App](project/node-client.md)
 * [Milestone 2 - Express](project/milestone-2-express.md)
 * [Milestone 3 - MongoDB](project/milestone-3-mongodb.md)
+* [Milestone 4 - Security](project/milestone-4-security.md)
