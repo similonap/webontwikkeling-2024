@@ -81,6 +81,28 @@ Probeer maar eens zelf een wachtwoord te hashen met een `saltRounds` van 20 en 5
 
 Timing attacks zijn aanvallen waarbij een aanvaller probeert om informatie te verkrijgen door de tijd te meten die het kost om een bepaalde taak uit te voeren. Dit kan bijvoorbeeld gebruikt worden om een wachtwoord te kraken door te meten hoe lang het duurt om een hash te berekenen. Bcrypt is ontworpen om dit soort aanvallen te voorkomen door een vaste tijd te nemen om een hash te berekenen, ongeacht de input. Dit voorkomt dat een aanvaller informatie kan verkrijgen door de tijd te meten. Bv: als je een lang wachtwoord hebt, zal het niet langer duren om een hash te berekenen dan voor een kort wachtwoord.
 
+### Gebruik van hashing voor bestanden
+
+Je kan hashing ook gebruiken om de integriteit van bestanden te controleren. Als je een hash berekent van een bestand en deze hash bewaart, kan je later controleren of het bestand is gewijzigd. Als de hash van het bestand overeenkomt met de bewaarde hash, weet je dat het bestand niet is gewijzigd. Als de hash niet overeenkomt, weet je dat het bestand is gewijzigd en kan je actie ondernemen.
+
+Vaak zie je op een website iets zoals dit:
+
+![Hashes VSCode](hashes-vscode.png)
+
+Als je het bestand gedownload hebt kan je met het `sha256sum` in je console de hash berekenen en controleren of deze overeenkomt met de hash op de website.
+
+```bash
+sha256sum vscode-windows-x64.zip
+```
+
+of in Windows:
+
+```powershell
+Get-FileHash vscode-windows-x64.zip -Algorithm SHA256
+```
+
+Als de hashes overeenkomen, weet je dat het bestand niet is gewijzigd en dat je het veilig kan gebruiken.
+
 ## Encryptie
 
 Encryptie is een techniek die gebruikt wordt om data te versleutelen. Het grote verschil met hashing is dat je de originele data kan herstellen uit de versleutelde data. Dit doe je aan de hand van een sleutel (een soort passwoord). Encryptie wordt vaak gebruikt om data te beveiligen tijdens transport (zoals gebeurd bij HTTPS) of om data te beveiligen op een harde schijf. 
