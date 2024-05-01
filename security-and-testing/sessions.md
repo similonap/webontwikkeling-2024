@@ -119,7 +119,7 @@ import mongoDbSession from "connect-mongodb-session";
 const MongoDBStore = mongoDbSession(session);
 
 const mongoStore = new MongoDBStore({
-    uri: "mongodb+srv://webontwikkeling:webontwikkeling@mijncluster.zhzdvam.mongodb.net/?retryWrites=true&w=majority&appName=MijnCluster",
+    uri: process.env.MONGODB_URI ?? "mongodb://localhost:27017",
     collection: "sessions",
     databaseName: "webontwikkeling",
 });
