@@ -457,3 +457,5 @@ Nu kunnen we de volgende code in onze `login.ejs` file toevoegen (of in een apar
 ```
 
 Het is mogelijk om met css animaties te werken om de messages te laten verdwijnen na een bepaalde tijd. Dit is echter niet de focus van deze cursus. Het is wel aan te raden om dit te doen in een echte applicatie.
+
+Er bestaan ook packages op npm die voor jou de flash messages afhandelen. Je kan deze gebruiken als je dit wil. Maar het is ook goed om te weten hoe je dit zelf kan doen.
