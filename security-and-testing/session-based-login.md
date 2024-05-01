@@ -261,7 +261,7 @@ const mongoStore = new MongoDBStore({
 
 declare module 'express-session' {
     export interface SessionData {
-        user: User
+        user?: User
     }
 }
 
@@ -389,3 +389,71 @@ en voegen we een logout knop toe aan onze home pagina:
     </form>
 <%- include("partials/footer") %>
 ```
+
+## Flash Messages
+
+We maken vaak gebruik van `try catch` blokken om errors op te vangen bij het inloggen en gebruiken vervolgens een `redirect` om de gebruiker terug te sturen naar de login pagina. Dit is niet ideaal. We zouden beter een error message tonen op de login pagina. We kunnen jammer genoeg geen error message meegeven met een redirect. Dus we hebben hier voor een andere oplossing nodig. Het is mogelijk om een error message mee te geven in de sessie. Eerst voorzien we een interface voor een `FlashMessage` in onze `types.ts` file:
+
+```typescript
+export interface FlashMessage {
+    type: "error" | "success"
+    message: string;
+}
+```
+
+Voeg een nieuwe property toe aan je `SessionData` interface in je `session.ts` file:
+
+```typescript
+export interface SessionData {
+    user?: User;
+    message?: FlashMessage;
+}
+```
+
+Een flash message is een bericht dat we maar 1 keer willen tonen, en dan verwijderen. We gaan nu een middleware maken die deze flash messages toevoegt aan de `res.locals`. Maak een nieuwe file aan en noem deze `flashMiddleware.ts`. Voeg de volgende code toe aan deze file:
+
+```typescript
+import { NextFunction, Request, Response } from "express";
+
+export function flashMiddleware(req: Request, res: Response, next: NextFunction) {
+    if (req.session.message) {
+        res.locals.message = req.session.message;
+        delete req.session.message;
+    } else {
+        res.locals.message = undefined;
+    }
+    next();
+};
+```
+
+Hier gaan we dus kijken of er een message in de sessie zit. Als deze er is voegen we deze toe aan de `res.locals` en verwijderen we deze uit de sessie. We gaan deze middleware toevoegen aan onze app. Voeg de volgende code toe aan je `index.ts` file:
+
+```typescript
+import { flashMiddleware } from "./flashMiddleware";
+
+app.use(flashMiddleware);
+```
+
+Nu kunnen we heel gemakkelijk een error message toevoegen aan de sessie en deze tonen op de login pagina. Zo kunnen we de gebruiker laten weten wat er mis is gegaan. We kunnen de volgende code in de `catch` blok van onze login route toevoegen:
+
+```typescript
+req.session.message = {type: "error", message: e.message};
+res.redirect("/login");
+```
+
+Maar ook de volgende code bij een succesvolle login:
+
+```typescript
+req.session.message = {type: "success", message: "Login successful"};
+res.redirect("/");
+```
+
+Nu kunnen we de volgende code in onze `login.ejs` file toevoegen (of in een aparte partials file als je dit wil hergebruiken):
+
+```html
+<% if (message) { %>
+    <p class="<%= message.type %>"><%= message.message %></p>
+<% } %>
+```
+
+Het is mogelijk om met css animaties te werken om de messages te laten verdwijnen na een bepaalde tijd. Dit is echter niet de focus van deze cursus. Het is wel aan te raden om dit te doen in een echte applicatie.
