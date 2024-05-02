@@ -390,6 +390,67 @@ en voegen we een logout knop toe aan onze home pagina:
 <%- include("partials/footer") %>
 ```
 
+## Routers
+
+Het is ook best om onze routes in aparte files te zetten. We gaan een `routes` map maken in de root van je project. In deze map maken we een loginRouter en een homeRouter. De reden hiervoor is dat we op deze manier de volledige homeRouter kunnen beveiligen met de secureMiddleware. Maak een nieuwe file aan in de `routes` map en noem deze `loginRouter.ts`. Voeg de volgende code toe aan deze file:
+
+```typescript
+export function loginRouter() {
+    const router = express.Router();
+
+    router.get("/login", async (req, res) => {
+        res.render("login");
+    });
+
+    router.post("/login", async (req, res) => {
+        const email: string = req.body.email;
+        const password: string = req.body.password;
+        try {
+            let user: User = await login(email, password);
+            delete user.password; // Remove password from user object. Sounds like a good idea.
+            req.session.user = user;
+            res.redirect("/")
+        } catch (e: any) {
+            res.redirect("/login");
+        }
+    });
+
+    router.post("/logout", secureMiddleware, async (req, res) => {
+        req.session.destroy((err) => {
+            res.redirect("/login");
+        });
+    });
+
+    return router;
+}
+```
+
+en maak een nieuwe file aan in de `routes` map en noem deze `homeRouter.ts`. Voeg de volgende code toe aan deze file:
+
+```typescript
+import express from "express";
+
+export function homeRouter() {
+    const router = express.Router();
+
+    router.get("/", async(req, res) => {
+        res.render("index");
+    });
+
+    return router;
+}
+```
+
+We gaan nu deze routers toevoegen aan onze app. Voeg de volgende code toe aan je `index.ts` file:
+
+```typescript
+import { loginRouter } from "./routes/loginRouter";
+import { homeRouter } from "./routes/homeRouter";
+
+app.use(loginRouter());
+app.use(homeRouter());
+```
+
 ## Flash Messages
 
 We maken vaak gebruik van `try catch` blokken om errors op te vangen bij het inloggen en gebruiken vervolgens een `redirect` om de gebruiker terug te sturen naar de login pagina. Dit is niet ideaal. We zouden beter een error message tonen op de login pagina. We kunnen jammer genoeg geen error message meegeven met een redirect. Dus we hebben hier voor een andere oplossing nodig. Het is mogelijk om een error message mee te geven in de sessie. Eerst voorzien we een interface voor een `FlashMessage` in onze `types.ts` file:
