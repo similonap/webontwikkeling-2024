@@ -1,6 +1,6 @@
 # Session Based Login
 
-In dit onderdeel gaan we een volledig werkend login systeem maken. We gaan gebruik maken van sessies om de gebruiker ingelogd te houden. 
+In dit onderdeel gaan we een volledig werkend login systeem maken. We gaan gebruik maken van sessies om de gebruiker ingelogd te houden.
 
 ## Nieuwe express app
 

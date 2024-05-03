@@ -36,11 +36,11 @@ export default session({
 });
 ```
 
-- De `secret` optie is een string die wordt gebruikt om de sessie te beveiligen. Het is belangrijk dat deze string geheim blijft, omdat het wordt gebruikt om de sessie te versleutelen. Als iemand deze string weet, kan hij de sessie van een andere gebruiker overnemen. Daarom is het een goed idee om deze string in een environment variabele te zetten, zodat deze niet in de code staat.
-- De `store` optie is een object dat de sessie data opslaat. In dit geval gebruiken we een `MemoryStore`, wat betekent dat de data in het geheugen van de server wordt opgeslagen. Dit is handig voor ontwikkeling en debugging, maar niet geschikt voor productie. In productie gebruik je best een externe database, zoals MongoDB of Redis.
-- De `resave` optie bepaalt of de sessie opnieuw moet worden opgeslagen als er geen veranderingen zijn. De standaardwaarde is `true`.
-- De `saveUninitialized` optie bepaalt of de sessie moet worden opgeslagen als er geen data in zit. De standaardwaarde is `true`.
-- De `maxAge` optie bepaalt hoelang de sessie geldig is. In dit geval is de sessie 1 week geldig. Als je deze optie niet instelt, is de sessie geldig tot de browser wordt gesloten.
+* De `secret` optie is een string die wordt gebruikt om de sessie te beveiligen. Het is belangrijk dat deze string geheim blijft, omdat het wordt gebruikt om de sessie te versleutelen. Als iemand deze string weet, kan hij de sessie van een andere gebruiker overnemen. Daarom is het een goed idee om deze string in een environment variabele te zetten, zodat deze niet in de code staat.
+* De `store` optie is een object dat de sessie data opslaat. In dit geval gebruiken we een `MemoryStore`, wat betekent dat de data in het geheugen van de server wordt opgeslagen. Dit is handig voor ontwikkeling en debugging, maar niet geschikt voor productie. In productie gebruik je best een externe database, zoals MongoDB of Redis.
+* De `resave` optie bepaalt of de sessie opnieuw moet worden opgeslagen als er geen veranderingen zijn. De standaardwaarde is `true`.
+* De `saveUninitialized` optie bepaalt of de sessie moet worden opgeslagen als er geen data in zit. De standaardwaarde is `true`.
+* De `maxAge` optie bepaalt hoelang de sessie geldig is. In dit geval is de sessie 1 week geldig. Als je deze optie niet instelt, is de sessie geldig tot de browser wordt gesloten.
 
 Vervolgens moeten we deze sessie middleware toevoegen aan onze Express applicatie. Eerst importeren we de sessie middleware in ons `app.ts` bestand:
 
