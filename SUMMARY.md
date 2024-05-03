@@ -59,9 +59,9 @@
 
 * [Environment Variables](security-and-testing/environment-variables.md)
 * [Cookies](security-and-testing/cookies.md)
-* [Sessions](security-and-testing/sessions.md)
 * [Hashing & Encryptie](security-and-testing/hashing-encryption.md)
-* [Session Based Login](security-and-testing/session-based-login.md)
+* [Sessions](security-and-testing/sessions/README.md)
+  * [Session Based Login](security-and-testing/sessions/session-based-login.md)
 * [JWT Tokens](security-and-testing/jwt-tokens/README.md)
   * [JWT NPM package](security-and-testing/jwt-tokens/jwt-npm-package.md)
   * [Tokens veilig opslaan](security-and-testing/jwt-tokens/tokens-veilig-opslaan.md)
