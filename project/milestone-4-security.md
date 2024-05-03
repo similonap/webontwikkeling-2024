@@ -8,3 +8,5 @@
 - Alleen een ADMIN gebruiker mag de edit button zien op de dashboard pagina. Je kan dit doen door de button te verbergen voor de USER role. Zorg er ook voor dat de pagina zelf niet toegankelijk is voor de USER role.
 - Zorg ervoor dat de gebruiker zich ook kan uitloggen. Voeg een logout knop toe aan de dashboard pagina. Als de gebruiker op de logout knop klikt, dan moet hij worden uitgelogd en worden doorgestuurd naar de login pagina.
 - Zorg ervoor dat een gebruiker ook kan registreren. Dit moet gewoon een eenvoudige pagina zijn met een form met twee input velden: username en password. Als de gebruiker het formulier invult, dan moet hij worden geregistreerd en worden doorgestuurd naar de login pagina. Kijk ook of de gebruikersnaam al bestaat in de database. Als de gebruikersnaam al bestaat, geef dan een foutmelding. Zorg ervoor dat het wachtwoord veilig wordt opgeslagen.
+
+Zorg dat je applicatie wordt gehosted op een cloud provider naar keuze (bijvoorbeeld render) en dus je applicatie online is te bezoeken. Voeg de link toe aan je README.md bestand.
