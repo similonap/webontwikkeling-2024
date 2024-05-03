@@ -56,7 +56,7 @@ app.use(session);
 
 Als je nu je express server opstart en een request doet naar eender welke route, zal er een sessie worden aangemaakt voor de client. Je kan dit zien in de developer tools van je browser, waar je een cookie ziet met de naam `connect.sid`. Deze cookie bevat de identifier van de sessie en zal worden gebruikt om de sessie te identificeren op de server. Deze wordt automatisch meegestuurd vanuit de browser bij elke request.
 
-![Development tools - Session ID](../../.gitbook/assets/sessionidbrowser.png)
+![Development tools - Session ID](../.gitbook/assets/sessionidbrowser.png)
 
 ### Session data opslaan/uitlezen
 
