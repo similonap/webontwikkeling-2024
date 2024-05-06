@@ -161,6 +161,7 @@
   * [Login Express](exercises/security/login-express/README.md)
   * [Pokedex Express Sessions](exercises/security/pokedex-express-sessions/README.md)
 * [19. Token based login](labos/19.-token-based-login/README.md)
+  * [JWT Sign](exercises/security/jwt-sign/README.md)
   * [Login Express JWT](exercises/security/login-express-jwt/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
