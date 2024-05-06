@@ -54,7 +54,7 @@ import * as jwt from 'jsonwebtoken';
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 const secret = 'my_secret_key';
 
-jwt.verify(token, secret, (err: any, decoded: any) => {
+jwt.verify(token, secret, (err, decoded) => {
   if (err) {
     // Er is een error opgetreden bij het verifiëren van de token
     console.error(err);
