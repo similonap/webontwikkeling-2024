@@ -54,17 +54,12 @@ import * as jwt from 'jsonwebtoken';
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 const secret = 'my_secret_key';
 
-jwt.verify(token, secret, (err, decoded) => {
-  if (err) {
-    // Er is een error opgetreden bij het verifiëren van de token
-    console.error(err);
-    return;
-  }
-
-  // Token is geverifieërd
-  console.log(decoded);
-  // Output: { sub: '1234567890', name: 'John Doe', iat: 1516239022 }
-});
+try {
+    let decoded = jwt.verify(token, secret);
+    console.log(decoded);
+} catch (error) {
+    console.error(error);
+}
 ```
 
 In dit voorbeeld wordt de `jwt.verify()` functie gebruikt om een JWT te verifiëren en te decoderen met behulp van de gegeven geheime sleutel. Als de verificatie en decodering succesvol is, worden de gegevens van de JWT weergegeven als een object. Als er een fout optreedt bij het verifiëren of decoderen van de token, wordt een foutmelding weergegeven.
