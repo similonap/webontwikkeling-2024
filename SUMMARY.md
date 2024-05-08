@@ -67,6 +67,7 @@
   * [JWT NPM package](security-and-testing/jwt-tokens/jwt-npm-package.md)
   * [Tokens veilig opslaan](security-and-testing/jwt-tokens/tokens-veilig-opslaan.md)
   * [Token Based Login](security-and-testing/jwt-tokens/token-based-login.md)
+* [Testing](security-and-testing/testing.md)
 
 ## Labos
 
