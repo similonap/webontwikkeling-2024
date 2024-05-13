@@ -170,6 +170,7 @@
   * [String Test](exercises/testing/string-test/README.md)
   * [Math Express Test](exercises/testing/math-express-test/README.md)
   * [Form Express Test](exercises/testing/form-express-test/README.md)
+  * [Pet Shelter Express Test](exercises/testing/pet-shelter-express-test/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
