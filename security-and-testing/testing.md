@@ -175,6 +175,30 @@ describe("fetchUser", () => {
 });
 ```
 
+#### Test setup en teardown
+
+Als je bepaalde code wil uitvoeren voor en na elke test, kan je dit doen met `beforeEach`, `afterEach`, `beforeAll` en `afterAll`. Deze kunnen zich in de `describe` blokken bevinden of globaal in het bestand.
+
+```typescript
+beforeAll(() => {
+    console.log("Before all tests");
+});
+
+beforeEach(() => {
+    console.log("Before each test");
+});
+
+afterEach(() => {
+    console.log("After each test");
+});
+
+afterAll(() => {
+    console.log("After all tests");
+});
+```
+
+Dit wordt gebruikt om bijvoorbeeld een database connectie te openen en te sluiten voor en na elke test.
+
 ### Express testen
 
 Als we een Express applicatie willen testen, kunnen we gebruik maken van de `supertest` library. Deze library maakt het mogelijk om HTTP requests te versturen naar een Express applicatie en de response te testen.
@@ -348,5 +372,94 @@ describe("GET /hello", () => {
             expect(h1.text).toBe("Hello, world!");
         }
     });
+});
+```
+
+### Coverage
+
+Jest kan ook gebruikt worden om de code coverage te berekenen. Dit is het percentage van de code dat door de tests gedekt wordt. Hoe hoger dit percentage, hoe beter je code getest is. Eerst moet je wel in je `package.json` de volgende lijn toevoegen bij de scripts.
+
+```json
+"scripts": {
+  "coverage": "jest --coverage"
+}
+```
+
+Nu kan je de coverage berekenen met `npm run coverage`. Je krijgt dan een overzicht van de coverage van je code.
+
+Je krijgt een uitgebreid overzicht van welke lijnen er wel en niet getest zijn. Dit kan je helpen om te zien welke delen van je code nog niet getest zijn en waar je nog extra tests moet schrijven. Je kan dit verslag vinden in de map `coverage/lcov-report/index.html`.
+
+### Mocking
+
+Unit testen wordt vaak lastiger wanneer je code interageert met "de buitenwereld": filesystemen, databanken, invoer van de gebruiker, uitvoer naar de terminal, externe servers,...
+
+Om deze reden wordt vaak gebruik gemaakt van "mocks": waarden die de plaats innemen van onderdelen die het moeilijk maken om unit testen te schrijven. Deze leveren vooraf vastgelegde data af eerder dan de echte handelingen uit te voeren. Achteraf kunnen we ook controleren dat deze gebruikt zijn zoals verwacht. Dit past binnen het black box principe dat gehanteerd wordt voor unit testen. Jest bevat ingebouwde functionaliteit voor het maken van mocks.
+
+#### Database
+
+We hebben gekozen om onze database altijd in een aparte module te steken die onze collection exporteert. Dit maakt het makkelijk om deze te mocken. We gaan hierbij gebruik maken van de `spyOn` functie van Jest om de functies van de database module te mocken.
+
+```typescript
+app.get("/pets", async (req, res) => {
+    let pets : Pet[] = await getPets();
+    res.render("pets", { pets });
+});
+```
+
+```typescript
+import { collection, getPets } from "./database";
+import request from "supertest";
+import app from "./app";
+
+test("that /pets calls the getPets function", async () => {
+    const toArrayMock = jest.fn().mockResolvedValue(mockPets);
+    const findMock = jest.spyOn(collection, 'find').mockImplementation(() => ({
+        toArray: toArrayMock
+    }) as any);
+    const response = await request(app).get("/pets");
+    expect(response.status).toBe(200);
+    expect(findMock).toHaveBeenCalledWith({});
+});
+```
+
+De `spyOn` functie maakt een mock van de `find` functie van de `collection` module. We geven aan dat deze mock de `toArray` functie moet teruggeven met de waarde `mockPets`. We controleren dan of de `find` functie van de `collection` module aangeroepen is met de juiste parameters.
+
+#### Fetch
+
+We gebruiken fetch om requests op externe services te doen. Omdat dit iets is dat je vaak wil mocken (om te vermijden dat netwerkstoringen testen doen falen, om te vermijden dat je API-limieten bereikt,...) is hier speciale ondersteuning voor.
+
+We installeren eerst fetch-mock-jest (als development dependency).
+
+De clientcode:
+
+```typescript
+interface Pokemon {
+    name: string,
+    url: string,
+}
+
+app.get("/pokemon", async (req: Request, res: Response) => {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2");
+    const pokemon = (await response.json()).results as Pokemon[];
+    res.render("pokemon", { names: pokemon.map(({name}) => name) });
+});
+```
+
+De testcode:
+
+```typescript
+import fetchMock from 'fetch-mock-jest';
+
+describe("pokemon", () => {
+  it("Should display Pokemon names based on request result", async () => {
+    const mockResponse = { results: [{ name: "squirtle" }, { name: "wartortle" }] };
+    // deze is automatisch gepatcht na de import
+    fetchMock.get("https://pokeapi.co/api/v2/pokemon?limit=2", mockResponse);
+    const response = await request(Server.getServer()).get('/pokemon');
+    expect(response.status).toBe(200);
+    expect(response.text).toContain('<li>');
+    expect(response.text).toContain('squirtle');
+    expect(response.text).toContain('wartortle');
+  })
 });
 ```
