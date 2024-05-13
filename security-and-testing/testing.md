@@ -463,3 +463,13 @@ describe("pokemon", () => {
   })
 });
 ```
+
+#### Neveneffecten vermijden
+
+Om te vermijden dat andere operaties die fs.readFile nodig hebben niet fout lopen, moeten we zorgen dat de mock enkel in deze testfunctie gebruikt wordt. Daarom voegen we in de testfile deze regel toe:
+
+```typescript
+afterEach(() => jest.clearAllMocks());
+```
+
+Als we dit buiten de describe-blokken doen, gebeurt dit na elke test.
