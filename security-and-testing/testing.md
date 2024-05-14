@@ -20,7 +20,7 @@ npm i --save-dev jest ts-jest @types/jest
 
 ### Configuratie
 
-Om Jest te kunnen gebruiken (met TypeScript), voer je dit commando uit: 
+Om Jest te kunnen gebruiken (met TypeScript), voer je dit commando uit:
 
 ```bash
 npx ts-jest config:init
@@ -38,7 +38,7 @@ Om te zorgen dat je al je Jest-tests kan laten lopen met npm test, voeg je dit t
 
 #### Basis
 
-Om een bepaalde functie te kunnen testen, moet je deze functie exporteren. Daarom is het belangrijk om zoveel mogelijk modules te gebruiken die je kan exporteren. 
+Om een bepaalde functie te kunnen testen, moet je deze functie exporteren. Daarom is het belangrijk om zoveel mogelijk modules te gebruiken die je kan exporteren.
 
 Stel dat je een functie hebt die een string omzet naar hoofdletters in een bestand `string-utils.ts`:
 
@@ -77,7 +77,7 @@ describe("toUpperFunction", () => {
 });
 ```
 
-`it` is een functie die een test definieert. De eerste parameter is een beschrijving van de test, de tweede parameter is een functie die de test uitvoert. Je kan ook `test` gebruiken in plaats van `it`. 
+`it` is een functie die een test definieert. De eerste parameter is een beschrijving van de test, de tweede parameter is een functie die de test uitvoert. Je kan ook `test` gebruiken in plaats van `it`.
 
 We kunnen nu de tests uitvoeren met `npm test`. We krijgen dan volgende output:
 
@@ -369,7 +369,7 @@ describe("GET /hello", () => {
         const root = parse(response.text);
         const h1 = root.querySelector("h1");
         if (h1) {
-            expect(h1.text).toBe("Hello, world!");
+            expect(h1.innerText).toBe("Hello, world!");
         }
     });
 });
