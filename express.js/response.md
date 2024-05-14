@@ -16,6 +16,16 @@ app.get("/redirect",(req,res)=>{
 })
 ```
 
+Soms is het interessant om een redirect te sturen naar de vorige pagina. Dit kan je doen met de method `res.redirect` en de waarde `back`:
+
+```typescript
+app.get("/redirect",(req,res)=>{
+    res.redirect("back");
+})
+```
+
+Dit kan je bijvoorbeeld gebruiken om een gebruiker door te sturen na het verzenden van een POST request.
+
 ### Status Code
 
 De status code van een HTTP response geeft aan of de request geslaagd is of niet. De status code wordt automatisch ingesteld op 200 (OK) wanneer je een response verstuurd. Je kan de status code wijzigen met de method `res.status`:
