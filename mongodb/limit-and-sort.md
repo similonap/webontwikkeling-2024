@@ -22,6 +22,32 @@ Je kan ook meerdere velden meegeven om op te sorteren. Als je meerdere velden me
 const result = await collection.find({}).sort({ name: 1, age: -1 }).toArray();
 ```
 
+### Taalafhankelijke sortering
+
+Je kan ook sorteren op basis van de taal van de gebruiker. Dit is handig als je bijvoorbeeld een applicatie hebt die in meerdere talen beschikbaar is. Je kan dit doen door de `collation` methode aan te roepen. 
+
+```typescript
+const result = await collection.find({}).sort({ name: 1 }).collation({ locale: "en" }).toArray();
+```
+
+In dit voorbeeld sorteren we op de naam van de student. We geven ook de locale mee als "en" (Engels). Dit zorgt ervoor dat de sortering correct gebeurt voor de Engelse taal. Dit wil zeggen dat de sortering rekening houdt met speciale tekens en hoofdletters. Over het algemeen wil je dat de sortering hoofdlettergevoelig is.
+
+Zonder de `collation` methode zou de sortering er als volgt uitzien:
+
+```
+Apple
+Grapefruit
+banana
+```
+
+Met de `collation` methode ziet de sortering er als volgt uit:
+
+```
+Apple
+banana
+Grapefruit
+```
+
 ## Limit (en Skip)
 
 Je kan de `limit` methode gebruiken om het aantal resultaten te beperken. Je moet eerst een `find` query uitvoeren en dan de `limit` methode aanroepen. Je kan deze gewoon achter de `find` methode aanroepen. 
