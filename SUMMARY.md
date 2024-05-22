@@ -173,6 +173,7 @@
   * [Pet Shelter Express Test](exercises/testing/pet-shelter-express-test/README.md)
 * [21. Herhaling](labos/21.-herhaling/README.md)
   * [Youtube Favorites](exercises/herhaling/youtube-playlists/README.md)
+  * [Beerster](exercises/herhaling/beerster/README.md)
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
