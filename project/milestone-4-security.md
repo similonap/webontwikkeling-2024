@@ -12,3 +12,10 @@ Voeg de volgende functionaliteiten toe aan je web applicatie:
 - Zorg ervoor dat een gebruiker ook kan registreren. Dit moet gewoon een eenvoudige pagina zijn met een form met twee input velden: username en password. Als de gebruiker het formulier invult, dan moet hij worden geregistreerd en worden doorgestuurd naar de login pagina. Kijk ook of de gebruikersnaam al bestaat in de database. Als de gebruikersnaam al bestaat, geef dan een foutmelding. Zorg ervoor dat het wachtwoord veilig wordt opgeslagen (hint bcrypt).
 
 Zorg dat je applicatie wordt gehosted op een cloud provider naar keuze (bijvoorbeeld render) en dus je applicatie online is te bezoeken. Voeg de link toe aan je README.md bestand.
+
+### Bonus
+
+Implementeer de nodige logica om gebruikers melding te geven wanneer hun maandelijks budget dreigt overschreden te worden. 
+
+- Bij registratie geef je de gebruiker de optie om de waarden mee te geven waarmee je de properties van het budget object kan invullen (monthlyLimit, notificationThreshold) en vraag je of hij al dan niet notificatie wil krijgen als zijn budget dreigt overschreden te worden.
+- Wanneer de uitgaven van de gebruiker groter worden dan de opgegeven notificationThreshold breng je de gebruiker hier duidelijk van op de hoogte.
