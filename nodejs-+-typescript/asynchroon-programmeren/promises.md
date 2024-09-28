@@ -2,7 +2,7 @@
 
 Een belangrijk mechanisme om asynchrone code te schrijven is het gebruik van Promises. Een Promise is een object dat een waarde bevat die pas op een later moment beschikbaar zal zijn. Zoals het engelse woord al aangeeft, is een Promise een belofte dat de functie die een promise teruggeeft, op een later moment een waarde zal teruggeven.
 
-Een van de meest bekende functies die een Promise gebruikt is de fetch functie. Deze functie wordt gebruikt om data op te halen van een server. Alle communicatie tussen je programma en de server moet synchroon gebeuren. Dit komt omdat je niet wil dat je programma wacht tot er een antwoord komt van de server. Zelfs al gaat de communicatie met de server heel snel, ze gaat in vergelijking met de uitvoering van een gewone instructie veel trager.
+Een van de meest bekende functies die een Promise gebruikt is de fetch functie. Deze functie wordt gebruikt om data op te halen van een server. Alle communicatie tussen je programma en de server moet asynchroon gebeuren. Dit komt omdat je niet wil dat je programma wacht tot er een antwoord komt van de server. Zelfs al gaat de communicatie met de server heel snel, ze gaat in vergelijking met de uitvoering van een gewone instructie veel trager.
 
 ## Aanmaken van een Promise
 
