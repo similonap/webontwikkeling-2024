@@ -68,7 +68,7 @@ console.log(areaSquare(2));
 Heel vaak wordt er door een module maar één functie geëxporteerd. In dat geval kan je gebruik maken van een default export. Dit is een export zonder naam.
 
 ```typescript
-export default funtion(r: number): number {
+export default function(r: number): number {
     return Math.PI * r * r;
 }
 ```
@@ -106,20 +106,35 @@ import { Person } from './types';
 
 ## npm.js
 
-npm.js is de package manager voor JavaScript. Het is de grootste software registry ter wereld. Hier vind je heel veel packages die je kan gebruiken in je projecten. Je kan deze packages installeren aan de hand van het volgende commando.
-
-```bash
-npm install <package-name>
-```
-
-Wil je een bepaalde package zoeken dan kan je dat doen op de [npmjs website](https://www.npmjs.com/). Je vind er ook uitgebreide documentatie over de packages en hoe je deze kan gebruiken. 
+npm.js is de package manager voor JavaScript. Het is de grootste software registry ter wereld. Hier vind je heel veel packages die je kan gebruiken in je projecten. Wil je een bepaalde package zoeken dan kan je dat doen op de [npmjs website](https://www.npmjs.com/). Je vind er ook uitgebreide documentatie over de packages en hoe je deze kan gebruiken. 
 
 ![alt text](../.gitbook/assets/npmjs.png)
 
+Npm packages kunnen typisch op drie verschillende manieren geïnstalleerd worden: als dependency, dev dependency, en globaal. Een dependency wordt geïnstalleerd wanneer een pakket nodig is voor de werking van je applicatie in productie; dit zijn bijvoorbeeld bibliotheken die essentieel zijn om de applicatie te laten draaien (bv. leaflet om je interactieve map te tonen). Een dev dependency daarentegen is een pakket dat alleen nodig is tijdens de ontwikkeling, zoals tools voor testen of linting, en wordt niet meegeleverd in productie. Tot slot kunnen pakketten ook globaal geïnstalleerd worden, wat betekent dat ze overal op je systeem beschikbaar zijn, ongeacht welk project je gebruikt. Dit wordt meestal gedaan voor CLI-tools die je buiten een specifiek project wilt gebruiken, zoals TypeScript of ESLint.
+
+| **Installatiemethode**             | **Beschrijving**                                                                                         | **Installatievoorbeeld**                                                                                  |
+|------------------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Dependencies**                   | Packages die nodig zijn om de applicatie in productie te laten draaien.                                   | `npm install package-name`                                                                                 |
+| **DevDependencies**                | Packages die alleen nodig zijn tijdens de ontwikkeling (testing, linting, building, enz.).          | `npm install package-name --save-dev`                                                                      |
+| **Globale installatie (`-g`)**     | Packages die globaal op je systeem worden geïnstalleerd, vaak gebruikt voor CLI-tools.                    | `npm install package-name -g`                                                                              |
+
+
 ## package.json
 
-Elk project heeft een `package.json` bestand. Dit bestand bevat alle informatie over je project. Het bevat ook een lijst van alle packages die je nodig hebt voor je project. Wanneer je een package installeert met npm dan wordt deze package toegevoegd aan dit bestand in de `dependencies` sectie.
+Elk project heeft een `package.json` bestand. Dit bestand bevat alle informatie over je project. Het bevat ook een lijst van alle packages die je nodig hebt voor je project. Wanneer je een package installeert met npm dan wordt deze package toegevoegd aan dit bestand in de juiste `dependency` sectie.
 
+**Packages installeren in de CLI**
+```bash
+# Install als Dependency 
+# Packages die essentieel zijn voor de uitvoering van je applicatie in productie
+npm install readline-sync
+
+# Install als DevDependency
+# Packages die je nodig hebt voor de ontwikkeling van je project
+npm install @types/readline-sync --save-dev
+```
+
+**package.json**
 ```json
 {
   "name": "project-name",
@@ -133,7 +148,10 @@ Elk project heeft een `package.json` bestand. Dit bestand bevat alle informatie 
   "author": "Andie Similon",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0"
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+	  "@types/readline-sync": "^1.4.8"
   }
 }
 ```
@@ -150,6 +168,14 @@ Wanneer je een package installeert met npm dan wordt deze package geïnstalleerd
 
 Omdat alle dependencies opgegeven staan in het `package.json` bestand en je deze ten allen tijde kan installeren aan de hand van het `npm install` commando, moet je deze map ook niet toevoegen aan je git repository. Het is een goed idee om deze map toe te voegen aan je `.gitignore` bestand. Voeg deze map ook nooit toe aan een zip bestand dat je doorstuurt naar iemand anders. Deze persoon kan dan zelf de dependencies installeren aan de hand van het `npm install` commando.
 
+Wanneer je een package terug zou willen verwijderen uit je node_modules folder kan je dit doen met het volgende commando:
+
+```bash
+npm uninstall <package-name>
+```
+
+Al de bestanden die je voordien had gedownload bij het installeren van deze package in de node_modules folder zijn nu terug verwijderd. De package is ook verwijderd uit de `package.json` file.
+
 ## Importeren van npm packages
 
 Dit is ook de manier hoe je meestal npm packages importeert. Daar maakte het ook nooit uit welke naam je achter de import zette.
@@ -158,7 +184,7 @@ Dit is ook de manier hoe je meestal npm packages importeert. Daar maakte het ook
 import readline from 'readline-sync';
 ```
 
-Deze functies kon je dan gebruiken door middel van de naam die je achter de import zette gevongd door een punt.
+Deze functies kon je dan gebruiken door middel van de naam die je achter de import zette gevolgd door een punt.
 
 ```typescript
 const name = readline.question('Wat is je naam? ');
