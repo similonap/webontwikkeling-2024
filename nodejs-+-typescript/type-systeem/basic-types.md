@@ -184,6 +184,26 @@ notSure = false;
 
 Je ziet dat we de variabele `notSure` eerst een getal geven, dan een string en dan een boolean. Dit is allemaal mogelijk omdat we het `any` type gebruiken. Je verliest hier wel de voordelen van TypeScript. Je kan dus best zo weinig mogelijk het `any` type gebruiken. 
 
+### Unknown
+
+In TypeScript is unknown een type dat aangeeft dat we een variabele hebben waarvan het type niet bekend is op het moment van declaratie. Het is vergelijkbaar met het any type, maar met meer typeveiligheid. Waar any je toestaat om willekeurige bewerkingen op de variabele uit te voeren zonder controle, dwingt unknown je om het type expliciet te controleren of te specificeren voordat je er bewerkingen op uitvoert.
+
+```typescript
+let value: unknown;
+
+value = 10;        // geldig
+value = "Hello";   // geldig
+value = true;      // geldig
+
+let num: number;
+num = value; // Error: Type 'unknown' is not assignable to type 'number'
+
+// Je moet het type eerst controleren of omzetten:
+if (typeof value === "number") {
+  num = value; // Dit is nu geldig omdat we het type hebben gecontroleerd
+}
+```
+
 ## Union types
 
 Een union type is een type dat bestaat uit meerdere types. Je kan een union type gebruiken als je een variabele wil declareren die meerdere types kan bevatten. Je kan een union type declareren door de types te scheiden met een `|` teken. Als je wil toelaten dat een variabele een string of een getal kan bevatten dan kan je dit doen door het volgende te schrijven:
