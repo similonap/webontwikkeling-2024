@@ -45,3 +45,6 @@ Maak een console-applicatie om kosten toe te voegen of te bekijken. De gebruiker
 ### Inzenden
 
 Zorg ervoor dat je alles pushed naar je repository en de link naar je repository inzendt via digitap. De deadline vind je op digitap.
+
+## Voorbeeld
+![Bekijk het voorbeeld](../.gitbook/assets/milestone-1.gif)
