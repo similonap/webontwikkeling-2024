@@ -181,7 +181,13 @@
 ## Project
 
 * [Voorbereiding](project/dev-container.md)
-* [Milestone 1 - Terminal App](project/node-client.md)
-* [Milestone 2 - Express](project/milestone-2-express.md)
-* [Milestone 3 - MongoDB](project/milestone-3-mongodb.md)
-* [Milestone 4 - Security](project/milestone-4-security.md)
+* [Semester 2](project/semester-2/README.md)
+  * [Milestone 1 - Terminal App](project/semester-2/milestone-1-terminal-app.md)
+  * [Milestone 2 - Express](project/semester-2/milestone-2-express.md)
+  * [Milestone 3 - MongoDB](project/semester-2/milestone-3-mongodb.md)
+  * [Milestone 4 - Security](project/semester-2/milestone-4-security.md)
+* [Semester 1](project/semester-1/README.md)
+  * [Milestone 1 - Terminal App](project/semester-1/node-client.md)
+  * [Milestone 2 - Express](project/semester-1/milestone-2-express.md)
+  * [Milestone 3 - MongoDB](project/semester-1/milestone-3-mongodb.md)
+  * [Milestone 4 - Security](project/semester-1/milestone-4-security.md)

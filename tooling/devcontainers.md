@@ -84,7 +84,7 @@ Indien WSL dus geinstalleerd is, kan je WSL updaten met het volgende command:
 wsl --update
 ```
 
-**Als je WSL **_**NIET**_** geinstalleerd hebt, dan installeer je WSL met het volgende commando:**
+**Als je WSL&#x20;**_**NIET**_**&#x20;geinstalleerd hebt, dan installeer je WSL met het volgende commando:**
 
 ```
 wsl --install
