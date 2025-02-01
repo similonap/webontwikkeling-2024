@@ -20,10 +20,10 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 * Gebruik het commando `git add` om je wijzigingen toe te voegen aan de staging area.
 * Gebruik het commando `git commit` om je wijzigingen te committen. Geef je commit een zinvolle boodschap.
 * Gebruik het commando `git push` om je wijzigingen naar de remote repository te pushen.
-* Ga na of je wijzigingen zichtbaar zijn door via de browser naar de repository te gaan.
+* Ga na of je wijzigingen zichtbaar zijn door via de browser naar de repository te gaan (via github.com).
 * Maak een nieuwe map `labos` in de root van je project. Dit moet je aan de hand van de terminal doen. Ga vervolgens naar de map `labos` in de terminal.
-* Maak een nieuwe map `tooling` in de map `labos` en ga naar de map `tooling` in de terminal.
-* Maak een nieuw bestand `oefeningen.md` aan in de map `tooling` en open het bestand in visual studio code.
+* Maak een nieuwe map `labo1` in de map `labos` en ga naar de map `labo1` in de terminal.
+* Maak een nieuw bestand `oefeningen.md` aan in de map `labo1` en open het bestand in visual studio code.
 * Maak een wijziging in het bestand en voeg vervolgens alle wijzigingen toe aan de staging area, commit en push ze naar de remote repository.
 * Maak een nieuwe map `backup` en kopiëer het bestand `oefeningen.md` naar de map `backup`.
 * Maak een kopie van het bestand `oefeningen.md` in de `backup` directory en noem het `oefeningen2.md`.
