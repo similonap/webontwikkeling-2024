@@ -8,7 +8,7 @@
 Je kan deze workflow ook gebruiken voor andere projecten die node.js. Uiteraard moet je dan wel zelf je eigen repository aanmaken op github.
 {% endhint %}
 
-1. Maak een nieuwe repository aan op Github aan de hand van de [Github Classroom](https://classroom.github.com/a/z\_CYhW1S) link.&#x20;
+1. Maak een nieuwe repository aan op Github aan de hand van de Github Classroom link.&#x20;
 2. Clone de repository in een container volume. (ctrl-shift-p -> `Remote-Containers: Clone Repository in Container Volume...`)&#x20;
 3. Kies `main` als branch
 4. Als er gevraagd wordt achter de container template: Kies `Node JS & Typescript`
