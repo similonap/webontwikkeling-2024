@@ -14,7 +14,7 @@ De enige toevoeging die niet aanwezig is die JavaScript tot het niveau van een p
 
 Je vraagt je dan misschien af. Kunnen browsers (of node.js) dan ook gewoon TypeScript interpreteren en uitvoeren? Het antwoord hier op is jammer "**Nee"**.  We moeten hiervoor een TypeScript compiler gebruiken om alle TypeScript code om te zetten naar gewone JavaScript code. Deze code zal dan wel uitvoerbaar zijn. We zien later hoe we dit gaan doen.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Stack Overflow - Programming, scripting, and markup languages</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-02-04 at 21.16.44.png" alt=""><figcaption></figcaption></figure>
 
 In de bovenstaande tabel lijkt JavaScript nog altijd duidelijk de populairste optie van de twee.  Je vraagt je waarschijnlijk wel af waarom we dan niet gewoon JavaScript zien. Het antwoord is hier heel eenvoudig. Het is beter om eerst de goede gewoontes van TypeScript aan te leren, en dan over te schakelen naar het lossere JavaScript. Andersom is veel lastiger, slechte gewoontes leer je nu eenmaal niet snel af. En vergeet niet, de verschillen zijn in principe minimaal, en alles wat je leert voor TypeScript is zeer eenvoudig over te zetten naar JavaScript. Eigenlijk leer je in deze cursus twee talen in 1 klap!
 
