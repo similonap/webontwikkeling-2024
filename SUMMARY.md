@@ -180,7 +180,7 @@
 
 ## Project
 
-* [Voorbereiding](project/dev-container.md)
+* [Voorbereiding (devcontainer + github)](project/dev-container.md)
 * [Semester 2](project/semester-2/README.md)
   * [Milestone 1 - Terminal App](project/semester-2/milestone-1-terminal-app.md)
   * [Milestone 2 - Express](project/semester-2/milestone-2-express.md)
