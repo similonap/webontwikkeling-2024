@@ -120,6 +120,20 @@ Zoek naar het "Remote Development" extension pack van Microsoft. [https://market
 
 Dit installeert 4 extensies in VS Code die je helpen met ontwikkeling in DevContainers.
 
+Tenslotte installeer je nog de "Github Pull Request" extention: [https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+
+#### Authenticatie met Github
+
+Klik in Visual Studio Code in de linkeronderhoek op het "avatar" icoontje.&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-02-05 at 12.41.46.png" alt=""><figcaption><p>De positie van het Accounts menu</p></figcaption></figure>
+
+Kies vervolgens " Sign in to GitHub to use GitHub Pull Requests".  Vervolgens zou er een browser venster moeten openen die je vraagt om te authenticeren via Github. Doe dit met je Github AP account.
+
+{% hint style="info" %}
+Pro Tip: in hetzelfde menu vind je ook "Sign in to sync settings" terug. Indien je dit doet worden alle Visual Studio Code instellingen gesynchroniseerd met GitHub. Als je dus ooit Visual Studio Code installeert op een andere computer zal deze automatisch dezelfde instellingen krijgen.
+{% endhint %}
+
 ### Starting a DevContainer from a Github Repo
 
 Maak een nieuwe Github Repo (tijdens onze lessen gebruik je de Github url op Digitap) of gebruik een bestaande Github Repo.
