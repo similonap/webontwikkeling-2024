@@ -156,7 +156,7 @@ function forEach(array: number[], callback: any) {
 }
 ```
 
-De functie hierboven heeft twee parameters: `array`` en een `callback` functie. Je kan die op een heel gelijkaardige manier gebruiken zoals de ingebouwde `forEach` functie.
+De functie hierboven heeft twee parameters: `array`` en een` callback`functie. Je kan die op een heel gelijkaardige manier gebruiken zoals de ingebouwde`forEach\` functie.
 
 ```typescript
 let numbers : number[] = [1,2,3,4,5];
@@ -324,15 +324,17 @@ let sum : number = numbers.reduce((accumulator, element) => accumulator + elemen
 console.log(sum); // 15
 ```
 
+[https://reduce.surge.sh/](https://reduce.surge.sh/) (visualizatie van bovenstaande code)
+
 Het type dat de callback functie teruggeeft is hetzelfde als het type van de accumulator. In dit geval is dat `number`. Je kan dit ook expliciet aangeven.
 
 ```typescript
 let sum : number = numbers.reduce((accumulator: number, element: number) => accumulator + element);
 ```
 
-Het type van de accumulator is hetzelfde als het type van de initiele waarde die je meegeeft aan de `reduce` methode. Als je geen initiele waarde meegeeft, dan zal de accumulator hetzelfde type hebben als het eerste element van de array. 
+Het type van de accumulator is hetzelfde als het type van de initiele waarde die je meegeeft aan de `reduce` methode. Als je geen initiele waarde meegeeft, dan zal de accumulator hetzelfde type hebben als het eerste element van de array.
 
-Soms is het zelfs nodig om het type van de accumulator expliciet aan te geven omdat het type niet kan worden afgeleid. 
+Soms is het zelfs nodig om het type van de accumulator expliciet aan te geven omdat het type niet kan worden afgeleid.
 
 ```typescript
 let numbers : number[] = [1,2,3,4,5];
@@ -354,7 +356,7 @@ let firstEven : number | undefined = numbers.find(element => element % 2 === 0);
 console.log(firstEven); // 2
 ```
 
-Het type van `firstEven` is `number | undefined`. Dit komt omdat de `find` methode `undefined` zal teruggeven als er geen element is gevonden waarvoor de callback functie `true` teruggeeft. Zelfs als je zeker weet dat er altijd een element zal zijn dat voldoet aan de voorwaarde, moet je nog steeds `undefined` in overweging nemen. 
+Het type van `firstEven` is `number | undefined`. Dit komt omdat de `find` methode `undefined` zal teruggeven als er geen element is gevonden waarvoor de callback functie `true` teruggeeft. Zelfs als je zeker weet dat er altijd een element zal zijn dat voldoet aan de voorwaarde, moet je nog steeds `undefined` in overweging nemen.
 
 ```typescript
 let names : string[] = ["Andie", "Bert", "Cedric"];
@@ -363,4 +365,3 @@ let firstD : string | undefined = names.find(name => name.startsWith("D"));
 
 console.log(firstD); // undefined
 ```
-
