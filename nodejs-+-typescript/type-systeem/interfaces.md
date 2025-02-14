@@ -152,6 +152,58 @@ console.log(user.address.street); // Error: Object is possibly 'undefined'
 
 Een record type is een object waarvan we de properties niet kennen. We weten niet welke properties het object zal hebben. We kunnen dit aangeven aan de hand van de `Record` type. Dit type heeft twee type parameters: het eerste type parameter is het type van de keys en het tweede type parameter is het type van de values.
 
+### Voorbeeld
+
+Stel je voor dat je namen van gebruikers wilt bijhouden en bij elke naam een telefoonnummer wilt opslaan. Je wil dus een object hebben in de vorm van:
+
+```typescript
+{
+  "Andie": "+32 123 45 67 89",
+  "Debbie": "+32 987 65 43 21"
+}
+```
+
+Je zou hier een interface van kunnen maken:
+
+```typescript
+interface PhoneBook {
+  "Andie": string,
+  "Debbie": string
+}
+
+const phoneBook: PhoneBook = {
+  "Andie": "+32 123 45 67 89",
+  "Debbie": "+32 987 65 43 21"
+}
+```
+
+wil je nu een toevoegen:
+
+```
+phoneBook["Charlie"] = "+32 123 45 67 89";
+```
+
+dan gaat dit niet werken. Je moet de interface aanpassen:
+
+```typescript
+interface PhoneBook {
+  "Andie": string,
+  "Debbie": string,
+  "Charlie": string
+}
+```
+
+Dit is uiteraard niet handig als je niet op voorhand weet welke namen er in het telefoonboek zullen staan. Je kan dit oplossen aan de hand van de `Record` type:
+
+```typescript
+let phoneBook: Record<string, string> = {
+  "Andie": "+32 123 45 67 89",
+  "Debbie": "+32 987 65 43 21"
+}
+```
+
+### Occurences tellen
+
 Stel dat we een object willen gebruiken om bij te houden hoeveel keer een bepaalde waarde voorkomt in een array. We kunnen onmogelijk op voorhand weten welke waarden er in de array zullen zitten dus we kunnen niet op voorhand zeggen welke properties het object zal hebben. We kunnen dit oplossen aan de hand van de `Record` type:
 
 ```typescript
