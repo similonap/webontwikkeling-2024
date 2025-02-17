@@ -1,5 +1,7 @@
 # Extra voorbeelden
 
+Dit onderdeel bevat een aantal extra voorbeelden van asynchroon programmeren in TypeScript. Deze voorbeelden zijn niet noodzakelijk om te kennen, maar kunnen je wel helpen om een beter inzicht te krijgen in asynchroon programmeren en het omgaan met complexere situaties.
+
 ## fetch met paging
 
 We gaan nu een iets complexer voorbeeld bekijken. We gaan deze keer eens de `https://reqres.in/api/users` API gebruiken. Als je naar de response kijkt, dan zie je dat deze geen array teruggeeft, maar een object. Dit object bevat een array met de key `data` en ook een andere properties zoals `page`, `per_page`, `total` en `total_pages`. Het data object bevat een array van gebruikers. 
