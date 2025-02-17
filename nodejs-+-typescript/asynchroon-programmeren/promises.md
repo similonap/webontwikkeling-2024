@@ -98,6 +98,22 @@ multiply(4,10)
     .catch((error) => console.log(error.message))
 ```
 
+## Promise All
+
+Als je meerdere promises hebt die je tegelijkertijd wil uitvoeren, dan kan je de Promise.all functie gebruiken. Deze functie heeft als argument een array van promises. Deze functie zal een nieuwe promise teruggeven die resolved is als alle promises in de array resolved zijn. De waarde die deze promise teruggeeft is een array van de waarden van de promises.
+
+```typescript
+Promise.all([multiply(2, 2), multiply(3, 3), multiply(4, 4)])
+    .then((results: number[]) => console.log(results))
+    .catch((error) => console.log(error.message));
+```
+
+Het resultaat hier is dus:
+
+```
+[4, 9, 16]
+```
+
 ## Built-in promises
 
 ### Filesystem
