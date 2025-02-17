@@ -6,6 +6,12 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 
 * [Asynchroon programmeren](../../nodejs-+-typescript/asynchroon-programmeren/)
 
+### Todo List Fetch
+
+{% content-ref url="../../exercises/node-typescript/todo-list-fetch/" %}
+[todo-list-fetch](../../exercises/node-typescript/todo-list-fetch)
+{% endcontent-ref %}
+
 ### Bitcoin-API
 
 {% content-ref url="../../exercises/node-typescript/bitcoin-api/" %}

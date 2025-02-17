@@ -105,6 +105,7 @@
   * [Fake Fetch](exercises/node-typescript/fake-fetch/README.md)
   * [Promise All](exercises/node-typescript/promise-all/README.md)
   * [Slow Sum](exercises/node-typescript/slow-sum/README.md)
+  * [Todo List Fetch](exercises/node-typescript/todo-list-fetch/README.md)
   * [Cocktails Promise All](exercises/node-typescript/cocktails-promise-all/README.md)
   * [Bitcoin API](exercises/node-typescript/bitcoin-api/README.md)
   * [Joke API](exercises/node-typescript/joke-api/README.md)
