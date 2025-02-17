@@ -25,6 +25,7 @@
   * [Promises](nodejs-+-typescript/asynchroon-programmeren/promises.md)
   * [Async/Await](nodejs-+-typescript/asynchroon-programmeren/async-await.md)
   * [Fetch](nodejs-+-typescript/asynchroon-programmeren/fetch.md)
+  * [Extra voorbeelden](nodejs-+-typescript/asynchroon-programmeren/extra.md)
 
 ## Express.js
 
