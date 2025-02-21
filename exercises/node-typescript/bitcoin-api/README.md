@@ -5,6 +5,7 @@ Maak een nieuw project `bitcoin-api` waarin je jouw bronbestanden voor deze oefe
 Bij het opstarten van de applicatie wordt er gevraagd welke valuta je wilt zien. De keuze bestaat uit de volgende valuta: EUR, USD, GBP. Vervolgens zal de applicatie de huidige prijs van bitcoin in de gekozen valuta tonen. Maak gebruik van de `fetch` functie om de data op te halen.
 
 [Coindesk API](https://api.coindesk.com/v1/bpi/currentprice.json)
+[Mirror](https://sampleapis.assimilate.be/bitcoin/current)
 
 #### Voorbeeld interactie
 
