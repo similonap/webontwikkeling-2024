@@ -89,7 +89,7 @@ Dit print altijd
 
 ### Error object
 
-Als je een foutmelding opvangt in een `catch` block dan kan je deze foutmelding gebruiken in je code. Tot nu toe hebben we altijd een nieuw Error object aangemaakt en zelf een foutmelding gegeven. Maar je kan ook de foutmelding die je opvangt gebruiken. Dit is een object met een aantal properties die je kan gebruiken. Zo heeft dit object een `message` property die de foutmelding bevat. Je kan deze property gebruiken om de foutmelding te tonen aan de gebruiker. Let er op dat je hier het type any moet gebruiken omdat je niet weet welk type de foutmelding zal hebben.
+Als je een foutmelding opvangt in een `catch` block dan kan je deze foutmelding gebruiken in je code. Tot nu toe hebben we altijd een nieuw Error object aangemaakt en zelf een foutmelding gegeven. Maar je kan ook de foutmelding die je opvangt gebruiken. Dit is een object met een aantal properties die je kan gebruiken. Zo heeft dit object een `message` property die de foutmelding bevat. Je kan deze property gebruiken om de foutmelding te tonen aan de gebruiker. Let er op dat je hier het type `unknown` (of `any`) moet gebruiken omdat je niet weet welk type de foutmelding zal hebben.
 
 ```typescript
 try {
@@ -99,11 +99,23 @@ try {
 }
 ```
 
+```typescript
+try {
+    console.log(divide(5, 0));
+} catch (error : unknown) {
+    if (error instanceof Error) {
+        console.log(error.message);
+    }
+}
+```
+
 Dit zal de volgende output geven:
 
 ```
 Division by zero is not allowed
 ```
+
+
 
 In principe is het ook mogelijk om een foutmelding op te gooien zonder een Error object te gebruiken. Je kan bijvoorbeeld een string opgooien als foutmelding. 
 
