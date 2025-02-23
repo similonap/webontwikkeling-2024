@@ -21,3 +21,9 @@ Vanaf dit onderdeel moet je een nieuwe repository aanmaken via de [classroom lin
 {% content-ref url="../../exercises/express/dadjoke-express/" %}
 [dadjoke-express](../../exercises/express/dadjoke-express/)
 {% endcontent-ref %}
+
+### Bitcoin Current
+
+{% content-ref url="../../exercises/express/bitcoin-current/" %}
+[bitcoin-current](../../exercises/express/bitcoin-current/)
+{% endcontent-ref %}

@@ -102,6 +102,14 @@ We plaatsen deze interfaces vaak in een apart bestand met de naam `types.ts`. We
 import { Person } from './types';
 ```
 
+Je kan ook specifiek aangeven dat je een interface wil importeren door gebruik te maken van de `import type` syntax.
+
+```typescript
+import type { Person } from './types';
+```
+
+
+
 ## Npm Packages
 
 ## npm.js
