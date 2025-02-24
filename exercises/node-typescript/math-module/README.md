@@ -1,6 +1,6 @@
 ### Math Module
 
-Maak een nieuw project aan met de naam `math-module`. Maak een nieuwe file aan met de naam `math.ts`. In deze file maak je een module aan met de naam `MathModule`. Deze module bevat de volgende functies:
+Maak een nieuw project aan met de naam `math-module`. Maak een nieuwe file aan met de naam `math.ts`. Deze module bevat de volgende functies:
 
 - `add(a: number, b: number): number` - Deze functie accepteert twee getallen en geeft de som van deze getallen terug.
 - `subtract(a: number, b: number): number` - Deze functie accepteert twee getallen en geeft het verschil van deze getallen terug.
