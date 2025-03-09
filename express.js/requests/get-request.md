@@ -96,7 +96,7 @@ const persons: Person[] = [
 ]
 
 app.get("/", (req, res) => {
-    let q : string = req.query.q ? req.query.q : "";
+    let q : string = typeof req.query.q === "string" ? req.query.q : "";
     let filteredPersons: Person[] = persons.filter((person) => {
         return person.name.toLowerCase().startsWith(q.toLowerCase());
     });
