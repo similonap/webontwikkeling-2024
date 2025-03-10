@@ -10,7 +10,7 @@ Vanaf nu is het verplicht om de data via een fetch in te lezen van je publiekeli
 
 ### Overzichtspagina met Objecten in een Tabel
 
-Creëer een overzichtspagina waar alle objecten worden weergegeven in een tabelvorm. Gebruikers kunnen zelf kiezen welke vijf velden van de objecten niet getoond worden in de tabel. Dit betekent dat sommige informatie van de objecten bewust wordt weggelaten voor een overzichtelijker weergave.
+Creëer een overzichtspagina waar alle objecten worden weergegeven in een tabelvorm. Je mag zelf kiezen welke vijf velden van de objecten niet getoond worden in de tabel. Dit betekent dat sommige informatie van de objecten bewust wordt weggelaten voor een overzichtelijker weergave.
 
 #### Functionaliteiten:
 
