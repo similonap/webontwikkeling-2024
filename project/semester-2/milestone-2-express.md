@@ -2,6 +2,12 @@
 
 ## Opdracht Specificaties
 
+###
+
+{% hint style="warning" %}
+Vanaf nu is het verplicht om de data via een fetch in te lezen van je publiekelijk beschikbare json file!
+{% endhint %}
+
 ### Overzichtspagina met Objecten in een Tabel
 
 Creëer een overzichtspagina waar alle objecten worden weergegeven in een tabelvorm. Gebruikers kunnen zelf kiezen welke vijf velden van de objecten niet getoond worden in de tabel. Dit betekent dat sommige informatie van de objecten bewust wordt weggelaten voor een overzichtelijker weergave.
@@ -17,8 +23,8 @@ Creëer een overzichtspagina waar alle objecten worden weergegeven in een tabelv
 
 #### Opmerkingen:
 
-* **Styling**: Je bent vrij om zelf CSS te schrijven voor de styling van de pagina's. Daarnaast is het toegestaan om frameworks zoals **Tailwind** of **Bootstrap** te gebruiken voor het design. Zorg ervoor dat de interface gebruiksvriendelijk en overzichtelijk blijft.&#x20;
-* **Responsief Ontwerp**: Het wordt sterk aangemoedigd om een responsief ontwerp te hanteren voor de applicatie.&#x20;
+* **Styling**: Je bent vrij om zelf CSS te schrijven voor de styling van de pagina's. Daarnaast is het toegestaan om frameworks zoals **Tailwind** of **Bootstrap** te gebruiken voor het design. Zorg ervoor dat de interface gebruiksvriendelijk en overzichtelijk blijft.
+* **Responsief Ontwerp**: Het wordt sterk aangemoedigd om een responsief ontwerp te hanteren voor de applicatie.
 * **Herbruikbaarheid**: Implementeer de navigatiebalk met behulp van include files om hergebruik van code te bevorderen. Dit zorgt voor een consistent uiterlijk over alle pagina's heen, zonder dat er sprake is van code duplicatie, wat bijdraagt aan een meer gestructureerde en onderhoudbare codebase.
 
 Deze specificaties zijn bedoeld om een interactieve en gebruiksvriendelijke interface te bieden waarmee gebruikers gemakkelijk door de objecten en hun details kunnen navigeren, filteren en sorteren voor betere toegankelijkheid en overzicht.
@@ -54,4 +60,3 @@ Deze screenshots dienen als voorbeeld en zijn niet bedoeld om exact gekopieerd t
 <figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>Detail pagina van de gerelateerde guilds (geralateerde objecten)</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/milestone2.gif" alt=""><figcaption></figcaption></figure>
-
