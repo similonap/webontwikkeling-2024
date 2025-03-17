@@ -26,6 +26,7 @@ Creëer een overzichtspagina waar alle objecten worden weergegeven in een tabelv
 * **Styling**: Je bent vrij om zelf CSS te schrijven voor de styling van de pagina's. Daarnaast is het toegestaan om frameworks zoals **Tailwind** of **Bootstrap** te gebruiken voor het design. Zorg ervoor dat de interface gebruiksvriendelijk en overzichtelijk blijft.
 * **Responsief Ontwerp**: Het wordt sterk aangemoedigd om een responsief ontwerp te hanteren voor de applicatie.
 * **Herbruikbaarheid**: Implementeer de navigatiebalk met behulp van include files om hergebruik van code te bevorderen. Dit zorgt voor een consistent uiterlijk over alle pagina's heen, zonder dat er sprake is van code duplicatie, wat bijdraagt aan een meer gestructureerde en onderhoudbare codebase.
+* **Server-side**: Alle filtering en sortering gebeurt server-side. 
 
 Deze specificaties zijn bedoeld om een interactieve en gebruiksvriendelijke interface te bieden waarmee gebruikers gemakkelijk door de objecten en hun details kunnen navigeren, filteren en sorteren voor betere toegankelijkheid en overzicht.
 
