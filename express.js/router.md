@@ -68,7 +68,7 @@ import postRouter from "./routers/posts";
 ```
 
 ```typescript
-app.use("/posts", postRouter());
+app.use("/posts", postRouter(posts));
 ```
 
 Alle routes die je definieert in de `posts` router, zullen dan beginnen met `/posts`. Dus in het geval van het voorbeeld hierboven:
