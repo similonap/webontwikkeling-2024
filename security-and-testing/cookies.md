@@ -68,7 +68,7 @@ Nu kunnen we de naam van de gebruiker uitlezen in de profielpagina:
 ```typescript
 app.get("/profile", (req, res) => {
   let name: string = req.cookies.username;
-  res.render("profile", { username: username });
+  res.render("profile", { username: name });
 });
 ```
 
