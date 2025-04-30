@@ -4,7 +4,7 @@ Voor deze oefening beginnen we met een [starter project](./starter.zip). Downloa
 
 Als we het starter project opstart krijg je de volgende situatie te zien:
 
-![Starter](image.png)
+![Starter](starter.png)
 
 Geen van de functionaliteiten werkt momenteel. Het is aan jou om de applicatie te voorzien van de nodige functionaliteiten.
 

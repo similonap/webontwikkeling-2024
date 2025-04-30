@@ -62,7 +62,7 @@ const result = await collection.find({ $and: [{ age: { $gt: 18 } }, { age: { $lt
 Dit geeft alle documenten terug waarvan het veld `age` groter is dan 18 en kleiner dan 25. Dus alle documenten waarvan het veld `age` tussen 18 en 25 ligt.
 
 ```typescript
-const result = await collection.find({ $not: { age: { $gt: 18 } } }).toArray();
+const result = await collection.find({ age: { $not: { $gt: 18 } } }).toArray();
 ```
 
 Dit geeft alle documenten terug waarvan het veld `age` niet groter is dan 18. Dus alle documenten waarvan het veld `age` kleiner of gelijk is aan 18.
