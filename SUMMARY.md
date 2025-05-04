@@ -180,6 +180,7 @@
 * [Extra oefeningen](labos/extra/README.md)
   * [DNA Match](exercises/node-typescript/dna-match/README.md)
   * [View Counter](exercises/express/viewcounter/README.md)
+  * [Hogwarts Express CRUD](exercises/mongodb/hogwarts-express-crud/README.md)
 
 ## Project
 
