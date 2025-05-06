@@ -371,7 +371,7 @@ Let op dat je deze niet aan de login route toevoegt. Anders kan je nooit inlogge
 Voor de volledigheid gaan we ook een logout functie toevoegen. Voeg de volgende code toe aan je `index.ts` file:
 
 ```typescript
-app.get("/logout", async(req, res) => {
+app.post("/logout", async(req, res) => {
     req.session.destroy(() => {
         res.redirect("/login");
     });
