@@ -75,9 +75,9 @@ import { User } from "./types";
 
 export const MONGODB_URI = process.env.MONGODB_URI ?? "mongodb://localhost:27017";
 
-export const userCollection = client.db("login-express").collection<User>("users");
-
 export const client = new MongoClient(MONGODB_URI);
+
+export const userCollection = client.db("login-express").collection<User>("users");
 
 async function exit() {
     try {
