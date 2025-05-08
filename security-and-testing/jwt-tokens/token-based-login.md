@@ -65,6 +65,12 @@ export function secureMiddleware(req: Request, res: Response, next: NextFunction
 };
 ```
 
+Om de jwt token te kunnen uitlezen moeten we de cookie parser middleware in de `index.ts` file nog instellen.
+
+```typescript
+app.use(cookieParser());
+```
+
 ## JWT Token verwijderen
 
 We moeten ook de JWT token verwijderen wanneer de user uitlogt. Dit doen we door de cookie te verwijderen.
