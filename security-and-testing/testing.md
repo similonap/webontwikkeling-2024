@@ -412,6 +412,10 @@ import request from "supertest";
 import app from "./app";
 
 test("that /pets calls the getPets function", async () => {
+    const mockPets = [
+        { name: "Fido", species: "dog" },
+        { name: "Milo", species: "cat" },
+    ];
     const toArrayMock = jest.fn().mockResolvedValue(mockPets);
     const findMock = jest.spyOn(collection, 'find').mockImplementation(() => ({
         toArray: toArrayMock
