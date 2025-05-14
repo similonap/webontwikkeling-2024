@@ -52,7 +52,13 @@ import { NextFunction, Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 
 export function secureMiddleware(req: Request, res: Response, next: NextFunction) {
-    let token : string = req.cookies.jwt;
+    const token: string | undefined = req.cookies?.jwt;
+
+    if (!token) {
+        console.log("No token found, redirecting to login");
+        return res.redirect("/login"); // or return a 401 Unauthorized response
+    }
+    
     jwt.verify(token, process.env.JWT_SECRET!, (err, user) => {
         if (err) {
             res.redirect("/login");
@@ -63,6 +69,12 @@ export function secureMiddleware(req: Request, res: Response, next: NextFunction
         }
     });
 };
+```
+
+Om de jwt token te kunnen uitlezen moeten we de cookie parser middleware in de `index.ts` file nog instellen.
+
+```typescript
+app.use(cookieParser());
 ```
 
 ## JWT Token verwijderen

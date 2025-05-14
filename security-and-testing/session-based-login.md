@@ -75,9 +75,9 @@ import { User } from "./types";
 
 export const MONGODB_URI = process.env.MONGODB_URI ?? "mongodb://localhost:27017";
 
-export const userCollection = client.db("login-express").collection<User>("users");
-
 export const client = new MongoClient(MONGODB_URI);
+
+export const userCollection = client.db("login-express").collection<User>("users");
 
 async function exit() {
     try {
@@ -360,7 +360,7 @@ Nu moeten we deze middleware toevoegen aan onze app. We gaan deze niet toevoegen
 import { secureMiddleware } from "./secureMiddleware";
 
 app.get("/", secureMiddleware, async(req, res) => {
-    res.render("index");
+    res.render("index", { user: req.session.user });
 });
 ```
 
@@ -395,6 +395,8 @@ en voegen we een logout knop toe aan onze home pagina:
 Het is ook best om onze routes in aparte files te zetten. We gaan een `routes` map maken in de root van je project. In deze map maken we een loginRouter en een homeRouter. De reden hiervoor is dat we op deze manier de volledige homeRouter kunnen beveiligen met de secureMiddleware. Maak een nieuwe file aan in de `routes` map en noem deze `loginRouter.ts`. Voeg de volgende code toe aan deze file:
 
 ```typescript
+import express from "express";
+
 export function loginRouter() {
     const router = express.Router();
 
