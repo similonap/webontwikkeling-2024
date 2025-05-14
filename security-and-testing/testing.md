@@ -147,7 +147,7 @@ export async function fetchUser(id: number): Promise<string> {
             if (id === 1) {
                 resolve("John Doe");
             } else {
-                reject("User not found");
+                reject(new Error("User not found"));
             }
         }, 1000);
     });
