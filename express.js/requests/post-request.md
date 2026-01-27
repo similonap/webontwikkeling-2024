@@ -49,7 +49,7 @@ Er zijn hier twee belangrijke dingen op te merken in dit voorbeeld:
 
 Het proces om de data van een formulier te behandelen noemen we form handling. Dit is het proces waarbij de data van het formulier wordt opgevraagd en verwerkt. Hieronder een flowchart van het proces:
 
-![Form Handling (https://developer.mozilla.org/)](../../.gitbook/formhandling.png)
+![Form Handling (https://developer.mozilla.org/)](../../.gitbook/assets/formhandling.png)
 
 De meeste formulieren werken op deze manier.
 

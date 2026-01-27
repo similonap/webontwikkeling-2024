@@ -1,4 +1,4 @@
-### Oefening: Rot13
+# Rot13
 
 Maak een nieuw project aan met de naam `rot13`.
 
@@ -6,7 +6,7 @@ We willen een programma maken dat een string encodeert met de rot13 methode. De 
 
 De gebruiker geeft een string in en het programma toont de gecodeerde string.
 
-<figure><img src="rot13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/rot13.png" alt=""><figcaption></figcaption></figure>
 
 De werkwijze is als volgt:
 
@@ -17,7 +17,7 @@ De werkwijze is als volgt:
 * Je neemt de letter op de nieuwe index en je voegt deze toe aan een nieuwe string.
 * Als de letter een spatie is of een ander teken dan een letter dan voeg je deze ook toe aan de nieuwe string. Je moet dus controleren of de letter in de array van het alfabet staat.
 
-#### Voorbeeld interactie
+## Voorbeeld interactie
 
 ```bash
 Enter a string: hello

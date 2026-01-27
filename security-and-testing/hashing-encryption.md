@@ -87,7 +87,7 @@ Je kan hashing ook gebruiken om de integriteit van bestanden te controleren. Als
 
 Vaak zie je op een website iets zoals dit:
 
-![Hashes VSCode](hashes-vscode.png)
+![Hashes VSCode](../.gitbook/assets/hashes-vscode.png)
 
 Als je het bestand gedownload hebt kan je met het `sha256sum` in je console de hash berekenen en controleren of deze overeenkomt met de hash op de website.
 
@@ -105,7 +105,7 @@ Als de hashes overeenkomen, weet je dat het bestand niet is gewijzigd en dat je 
 
 ## Encryptie
 
-Encryptie is een techniek die gebruikt wordt om data te versleutelen. Het grote verschil met hashing is dat je de originele data kan herstellen uit de versleutelde data. Dit doe je aan de hand van een sleutel (een soort passwoord). Encryptie wordt vaak gebruikt om data te beveiligen tijdens transport (zoals gebeurd bij HTTPS) of om data te beveiligen op een harde schijf. 
+Encryptie is een techniek die gebruikt wordt om data te versleutelen. Het grote verschil met hashing is dat je de originele data kan herstellen uit de versleutelde data. Dit doe je aan de hand van een sleutel (een soort passwoord). Encryptie wordt vaak gebruikt om data te beveiligen tijdens transport (zoals gebeurd bij HTTPS) of om data te beveiligen op een harde schijf.
 
 Er zijn twee soorten encryptie: symmetrische en asymmetrische encryptie.
 
@@ -113,15 +113,15 @@ Er zijn twee soorten encryptie: symmetrische en asymmetrische encryptie.
 
 Bij symmetrische encryptie wordt dezelfde sleutel gebruikt om data te versleutelen en te ontsleutelen. Dit betekent dat de sleutel geheim moet blijven, anders kan iedereen de data ontsleutelen. Symmetrische encryptie is snel en efficiënt, maar heeft als nadeel dat je de sleutel veilig moet kunnen uitwisselen. Beide partijen moeten de sleutel kennen om data te kunnen uitwisselen.
 
-![Symmetric encryption](symmetric.png)
+![Symmetric encryption](../.gitbook/assets/symmetric.png)
 
-Het grote nadeel van symmetrische encryptie is dat je de sleutel veilig moet kunnen uitwisselen. Als je de sleutel via een onveilig kanaal verstuurt, kan een aanvaller de sleutel onderscheppen en zo toegang krijgen tot de data. 
+Het grote nadeel van symmetrische encryptie is dat je de sleutel veilig moet kunnen uitwisselen. Als je de sleutel via een onveilig kanaal verstuurt, kan een aanvaller de sleutel onderscheppen en zo toegang krijgen tot de data.
 
 ### Asymmetrische encryptie (Public Key Cryptography)
 
-Bij asymmetrische encryptie worden twee sleutels gebruikt: een publieke en een private sleutel. De publieke sleutel wordt gebruikt om data te versleutelen en de private sleutel wordt gebruikt om data te ontsleutelen. Dit betekent dat je de publieke sleutel veilig kan delen met anderen, zonder dat ze toegang hebben tot de private sleutel. Assymetrische encryptie is veiliger omdat er geen geheimen gedeeld moeten worden, maar is ook trager en minder efficiënt dan symmetrische encryptie. 
+Bij asymmetrische encryptie worden twee sleutels gebruikt: een publieke en een private sleutel. De publieke sleutel wordt gebruikt om data te versleutelen en de private sleutel wordt gebruikt om data te ontsleutelen. Dit betekent dat je de publieke sleutel veilig kan delen met anderen, zonder dat ze toegang hebben tot de private sleutel. Assymetrische encryptie is veiliger omdat er geen geheimen gedeeld moeten worden, maar is ook trager en minder efficiënt dan symmetrische encryptie.
 
-![Assymetric encryption](assymetric.png)
+![Assymetric encryption](../.gitbook/assets/assymetric.png)
 
 Pas op dat je nooit een private sleutel deelt met anderen, want dan kan iedereen je data ontsleutelen.
 
@@ -133,7 +133,7 @@ HTTPS zorgt voor een beveiligde communicatie tussen een webserver en een browser
 
 Als je een website bezoekt via HTTPS, kan je zien dat de URL begint met `https://` en dat er een slotje in de adresbalk staat. Dit betekent dat de verbinding beveiligd is en dat je data veilig is. Let er altijd op dat je een website bezoekt via HTTPS als je gevoelige data moet invoeren, zoals wachtwoorden of creditcardgegevens.
 
-![Https](https.png)
+![Https](../.gitbook/assets/https.png)
 
 Het is wel belangrijk om te weten dat je er niet automatisch vanuit mag gaan dat een website veilig is als het begint met `https://`. Het betekent enkel dat de verbinding beveiligd is, maar niet dat de website zelf veilig is. Een website kan nog steeds kwetsbaar zijn voor aanvallen zoals cross-site scripting of SQL injection.
 
@@ -141,11 +141,11 @@ Het is wel belangrijk om te weten dat je er niet automatisch vanuit mag gaan dat
 
 Een SSL certificaat is een digitaal certificaat dat wordt gebruikt om de identiteit van een website te verifiëren en om een beveiligde verbinding tot stand te brengen. Het certificaat bevat informatie over de website, zoals de naam van de eigenaar en de geldigheidsduur van het certificaat. Het bevat ook de publieke sleutel van de website, die wordt gebruikt om data te versleutelen.
 
-![Certificaat AP](certificate.png)
+![Certificaat AP](../.gitbook/assets/certificate.png)
 
 Je moet hier wel mee opletten want in principe kan iedereen een SSL certificaat zelf aanmaken. Dit betekent dat een website die begint met `https://` niet per se veilig is. Hier komt de rol van certificeringsinstanties (CA's) in het spel. Als je een website bezoekt via HTTPS, controleert je browser of het SSL certificaat geldig is en of het is uitgegeven door een vertrouwde CA. Als dit niet het geval is, krijg je een waarschuwing te zien en kan je beslissen of je de website wil bezoeken of niet.
 
-![https://self-signed.badssl.com/](selfsigned.png)
+![https://self-signed.badssl.com/](../.gitbook/assets/selfsigned.png)
 
 #### Let's Encrypt
 
@@ -154,4 +154,3 @@ Normaal gezien moet je betalen voor een SSL certificaat, maar er zijn ook gratis
 Let's Encrypt is een non-profit certificeringsinstantie (CA's) die gratis SSL certificaten uitgeeft. Het doel van Let's Encrypt is om het internet veiliger te maken door het gebruik van HTTPS te stimuleren. Je kan een SSL certificaat aanvragen via de website van Let's Encrypt of via een hosting provider die Let's Encrypt ondersteunt.
 
 Je kan meer informatie vinden op de website van Let's Encrypt: [https://letsencrypt.org/](https://letsencrypt.org/)
-

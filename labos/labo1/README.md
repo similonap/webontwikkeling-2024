@@ -11,7 +11,7 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 ## Devcontainer opzetten
 
 * Github account aanmaken met je AP e-mailadres
-* Je kan de volgende invite link gebruiken om de repository te clonen: [Github Classroom](https://classroom.github.com/a/Zn-O1cS-)
+* Je kan de volgende invite link gebruiken om de repository te clonen: [Github Classroom](https://classroom.github.com/a/QN-7bCPi)
 * Volg de instructies in de [Devcontainers](../../tooling/devcontainers.md) sectie om een devcontainer op te zetten.
 
 ## Git en Terminal

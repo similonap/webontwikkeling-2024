@@ -1,4 +1,4 @@
-### Todo list
+# Todo List String
 
 Maak een nieuw project aan met de naam `todo-list-string`.
 
@@ -41,6 +41,6 @@ What did you do? [1, 2, 3]: 2
 
 Als de gebruiker kiest voor "Exit" dan stopt het programma.
 
-#### **Voorbeeldinteractie:**
+## **Voorbeeldinteractie:**
 
-<figure><img src="todos.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/todos (1).gif" alt=""><figcaption></figcaption></figure>
