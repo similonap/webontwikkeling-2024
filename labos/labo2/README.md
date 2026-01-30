@@ -9,6 +9,7 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 * [Eerste NodeJS App](../../nodejs-+-typescript/projectmaken.md)
 * [Input Lezen](../../nodejs-+-typescript/input-lezen.md) (nog geen menu)
 * [Basis types](../../nodejs-+-typescript/type-systeem/basic-types.md) (enkel string, number en boolean)
+* [Robot 
 
 ## Oefeningen
 
@@ -64,4 +65,10 @@ Maak een nieuwe directory `labo2` aan in de root van je project.
 
 {% content-ref url="../../exercises/node-typescript/text-box/" %}
 [text-box](../../exercises/node-typescript/text-box/)
+{% endcontent-ref %}
+
+### Robot Readline
+
+]{% content-ref url="../../exercises/node-typescript/robots-readline/" %}
+[text-box](../../exercises/node-typescript/robots-readline/)
 {% endcontent-ref %}
