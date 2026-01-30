@@ -69,6 +69,6 @@ Maak een nieuwe directory `labo2` aan in de root van je project.
 
 ### Robot Readline
 
-]{% content-ref url="../../exercises/node-typescript/robots-readline/" %}
+{% content-ref url="../../exercises/node-typescript/robots-readline/" %}
 [text-box](../../exercises/node-typescript/robots-readline/)
 {% endcontent-ref %}
