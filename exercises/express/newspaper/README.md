@@ -1,6 +1,6 @@
-### Newspaper
+# Newspaper
 
-Maak een nieuw project aan met de naam `newspaper` en installeer express volgens de instructies in de theorie les. 
+Maak een nieuw project aan met de naam `newspaper` en installeer express volgens de instructies in de theorie les.
 
 Zorg ervoor dat ejs wordt geinstalleerd en dat je de view engine instelt op ejs.
 
@@ -132,24 +132,22 @@ app.listen(app.get("port"), () => {
 
 Zorg nu voor de volgende routes (je moet nog geen dynamische routes maken):
 
-- `/` laat alle artikels zien
-- `/politics` laat enkel de artikels zien die over politiek gaan
-- `/economy` laat enkel de artikels zien die over economie gaan
-- `/sports` laat enkel de artikels zien die over sport gaan
-- `/entertainment` laat enkel de artikels zien die over entertainment gaan
-- `/technology` laat enkel de artikels zien die over technologie gaan
-- Voorzie ook een 404 pagina die getoond wordt als de gebruiker een route probeert te bezoeken die niet bestaat.
+* `/` laat alle artikels zien
+* `/politics` laat enkel de artikels zien die over politiek gaan
+* `/economy` laat enkel de artikels zien die over economie gaan
+* `/sports` laat enkel de artikels zien die over sport gaan
+* `/entertainment` laat enkel de artikels zien die over entertainment gaan
+* `/technology` laat enkel de artikels zien die over technologie gaan
+* Voorzie ook een 404 pagina die getoond wordt als de gebruiker een route probeert te bezoeken die niet bestaat.
 
 Alle routes gebruiken dezelfde ejs template om de artikels te tonen. Buiten de 404 pagina, die een eigen ejs template gebruikt.
 
 Hieronder een aantal voorwaarden waaraan je applicatie moet voldoen:
 
-- Bovenaan de pagina moet een navigatiebalk staan met links naar alle topics
-- De topics moeten dynamisch gegenereerd worden op basis van de topics array. (Via een for loop in de ejs template)
-- De artikels moeten `<article>` elementen gebruiken om de artikels te tonen.
-- Zorg voor styling van de artikels.
-- Zorg voor 2 partials `header` en `footer` die je kan includen in je ejs template.
+* Bovenaan de pagina moet een navigatiebalk staan met links naar alle topics
+* De topics moeten dynamisch gegenereerd worden op basis van de topics array. (Via een for loop in de ejs template)
+* De artikels moeten `<article>` elementen gebruiken om de artikels te tonen.
+* Zorg voor styling van de artikels.
+* Zorg voor 2 partials `header` en `footer` die je kan includen in je ejs template.
 
-
-
-![alt text](articles.png)
+![alt text](<../../../.gitbook/assets/articles (1).png>)

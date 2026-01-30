@@ -1,4 +1,4 @@
-### Maaltafels
+# Maaltafels
 
 Maak een nieuw project **maaltafels** waarin je jouw bronbestanden voor deze oefening kan plaatsen.
 
@@ -28,4 +28,4 @@ Je mag geen aanpassingen maken in de `index.ts` file. Het opbouwen van de tabel 
 
 **De output in de browser moet er als volgt uitzien:**
 
-![](maaltafels.png)
+![](<../../../.gitbook/assets/maaltafels (1).png>)

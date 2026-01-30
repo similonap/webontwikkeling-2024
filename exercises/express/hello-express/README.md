@@ -1,4 +1,4 @@
-## helloExpress
+# Hello Express
 
 Maak een nieuw project aan met de naam `helloExpress` en installeer express volgens de instructies in de theorie les.
 
@@ -19,7 +19,6 @@ In deze oefening is het nog niet de bedoeling om EJS te gebruiken. We gaan enkel
     * `profilePic`
 
     De `profilepic` property bevat een url van een foto van jezelf. De foto moet je in de public folder zetten.
-
 * Zorg dat `localhost:3000/whoami` een HTML pagina toont met:
   * de zin "My name is _XXX_ and I am _YYY_ years old" met XXX en YYY de waarden van de properties van de `thisisme` variabel en
   * de foto uit profilePic
@@ -41,7 +40,7 @@ In deze oefening is het nog niet de bedoeling om EJS te gebruiken. We gaan enkel
 * Deze route toont elke keer dat je deze pagina bezoekt een andere kleur.
 * Zoek zelf uit hoe je een willekeurige kleur kan berekenen. Probeer zelf eerst iets in elkaar te steken voor je begint te googlen hoe het moet.
 
-![](./randomcolor.gif)
+![](<../../../.gitbook/assets/randomcolor (1).gif>)
 
 **Foutafhandeling**
 
