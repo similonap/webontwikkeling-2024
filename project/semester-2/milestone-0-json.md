@@ -1,4 +1,4 @@
-# Milestone 0 - Voorbereiding
+# Milestone 0 - JSON
 
 ## JSON Aanmaken
 

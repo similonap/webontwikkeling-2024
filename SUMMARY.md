@@ -186,7 +186,7 @@
 
 * [Voorbereiding (devcontainer + github)](project/dev-container.md)
 * [Semester 2](project/semester-2/README.md)
-  * [Milestone 0 - Voorbereiding](project/semester-2/milestone-0-voorbereiding.md)
+  * [Milestone 0 - JSON](project/semester-2/milestone-0-json.md)
   * [Milestone 1 - Terminal App](project/semester-2/milestone-1-terminal-app.md)
   * [Milestone 2 - Express](project/semester-2/milestone-2-express.md)
   * [Milestone 3 - MongoDB](project/semester-2/milestone-3-mongodb.md)
