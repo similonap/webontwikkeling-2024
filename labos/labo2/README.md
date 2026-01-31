@@ -9,7 +9,6 @@ Bekijk voor het labo aan te vangen eerst de volgende topics:
 * [Eerste NodeJS App](../../nodejs-+-typescript/projectmaken.md)
 * [Input Lezen](../../nodejs-+-typescript/input-lezen.md) (nog geen menu)
 * [Basis types](../../nodejs-+-typescript/type-systeem/basic-types.md) (enkel string, number en boolean)
-* [Robot 
 
 ## Oefeningen
 
