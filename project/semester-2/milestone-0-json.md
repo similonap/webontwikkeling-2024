@@ -171,7 +171,7 @@ Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd a
 
 We gaan github gebruiken voor ons JSON bestand te hosten. Hoewel github gebruikt wordt kunnen we dit ook gebruiken om bestanden in op te slaan en publiekelijk te hosten (in beperkte mate)
 
-* Maak een nieuwe github repository aan en zet deze publiek.
+* Maak **een nieuwe github** **repository** aan en zet deze publiek.
 * Je kan deze clonen of gewoon via de web interface de bestanden toevoegen.
 * Upload je image bestanden naar github (of push deze naar je repository)
 * Update de image urls in je json file zodat deze naar github urls wijzen. Zorg zeker dat je de raw url gebruikt als image url. Bv: [https://raw.githubusercontent.com/similonap/fake-gpt/main/images/chatbot.png](https://raw.githubusercontent.com/similonap/fake-gpt/main/images/chatbot.png)
