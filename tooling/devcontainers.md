@@ -181,3 +181,11 @@ wsl --update
 ```
 
 * Hierna kan je best je computer herstarten om zeker te zijn dat alles goed werkt.
+
+### Repository Access Issue
+
+Krijg je deze error tijdens het accepteren van een github classroom
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Kijk je mail na voor een invite link. Deze link wordt pas verstuurd als je deze error hebt gekregen.
