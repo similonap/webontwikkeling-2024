@@ -178,3 +178,11 @@ We gaan github gebruiken voor ons JSON bestand te hosten. Hoewel github gebruikt
 * Upload je json naar github (of push deze naar je repository)
 
 Je mag uiteraard zelf ook hosting voorzien voor je json bestand en images. Zorg er gewoon voor dat je json publiekelijk beschikbaar is en je images.
+
+
+
+## Interessante links
+
+* [ChatGPT](https://chatgpt.com/)
+* [Gemini](https://gemini.google.com/app)
+* [https://perchance.org/ai-text-to-image-generator](https://perchance.org/ai-text-to-image-generator)
