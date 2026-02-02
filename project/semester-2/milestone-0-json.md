@@ -23,7 +23,7 @@ We gaan een json bestand nodig hebben dat we gaan gebruiken als basis van een AP
 Let op dat dit een minimale vereiste is. Je mag gerust meer properties toevoegen als dat nodig is voor je idee.
 
 {% hint style="info" %}
-Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd via Gemini of ChatGPT
+Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd via Gemini of ChatGPT.&#x20;
 {% endhint %}
 
 **Voorbeelden:**
