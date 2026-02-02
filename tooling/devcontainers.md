@@ -98,6 +98,10 @@ Ga naar [https://www.docker.com/products/docker-desktop/](https://www.docker.com
 
 Download het installie-programma en voer het programma uit.
 
+{% hint style="danger" %}
+Je hoeft **GEEN** account te maken om docker desktop te installeren. Als je dit wel doet moet kijk dan in je email naar een verificatiemail.
+{% endhint %}
+
 #### Install Git
 
 Ga naar [https://git-scm.com/downloads](https://git-scm.com/downloads)
