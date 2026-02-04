@@ -1,6 +1,7 @@
 # Modules
 
 ## Eigen Modules Maken
+
 ### Wat zijn modules?
 
 Modules zijn een manier om je code te organiseren in verschillende bestanden. Vaak wil je bepaalde functies beschikbaar maken voor andere bestanden. Dit kan je doen door deze functies in een module te zetten. Je kan dan in andere bestanden deze module importeren en de functies gebruiken.
@@ -108,30 +109,28 @@ Je kan ook specifiek aangeven dat je een interface wil importeren door gebruik t
 import type { Person } from './types';
 ```
 
-
-
 ## Npm Packages
 
 ## npm.js
 
-npm.js is de package manager voor JavaScript. Het is de grootste software registry ter wereld. Hier vind je heel veel packages die je kan gebruiken in je projecten. Wil je een bepaalde package zoeken dan kan je dat doen op de [npmjs website](https://www.npmjs.com/). Je vind er ook uitgebreide documentatie over de packages en hoe je deze kan gebruiken. 
+npm.js is de package manager voor JavaScript. Het is de grootste software registry ter wereld. Hier vind je heel veel packages die je kan gebruiken in je projecten. Wil je een bepaalde package zoeken dan kan je dat doen op de [npmjs website](https://www.npmjs.com/). Je vind er ook uitgebreide documentatie over de packages en hoe je deze kan gebruiken.
 
 ![alt text](../.gitbook/assets/npmjs.png)
 
 Npm packages kunnen typisch op drie verschillende manieren geïnstalleerd worden: als dependency, dev dependency, en globaal. Een dependency wordt geïnstalleerd wanneer een pakket nodig is voor de werking van je applicatie in productie; dit zijn bijvoorbeeld bibliotheken die essentieel zijn om de applicatie te laten draaien (bv. leaflet om je interactieve map te tonen). Een dev dependency daarentegen is een pakket dat alleen nodig is tijdens de ontwikkeling, zoals tools voor testen of linting, en wordt niet meegeleverd in productie. Tot slot kunnen pakketten ook globaal geïnstalleerd worden, wat betekent dat ze overal op je systeem beschikbaar zijn, ongeacht welk project je gebruikt. Dit wordt meestal gedaan voor CLI-tools die je buiten een specifiek project wilt gebruiken, zoals TypeScript of ESLint.
 
-| **Installatiemethode**             | **Beschrijving**                                                                                         | **Installatievoorbeeld**                                                                                  |
-|------------------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| **Dependencies**                   | Packages die nodig zijn om de applicatie in productie te laten draaien.                                   | `npm install package-name`                                                                                 |
-| **DevDependencies**                | Packages die alleen nodig zijn tijdens de ontwikkeling (testing, linting, building, enz.).          | `npm install package-name --save-dev`                                                                      |
-| **Globale installatie (`-g`)**     | Packages die globaal op je systeem worden geïnstalleerd, vaak gebruikt voor CLI-tools.                    | `npm install package-name -g`                                                                              |
-
+| **Installatiemethode**         | **Beschrijving**                                                                           | **Installatievoorbeeld**              |
+| ------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------- |
+| **Dependencies**               | Packages die nodig zijn om de applicatie in productie te laten draaien.                    | `npm install package-name`            |
+| **DevDependencies**            | Packages die alleen nodig zijn tijdens de ontwikkeling (testing, linting, building, enz.). | `npm install package-name --save-dev` |
+| **Globale installatie (`-g`)** | Packages die globaal op je systeem worden geïnstalleerd, vaak gebruikt voor CLI-tools.     | `npm install package-name -g`         |
 
 ## package.json
 
 Elk project heeft een `package.json` bestand. Dit bestand bevat alle informatie over je project. Het bevat ook een lijst van alle packages die je nodig hebt voor je project. Wanneer je een package installeert met npm dan wordt deze package toegevoegd aan dit bestand in de juiste `dependency` sectie.
 
 **Packages installeren in de CLI**
+
 ```bash
 # Install als Dependency 
 # Packages die essentieel zijn voor de uitvoering van je applicatie in productie
@@ -143,6 +142,7 @@ npm install @types/readline-sync --save-dev
 ```
 
 **package.json**
+
 ```json
 {
   "name": "project-name",
@@ -170,19 +170,19 @@ Je kan alle dependencies installeren aan de hand van het volgende commando. Dus 
 npm install
 ```
 
-## node_modules
+## node\_modules
 
 Wanneer je een package installeert met npm dan wordt deze package geïnstalleerd in een map genaamd `node_modules`. Deze map bevat alle packages die je nodig hebt voor je project. Je moet deze map niet zelf aanmaken. npm doet dit automatisch voor je.
 
 Omdat alle dependencies opgegeven staan in het `package.json` bestand en je deze ten allen tijde kan installeren aan de hand van het `npm install` commando, moet je deze map ook niet toevoegen aan je git repository. Het is een goed idee om deze map toe te voegen aan je `.gitignore` bestand. Voeg deze map ook nooit toe aan een zip bestand dat je doorstuurt naar iemand anders. Deze persoon kan dan zelf de dependencies installeren aan de hand van het `npm install` commando.
 
-Wanneer je een package terug zou willen verwijderen uit je node_modules folder kan je dit doen met het volgende commando:
+Wanneer je een package terug zou willen verwijderen uit je node\_modules folder kan je dit doen met het volgende commando:
 
 ```bash
 npm uninstall <package-name>
 ```
 
-Al de bestanden die je voordien had gedownload bij het installeren van deze package in de node_modules folder zijn nu terug verwijderd. De package is ook verwijderd uit de `package.json` file.
+Al de bestanden die je voordien had gedownload bij het installeren van deze package in de node\_modules folder zijn nu terug verwijderd. De package is ook verwijderd uit de `package.json` file.
 
 ## Importeren van npm packages
 
@@ -245,7 +245,7 @@ npm install --save-dev @types/ejs
 Je kan op de npmjs website heel eenvoudig zien of een bepaalde package TypeScript support heeft:
 
 * Bevat deze een <img src="../.gitbook/assets/dt.png" alt="" data-size="line"> tag? Dan kan je deze installeren aan de hand van de bovenstaande commando's
-* Bevat deze een <img src="../.gitbook/assets/image.png" alt="" data-size="line"> tag, dan zitten de types al in de npm package en dan hoef je niets te doen.
+* Bevat deze een <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> tag, dan zitten de types al in de npm package en dan hoef je niets te doen.
 
 Bevat deze geen van beide? Dan heb je helemaal geen types en heb je geen voordelen van TypeScript. Je moet dan ook nog een extra aanpassing doen aan je project om deze library toch nog te gebruiken.
 
@@ -261,7 +261,7 @@ Dit is ook wat je vscode je aanraad als je over de error hovered als hij de type
 
 ## Voorbeeld: Lodash
 
-We gaan in dit voorbeeld de `lodash` package gebruiken. Deze package bevat heel veel handige functies die je kan gebruiken in je projecten. Het is een soort zwitsers zakmes voor JavaScript. 
+We gaan in dit voorbeeld de `lodash` package gebruiken. Deze package bevat heel veel handige functies die je kan gebruiken in je projecten. Het is een soort zwitsers zakmes voor JavaScript.
 
 We installeren deze library aan de hand van het volgende commando.
 
@@ -287,7 +287,7 @@ Dit moeten we aanpassen naar het nieuwe module systeem.
 import _ from 'lodash';
 ```
 
-Vervolgens kunnen we de functies gebruiken zoals beschreven in de documentatie. 
+Vervolgens kunnen we de functies gebruiken zoals beschreven in de documentatie.
 
 Bv de `reverse` functie.
 
@@ -304,9 +304,3 @@ console.log(_.round(4.006, 2));
 ```
 
 In die oefeningen zullen we nog een aantal handige functies van `lodash` bekijken.
-
-
-
-
-
-

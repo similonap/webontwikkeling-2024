@@ -69,13 +69,13 @@ wsl --version
 Als WSL geinstalleerd is, zou je output moeten krijgen zoals deze (versie nummers kunnen verschillen).
 
 ```
-WSL version: 2.0.14.0
-Kernel version: 5.15.133.1-1
-WSLg version: 1.0.59
-MSRDC version: 1.2.4677
+WSL version: 2.4.10.0
+Kernel version: 5.15.167.4
+WSLg version: 1.0.65
+MSRDC version: 1.2.5620
 Direct3D version: 1.611.1-81528511
-DXCore version: 10.0.25131.1002-220531-1700.rs-onecore-base2-hyp
-Windows version: 10.0.22621.3007
+DXCore version: 10.0.26100.1-240331-1435.ge-release
+Windows version: 10.0.26100.3037
 ```
 
 Indien WSL dus geinstalleerd is, kan je WSL updaten met het volgende command:
@@ -87,7 +87,7 @@ wsl --update
 **Als je WSL&#x20;**_**NIET**_**&#x20;geinstalleerd hebt, dan installeer je WSL met het volgende commando:**
 
 ```
-wsl --install
+wsl --install --no-distribution
 ```
 
 Meer informatie vind je op:[ https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -97,6 +97,10 @@ Meer informatie vind je op:[ https://learn.microsoft.com/en-us/windows/wsl/insta
 Ga naar [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 Download het installie-programma en voer het programma uit.
+
+{% hint style="danger" %}
+Je hoeft **GEEN** account te maken om docker desktop te installeren. Als je dit wel doet moet kijk dan in je email naar een verificatiemail.
+{% endhint %}
 
 #### Install Git
 
@@ -177,3 +181,11 @@ wsl --update
 ```
 
 * Hierna kan je best je computer herstarten om zeker te zijn dat alles goed werkt.
+
+### Repository Access Issue
+
+Krijg je deze error tijdens het accepteren van een github classroom
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Kijk je mail na voor een invite link. Deze link wordt pas verstuurd als je deze error hebt gekregen.

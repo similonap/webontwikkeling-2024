@@ -23,7 +23,7 @@ We gaan een json bestand nodig hebben dat we gaan gebruiken als basis van een AP
 Let op dat dit een minimale vereiste is. Je mag gerust meer properties toevoegen als dat nodig is voor je idee.
 
 {% hint style="info" %}
-Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd aan de hand van AI generation tools zoals DALL-E (via bing of chatgpt)
+Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd via Gemini of ChatGPT.&#x20;
 {% endhint %}
 
 **Voorbeelden:**
@@ -171,10 +171,18 @@ Zorg vooral voor realistische data. Images kunnen eenvoudig worden gegenereerd a
 
 We gaan github gebruiken voor ons JSON bestand te hosten. Hoewel github gebruikt wordt kunnen we dit ook gebruiken om bestanden in op te slaan en publiekelijk te hosten (in beperkte mate)
 
-* Maak een nieuwe github repository aan en zet deze publiek.
+* Maak **een nieuwe github** **repository** aan en zet deze publiek.
 * Je kan deze clonen of gewoon via de web interface de bestanden toevoegen.
 * Upload je image bestanden naar github (of push deze naar je repository)
 * Update de image urls in je json file zodat deze naar github urls wijzen. Zorg zeker dat je de raw url gebruikt als image url. Bv: [https://raw.githubusercontent.com/similonap/fake-gpt/main/images/chatbot.png](https://raw.githubusercontent.com/similonap/fake-gpt/main/images/chatbot.png)
 * Upload je json naar github (of push deze naar je repository)
 
 Je mag uiteraard zelf ook hosting voorzien voor je json bestand en images. Zorg er gewoon voor dat je json publiekelijk beschikbaar is en je images.
+
+
+
+## Interessante links
+
+* [ChatGPT](https://chatgpt.com/)
+* [Gemini](https://gemini.google.com/app)
+* [https://perchance.org/ai-text-to-image-generator](https://perchance.org/ai-text-to-image-generator)
