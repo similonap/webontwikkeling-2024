@@ -1,33 +1,33 @@
-# Wat is NodeJS?
+# Wat is Node.js?
 
-Tot 2009 werd JavaScript exclusief gebruikt in browsers en was het gebruik van deze taal enkel nodig voor web pagina's. In 2009 veranderde dit verhaal helemaal bij het ontstaan van Node.js. Node.js laat het toe om JavaScript buiten de browser te gaan uitvoeren. Zo konden ook andere soorten applicaties worden gemaakt met JavaScript en steeg de populariteit van JavaScript heel snel. Dankzij Node.js konden web ontwikkelaars volledige applicaties bouwen die op web servers draaiden en in de browser met 1 dezelfde taal.
+Tot 2009 leefde JavaScript exclusief binnen de muren van de webbrowser; de taal diende enkel om webpagina's interactief te maken. Dit veranderde radicaal met de introductie van **Node.js** door Ryan Dahl.
 
-Ondertussen is JavaScript de 7de meest gebruikte programmeertaal in de wereld en kan deze gebruikt worden voor bijna alles te maken zoals:
+Node.js haalde JavaScript uit de browser door gebruik te maken van de krachtige V8-engine van Google Chrome. Hierdoor werd het mogelijk om JavaScript ook **server-side** (op de server) uit te voeren. Dit was een revolutie: voor het eerst konden ontwikkelaars zowel de voorkant (frontend) als de achterkant (backend) van een applicatie bouwen met **één en dezelfde taal**. Dit concept, vaak "JavaScript Everywhere" genoemd, zorgde voor een explosieve groei van het ecosysteem.
 
-* **Mobiele applicaties**
-  * Bv. met React native
-* **Web applicaties**
-  * Bv. met React.js, angular, Vue.JS,...
-* **Games**
-  * Bv. met Phaser, kiwi.js,...
-* **Desktop applicaties**
-  * Bv. met electron.js
+Vandaag de dag is JavaScript (mede dankzij TypeScript) volgens de *Stack Overflow Developer Survey* en *GitHub Octoverse* al jarenlang de **meest gebruikte programmeertaal ter wereld**.
 
-Meest gebruikte programmeertalen, Aug 2021 vergeleken met vorig jaar:
+De veelzijdigheid is ongekend. Waar het begon met simpele scripts, vormt het nu de basis voor:
 
-| <p>Rank<br></p> | Language       | Share   | Trend  |
-| --------------- | -------------- | ------- | ------ |
-| 1               | Python         | 29.93 % | -2.2 % |
-| 2               | Java           | 17.78 % | +1.2 % |
-| 3               | **JavaScript** | 8.79 %  | +0.6 % |
-| 4               | C#             | 6.73 %  | +0.2 % |
-| 5               | C/C++          | 6.45 %  | +0.7 % |
-| 6               | PHP            | 5.76 %  | -0.0 % |
-| 7               | R              | 3.92 %  | -0.1 % |
-| 8               | Objective-C    | 2.26 %  | -0.3 % |
-| 9               | **TypeScript** | 2.11 %  | +0.2 % |
-| 10              | Swift          | 1.96 %  | -0.3 % |
+* **Backend & API's** (De kracht van Node.js)
+  * Bv. met Express, NestJS of Fastify.
+* **Moderne Web Applicaties (Full Stack)**
+  * Bv. met Next.js (React), Nuxt (Vue) of SvelteKit.
+* **Mobiele Applicaties**
+  * Bv. met React Native of Expo.
+* **Desktop Applicaties**
+  * Bv. met Electron (gebruikt door VS Code & Spotify) of het modernere Tauri.
+* **3D & Games**
+  * Bv. met Three.js of Babylon.js.
 
+<p align="center">
+  <img src="nodejs.png" alt="Stack Overflow 2025 Data" width="600">
+  <br>
+  <em>Top web frameworks and technologies (Stack Overflow Survey 2025)</em>
+</p>
 
+Zonder de introductie van Node.js in 2009 zouden we waarschijnlijk nog steeds vastzitten aan de limieten van de browser. Node.js heeft JavaScript getransformeerd van een eenvoudige scripttaal naar de ruggengraat van moderne softwareontwikkeling.
 
-JavaScript is een van de meest veelzijdige talen in de programmeerwereld waar bijna alles mee kan gedaan worden. Dit is allemaal mogelijk geworden dankzij het ontstaan van Node.js in 2009, zonder Node.js zouden we voor eeuwig vast hebben gezeten in de limieten van de browser en was JavaScript nooit uitgegroeid tot de taal die het nu is.
+## Bronnen
+
+- https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/
+- https://survey.stackoverflow.co/2025/technology
