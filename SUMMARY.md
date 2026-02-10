@@ -82,6 +82,7 @@
   * [Wisselgeld](exercises/node-typescript/wisselgeld/README.md)
   * [Name from Email](exercises/node-typescript/name-from-email/README.md)
   * [Text Box](exercises/node-typescript/text-box/README.md)
+  * [Robot Readline](labos/labo2/robot-readline.md)
 * [3. Arrays](labos/labo3/README.md)
   * [Som van getallen](exercises/node-typescript/som-van-getallen/README.md)
   * [Puntenboek](exercises/node-typescript/puntenboek/README.md)
