@@ -90,6 +90,7 @@
   * [Pokemon Team](exercises/node-typescript/pokemon-team/README.md)
   * [Todo List String](exercises/node-typescript/todo-list-string/README.md)
   * [Tick Tac Toe](exercises/node-typescript/tic-tac-toe/README.md)
+  * [Robot Caesar](labos/labo3/robot-caesar.md)
 * [4. Interfaces & functies](labos/labo4/README.md)
   * [Interfaces](labos/labo4/interfaces/README.md)
     * [Recepten](exercises/node-typescript/recepten/README.md)
