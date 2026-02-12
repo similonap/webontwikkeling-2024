@@ -350,3 +350,13 @@ console.log(defaultUser.address!.street); // Defaultstreet
 ```
 
 Let op dat je deze operator niet begint te gebruiken om fouten te verbergen. Je moet er zeker van zijn dat de waarde niet undefined of null kan zijn. Anders zal je een foutmelding krijgen op runtime. Gebruik hem dus niet om de compiler de mond te snoeren.
+
+### Het `as` keyword
+
+Het `as` keyword wordt gebruikt om TypeScript te vertellen dat een waarde een bepaald type heeft. Dit is nodig omdat TypeScript niet altijd weet welk type een waarde heeft. Dit is een zogenaamde type assertion. Opgelet: dit is geen type casting. Het verandert het type van de waarde niet. Het verandert alleen het type dat TypeScript denkt dat de waarde heeft.
+
+```typescript
+let data = "Hello World";
+let data2 = data as string;
+```
+
