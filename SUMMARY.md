@@ -103,6 +103,7 @@
     * [Movies Functions](exercises/node-typescript/movies-functions/README.md)
     * [Filter Numbers](exercises/node-typescript/filter-numbers/README.md)
     * [At Least Two](exercises/node-typescript/at-least-two/README.md)
+    * [Robot Password](labos/labo4/functions/robot-password.md)
 * [5. Async & fetch](labos/labo5/README.md)
   * [Fake Fetch](exercises/node-typescript/fake-fetch/README.md)
   * [Promise All](exercises/node-typescript/promise-all/README.md)
