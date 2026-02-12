@@ -360,3 +360,15 @@ let data = "Hello World";
 let data2 = data as string;
 ```
 
+Dit is soms wel gevaarlijk om te gebruiken. Je moet er zeker van zijn dat de waarde wel degelijk het type heeft dat je aangeeft. Anders zal je een foutmelding krijgen op runtime.
+
+```typescript
+let data = "Hello World";
+let data2 = data as number;
+
+console.log(data2.toFixed(2)); 
+```
+
+Dit is gevaarlijk omdat we TypeScript vertellen dat `data2` het type `number` heeft, terwijl het in werkelijkheid het type `string` heeft. Als we nu een methode zouden gebruiken die alleen voor `number` beschikbaar is, dan krijgen we een foutmelding op runtime.
+
+
