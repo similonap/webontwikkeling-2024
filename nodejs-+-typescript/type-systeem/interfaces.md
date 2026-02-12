@@ -274,8 +274,10 @@ Je moet hier wel op letten dat je in je `tsconfig.json` bestand de volgende opti
 Je moet dan nog wel de inhoud van `usersJson` in een variabele of constante steken:
 
 ```typescript
-const users: User[] = data;
+const users: User[] = data as User[]
 ```
+
+Je merkt hier op dat we het `as` statement gebruiken om TypeScript te vertellen dat `data` het type `User[]` heeft. Dit is nodig omdat TypeScript niet weet welk type `data` heeft omdat dit afkomstig is van een JSON bestand. Dit is een zogenaamde type assertion. 
 
 Het is niet altijd mogelijk om een bestand in te lezen aan de hand van het `import` statement. Als je bijvoorbeeld een bestand wil inlezen dat niet in je project zit en ergens anders op je computer staat dan kan je dit niet inlezen aan de hand van het `import` statement. In dat geval kan je gebruik maken van de `fs` module.
 
