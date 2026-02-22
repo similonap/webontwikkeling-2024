@@ -115,6 +115,7 @@
   * [School API](exercises/node-typescript/school-api/README.md)
   * [Cocktails API](exercises/node-typescript/cocktails-api/README.md)
   * [Unix Timestamp API](exercises/node-typescript/unix-timestamp-api/README.md)
+  * [Robot Promise All ](https://cc.assimilate.be/challenges/promise-all)
 * [6. Modules en NPM Packages](labos/labo6/README.md)
   * [Math Module](exercises/node-typescript/math-module/README.md)
   * [Export Interfaces](exercises/node-typescript/export-interfaces/README.md)
