@@ -55,7 +55,6 @@ Je kan nu in de `index.ejs` view de `title` variabele gebruiken zonder deze mee 
 
 Je zou eventueel ook een `user` object kunnen toevoegen aan de `res.locals` object. Zo kan je in alle views de `user` variabele gebruiken. Je kan deze variabele dan bijvoorbeeld gebruiken om te bepalen of de gebruiker is ingelogd of niet.
 
-
 ### Security token voorbeeld
 
 Stel dat je een API hebt waarbij je een security token moet meesturen met elke request. Je kan dan een middleware functie schrijven die de security token controleert. Als de security token niet klopt, dan kan je een error terugsturen. Als de security token wel klopt, dan kan je de request doorsturen naar de volgende middleware functie in de stack. We zullen de authorization header gebruiken om de security token mee te sturen.
@@ -164,9 +163,9 @@ export const handleError = (err: any, req: Request, res: Response, next: NextFun
     res.status(500).render("error",
         {
             message: err.message,
-            message: err.stack
-        }
-});
+            stack: err.stack
+        });
+};
 ```
 
 en dan kunnen we deze middleware functie toevoegen aan de stack:
@@ -285,7 +284,7 @@ app.use(maxRequest({ maxRequests: 10 }));
 
 ### Middleware volgorde
 
-De volgorde van de middleware functies is belangrijk. De eerste middleware functie die wordt toegevoegd aan de stack zal als eerste worden uitgevoerd. De laatste middleware functie die wordt toegevoegd aan de stack zal als laatste worden uitgevoerd. 
+De volgorde van de middleware functies is belangrijk. De eerste middleware functie die wordt toegevoegd aan de stack zal als eerste worden uitgevoerd. De laatste middleware functie die wordt toegevoegd aan de stack zal als laatste worden uitgevoerd.
 
 Doe je bv het volgende:
 
