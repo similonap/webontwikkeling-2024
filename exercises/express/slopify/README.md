@@ -4,7 +4,7 @@ In deze opdracht bouw je de **Slopify** muziekstreamingapp verder uit. Je start 
 
 Werk uitsluitend in de map `slopify_starter`. Wijzig geen bestanden in de map `slopify`.
 
-[Starter.zip](starter.zip)
+[Starter.zip](https://github.com/similonap/webontwikkeling-2024/raw/refs/heads/main/exercises/express/slopify/starter.zip)
 
 ***
 
