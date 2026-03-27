@@ -61,7 +61,7 @@
 
 * [Environment Variables](security-and-testing/environment-variables.md)
 * [Cookies](security-and-testing/cookies.md)
-* [Hashing & Encryptie](security-and-testing/hashing-encryption.md)
+* [Hashing](security-and-testing/hashing.md)
 * [Sessions](security-and-testing/sessions.md)
   * [Session Based Login](security-and-testing/session-based-login.md)
 * [JWT Tokens](security-and-testing/jwt-tokens/README.md)
