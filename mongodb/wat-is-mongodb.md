@@ -61,13 +61,31 @@ Om MongoDB Atlas te gebruiken, kan je een account aanmaken op [https://www.mongo
 
 Let zeker op dat je voor deze cursus een gratis cluster aanmaakt. Dit is voldoende voor onze doeleinden.
 
-## Devcontainer
+## Docker
 
-Als je applicatie in productie draait moet je uiteraard gebruik maken van een mongodb server die online staat (zoaals MongoDB Atlas). Maar tijdens het ontwikkelen kan je gebruik maken van een mongodb server die lokaal draait. Dit kan je doen door een mongodb server te installeren op je eigen machine of door gebruik te maken van een devcontainer die een mongodb server bevat.
+Wanneer je applicatie in productie draait, maak je uiteraard gebruik van een externe MongoDB-server, zoals MongoDB Atlas.
 
-Er is jammer genoeg geen standaard devcontainer die typescript en mongodb bevat. Maar dankzij de flexibiliteit van devcontainers kunnen we zelf een devcontainer maken die typescript en mongodb bevat. Dit is buiten de scope van deze cursus, dus we gaan gebruik maken van een voorgemaakte template.
+Tijdens het ontwikkelen is het echter praktischer om een lokale MongoDB-instantie te gebruiken. Dit kun je doen door MongoDB direct op je machine te installeren of door gebruik te maken van Docker.
 
-Als je wil connecteren met een lokale mongodb server in een devcontainer, kan je gebruik maken van volgende connectie string: `mongodb://localhost:27017`.
+#### MongoDB draaien met Docker
+
+Met het onderstaande commando start je een MongoDB-container waarbij de data behouden blijft via een _volume_:
+
+```
+docker run -d \
+  -p 27017:27017 \
+  -v mongo-data:/data/db \
+  --name mongodb \
+  mongo:latest
+```
+
+#### Verbinding maken vanuit een Dev Container
+
+Als je werkt vanuit een Dev Container en verbinding wilt maken met de MongoDB-server die op je eigen machine (de host) draait, gebruik je de volgende verbindingsstring:
+
+`mongodb://host.docker.internal:27017/`
+
+Let op: `host.docker.internal` is een speciale DNS-naam die binnen Docker wordt gebruikt om te verwijzen naar het IP-adres van je lokale machine (de host).
 
 ## MongoDB for VS Code
 
