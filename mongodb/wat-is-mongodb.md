@@ -79,13 +79,15 @@ docker run -d \
   mongo:latest
 ```
 
+**Let op:** dit commando moet je op je eigen machine uitvoeren, niet in de devcontainer.
+
 #### Verbinding maken vanuit een Dev Container
 
 Als je werkt vanuit een Dev Container en verbinding wilt maken met de MongoDB-server die op je eigen machine (de host) draait, gebruik je de volgende verbindingsstring:
 
 `mongodb://host.docker.internal:27017/`
 
-Let op: `host.docker.internal` is een speciale DNS-naam die binnen Docker wordt gebruikt om te verwijzen naar het IP-adres van je lokale machine (de host).
+**Let op:** `host.docker.internal` is een speciale DNS-naam die binnen Docker wordt gebruikt om te verwijzen naar het IP-adres van je lokale machine (de host).
 
 ## MongoDB for VS Code
 
