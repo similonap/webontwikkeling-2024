@@ -61,7 +61,7 @@ Om MongoDB Atlas te gebruiken, kan je een account aanmaken op [https://www.mongo
 
 Let zeker op dat je voor deze cursus een gratis cluster aanmaakt. Dit is voldoende voor onze doeleinden.
 
-## Docker
+## Docker en devcontainers
 
 Wanneer je applicatie in productie draait, maak je uiteraard gebruik van een externe MongoDB-server, zoals MongoDB Atlas.
 
