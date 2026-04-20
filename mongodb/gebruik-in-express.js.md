@@ -65,7 +65,7 @@ export async function connect() {
 In dit voorbeeld maken we een connectie met de MongoDB database. We maken ook een functie `exit` die we gebruiken om de connectie met de database te sluiten. We gebruiken de `process.on` methode om een event listener toe te voegen voor het `SIGINT` event. Dit event wordt getriggerd als je `CTRL+C` drukt in de terminal. Zo zorgen we ervoor dat de connectie met de database netjes wordt afgesloten als je de applicatie stopt.
 
 {% hint style="warning" %}
-Wanneer je Nodemon gebruikt, wordt er bij een automatische herstart een `SIGUSR2`-signaal verstuurd in plaats van `SIGINT`. Om ervoor te zorgen dat je applicatie in alle situaties netjes afsluit—zowel bij een handmatige stop als bij een herstart door Nodemon—moet je beide signalen afhandelen.
+Wanneer je Nodemon gebruikt, kan je best ook `SIGUSR2`  afhandelen zodat je connectie ook wordt afgesloten tijdens het developen.&#x20;
 {% endhint %}
 
 Vervolgens kunnen we deze module gebruiken in onze Express.js applicatie.
