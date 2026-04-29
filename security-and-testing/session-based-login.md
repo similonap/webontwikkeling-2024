@@ -240,8 +240,7 @@ npm install --save-dev @types/express-session
 We zullen de sessie data bijhouden in een mongodb database. We gaan dus ook de `connect-mongodb-session` package installeren. Voer het volgende commando uit in de terminal:
 
 ```bash
-npm install connect-mongodb-session
-npm install --save-dev @types/connect-mongodb-session
+npm install connect-mongodb
 ```
 
 We gaan nu een nieuwe file aanmaken in de root van je project en noem deze `session.ts`. Voeg de volgende code toe aan deze file:
@@ -250,13 +249,16 @@ We gaan nu een nieuwe file aanmaken in de root van je project en noem deze `sess
 import { MONGODB_URI } from "./database";
 import session, { MemoryStore } from "express-session";
 import { User } from "./types";
-import mongoDbSession from "connect-mongodb-session";
-const MongoDBStore = mongoDbSession(session);
+import MongoStore from 'connect-mongo'
 
-const mongoStore = new MongoDBStore({
+const mongoStore = MongoStore.create({
     uri: MONGODB_URI,
     collection: "sessions",
-    databaseName: "login-express",
+    databaseName: "login-express",    
+});
+
+mongoStore.on("error", (error) => {
+    console.error(error);
 });
 
 declare module 'express-session' {
