@@ -101,7 +101,7 @@ De inhoud van de sessie wordt langs de serverzijde opgeslagen. Dit impliceert da
 
 Het defaultmechanisme van express-session is een "in-memory store", dus tijdelijke opslag. Voor ontwikkeling en debugging kan dit handig zijn. In productie gebruik je een "session store". Dit is een externe database die de sessiegegevens opslaat. Er zijn verschillende session stores beschikbaar, zoals `connect-redis`, `connect-mongo`, `connect-mysql`, enz. Deze moet je zelf installeren en configureren.
 
-Wil je bijvoorbeeld mongodb gebruiken als session store, dan installeer je de package `connect-mongodb`:
+Wil je bijvoorbeeld mongodb gebruiken als session store, dan installeer je de package `connect-mongo`:
 
 ```bash
 npm install connect-mongo

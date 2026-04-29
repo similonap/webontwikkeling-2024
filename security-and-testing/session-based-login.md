@@ -237,10 +237,10 @@ npm install express-session
 npm install --save-dev @types/express-session
 ```
 
-We zullen de sessie data bijhouden in een mongodb database. We gaan dus ook de `connect-mongodb-session` package installeren. Voer het volgende commando uit in de terminal:
+We zullen de sessie data bijhouden in een mongodb database. We gaan dus ook de `connect-mongo` package installeren. Voer het volgende commando uit in de terminal:
 
 ```bash
-npm install connect-mongodb
+npm install connect-mongo
 ```
 
 We gaan nu een nieuwe file aanmaken in de root van je project en noem deze `session.ts`. Voeg de volgende code toe aan deze file:
