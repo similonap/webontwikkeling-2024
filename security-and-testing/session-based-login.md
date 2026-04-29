@@ -253,8 +253,8 @@ import MongoStore from 'connect-mongo'
 
 const mongoStore = MongoStore.create({
     mongoUrl: MONGODB_URI,
-    collection: "sessions",
-    databaseName: "login-express",    
+    dbName: "sessions",
+    collectionName: "login-express"   
 });
 
 mongoStore.on("error", (error) => {
