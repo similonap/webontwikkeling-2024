@@ -252,7 +252,7 @@ import { User } from "./types";
 import MongoStore from 'connect-mongo'
 
 const mongoStore = MongoStore.create({
-    uri: MONGODB_URI,
+    mongoUrl: MONGODB_URI,
     collection: "sessions",
     databaseName: "login-express",    
 });
