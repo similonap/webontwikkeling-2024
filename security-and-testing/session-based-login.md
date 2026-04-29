@@ -294,7 +294,8 @@ app.post("/login", async(req, res) => {
     const password : string = req.body.password;
     try {
         let user : User = await login(email, password);
-        delete user.password; 
+        delete user.password; // Paswoord mag nooit in de sessie
+        delete user._id; // _id moet niet in de sessie
         req.session.user = user;
         res.redirect("/")
     } catch (e : any) {
