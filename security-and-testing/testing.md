@@ -415,47 +415,61 @@ app.get("/pets", async (req, res) => {
 ```typescript
 import request from "supertest";
 import app from "./app";
-import { getPets } from "./database";
+import { getUsers } from "./database";
 
 jest.mock("./database");
 
-const mockGetPets = getPets as jest.MockedFunction<typeof getPets>;
+const mockGetUsers = jest.mocked(getUsers);
 
-const mockPets = [
-    { id: 1, name: "Buddy", species: "Dog" },
-    { id: 2, name: "Mittens", species: "Cat" },
+const mockUsers = [
+    {
+        id: 1,
+        name: "Leanne Graham",
+        username: "Bret",
+        email: "sincere@april.biz",
+        phone: "1-770-736-8031",
+        website: "hildegard.org",
+        address: {
+            street: "Kulas Light",
+            suite: "Apt. 556",
+            city: "Gwenborough",
+            zipcode: "92998-3874",
+            geo: { lat: -37.3159, lng: 81.1496 },
+        },
+        company: {
+            name: "Romaguera-Crona",
+            catchPhrase: "Multi-layered client-server neural-net",
+            bs: "harness real-time e-markets",
+        },
+    },
 ];
 
-describe("GET /pets", () => {
-    it("should return 200 and render the list of pets", async () => {
-        // Arrange
-        mockGetPets.mockResolvedValue(mockPets as any);
-        // Act
-        const res = await request(app).get("/pets");
-        // Assert
+describe("GET /users", () => {
+    it("returns 200 and renders users from the database", async () => {
+        mockGetUsers.mockResolvedValue(mockUsers as any);
+
+        const res = await request(app).get("/users");
+
         expect(res.status).toBe(200);
-        expect(res.text).toContain("Buddy");
-        expect(res.text).toContain("Mittens");
-        expect(mockGetPets).toHaveBeenCalledTimes(1);
+        expect(res.text).toContain("Leanne Graham");
+        expect(mockGetUsers).toHaveBeenCalledTimes(1);
     });
 
-    it("should return 200 even if the pet list is empty", async () => {
-        // Arrange
-        mockGetPets.mockResolvedValue([]);
-        // Act
-        const res = await request(app).get("/pets");
-        // Assert
+    it("returns 200 with an empty list when no users exist", async () => {
+        mockGetUsers.mockResolvedValue([] as any);
+
+        const res = await request(app).get("/users");
+
         expect(res.status).toBe(200);
-        expect(mockGetPets).toHaveBeenCalled();
     });
 
-    it("should handle database errors gracefully", async () => {
-        // Arrange
-        mockGetPets.mockRejectedValue(new Error("Database connection failed"));
-        // Act
-        const res = await request(app).get("/pets");
-        // Assert
-        expect(res.status).toBe(500);
+    it("passes the message query param to the view", async () => {
+        mockGetUsers.mockResolvedValue([] as any);
+
+        const res = await request(app).get("/users?message=User+deleted");
+
+        expect(res.status).toBe(200);
+        expect(res.text).toContain("User deleted");
     });
 });
 ```
