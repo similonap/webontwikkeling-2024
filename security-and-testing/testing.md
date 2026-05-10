@@ -34,6 +34,12 @@ Om te zorgen dat je al je Jest-tests kan laten lopen met npm test, voeg je dit t
 }
 ```
 
+Het kan zijn dat je in vscode fouten krijgt bij het gebruik van jest maar de testen wel kan uitvoeren. Je kan de volgende lijn in je tsconfig.json bestand zetten om dit op te lossen:
+
+```json
+"types": ["jest", "node"]
+```
+
 ### Node.js testen
 
 #### Basis
