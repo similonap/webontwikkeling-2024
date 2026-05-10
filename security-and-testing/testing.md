@@ -403,7 +403,7 @@ Om deze reden wordt vaak gebruik gemaakt van "mocks": waarden die de plaats inne
 
 #### Database
 
-We hebben gekozen om onze database altijd in een aparte module te steken die onze collection exporteert. Dit maakt het makkelijk om deze te mocken. We gaan hierbij gebruik maken van de `spyOn` functie van Jest om de functies van de database module te mocken.
+We hebben gekozen om onze database altijd in een aparte module te steken die onze collection exporteert. Dit maakt het makkelijk om deze te mocken. We gaan hierbij gebruik maken van de `mock` functie van Jest om de functies van de database module te mocken.
 
 ```typescript
 app.get("/pets", async (req, res) => {
@@ -413,26 +413,54 @@ app.get("/pets", async (req, res) => {
 ```
 
 ```typescript
-import { collection, getPets } from "./database";
 import request from "supertest";
 import app from "./app";
+import { getPets } from "./database";
 
-test("that /pets calls the getPets function", async () => {
-    const mockPets = [
-        { name: "Fido", species: "dog" },
-        { name: "Milo", species: "cat" },
-    ];
-    const toArrayMock = jest.fn().mockResolvedValue(mockPets);
-    const findMock = jest.spyOn(collection, 'find').mockImplementation(() => ({
-        toArray: toArrayMock
-    }) as any);
-    const response = await request(app).get("/pets");
-    expect(response.status).toBe(200);
-    expect(findMock).toHaveBeenCalledWith({});
+jest.mock("./database");
+
+const mockGetPets = getPets as jest.MockedFunction<typeof getPets>;
+
+const mockPets = [
+    { id: 1, name: "Buddy", species: "Dog" },
+    { id: 2, name: "Mittens", species: "Cat" },
+];
+
+describe("GET /pets", () => {
+    it("should return 200 and render the list of pets", async () => {
+        // Arrange
+        mockGetPets.mockResolvedValue(mockPets as any);
+        // Act
+        const res = await request(app).get("/pets");
+        // Assert
+        expect(res.status).toBe(200);
+        expect(res.text).toContain("Buddy");
+        expect(res.text).toContain("Mittens");
+        expect(mockGetPets).toHaveBeenCalledTimes(1);
+    });
+
+    it("should return 200 even if the pet list is empty", async () => {
+        // Arrange
+        mockGetPets.mockResolvedValue([]);
+        // Act
+        const res = await request(app).get("/pets");
+        // Assert
+        expect(res.status).toBe(200);
+        expect(mockGetPets).toHaveBeenCalled();
+    });
+
+    it("should handle database errors gracefully", async () => {
+        // Arrange
+        mockGetPets.mockRejectedValue(new Error("Database connection failed"));
+        // Act
+        const res = await request(app).get("/pets");
+        // Assert
+        expect(res.status).toBe(500);
+    });
 });
 ```
 
-De `spyOn` functie maakt een mock van de `find` functie van de `collection` module. We geven aan dat deze mock de `toArray` functie moet teruggeven met de waarde `mockPets`. We controleren dan of de `find` functie van de `collection` module aangeroepen is met de juiste parameters.
+Het Arrange, Act, Assert (AAA) patroon is een vaste structuur voor unit tests die de leesbaarheid vergroot door de test in drie logische stappen op te splitsen: eerst zet je alle benodigde data en mocks klaar (Arrange), vervolgens voer je de specifieke actie of functie uit die je wilt testen (Act), en tot slot controleer je of het resultaat en de bijwerkingen overeenkomen met je verwachtingen (Assert).&#x20;
 
 #### Fetch
 
