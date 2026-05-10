@@ -519,15 +519,16 @@ afterEach(() => {
 
 describe("GET /pokemon", () => {
     it("renders pokemon names from the API", async () => {
+        // Arrange
         fetchMock.get(POKE_API_URL, {
             results: [
                 { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/" },
                 { name: "ivysaur", url: "https://pokeapi.co/api/v2/pokemon/2/" },
             ],
         });
-
+        // Act
         const res = await request(app).get("/pokemon");
-
+        // Assert
         expect(res.status).toBe(200);
         expect(res.text).toContain("bulbasaur");
         expect(res.text).toContain("ivysaur");
@@ -580,19 +581,21 @@ describe('GET /lezen', () => {
   });
 
   it('geeft de tekst terug bij succes', async () => {
+    // Arrange
     mockedReadFile.mockResolvedValue('Mock data!');
-
+    // Act
     const res = await request(app).get('/lezen');
-    
+    // Assert
     expect(res.text).toBe('Mock data!');
     expect(mockedReadFile).toHaveBeenCalledTimes(1);
   });
 
   it('geeft een 500 bij een fout', async () => {
+    // Arrange
     mockedReadFile.mockRejectedValue(new Error('File not found'));
-
+    // Act
     const res = await request(app).get('/lezen');
-
+    // Assert
     expect(res.status).toBe(500);
     expect(mockedReadFile).toHaveBeenCalledTimes(1); 
   });
