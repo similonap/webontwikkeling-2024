@@ -466,7 +466,11 @@ Het Arrange, Act, Assert (AAA) patroon is een vaste structuur voor unit tests di
 
 We gebruiken fetch om requests op externe services te doen. Omdat dit iets is dat je vaak wil mocken (om te vermijden dat netwerkstoringen testen doen falen, om te vermijden dat je API-limieten bereikt,...) is hier speciale ondersteuning voor.
 
-We installeren eerst fetch-mock-jest (als development dependency).
+We installeren eerst `@fetch-mock/jest` (als development dependency).
+
+```
+npm install --save-dev @fetch-mock/jest
+```
 
 De clientcode:
 
@@ -486,21 +490,37 @@ app.get("/pokemon", async (req: Request, res: Response) => {
 De testcode:
 
 ```typescript
-import fetchMock from 'fetch-mock-jest';
+const POKE_API_URL = "https://pokeapi.co/api/v2/pokemon?limit=2";
 
-describe("pokemon", () => {
-  it("Should display Pokemon names based on request result", async () => {
-    const mockResponse = { results: [{ name: "squirtle" }, { name: "wartortle" }] };
-    // deze is automatisch gepatcht na de import
-    fetchMock.get("https://pokeapi.co/api/v2/pokemon?limit=2", mockResponse);
-    const response = await request(Server.getServer()).get('/pokemon');
-    expect(response.status).toBe(200);
-    expect(response.text).toContain('<li>');
-    expect(response.text).toContain('squirtle');
-    expect(response.text).toContain('wartortle');
-  })
+beforeEach(() => {
+    fetchMock.mockGlobal();
 });
+
+afterEach(() => {
+    fetchMock.mockRestore();
+});
+
+describe("GET /pokemon", () => {
+    it("renders pokemon names from the API", async () => {
+        fetchMock.get(POKE_API_URL, {
+            results: [
+                { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon/1/" },
+                { name: "ivysaur", url: "https://pokeapi.co/api/v2/pokemon/2/" },
+            ],
+        });
+
+        const res = await request(app).get("/pokemon");
+
+        expect(res.status).toBe(200);
+        expect(res.text).toContain("bulbasaur");
+        expect(res.text).toContain("ivysaur");
+        expect(fetchMock).toHaveFetched(POKE_API_URL);
+    });
+});
+
 ```
+
+Vergeet niet de `fetchMock.mockGlobal()` en `fetchMock.mockRestore()` uit te voeren na elke test anders zal de echte fetch functie worden uitgevoerd en dit willen we niet.
 
 #### Neveneffecten vermijden
 
