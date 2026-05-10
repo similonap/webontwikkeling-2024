@@ -524,7 +524,7 @@ Vergeet niet de `fetchMock.mockGlobal()` en `fetchMock.mockRestore()` uit te voe
 
 #### Neveneffecten vermijden
 
-Om te vermijden dat andere operaties die fs.readFile nodig hebben niet fout lopen, moeten we zorgen dat de mock enkel in deze testfunctie gebruikt wordt. Daarom voegen we in de testfile deze regel toe:
+Om te vermijden dat testen elkaar beinvloeden. Bijvoorbeeld bij&#x20;
 
 ```typescript
 afterEach(() => jest.clearAllMocks());
