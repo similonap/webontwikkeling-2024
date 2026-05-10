@@ -568,6 +568,10 @@ app.get("/pokemon", async (req: Request, res: Response) => {
 De testcode:
 
 ```typescript
+import request from "supertest";
+import fetchMock from "@fetch-mock/jest";
+import app from "./index";
+
 const POKE_API_URL = "https://pokeapi.co/api/v2/pokemon?limit=2";
 
 beforeEach(() => {
