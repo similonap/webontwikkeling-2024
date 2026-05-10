@@ -545,3 +545,55 @@ afterEach(() => jest.clearAllMocks());
 ```
 
 Als we dit buiten de describe-blokken doen, gebeurt dit na elke test.
+
+Bijvoorbeeld:
+
+```typescript
+app.get('/lezen', async (req, res) => {
+  try {
+    const data = await readFile('somepath.txt', 'utf-8');
+    res.send(data);
+  } catch (err) {
+    res.status(500).send('Error');
+  }
+});
+```
+
+en de volgende tests:
+
+```typescript
+import request from 'supertest';
+import { readFile } from 'fs/promises';
+import app from './index';
+
+jest.mock('fs/promises');
+
+const mockedReadFile = jest.mocked(readFile);
+
+describe('GET /lezen', () => {
+  
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('geeft de tekst terug bij succes', async () => {
+    mockedReadFile.mockResolvedValue('Mock data!');
+
+    const res = await request(app).get('/lezen');
+    
+    expect(res.text).toBe('Mock data!');
+    expect(mockedReadFile).toHaveBeenCalledTimes(1);
+  });
+
+  it('geeft een 500 bij een fout', async () => {
+    mockedReadFile.mockRejectedValue(new Error('File not found'));
+
+    const res = await request(app).get('/lezen');
+
+    expect(res.status).toBe(500);
+    expect(mockedReadFile).toHaveBeenCalledTimes(1); 
+  });
+});
+```
+
+Probeer eens de `clearAllMocks` weg te halen en kijk wat er gebeurd.
