@@ -416,27 +416,16 @@ app.get("/pets", async (req, res) => {
 import request from "supertest";
 import app from "./app";
 import { getPets } from "./database";
-import { ObjectId } from "mongodb";
+import { ObjectId, WithId } from "mongodb";
+import { Pet } from "./types";
 
 jest.mock("./database");
 
 const mockGetPets = jest.mocked(getPets);
 
-const mockPets : Pet[] = [
-    {
-        _id: new ObjectId("a1234"),
-        id: 1,
-        name: "Buddy",
-        species: "Dog",
-        age: 3
-    },
-    {
-        _id: new ObjectId("b1234"),    
-        id: 2,
-        name: "Mittens",
-        species: "Cat",
-        age: 5
-    }
+const mockPets : WithId<Pet>[] = [
+    { _id: new ObjectId("65f1a1b2c3d4e5f6a1b2c3d4"), name: "Buddy", age: 2, type: "dog", breed: "Golden Retriever" },
+    { _id: new ObjectId("65f1a1b2c3d4e5f6a1b2c3d5"), name: "Daisy", age: 3, type: "dog", breed: "Beagle" },
 ];
 
 describe("GET /pets", () => {
@@ -451,7 +440,7 @@ describe("GET /pets", () => {
         // Assert
         expect(res.status).toBe(200);
         expect(res.text).toContain("Buddy");
-        expect(res.text).toContain("Mittens");
+        expect(res.text).toContain("Daisy");
         expect(mockGetPets).toHaveBeenCalledTimes(1);
     });
 
