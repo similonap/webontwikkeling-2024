@@ -416,6 +416,7 @@ app.get("/pets", async (req, res) => {
 import request from "supertest";
 import app from "./app";
 import { getPets } from "./database";
+import { ObjectId } from "mongodb";
 
 jest.mock("./database");
 
@@ -423,12 +424,14 @@ const mockGetPets = jest.mocked(getPets);
 
 const mockPets : Pet[] = [
     {
+        _id: new ObjectId("a1234"),
         id: 1,
         name: "Buddy",
         species: "Dog",
         age: 3
     },
     {
+        _id: new ObjectId("b1234"),    
         id: 2,
         name: "Mittens",
         species: "Cat",
