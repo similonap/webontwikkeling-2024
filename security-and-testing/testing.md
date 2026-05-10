@@ -412,6 +412,75 @@ app.get("/pets", async (req, res) => {
 });
 ```
 
+Met de volgende `types.ts`
+
+```typescript
+import { ObjectId } from "mongodb"
+
+export interface Pet {
+    _id?: ObjectId,
+    name: string,
+    age: number,
+    type: PetType,
+    breed: string
+}
+
+export type PetType = "dog" | "cat" | "hamster"
+```
+
+en `database.ts:`
+
+```typescript
+import {Collection, MongoClient} from "mongodb";
+import dotenv from "dotenv";
+import { Pet, PetType } from "./types";
+
+dotenv.config();
+
+if (!process.env.MONGODB_URI) {
+    process.exit(0);
+}
+
+const client = new MongoClient(process.env.MONGODB_URI);
+
+const petCollection: Collection<Pet> = client.db("pet-shelter").collection("pets");
+
+export async function getPets() {
+    return await petCollection.find().sort({"name": "asc"}).toArray();
+}
+
+
+export async function seed() {
+    if (await petCollection.countDocuments() === 0) {
+        const pets: Pet[] = [
+            { name: "Buddy", age: 2, type: "dog", breed: "Golden Retriever" },
+            { name: "Daisy", age: 3, type: "dog", breed: "Beagle" },
+            // ...
+        ];
+        console.log("No data... seeding");
+
+        await petCollection.insertMany(pets);
+
+    }
+}
+
+export async function connect() {
+    await client.connect();
+    console.log("Connected to database");
+    await seed();
+}
+
+export async function close() {
+    try {
+        await client.close()
+    } catch (e) {
+        console.error(e);
+    }
+}
+```
+
+Dan kunnen we de test schrijven op de volgende manier:
+
 ```typescript
 import request from "supertest";
 import app from "./app";
