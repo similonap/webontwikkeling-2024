@@ -443,7 +443,7 @@ describe("GET /pets", () => {
     
     it("should return 200 and render the list of pets", async () => {
         // Arrange
-        mockGetPets.mockResolvedValue(mockPets as any);
+        mockGetPets.mockResolvedValue(mockPets);
 
         // Act
         const res = await request(app).get("/pets");
